@@ -11,7 +11,7 @@ import SwiftUI
 struct AnimalPocketApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            GridItem()
         }
     }
 }
