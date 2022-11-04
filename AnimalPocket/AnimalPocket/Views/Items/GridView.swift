@@ -8,13 +8,27 @@
 import SwiftUI
 
 struct GridView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+  // we will iterate through the items in our API list
+  let items = 1...10
+  
+  // one row per category for the home page
+  let rows = [
+    GridItem()
+  ]
+  
+  var body: some View {
+    ScrollView(.horizontal) {
+      LazyHGrid(rows: rows, spacing: 15) {
+        ForEach(items, id: \.self) { item in
+          GridItemDetails()
+        }
+      }
     }
+  }
 }
 
 struct GridView_Previews: PreviewProvider {
-    static var previews: some View {
-        GridView()
-    }
+  static var previews: some View {
+    GridView()
+  }
 }

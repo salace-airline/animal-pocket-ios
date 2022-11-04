@@ -7,22 +7,22 @@
 
 import SwiftUI
 
-struct GridItem: View {
+struct GridItemDetails: View {
   var body: some View {
     VStack {
       // Image below will be a URL and can go into a separate "item image" component
       Image("Abeille naine")
         .background(Image("fond"))
+        .frame(width: 175)
         .clipShape(Rectangle())
         .overlay {
           Rectangle().stroke(Colors.green100, lineWidth: 2)
         }
-        .shadow(radius: 2)
-        .padding(.bottom, 10)
+        .padding(.bottom, 2)
       
       VStack {
         Text("Abeille Naine")
-          .font(.title)
+          .font(.system(size: 20))
           .bold()
       }
       .padding(.bottom, 2)
@@ -58,12 +58,16 @@ struct GridItem: View {
           Text("clochettes")
         }
       }
+      .font(.system(size: 15))
+      .padding(.bottom, 5)
     }
+    .frame(width: 175)
+    .background(Colors.beige100)
   }
 }
 
 struct GridItem_Previews: PreviewProvider {
     static var previews: some View {
-        GridItem()
+        GridItemDetails()
     }
 }
