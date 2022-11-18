@@ -20,6 +20,8 @@
 		101AF9F7290BBD9200855FA6 /* AnimalPocketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101AF9F6290BBD9200855FA6 /* AnimalPocketTests.swift */; };
 		101AFA01290BBD9200855FA6 /* AnimalPocketUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101AFA00290BBD9200855FA6 /* AnimalPocketUITests.swift */; };
 		101AFA03290BBD9200855FA6 /* AnimalPocketUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101AFA02290BBD9200855FA6 /* AnimalPocketUITestsLaunchTests.swift */; };
+		DC692FE32915776E00A0F8FB /* FinkHeavy_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC692FE22915776E00A0F8FB /* FinkHeavy_Regular.ttf */; };
+		DC692FE629157DFE00A0F8FB /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC692FE529157DFE00A0F8FB /* SwiftUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,9 @@
 		101AF9FC290BBD9200855FA6 /* AnimalPocketUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnimalPocketUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		101AFA00290BBD9200855FA6 /* AnimalPocketUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalPocketUITests.swift; sourceTree = "<group>"; };
 		101AFA02290BBD9200855FA6 /* AnimalPocketUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalPocketUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		DC692FE22915776E00A0F8FB /* FinkHeavy_Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FinkHeavy_Regular.ttf; sourceTree = "<group>"; };
+		DC692FE429157A3700A0F8FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		DC692FE529157DFE00A0F8FB /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +94,7 @@
 				004A258E290BDB17009281E4 /* HomePage.swift */,
 				004A2599290BDC42009281E4 /* Helpers */,
 				004A2590290BDB63009281E4 /* Items */,
+				DC692FE529157DFE00A0F8FB /* SwiftUIView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -107,6 +113,7 @@
 		004A2599290BDC42009281E4 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				DC692FE1291576BD00A0F8FB /* Fonts */,
 				0000E8C1290C1D6700BE076D /* Colors.swift */,
 			);
 			path = Helpers;
@@ -149,6 +156,7 @@
 		101AF9E4290BBD9100855FA6 /* AnimalPocket */ = {
 			isa = PBXGroup;
 			children = (
+				DC692FE429157A3700A0F8FB /* Info.plist */,
 				101AF9EB290BBD9200855FA6 /* Preview Content */,
 				004A259B290BDC61009281E4 /* Models */,
 				004A259A290BDC54009281E4 /* ViewModels */,
@@ -183,6 +191,14 @@
 				101AFA02290BBD9200855FA6 /* AnimalPocketUITestsLaunchTests.swift */,
 			);
 			path = AnimalPocketUITests;
+			sourceTree = "<group>";
+		};
+		DC692FE1291576BD00A0F8FB /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				DC692FE22915776E00A0F8FB /* FinkHeavy_Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,6 +305,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC692FE32915776E00A0F8FB /* FinkHeavy_Regular.ttf in Resources */,
 				0000E8C0290C1CCC00BE076D /* Color.xcassets in Resources */,
 				101AF9ED290BBD9200855FA6 /* Preview Assets.xcassets in Resources */,
 				101AF9EA290BBD9200855FA6 /* Assets.xcassets in Resources */,
@@ -318,6 +335,7 @@
 			files = (
 				004A259C290C0D71009281E4 /* GridItemDetails.swift in Sources */,
 				004A2594290BDBD6009281E4 /* ListView.swift in Sources */,
+				DC692FE629157DFE00A0F8FB /* SwiftUIView.swift in Sources */,
 				004A2598290BDC03009281E4 /* GridView.swift in Sources */,
 				004A258F290BDB17009281E4 /* HomePage.swift in Sources */,
 				0000E8C2290C1D6700BE076D /* Colors.swift in Sources */,
@@ -483,6 +501,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"AnimalPocket/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AnimalPocket/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -511,6 +530,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"AnimalPocket/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AnimalPocket/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
