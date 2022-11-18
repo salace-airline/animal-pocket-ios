@@ -63,6 +63,7 @@ struct GridItemDetails: View {
     }
     .frame(width: 175)
     .background(Colors.beige100)
+    .cornerRadius(10)
   }
 }
 

@@ -14,19 +14,17 @@ struct HomePage: View {
         Section(header: Text("Poissons")) {
           GridView()
         }
-        .listRowBackground(Color.red)
 
         Section(header: Text("Insectes")) {
           GridView()
         }
-        .listRowBackground(Color.red)
 
         Section(header: Text("Créatures Marines")) {
           GridView()
         }
-        .listRowBackground(Color.red)
-      }
+      } .listStyle(.plain)
       .navigationTitle("Pocket App")
+      .navigationBarTitleDisplayMode(.inline)
       .font(.custom("FinkHeavy", size: 18))
     }
   }
