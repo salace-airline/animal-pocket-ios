@@ -12,14 +12,13 @@ struct BugsResponse {
   let name: Name
   let availability: Availability
   let price: Int
-  let imageUri: String
-  let iconUri: String
+  let imageURI: String
+  let iconURI: String
 }
 
-extension BugsResponse {
+extension BugsResponse: Decodable {
   enum CodingKeys: String, CodingKey {
     case id
-    case fileName = "file-name"
     case name, availability, price
     case imageURI = "image_uri"
     case iconURI = "icon_uri"

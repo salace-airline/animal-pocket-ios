@@ -12,7 +12,7 @@ struct Name {
   let nameEUfr : String
 }
 
-extension Name: Codable {
+extension Name: Decodable {
   enum CodingKeys: String, CodingKey {
     case nameEUen = "name-EUen"
     case nameEUfr = "name-EUfr"

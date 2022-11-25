@@ -17,7 +17,7 @@ struct Availability {
   let timeArray: [Int]
 }
 
-extension Availability: Codable {
+extension Availability: Decodable {
   enum CodingKeys: String, CodingKey {
     case monthNorthern = "month-northern"
     case monthSouthern = "month-southern"

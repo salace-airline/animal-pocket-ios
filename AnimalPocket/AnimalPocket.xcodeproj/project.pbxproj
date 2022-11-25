@@ -17,7 +17,7 @@
 		00CFC9ED2931014500A291DB /* BugsName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CFC9EA2931014500A291DB /* BugsName.swift */; };
 		00CFC9EE2931014500A291DB /* BugsAvailability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CFC9EB2931014500A291DB /* BugsAvailability.swift */; };
 		00CFC9EF2931014500A291DB /* BugsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CFC9EC2931014500A291DB /* BugsResponse.swift */; };
-		00CFC9F22931016100A291DB /* BugsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CFC9F12931016100A291DB /* BugsService.swift */; };
+		00CFC9F22931016100A291DB /* BugsNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CFC9F12931016100A291DB /* BugsNetworkService.swift */; };
 		101AF9E6290BBD9100855FA6 /* AnimalPocketApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101AF9E5290BBD9100855FA6 /* AnimalPocketApp.swift */; };
 		101AF9EA290BBD9200855FA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 101AF9E9290BBD9200855FA6 /* Assets.xcassets */; };
 		101AF9ED290BBD9200855FA6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 101AF9EC290BBD9200855FA6 /* Preview Assets.xcassets */; };
@@ -54,7 +54,7 @@
 		00CFC9EA2931014500A291DB /* BugsName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BugsName.swift; sourceTree = "<group>"; };
 		00CFC9EB2931014500A291DB /* BugsAvailability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BugsAvailability.swift; sourceTree = "<group>"; };
 		00CFC9EC2931014500A291DB /* BugsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BugsResponse.swift; sourceTree = "<group>"; };
-		00CFC9F12931016100A291DB /* BugsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BugsService.swift; sourceTree = "<group>"; };
+		00CFC9F12931016100A291DB /* BugsNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BugsNetworkService.swift; sourceTree = "<group>"; };
 		101AF9E2290BBD9100855FA6 /* AnimalPocket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimalPocket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		101AF9E5290BBD9100855FA6 /* AnimalPocketApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalPocketApp.swift; sourceTree = "<group>"; };
 		101AF9E9290BBD9200855FA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -148,7 +148,7 @@
 		00CFC9F02931016100A291DB /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				00CFC9F12931016100A291DB /* BugsService.swift */,
+				00CFC9F12931016100A291DB /* BugsNetworkService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -344,7 +344,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00CFC9F22931016100A291DB /* BugsService.swift in Sources */,
+				00CFC9F22931016100A291DB /* BugsNetworkService.swift in Sources */,
 				004A259C290C0D71009281E4 /* GridItemDetails.swift in Sources */,
 				00CFC9EF2931014500A291DB /* BugsResponse.swift in Sources */,
 				004A2594290BDBD6009281E4 /* ListView.swift in Sources */,
