@@ -16,10 +16,13 @@
 		004A259C290C0D71009281E4 /* GridItemDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A2595290BDBE9009281E4 /* GridItemDetails.swift */; };
 		006E8C7E2931083700127551 /* BugsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006E8C7D2931083700127551 /* BugsViewModel.swift */; };
 		006E8C8029310A3A00127551 /* Bug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006E8C7F29310A3A00127551 /* Bug.swift */; };
-		006E8C8229310F0900127551 /* BugsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006E8C8129310F0900127551 /* BugsService.swift */; };
-		00CFC9ED2931014500A291DB /* BugsName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CFC9EA2931014500A291DB /* BugsName.swift */; };
-		00CFC9EE2931014500A291DB /* BugsAvailability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CFC9EB2931014500A291DB /* BugsAvailability.swift */; };
-		00CFC9EF2931014500A291DB /* BugsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CFC9EC2931014500A291DB /* BugsResponse.swift */; };
+		008AE01D293A3C8500BB4ACE /* Fish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008AE01C293A3C8500BB4ACE /* Fish.swift */; };
+		008AE01F293A3DBD00BB4ACE /* FishName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008AE01E293A3DBD00BB4ACE /* FishName.swift */; };
+		008AE021293A3DC700BB4ACE /* FishAvailability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008AE020293A3DC700BB4ACE /* FishAvailability.swift */; };
+		008AE023293A3E6800BB4ACE /* FishViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008AE022293A3E6800BB4ACE /* FishViewModel.swift */; };
+		008AE025293A3E8800BB4ACE /* FishNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008AE024293A3E8800BB4ACE /* FishNetworkService.swift */; };
+		00CFC9ED2931014500A291DB /* BugName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CFC9EA2931014500A291DB /* BugName.swift */; };
+		00CFC9EE2931014500A291DB /* BugAvailability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CFC9EB2931014500A291DB /* BugAvailability.swift */; };
 		00CFC9F22931016100A291DB /* BugsNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CFC9F12931016100A291DB /* BugsNetworkService.swift */; };
 		101AF9E6290BBD9100855FA6 /* AnimalPocketApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101AF9E5290BBD9100855FA6 /* AnimalPocketApp.swift */; };
 		101AF9EA290BBD9200855FA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 101AF9E9290BBD9200855FA6 /* Assets.xcassets */; };
@@ -56,10 +59,13 @@
 		004A2597290BDC03009281E4 /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
 		006E8C7D2931083700127551 /* BugsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugsViewModel.swift; sourceTree = "<group>"; };
 		006E8C7F29310A3A00127551 /* Bug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bug.swift; sourceTree = "<group>"; };
-		006E8C8129310F0900127551 /* BugsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugsService.swift; sourceTree = "<group>"; };
-		00CFC9EA2931014500A291DB /* BugsName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BugsName.swift; sourceTree = "<group>"; };
-		00CFC9EB2931014500A291DB /* BugsAvailability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BugsAvailability.swift; sourceTree = "<group>"; };
-		00CFC9EC2931014500A291DB /* BugsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BugsResponse.swift; sourceTree = "<group>"; };
+		008AE01C293A3C8500BB4ACE /* Fish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fish.swift; sourceTree = "<group>"; };
+		008AE01E293A3DBD00BB4ACE /* FishName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishName.swift; sourceTree = "<group>"; };
+		008AE020293A3DC700BB4ACE /* FishAvailability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishAvailability.swift; sourceTree = "<group>"; };
+		008AE022293A3E6800BB4ACE /* FishViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishViewModel.swift; sourceTree = "<group>"; };
+		008AE024293A3E8800BB4ACE /* FishNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishNetworkService.swift; sourceTree = "<group>"; };
+		00CFC9EA2931014500A291DB /* BugName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BugName.swift; sourceTree = "<group>"; };
+		00CFC9EB2931014500A291DB /* BugAvailability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BugAvailability.swift; sourceTree = "<group>"; };
 		00CFC9F12931016100A291DB /* BugsNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BugsNetworkService.swift; sourceTree = "<group>"; };
 		101AF9E2290BBD9100855FA6 /* AnimalPocket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimalPocket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		101AF9E5290BBD9100855FA6 /* AnimalPocketApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalPocketApp.swift; sourceTree = "<group>"; };
@@ -130,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				006E8C7D2931083700127551 /* BugsViewModel.swift */,
+				008AE022293A3E6800BB4ACE /* FishViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -137,18 +144,28 @@
 		004A259B290BDC61009281E4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				008AE01B293A3C7400BB4ACE /* Fish */,
 				00CFC9E92931014500A291DB /* Bugs */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
+		008AE01B293A3C7400BB4ACE /* Fish */ = {
+			isa = PBXGroup;
+			children = (
+				008AE01C293A3C8500BB4ACE /* Fish.swift */,
+				008AE01E293A3DBD00BB4ACE /* FishName.swift */,
+				008AE020293A3DC700BB4ACE /* FishAvailability.swift */,
+			);
+			path = Fish;
+			sourceTree = "<group>";
+		};
 		00CFC9E92931014500A291DB /* Bugs */ = {
 			isa = PBXGroup;
 			children = (
-				00CFC9EC2931014500A291DB /* BugsResponse.swift */,
-				00CFC9EA2931014500A291DB /* BugsName.swift */,
-				00CFC9EB2931014500A291DB /* BugsAvailability.swift */,
 				006E8C7F29310A3A00127551 /* Bug.swift */,
+				00CFC9EA2931014500A291DB /* BugName.swift */,
+				00CFC9EB2931014500A291DB /* BugAvailability.swift */,
 			);
 			path = Bugs;
 			sourceTree = "<group>";
@@ -157,7 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				00CFC9F12931016100A291DB /* BugsNetworkService.swift */,
-				006E8C8129310F0900127551 /* BugsService.swift */,
+				008AE024293A3E8800BB4ACE /* FishNetworkService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -354,15 +371,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				00CFC9F22931016100A291DB /* BugsNetworkService.swift in Sources */,
+				008AE021293A3DC700BB4ACE /* FishAvailability.swift in Sources */,
 				004A259C290C0D71009281E4 /* GridItemDetails.swift in Sources */,
-				00CFC9EF2931014500A291DB /* BugsResponse.swift in Sources */,
 				004A2594290BDBD6009281E4 /* ListView.swift in Sources */,
+				008AE023293A3E6800BB4ACE /* FishViewModel.swift in Sources */,
+				008AE01D293A3C8500BB4ACE /* Fish.swift in Sources */,
+				008AE01F293A3DBD00BB4ACE /* FishName.swift in Sources */,
 				004A2598290BDC03009281E4 /* GridView.swift in Sources */,
-				00CFC9ED2931014500A291DB /* BugsName.swift in Sources */,
-				006E8C8229310F0900127551 /* BugsService.swift in Sources */,
+				00CFC9ED2931014500A291DB /* BugName.swift in Sources */,
 				004A258F290BDB17009281E4 /* HomePage.swift in Sources */,
+				008AE025293A3E8800BB4ACE /* FishNetworkService.swift in Sources */,
 				0000E8C2290C1D6700BE076D /* Colors.swift in Sources */,
-				00CFC9EE2931014500A291DB /* BugsAvailability.swift in Sources */,
+				00CFC9EE2931014500A291DB /* BugAvailability.swift in Sources */,
 				101AF9E6290BBD9100855FA6 /* AnimalPocketApp.swift in Sources */,
 				006E8C8029310A3A00127551 /* Bug.swift in Sources */,
 				004A2592290BDBC8009281E4 /* ItemRow.swift in Sources */,

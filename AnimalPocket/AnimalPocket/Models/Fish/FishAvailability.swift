@@ -1,13 +1,13 @@
 //
-//  BugsAvailability.swift
+//  FishAvailability.swift
 //  AnimalPocket
 //
-//  Created by Sarah Watremet on 25/11/2022.
+//  Created by Sarah Watremet on 02/12/2022.
 //
 
 import Foundation
 
-struct BugsAvailability {
+struct FishAvailability {
   let monthNorthern, monthSouthern: String
   let time: String
   let isAllDay, isAllYear: Bool
@@ -17,7 +17,7 @@ struct BugsAvailability {
   let timeArray: [Int]
 }
 
-extension BugsAvailability: Decodable {
+extension FishAvailability: Decodable {
   enum CodingKeys: String, CodingKey {
     case monthNorthern = "month-northern"
     case monthSouthern = "month-southern"
