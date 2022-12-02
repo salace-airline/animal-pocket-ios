@@ -14,8 +14,8 @@ public enum BugsError: Error {
 }
 
 enum BugsNetworkService {
-  static func fetchBugs() async throws -> BugsResponse {
-    let url = URL(string: "https://acnhapi.com/v1/bugs")
+  static func fetchBugs() async throws -> [Bug] {
+    let url = URL(string: "https://acnhapi.com/v1a/bugs")
     guard let url else {
       throw BugsError.issueWithURL
     }
@@ -32,7 +32,7 @@ enum BugsNetworkService {
       throw BugsError.errorWhileFetchingData(statusCode: statusCode)
     }
     
-    let bugsResponse = try JSONDecoder().decode(BugsResponse.self, from: data)
+    let bugsResponse = try JSONDecoder().decode([Bug].self, from: data)
     return bugsResponse
   }
 }

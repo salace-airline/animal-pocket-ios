@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Availability {
+struct BugsAvailability {
   let monthNorthern, monthSouthern: String
   let time: String
   let isAllDay, isAllYear: Bool
@@ -17,7 +17,7 @@ struct Availability {
   let timeArray: [Int]
 }
 
-extension Availability: Decodable {
+extension BugsAvailability: Decodable {
   enum CodingKeys: String, CodingKey {
     case monthNorthern = "month-northern"
     case monthSouthern = "month-southern"
