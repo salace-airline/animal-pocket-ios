@@ -1,710 +1,574 @@
 // !$*UTF8*$!
 {
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 56;
-	objects = {
-
-/* Begin PBXBuildFile section */
-		0000E8C0290C1CCC00BE076D /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0000E8BF290C1CCB00BE076D /* Color.xcassets */; };
-		0000E8C2290C1D6700BE076D /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000E8C1290C1D6700BE076D /* Colors.swift */; };
-		004A258F290BDB17009281E4 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A258E290BDB17009281E4 /* HomePage.swift */; };
-		004A2592290BDBC8009281E4 /* ItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A2591290BDBC8009281E4 /* ItemRow.swift */; };
-		004A2594290BDBD6009281E4 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A2593290BDBD6009281E4 /* ListView.swift */; };
-		004A2598290BDC03009281E4 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A2597290BDC03009281E4 /* GridView.swift */; };
-		004A259C290C0D71009281E4 /* GridItemDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A2595290BDBE9009281E4 /* GridItemDetails.swift */; };
-		006E8C7E2931083700127551 /* BugsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006E8C7D2931083700127551 /* BugsViewModel.swift */; };
-		006E8C8029310A3A00127551 /* Bug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006E8C7F29310A3A00127551 /* Bug.swift */; };
-		008AE01D293A3C8500BB4ACE /* Fish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008AE01C293A3C8500BB4ACE /* Fish.swift */; };
-		008AE01F293A3DBD00BB4ACE /* FishName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008AE01E293A3DBD00BB4ACE /* FishName.swift */; };
-		008AE021293A3DC700BB4ACE /* FishAvailability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008AE020293A3DC700BB4ACE /* FishAvailability.swift */; };
-		008AE023293A3E6800BB4ACE /* FishViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008AE022293A3E6800BB4ACE /* FishViewModel.swift */; };
-		008AE025293A3E8800BB4ACE /* FishNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008AE024293A3E8800BB4ACE /* FishNetworkService.swift */; };
-		00CFC9ED2931014500A291DB /* BugName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CFC9EA2931014500A291DB /* BugName.swift */; };
-		00CFC9EE2931014500A291DB /* BugAvailability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CFC9EB2931014500A291DB /* BugAvailability.swift */; };
-		00CFC9F22931016100A291DB /* BugsNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CFC9F12931016100A291DB /* BugsNetworkService.swift */; };
-		101AF9E6290BBD9100855FA6 /* AnimalPocketApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101AF9E5290BBD9100855FA6 /* AnimalPocketApp.swift */; };
-		101AF9EA290BBD9200855FA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 101AF9E9290BBD9200855FA6 /* Assets.xcassets */; };
-		101AF9ED290BBD9200855FA6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 101AF9EC290BBD9200855FA6 /* Preview Assets.xcassets */; };
-		101AF9F7290BBD9200855FA6 /* AnimalPocketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101AF9F6290BBD9200855FA6 /* AnimalPocketTests.swift */; };
-		101AFA01290BBD9200855FA6 /* AnimalPocketUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101AFA00290BBD9200855FA6 /* AnimalPocketUITests.swift */; };
-		101AFA03290BBD9200855FA6 /* AnimalPocketUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101AFA02290BBD9200855FA6 /* AnimalPocketUITestsLaunchTests.swift */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		101AF9F3290BBD9200855FA6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 101AF9DA290BBD9100855FA6 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 101AF9E1290BBD9100855FA6;
-			remoteInfo = AnimalPocket;
-		};
-		101AF9FD290BBD9200855FA6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 101AF9DA290BBD9100855FA6 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 101AF9E1290BBD9100855FA6;
-			remoteInfo = AnimalPocket;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXFileReference section */
-		0000E8BF290C1CCB00BE076D /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Color.xcassets; path = Assets.xcassets/Color.xcassets; sourceTree = "<group>"; };
-		0000E8C1290C1D6700BE076D /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		004A258E290BDB17009281E4 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
-		004A2591290BDBC8009281E4 /* ItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRow.swift; sourceTree = "<group>"; };
-		004A2593290BDBD6009281E4 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
-		004A2595290BDBE9009281E4 /* GridItemDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridItemDetails.swift; sourceTree = "<group>"; };
-		004A2597290BDC03009281E4 /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
-		006E8C7D2931083700127551 /* BugsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugsViewModel.swift; sourceTree = "<group>"; };
-		006E8C7F29310A3A00127551 /* Bug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bug.swift; sourceTree = "<group>"; };
-		008AE01C293A3C8500BB4ACE /* Fish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fish.swift; sourceTree = "<group>"; };
-		008AE01E293A3DBD00BB4ACE /* FishName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishName.swift; sourceTree = "<group>"; };
-		008AE020293A3DC700BB4ACE /* FishAvailability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishAvailability.swift; sourceTree = "<group>"; };
-		008AE022293A3E6800BB4ACE /* FishViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishViewModel.swift; sourceTree = "<group>"; };
-		008AE024293A3E8800BB4ACE /* FishNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishNetworkService.swift; sourceTree = "<group>"; };
-		00CFC9EA2931014500A291DB /* BugName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BugName.swift; sourceTree = "<group>"; };
-		00CFC9EB2931014500A291DB /* BugAvailability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BugAvailability.swift; sourceTree = "<group>"; };
-		00CFC9F12931016100A291DB /* BugsNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BugsNetworkService.swift; sourceTree = "<group>"; };
-		101AF9E2290BBD9100855FA6 /* AnimalPocket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimalPocket.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		101AF9E5290BBD9100855FA6 /* AnimalPocketApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalPocketApp.swift; sourceTree = "<group>"; };
-		101AF9E9290BBD9200855FA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		101AF9EC290BBD9200855FA6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		101AF9F2290BBD9200855FA6 /* AnimalPocketTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnimalPocketTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		101AF9F6290BBD9200855FA6 /* AnimalPocketTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalPocketTests.swift; sourceTree = "<group>"; };
-		101AF9FC290BBD9200855FA6 /* AnimalPocketUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnimalPocketUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		101AFA00290BBD9200855FA6 /* AnimalPocketUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalPocketUITests.swift; sourceTree = "<group>"; };
-		101AFA02290BBD9200855FA6 /* AnimalPocketUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalPocketUITestsLaunchTests.swift; sourceTree = "<group>"; };
-/* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		101AF9DF290BBD9100855FA6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		101AF9EF290BBD9200855FA6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		101AF9F9290BBD9200855FA6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
-/* Begin PBXGroup section */
-		004A258C290BD9A3009281E4 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				004A258E290BDB17009281E4 /* HomePage.swift */,
-				004A2599290BDC42009281E4 /* Helpers */,
-				004A2590290BDB63009281E4 /* Items */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		004A2590290BDB63009281E4 /* Items */ = {
-			isa = PBXGroup;
-			children = (
-				004A2591290BDBC8009281E4 /* ItemRow.swift */,
-				004A2593290BDBD6009281E4 /* ListView.swift */,
-				004A2595290BDBE9009281E4 /* GridItemDetails.swift */,
-				004A2597290BDC03009281E4 /* GridView.swift */,
-			);
-			path = Items;
-			sourceTree = "<group>";
-		};
-		004A2599290BDC42009281E4 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				0000E8C1290C1D6700BE076D /* Colors.swift */,
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
-		004A259A290BDC54009281E4 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				006E8C7D2931083700127551 /* BugsViewModel.swift */,
-				008AE022293A3E6800BB4ACE /* FishViewModel.swift */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		004A259B290BDC61009281E4 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				008AE01B293A3C7400BB4ACE /* Fish */,
-				00CFC9E92931014500A291DB /* Bugs */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		008AE01B293A3C7400BB4ACE /* Fish */ = {
-			isa = PBXGroup;
-			children = (
-				008AE01C293A3C8500BB4ACE /* Fish.swift */,
-				008AE01E293A3DBD00BB4ACE /* FishName.swift */,
-				008AE020293A3DC700BB4ACE /* FishAvailability.swift */,
-			);
-			path = Fish;
-			sourceTree = "<group>";
-		};
-		00CFC9E92931014500A291DB /* Bugs */ = {
-			isa = PBXGroup;
-			children = (
-				006E8C7F29310A3A00127551 /* Bug.swift */,
-				00CFC9EA2931014500A291DB /* BugName.swift */,
-				00CFC9EB2931014500A291DB /* BugAvailability.swift */,
-			);
-			path = Bugs;
-			sourceTree = "<group>";
-		};
-		00CFC9F02931016100A291DB /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				00CFC9F12931016100A291DB /* BugsNetworkService.swift */,
-				008AE024293A3E8800BB4ACE /* FishNetworkService.swift */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		101AF9D9290BBD9100855FA6 = {
-			isa = PBXGroup;
-			children = (
-				101AF9E4290BBD9100855FA6 /* AnimalPocket */,
-				101AF9F5290BBD9200855FA6 /* AnimalPocketTests */,
-				101AF9FF290BBD9200855FA6 /* AnimalPocketUITests */,
-				101AF9E3290BBD9100855FA6 /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		101AF9E3290BBD9100855FA6 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				101AF9E2290BBD9100855FA6 /* AnimalPocket.app */,
-				101AF9F2290BBD9200855FA6 /* AnimalPocketTests.xctest */,
-				101AF9FC290BBD9200855FA6 /* AnimalPocketUITests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		101AF9E4290BBD9100855FA6 /* AnimalPocket */ = {
-			isa = PBXGroup;
-			children = (
-				101AF9EB290BBD9200855FA6 /* Preview Content */,
-				00CFC9F02931016100A291DB /* Services */,
-				004A259B290BDC61009281E4 /* Models */,
-				004A259A290BDC54009281E4 /* ViewModels */,
-				004A258C290BD9A3009281E4 /* Views */,
-				101AF9E5290BBD9100855FA6 /* AnimalPocketApp.swift */,
-				101AF9E9290BBD9200855FA6 /* Assets.xcassets */,
-				0000E8BF290C1CCB00BE076D /* Color.xcassets */,
-			);
-			path = AnimalPocket;
-			sourceTree = "<group>";
-		};
-		101AF9EB290BBD9200855FA6 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				101AF9EC290BBD9200855FA6 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		101AF9F5290BBD9200855FA6 /* AnimalPocketTests */ = {
-			isa = PBXGroup;
-			children = (
-				101AF9F6290BBD9200855FA6 /* AnimalPocketTests.swift */,
-			);
-			path = AnimalPocketTests;
-			sourceTree = "<group>";
-		};
-		101AF9FF290BBD9200855FA6 /* AnimalPocketUITests */ = {
-			isa = PBXGroup;
-			children = (
-				101AFA00290BBD9200855FA6 /* AnimalPocketUITests.swift */,
-				101AFA02290BBD9200855FA6 /* AnimalPocketUITestsLaunchTests.swift */,
-			);
-			path = AnimalPocketUITests;
-			sourceTree = "<group>";
-		};
-/* End PBXGroup section */
-
-/* Begin PBXNativeTarget section */
-		101AF9E1290BBD9100855FA6 /* AnimalPocket */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 101AFA06290BBD9200855FA6 /* Build configuration list for PBXNativeTarget "AnimalPocket" */;
-			buildPhases = (
-				101AF9DE290BBD9100855FA6 /* Sources */,
-				101AF9DF290BBD9100855FA6 /* Frameworks */,
-				101AF9E0290BBD9100855FA6 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = AnimalPocket;
-			productName = AnimalPocket;
-			productReference = 101AF9E2290BBD9100855FA6 /* AnimalPocket.app */;
-			productType = "com.apple.product-type.application";
-		};
-		101AF9F1290BBD9200855FA6 /* AnimalPocketTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 101AFA09290BBD9200855FA6 /* Build configuration list for PBXNativeTarget "AnimalPocketTests" */;
-			buildPhases = (
-				101AF9EE290BBD9200855FA6 /* Sources */,
-				101AF9EF290BBD9200855FA6 /* Frameworks */,
-				101AF9F0290BBD9200855FA6 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				101AF9F4290BBD9200855FA6 /* PBXTargetDependency */,
-			);
-			name = AnimalPocketTests;
-			productName = AnimalPocketTests;
-			productReference = 101AF9F2290BBD9200855FA6 /* AnimalPocketTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		101AF9FB290BBD9200855FA6 /* AnimalPocketUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 101AFA0C290BBD9200855FA6 /* Build configuration list for PBXNativeTarget "AnimalPocketUITests" */;
-			buildPhases = (
-				101AF9F8290BBD9200855FA6 /* Sources */,
-				101AF9F9290BBD9200855FA6 /* Frameworks */,
-				101AF9FA290BBD9200855FA6 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				101AF9FE290BBD9200855FA6 /* PBXTargetDependency */,
-			);
-			name = AnimalPocketUITests;
-			productName = AnimalPocketUITests;
-			productReference = 101AF9FC290BBD9200855FA6 /* AnimalPocketUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
-/* End PBXNativeTarget section */
-
-/* Begin PBXProject section */
-		101AF9DA290BBD9100855FA6 /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1400;
-				LastUpgradeCheck = 1400;
-				TargetAttributes = {
-					101AF9E1290BBD9100855FA6 = {
-						CreatedOnToolsVersion = 14.0.1;
-					};
-					101AF9F1290BBD9200855FA6 = {
-						CreatedOnToolsVersion = 14.0.1;
-						TestTargetID = 101AF9E1290BBD9100855FA6;
-					};
-					101AF9FB290BBD9200855FA6 = {
-						CreatedOnToolsVersion = 14.0.1;
-						TestTargetID = 101AF9E1290BBD9100855FA6;
-					};
-				};
-			};
-			buildConfigurationList = 101AF9DD290BBD9100855FA6 /* Build configuration list for PBXProject "AnimalPocket" */;
-			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-				Base,
-			);
-			mainGroup = 101AF9D9290BBD9100855FA6;
-			productRefGroup = 101AF9E3290BBD9100855FA6 /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				101AF9E1290BBD9100855FA6 /* AnimalPocket */,
-				101AF9F1290BBD9200855FA6 /* AnimalPocketTests */,
-				101AF9FB290BBD9200855FA6 /* AnimalPocketUITests */,
-			);
-		};
-/* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		101AF9E0290BBD9100855FA6 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0000E8C0290C1CCC00BE076D /* Color.xcassets in Resources */,
-				101AF9ED290BBD9200855FA6 /* Preview Assets.xcassets in Resources */,
-				101AF9EA290BBD9200855FA6 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		101AF9F0290BBD9200855FA6 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		101AF9FA290BBD9200855FA6 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		101AF9DE290BBD9100855FA6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				00CFC9F22931016100A291DB /* BugsNetworkService.swift in Sources */,
-				008AE021293A3DC700BB4ACE /* FishAvailability.swift in Sources */,
-				004A259C290C0D71009281E4 /* GridItemDetails.swift in Sources */,
-				004A2594290BDBD6009281E4 /* ListView.swift in Sources */,
-				008AE023293A3E6800BB4ACE /* FishViewModel.swift in Sources */,
-				008AE01D293A3C8500BB4ACE /* Fish.swift in Sources */,
-				008AE01F293A3DBD00BB4ACE /* FishName.swift in Sources */,
-				004A2598290BDC03009281E4 /* GridView.swift in Sources */,
-				00CFC9ED2931014500A291DB /* BugName.swift in Sources */,
-				004A258F290BDB17009281E4 /* HomePage.swift in Sources */,
-				008AE025293A3E8800BB4ACE /* FishNetworkService.swift in Sources */,
-				0000E8C2290C1D6700BE076D /* Colors.swift in Sources */,
-				00CFC9EE2931014500A291DB /* BugAvailability.swift in Sources */,
-				101AF9E6290BBD9100855FA6 /* AnimalPocketApp.swift in Sources */,
-				006E8C8029310A3A00127551 /* Bug.swift in Sources */,
-				004A2592290BDBC8009281E4 /* ItemRow.swift in Sources */,
-				006E8C7E2931083700127551 /* BugsViewModel.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		101AF9EE290BBD9200855FA6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				101AF9F7290BBD9200855FA6 /* AnimalPocketTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		101AF9F8290BBD9200855FA6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				101AFA03290BBD9200855FA6 /* AnimalPocketUITestsLaunchTests.swift in Sources */,
-				101AFA01290BBD9200855FA6 /* AnimalPocketUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		101AF9F4290BBD9200855FA6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 101AF9E1290BBD9100855FA6 /* AnimalPocket */;
-			targetProxy = 101AF9F3290BBD9200855FA6 /* PBXContainerItemProxy */;
-		};
-		101AF9FE290BBD9200855FA6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 101AF9E1290BBD9100855FA6 /* AnimalPocket */;
-			targetProxy = 101AF9FD290BBD9200855FA6 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin XCBuildConfiguration section */
-		101AFA04290BBD9200855FA6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-			};
-			name = Debug;
-		};
-		101AFA05290BBD9200855FA6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
-				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		101AFA07290BBD9200855FA6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"AnimalPocket/Preview Content\"";
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.salaceairline.AnimalPocket;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		101AFA08290BBD9200855FA6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"AnimalPocket/Preview Content\"";
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.salaceairline.AnimalPocket;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		101AFA0A290BBD9200855FA6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.salaceairline.AnimalPocketTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AnimalPocket.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AnimalPocket";
-			};
-			name = Debug;
-		};
-		101AFA0B290BBD9200855FA6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.salaceairline.AnimalPocketTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AnimalPocket.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AnimalPocket";
-			};
-			name = Release;
-		};
-		101AFA0D290BBD9200855FA6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.salaceairline.AnimalPocketUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = AnimalPocket;
-			};
-			name = Debug;
-		};
-		101AFA0E290BBD9200855FA6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.salaceairline.AnimalPocketUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = AnimalPocket;
-			};
-			name = Release;
-		};
-/* End XCBuildConfiguration section */
-
-/* Begin XCConfigurationList section */
-		101AF9DD290BBD9100855FA6 /* Build configuration list for PBXProject "AnimalPocket" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				101AFA04290BBD9200855FA6 /* Debug */,
-				101AFA05290BBD9200855FA6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		101AFA06290BBD9200855FA6 /* Build configuration list for PBXNativeTarget "AnimalPocket" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				101AFA07290BBD9200855FA6 /* Debug */,
-				101AFA08290BBD9200855FA6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		101AFA09290BBD9200855FA6 /* Build configuration list for PBXNativeTarget "AnimalPocketTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				101AFA0A290BBD9200855FA6 /* Debug */,
-				101AFA0B290BBD9200855FA6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		101AFA0C290BBD9200855FA6 /* Build configuration list for PBXNativeTarget "AnimalPocketUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				101AFA0D290BBD9200855FA6 /* Debug */,
-				101AFA0E290BBD9200855FA6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-/* End XCConfigurationList section */
-	};
-	rootObject = 101AF9DA290BBD9100855FA6 /* Project object */;
+   archiveVersion = "1";
+   objectVersion = "46";
+   objects = {
+      "OBJ_1" = {
+         isa = "PBXProject";
+         attributes = {
+            LastSwiftMigration = "9999";
+            LastUpgradeCheck = "9999";
+         };
+         buildConfigurationList = "OBJ_2";
+         compatibilityVersion = "Xcode 3.2";
+         developmentRegion = "en";
+         hasScannedForEncodings = "0";
+         knownRegions = (
+            "en"
+         );
+         mainGroup = "OBJ_5";
+         productRefGroup = "OBJ_13";
+         projectDirPath = ".";
+         targets = (
+            "animalpocket::AnimalPocket",
+            "animalpocket::SwiftPMPackageDescription",
+            "animalpocket::AnimalPocketPackageTests::ProductTarget",
+            "animalpocket::AnimalPocketTests"
+         );
+      };
+      "OBJ_10" = {
+         isa = "PBXGroup";
+         children = (
+            "OBJ_11"
+         );
+         name = "Tests";
+         path = "";
+         sourceTree = "SOURCE_ROOT";
+      };
+      "OBJ_11" = {
+         isa = "PBXGroup";
+         children = (
+            "OBJ_12"
+         );
+         name = "AnimalPocketTests";
+         path = "Tests/AnimalPocketTests";
+         sourceTree = "SOURCE_ROOT";
+      };
+      "OBJ_12" = {
+         isa = "PBXFileReference";
+         path = "AnimalPocketTests.swift";
+         sourceTree = "<group>";
+      };
+      "OBJ_13" = {
+         isa = "PBXGroup";
+         children = (
+            "animalpocket::AnimalPocket::Product",
+            "animalpocket::AnimalPocketTests::Product"
+         );
+         name = "Products";
+         path = "";
+         sourceTree = "BUILT_PRODUCTS_DIR";
+      };
+      "OBJ_16" = {
+         isa = "PBXFileReference";
+         path = "AnimalPocketTests";
+         sourceTree = "SOURCE_ROOT";
+      };
+      "OBJ_17" = {
+         isa = "PBXFileReference";
+         path = "AnimalPocketUITests";
+         sourceTree = "SOURCE_ROOT";
+      };
+      "OBJ_18" = {
+         isa = "PBXFileReference";
+         path = "AnimalPocket";
+         sourceTree = "SOURCE_ROOT";
+      };
+      "OBJ_19" = {
+         isa = "PBXFileReference";
+         path = "README.md";
+         sourceTree = "<group>";
+      };
+      "OBJ_2" = {
+         isa = "XCConfigurationList";
+         buildConfigurations = (
+            "OBJ_3",
+            "OBJ_4"
+         );
+         defaultConfigurationIsVisible = "0";
+         defaultConfigurationName = "Release";
+      };
+      "OBJ_21" = {
+         isa = "XCConfigurationList";
+         buildConfigurations = (
+            "OBJ_22",
+            "OBJ_23"
+         );
+         defaultConfigurationIsVisible = "0";
+         defaultConfigurationName = "Release";
+      };
+      "OBJ_22" = {
+         isa = "XCBuildConfiguration";
+         buildSettings = {
+            CURRENT_PROJECT_VERSION = "1";
+            DRIVERKIT_DEPLOYMENT_TARGET = "19.0";
+            ENABLE_TESTABILITY = "YES";
+            FRAMEWORK_SEARCH_PATHS = (
+               "$(inherited)",
+               "$(PLATFORM_DIR)/Developer/Library/Frameworks"
+            );
+            HEADER_SEARCH_PATHS = (
+               "$(inherited)"
+            );
+            INFOPLIST_FILE = "AnimalPocket.xcodeproj/AnimalPocket_Info.plist";
+            IPHONEOS_DEPLOYMENT_TARGET = "11.0";
+            LD_RUNPATH_SEARCH_PATHS = (
+               "$(inherited)",
+               "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx"
+            );
+            MACOSX_DEPLOYMENT_TARGET = "10.13";
+            OTHER_CFLAGS = (
+               "$(inherited)"
+            );
+            OTHER_LDFLAGS = (
+               "$(inherited)"
+            );
+            OTHER_SWIFT_FLAGS = (
+               "$(inherited)"
+            );
+            PRODUCT_BUNDLE_IDENTIFIER = "AnimalPocket";
+            PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+            PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+            SKIP_INSTALL = "YES";
+            SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
+               "$(inherited)"
+            );
+            SWIFT_VERSION = "5.0";
+            TARGET_NAME = "AnimalPocket";
+            TVOS_DEPLOYMENT_TARGET = "11.0";
+            WATCHOS_DEPLOYMENT_TARGET = "4.0";
+         };
+         name = "Debug";
+      };
+      "OBJ_23" = {
+         isa = "XCBuildConfiguration";
+         buildSettings = {
+            CURRENT_PROJECT_VERSION = "1";
+            DRIVERKIT_DEPLOYMENT_TARGET = "19.0";
+            ENABLE_TESTABILITY = "YES";
+            FRAMEWORK_SEARCH_PATHS = (
+               "$(inherited)",
+               "$(PLATFORM_DIR)/Developer/Library/Frameworks"
+            );
+            HEADER_SEARCH_PATHS = (
+               "$(inherited)"
+            );
+            INFOPLIST_FILE = "AnimalPocket.xcodeproj/AnimalPocket_Info.plist";
+            IPHONEOS_DEPLOYMENT_TARGET = "11.0";
+            LD_RUNPATH_SEARCH_PATHS = (
+               "$(inherited)",
+               "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx"
+            );
+            MACOSX_DEPLOYMENT_TARGET = "10.13";
+            OTHER_CFLAGS = (
+               "$(inherited)"
+            );
+            OTHER_LDFLAGS = (
+               "$(inherited)"
+            );
+            OTHER_SWIFT_FLAGS = (
+               "$(inherited)"
+            );
+            PRODUCT_BUNDLE_IDENTIFIER = "AnimalPocket";
+            PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+            PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+            SKIP_INSTALL = "YES";
+            SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
+               "$(inherited)"
+            );
+            SWIFT_VERSION = "5.0";
+            TARGET_NAME = "AnimalPocket";
+            TVOS_DEPLOYMENT_TARGET = "11.0";
+            WATCHOS_DEPLOYMENT_TARGET = "4.0";
+         };
+         name = "Release";
+      };
+      "OBJ_24" = {
+         isa = "PBXSourcesBuildPhase";
+         files = (
+            "OBJ_25"
+         );
+      };
+      "OBJ_25" = {
+         isa = "PBXBuildFile";
+         fileRef = "OBJ_9";
+      };
+      "OBJ_26" = {
+         isa = "PBXFrameworksBuildPhase";
+         files = (
+         );
+      };
+      "OBJ_28" = {
+         isa = "XCConfigurationList";
+         buildConfigurations = (
+            "OBJ_29",
+            "OBJ_30"
+         );
+         defaultConfigurationIsVisible = "0";
+         defaultConfigurationName = "Release";
+      };
+      "OBJ_29" = {
+         isa = "XCBuildConfiguration";
+         buildSettings = {
+            LD = "/usr/bin/true";
+            OTHER_SWIFT_FLAGS = (
+               "-swift-version",
+               "5",
+               "-I",
+               "$(TOOLCHAIN_DIR)/usr/lib/swift/pm/ManifestAPI",
+               "-sdk",
+               "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk",
+               "-package-description-version",
+               "5.7.0"
+            );
+            SWIFT_VERSION = "5.0";
+         };
+         name = "Debug";
+      };
+      "OBJ_3" = {
+         isa = "XCBuildConfiguration";
+         buildSettings = {
+            CLANG_ENABLE_OBJC_ARC = "YES";
+            COMBINE_HIDPI_IMAGES = "YES";
+            COPY_PHASE_STRIP = "NO";
+            DEBUG_INFORMATION_FORMAT = "dwarf";
+            DYLIB_INSTALL_NAME_BASE = "@rpath";
+            ENABLE_NS_ASSERTIONS = "YES";
+            GCC_OPTIMIZATION_LEVEL = "0";
+            GCC_PREPROCESSOR_DEFINITIONS = (
+               "$(inherited)",
+               "SWIFT_PACKAGE=1",
+               "DEBUG=1"
+            );
+            MACOSX_DEPLOYMENT_TARGET = "10.10";
+            ONLY_ACTIVE_ARCH = "YES";
+            OTHER_SWIFT_FLAGS = (
+               "$(inherited)",
+               "-DXcode"
+            );
+            PRODUCT_NAME = "$(TARGET_NAME)";
+            SDKROOT = "macosx";
+            SUPPORTED_PLATFORMS = (
+               "$(AVAILABLE_PLATFORMS)"
+            );
+            SUPPORTS_MACCATALYST = "YES";
+            SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
+               "$(inherited)",
+               "SWIFT_PACKAGE",
+               "DEBUG"
+            );
+            SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+            USE_HEADERMAP = "NO";
+         };
+         name = "Debug";
+      };
+      "OBJ_30" = {
+         isa = "XCBuildConfiguration";
+         buildSettings = {
+            LD = "/usr/bin/true";
+            OTHER_SWIFT_FLAGS = (
+               "-swift-version",
+               "5",
+               "-I",
+               "$(TOOLCHAIN_DIR)/usr/lib/swift/pm/ManifestAPI",
+               "-sdk",
+               "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk",
+               "-package-description-version",
+               "5.7.0"
+            );
+            SWIFT_VERSION = "5.0";
+         };
+         name = "Release";
+      };
+      "OBJ_31" = {
+         isa = "PBXSourcesBuildPhase";
+         files = (
+            "OBJ_32"
+         );
+      };
+      "OBJ_32" = {
+         isa = "PBXBuildFile";
+         fileRef = "OBJ_6";
+      };
+      "OBJ_34" = {
+         isa = "XCConfigurationList";
+         buildConfigurations = (
+            "OBJ_35",
+            "OBJ_36"
+         );
+         defaultConfigurationIsVisible = "0";
+         defaultConfigurationName = "Release";
+      };
+      "OBJ_35" = {
+         isa = "XCBuildConfiguration";
+         buildSettings = {
+         };
+         name = "Debug";
+      };
+      "OBJ_36" = {
+         isa = "XCBuildConfiguration";
+         buildSettings = {
+         };
+         name = "Release";
+      };
+      "OBJ_37" = {
+         isa = "PBXTargetDependency";
+         target = "animalpocket::AnimalPocketTests";
+      };
+      "OBJ_39" = {
+         isa = "XCConfigurationList";
+         buildConfigurations = (
+            "OBJ_40",
+            "OBJ_41"
+         );
+         defaultConfigurationIsVisible = "0";
+         defaultConfigurationName = "Release";
+      };
+      "OBJ_4" = {
+         isa = "XCBuildConfiguration";
+         buildSettings = {
+            CLANG_ENABLE_OBJC_ARC = "YES";
+            COMBINE_HIDPI_IMAGES = "YES";
+            COPY_PHASE_STRIP = "YES";
+            DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+            DYLIB_INSTALL_NAME_BASE = "@rpath";
+            GCC_OPTIMIZATION_LEVEL = "s";
+            GCC_PREPROCESSOR_DEFINITIONS = (
+               "$(inherited)",
+               "SWIFT_PACKAGE=1"
+            );
+            MACOSX_DEPLOYMENT_TARGET = "10.10";
+            OTHER_SWIFT_FLAGS = (
+               "$(inherited)",
+               "-DXcode"
+            );
+            PRODUCT_NAME = "$(TARGET_NAME)";
+            SDKROOT = "macosx";
+            SUPPORTED_PLATFORMS = (
+               "$(AVAILABLE_PLATFORMS)"
+            );
+            SUPPORTS_MACCATALYST = "YES";
+            SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
+               "$(inherited)",
+               "SWIFT_PACKAGE"
+            );
+            SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+            USE_HEADERMAP = "NO";
+         };
+         name = "Release";
+      };
+      "OBJ_40" = {
+         isa = "XCBuildConfiguration";
+         buildSettings = {
+            CLANG_ENABLE_MODULES = "YES";
+            CURRENT_PROJECT_VERSION = "1";
+            DRIVERKIT_DEPLOYMENT_TARGET = "19.0";
+            EMBEDDED_CONTENT_CONTAINS_SWIFT = "YES";
+            FRAMEWORK_SEARCH_PATHS = (
+               "$(inherited)",
+               "$(PLATFORM_DIR)/Developer/Library/Frameworks"
+            );
+            HEADER_SEARCH_PATHS = (
+               "$(inherited)"
+            );
+            INFOPLIST_FILE = "AnimalPocket.xcodeproj/AnimalPocketTests_Info.plist";
+            IPHONEOS_DEPLOYMENT_TARGET = "14.0";
+            LD_RUNPATH_SEARCH_PATHS = (
+               "$(inherited)",
+               "@loader_path/../Frameworks",
+               "@loader_path/Frameworks"
+            );
+            MACOSX_DEPLOYMENT_TARGET = "11.0";
+            OTHER_CFLAGS = (
+               "$(inherited)"
+            );
+            OTHER_LDFLAGS = (
+               "$(inherited)"
+            );
+            OTHER_SWIFT_FLAGS = (
+               "$(inherited)"
+            );
+            SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
+               "$(inherited)"
+            );
+            SWIFT_VERSION = "5.0";
+            TARGET_NAME = "AnimalPocketTests";
+            TVOS_DEPLOYMENT_TARGET = "14.0";
+            WATCHOS_DEPLOYMENT_TARGET = "7.0";
+         };
+         name = "Debug";
+      };
+      "OBJ_41" = {
+         isa = "XCBuildConfiguration";
+         buildSettings = {
+            CLANG_ENABLE_MODULES = "YES";
+            CURRENT_PROJECT_VERSION = "1";
+            DRIVERKIT_DEPLOYMENT_TARGET = "19.0";
+            EMBEDDED_CONTENT_CONTAINS_SWIFT = "YES";
+            FRAMEWORK_SEARCH_PATHS = (
+               "$(inherited)",
+               "$(PLATFORM_DIR)/Developer/Library/Frameworks"
+            );
+            HEADER_SEARCH_PATHS = (
+               "$(inherited)"
+            );
+            INFOPLIST_FILE = "AnimalPocket.xcodeproj/AnimalPocketTests_Info.plist";
+            IPHONEOS_DEPLOYMENT_TARGET = "14.0";
+            LD_RUNPATH_SEARCH_PATHS = (
+               "$(inherited)",
+               "@loader_path/../Frameworks",
+               "@loader_path/Frameworks"
+            );
+            MACOSX_DEPLOYMENT_TARGET = "11.0";
+            OTHER_CFLAGS = (
+               "$(inherited)"
+            );
+            OTHER_LDFLAGS = (
+               "$(inherited)"
+            );
+            OTHER_SWIFT_FLAGS = (
+               "$(inherited)"
+            );
+            SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
+               "$(inherited)"
+            );
+            SWIFT_VERSION = "5.0";
+            TARGET_NAME = "AnimalPocketTests";
+            TVOS_DEPLOYMENT_TARGET = "14.0";
+            WATCHOS_DEPLOYMENT_TARGET = "7.0";
+         };
+         name = "Release";
+      };
+      "OBJ_42" = {
+         isa = "PBXSourcesBuildPhase";
+         files = (
+            "OBJ_43"
+         );
+      };
+      "OBJ_43" = {
+         isa = "PBXBuildFile";
+         fileRef = "OBJ_12";
+      };
+      "OBJ_44" = {
+         isa = "PBXFrameworksBuildPhase";
+         files = (
+            "OBJ_45"
+         );
+      };
+      "OBJ_45" = {
+         isa = "PBXBuildFile";
+         fileRef = "animalpocket::AnimalPocket::Product";
+      };
+      "OBJ_46" = {
+         isa = "PBXTargetDependency";
+         target = "animalpocket::AnimalPocket";
+      };
+      "OBJ_5" = {
+         isa = "PBXGroup";
+         children = (
+            "OBJ_6",
+            "OBJ_7",
+            "OBJ_10",
+            "OBJ_13",
+            "OBJ_16",
+            "OBJ_17",
+            "OBJ_18",
+            "OBJ_19"
+         );
+         path = "";
+         sourceTree = "<group>";
+      };
+      "OBJ_6" = {
+         isa = "PBXFileReference";
+         explicitFileType = "sourcecode.swift";
+         path = "Package.swift";
+         sourceTree = "<group>";
+      };
+      "OBJ_7" = {
+         isa = "PBXGroup";
+         children = (
+            "OBJ_8"
+         );
+         name = "Sources";
+         path = "";
+         sourceTree = "SOURCE_ROOT";
+      };
+      "OBJ_8" = {
+         isa = "PBXGroup";
+         children = (
+            "OBJ_9"
+         );
+         name = "AnimalPocket";
+         path = "Sources/AnimalPocket";
+         sourceTree = "SOURCE_ROOT";
+      };
+      "OBJ_9" = {
+         isa = "PBXFileReference";
+         path = "AnimalPocket.swift";
+         sourceTree = "<group>";
+      };
+      "animalpocket::AnimalPocket" = {
+         isa = "PBXNativeTarget";
+         buildConfigurationList = "OBJ_21";
+         buildPhases = (
+            "OBJ_24",
+            "OBJ_26"
+         );
+         dependencies = (
+         );
+         name = "AnimalPocket";
+         productName = "AnimalPocket";
+         productReference = "animalpocket::AnimalPocket::Product";
+         productType = "com.apple.product-type.framework";
+      };
+      "animalpocket::AnimalPocket::Product" = {
+         isa = "PBXFileReference";
+         path = "AnimalPocket.framework";
+         sourceTree = "BUILT_PRODUCTS_DIR";
+      };
+      "animalpocket::AnimalPocketPackageTests::ProductTarget" = {
+         isa = "PBXAggregateTarget";
+         buildConfigurationList = "OBJ_34";
+         buildPhases = (
+         );
+         dependencies = (
+            "OBJ_37"
+         );
+         name = "AnimalPocketPackageTests";
+         productName = "AnimalPocketPackageTests";
+      };
+      "animalpocket::AnimalPocketTests" = {
+         isa = "PBXNativeTarget";
+         buildConfigurationList = "OBJ_39";
+         buildPhases = (
+            "OBJ_42",
+            "OBJ_44"
+         );
+         dependencies = (
+            "OBJ_46"
+         );
+         name = "AnimalPocketTests";
+         productName = "AnimalPocketTests";
+         productReference = "animalpocket::AnimalPocketTests::Product";
+         productType = "com.apple.product-type.bundle.unit-test";
+      };
+      "animalpocket::AnimalPocketTests::Product" = {
+         isa = "PBXFileReference";
+         path = "AnimalPocketTests.xctest";
+         sourceTree = "BUILT_PRODUCTS_DIR";
+      };
+      "animalpocket::SwiftPMPackageDescription" = {
+         isa = "PBXNativeTarget";
+         buildConfigurationList = "OBJ_28";
+         buildPhases = (
+            "OBJ_31"
+         );
+         dependencies = (
+         );
+         name = "AnimalPocketPackageDescription";
+         productName = "AnimalPocketPackageDescription";
+         productType = "com.apple.product-type.framework";
+      };
+   };
+   rootObject = "OBJ_1";
 }
