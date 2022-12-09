@@ -1,5 +1,5 @@
 //
-//  ListView.swift
+//  ItemRow.swift
 //  AnimalPocket
 //
 //  Created by Sarah Watremet on 28/10/2022.
@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct ListView: View {
+struct FishRow: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
-struct ItemList_Previews: PreviewProvider {
+struct ItemRow_Previews: PreviewProvider {
     static var previews: some View {
-        ListView()
+        FishRow()
     }
 }

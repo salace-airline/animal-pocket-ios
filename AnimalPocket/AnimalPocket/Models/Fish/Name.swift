@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct FishName {
-  let nameEUen: String
-  let nameEUfr : String
+public struct Name {
+  public let nameEUen: String
+  public let nameEUfr : String
 }
 
-extension FishName: Decodable {
+extension Name: Decodable {
   enum CodingKeys: String, CodingKey {
     case nameEUen = "name-EUen"
     case nameEUfr = "name-EUfr"

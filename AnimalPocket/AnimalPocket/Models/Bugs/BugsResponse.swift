@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct BugsResponse: Decodable {
-  let bugs: [Bug]
-}
-
-extension BugsResponse {
-  enum CodingKeys: String, CodingKey {
-    case bugs
-  }
-}
+//struct BugsResponse: Decodable {
+//  let bugs: [Bug]
+//}
+//
+//extension BugsResponse {
+//  enum CodingKeys: String, CodingKey {
+//    case bugs
+//  }
+//}
 

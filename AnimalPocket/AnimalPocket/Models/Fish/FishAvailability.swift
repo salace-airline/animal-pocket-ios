@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct FishAvailability {
-  let monthNorthern, monthSouthern: String
-  let time: Time
-  let isAllDay, isAllYear: Bool
-  let location: String
-  let rarity: String
-  let monthArrayNorthern, monthArraySouthern: [Int]
-  let timeArray: [Int]
+public struct FishAvailability {
+  public let monthNorthern, monthSouthern: String
+  public let time: String
+  public let isAllDay, isAllYear: Bool
+  public let location: String
+  public let rarity: String
+  public let monthArrayNorthern, monthArraySouthern: [Int]
+  public let timeArray: [Int]
 }
 
 extension FishAvailability: Decodable {

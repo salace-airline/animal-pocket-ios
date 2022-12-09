@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Time: String, Codable {
+public enum Time: String, Codable {
   case empty = ""
   case bet4Am9Pm = "4am - 9pm"
   case bet4Pm9Am = "4pm - 9am"
