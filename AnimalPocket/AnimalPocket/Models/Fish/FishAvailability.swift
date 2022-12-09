@@ -9,7 +9,7 @@ import Foundation
 
 struct FishAvailability {
   let monthNorthern, monthSouthern: String
-  let time: String
+  let time: Time
   let isAllDay, isAllYear: Bool
   let location: String
   let rarity: String
