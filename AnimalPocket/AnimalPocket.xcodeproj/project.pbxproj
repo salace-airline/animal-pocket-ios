@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		0000E8C0290C1CCC00BE076D /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0000E8BF290C1CCB00BE076D /* Color.xcassets */; };
 		0000E8C2290C1D6700BE076D /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000E8C1290C1D6700BE076D /* Colors.swift */; };
+		002CB1B2294339650093B974 /* Fish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002CB1B1294339650093B974 /* Fish.swift */; };
+		002CB1B429433A220093B974 /* FishAvailability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002CB1B329433A220093B974 /* FishAvailability.swift */; };
+		002CB1B629433A480093B974 /* FishName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002CB1B529433A480093B974 /* FishName.swift */; };
+		002CB1B829433AB20093B974 /* FishNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002CB1B729433AB20093B974 /* FishNetworkService.swift */; };
+		002CB1BA29433B1E0093B974 /* FishViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002CB1B929433B1E0093B974 /* FishViewModel.swift */; };
 		004A258F290BDB17009281E4 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A258E290BDB17009281E4 /* HomePage.swift */; };
 		004A2592290BDBC8009281E4 /* ItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A2591290BDBC8009281E4 /* ItemRow.swift */; };
 		004A2594290BDBD6009281E4 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A2593290BDBD6009281E4 /* ListView.swift */; };
@@ -16,7 +21,6 @@
 		004A259C290C0D71009281E4 /* GridItemDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A2595290BDBE9009281E4 /* GridItemDetails.swift */; };
 		006E8C7E2931083700127551 /* BugsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006E8C7D2931083700127551 /* BugsViewModel.swift */; };
 		006E8C8029310A3A00127551 /* Bug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006E8C7F29310A3A00127551 /* Bug.swift */; };
-		006E8C8229310F0900127551 /* BugsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006E8C8129310F0900127551 /* BugsService.swift */; };
 		00CFC9ED2931014500A291DB /* BugsName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CFC9EA2931014500A291DB /* BugsName.swift */; };
 		00CFC9EE2931014500A291DB /* BugsAvailability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CFC9EB2931014500A291DB /* BugsAvailability.swift */; };
 		00CFC9EF2931014500A291DB /* BugsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CFC9EC2931014500A291DB /* BugsResponse.swift */; };
@@ -49,6 +53,11 @@
 /* Begin PBXFileReference section */
 		0000E8BF290C1CCB00BE076D /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Color.xcassets; path = Assets.xcassets/Color.xcassets; sourceTree = "<group>"; };
 		0000E8C1290C1D6700BE076D /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		002CB1B1294339650093B974 /* Fish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fish.swift; sourceTree = "<group>"; };
+		002CB1B329433A220093B974 /* FishAvailability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishAvailability.swift; sourceTree = "<group>"; };
+		002CB1B529433A480093B974 /* FishName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishName.swift; sourceTree = "<group>"; };
+		002CB1B729433AB20093B974 /* FishNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishNetworkService.swift; sourceTree = "<group>"; };
+		002CB1B929433B1E0093B974 /* FishViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishViewModel.swift; sourceTree = "<group>"; };
 		004A258E290BDB17009281E4 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
 		004A2591290BDBC8009281E4 /* ItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRow.swift; sourceTree = "<group>"; };
 		004A2593290BDBD6009281E4 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
@@ -56,7 +65,6 @@
 		004A2597290BDC03009281E4 /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
 		006E8C7D2931083700127551 /* BugsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugsViewModel.swift; sourceTree = "<group>"; };
 		006E8C7F29310A3A00127551 /* Bug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bug.swift; sourceTree = "<group>"; };
-		006E8C8129310F0900127551 /* BugsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugsService.swift; sourceTree = "<group>"; };
 		00CFC9EA2931014500A291DB /* BugsName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BugsName.swift; sourceTree = "<group>"; };
 		00CFC9EB2931014500A291DB /* BugsAvailability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BugsAvailability.swift; sourceTree = "<group>"; };
 		00CFC9EC2931014500A291DB /* BugsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BugsResponse.swift; sourceTree = "<group>"; };
@@ -97,6 +105,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		002CB1B0294339580093B974 /* Fish */ = {
+			isa = PBXGroup;
+			children = (
+				002CB1B1294339650093B974 /* Fish.swift */,
+				002CB1B329433A220093B974 /* FishAvailability.swift */,
+				002CB1B529433A480093B974 /* FishName.swift */,
+			);
+			path = Fish;
+			sourceTree = "<group>";
+		};
 		004A258C290BD9A3009281E4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				006E8C7D2931083700127551 /* BugsViewModel.swift */,
+				002CB1B929433B1E0093B974 /* FishViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -137,6 +156,7 @@
 		004A259B290BDC61009281E4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				002CB1B0294339580093B974 /* Fish */,
 				00CFC9E92931014500A291DB /* Bugs */,
 			);
 			path = Models;
@@ -157,7 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				00CFC9F12931016100A291DB /* BugsNetworkService.swift */,
-				006E8C8129310F0900127551 /* BugsService.swift */,
+				002CB1B729433AB20093B974 /* FishNetworkService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -353,17 +373,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				002CB1BA29433B1E0093B974 /* FishViewModel.swift in Sources */,
 				00CFC9F22931016100A291DB /* BugsNetworkService.swift in Sources */,
 				004A259C290C0D71009281E4 /* GridItemDetails.swift in Sources */,
 				00CFC9EF2931014500A291DB /* BugsResponse.swift in Sources */,
 				004A2594290BDBD6009281E4 /* ListView.swift in Sources */,
 				004A2598290BDC03009281E4 /* GridView.swift in Sources */,
 				00CFC9ED2931014500A291DB /* BugsName.swift in Sources */,
-				006E8C8229310F0900127551 /* BugsService.swift in Sources */,
+				002CB1B429433A220093B974 /* FishAvailability.swift in Sources */,
 				004A258F290BDB17009281E4 /* HomePage.swift in Sources */,
 				0000E8C2290C1D6700BE076D /* Colors.swift in Sources */,
 				00CFC9EE2931014500A291DB /* BugsAvailability.swift in Sources */,
+				002CB1B829433AB20093B974 /* FishNetworkService.swift in Sources */,
+				002CB1B2294339650093B974 /* Fish.swift in Sources */,
 				101AF9E6290BBD9100855FA6 /* AnimalPocketApp.swift in Sources */,
+				002CB1B629433A480093B974 /* FishName.swift in Sources */,
 				006E8C8029310A3A00127551 /* Bug.swift in Sources */,
 				004A2592290BDBC8009281E4 /* ItemRow.swift in Sources */,
 				006E8C7E2931083700127551 /* BugsViewModel.swift in Sources */,
