@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct GridView: View {
-  @ObservedObject var viewModel = BugsViewModel()
+  @ObservedObject var viewModel = FishViewModel()
   
   // one row per category for the home page
   let rows = [
@@ -18,13 +18,13 @@ struct GridView: View {
   var body: some View {
     ScrollView(.horizontal) {
       LazyHGrid(rows: rows, spacing: 15) {
-        ForEach(viewModel.bugs) { bug in
+        ForEach(viewModel.fish) { fish in
           GridItemDetails()
         }
       }
     }
     .onAppear(perform: {
-      viewModel.loadBugs()
+      viewModel.loadFish()
     })
   }
 }
