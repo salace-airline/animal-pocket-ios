@@ -10,7 +10,6 @@ import SwiftUI
 struct FishRow: View {
   @ObservedObject var viewModel = FishViewModel()
   
-  var columns: [GridItem] = Array(repeating: .init(.flexible()), count: 3)
   let rows = [
     GridItem()
   ]
@@ -22,11 +21,6 @@ struct FishRow: View {
           FishDetails(fish: fish)
         }
       }
-//      LazyVGrid(columns: columns) {
-//        ForEach(viewModel.fishArray) { fish in
-//          FishDetails(fish: fish)
-//        }
-//      }
     }
     .onAppear(perform: {
       viewModel.loadFish()
