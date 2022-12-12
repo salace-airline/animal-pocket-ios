@@ -9,8 +9,8 @@ import Foundation
 
 struct Bug: Identifiable {
   let id: Int
-  let bugsName: BugsName
-  let bugsAvailability: BugsAvailability
+  let name: Name
+  let availability: Availability
   let price: Int
   let imageURI: String
   let iconURI: String
@@ -19,8 +19,8 @@ struct Bug: Identifiable {
 extension Bug: Decodable {
   enum CodingKeys: String, CodingKey {
     case id
-    case bugsName = "name"
-    case bugsAvailability = "availability"
+    case name
+    case availability 
     case price
     case imageURI = "image_uri"
     case iconURI = "icon_uri"
