@@ -1,5 +1,5 @@
 //
-//  GridView.swift
+//  FishRow.swift
 //  AnimalPocket
 //
 //  Created by Sarah Watremet on 28/10/2022.
@@ -28,7 +28,7 @@ struct FishRow: View {
   }
 }
 
-struct FishGrid_Previews: PreviewProvider {
+struct FishRow_Previews: PreviewProvider {
   static var previews: some View {
     FishRow(viewModel: FishViewModel())
   }
