@@ -16,12 +16,9 @@ struct FishImage: View {
       image
         .resizable()
         .scaledToFit()
-        .background(Image("fond"))
+        .background(Image("fond_bleu"))
         .frame(maxWidth: .infinity)
         .clipShape(Rectangle())
-        .overlay {
-          Rectangle().stroke(Colors.blue100, lineWidth: 2)
-        }
     } placeholder: {
         ProgressView()
     }

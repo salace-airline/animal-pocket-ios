@@ -18,9 +18,6 @@ struct BugImage: View {
         .background(Image("fond"))
         .frame(maxWidth: .infinity)
         .clipShape(Rectangle())
-        .overlay {
-          Rectangle().stroke(Colors.green100, lineWidth: 2)
-        }
     } placeholder: {
       ProgressView()
     }

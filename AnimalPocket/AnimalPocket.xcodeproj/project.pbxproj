@@ -143,8 +143,8 @@
 			isa = PBXGroup;
 			children = (
 				004A2595290BDBE9009281E4 /* FishDetails.swift */,
-				004A2597290BDC03009281E4 /* FishRow.swift */,
 				005DF1EF2948B6C800F964CE /* FishImage.swift */,
+				004A2597290BDC03009281E4 /* FishRow.swift */,
 			);
 			path = FishItems;
 			sourceTree = "<group>";
@@ -192,9 +192,9 @@
 		005DF1E12948805C00F964CE /* BugItems */ = {
 			isa = PBXGroup;
 			children = (
+				005DF1E62948825900F964CE /* BugDetails.swift */,
 				005DF1E22948807100F964CE /* BugImage.swift */,
 				005DF1E4294881FD00F964CE /* BugRow.swift */,
-				005DF1E62948825900F964CE /* BugDetails.swift */,
 			);
 			path = BugItems;
 			sourceTree = "<group>";
@@ -202,8 +202,8 @@
 		005DF1E829488DCC00F964CE /* SeaItems */ = {
 			isa = PBXGroup;
 			children = (
-				005DF1E929488DDC00F964CE /* SeaImage.swift */,
 				005DF1EB29488EA200F964CE /* SeaDetails.swift */,
+				005DF1E929488DDC00F964CE /* SeaImage.swift */,
 				005DF1ED29488FE900F964CE /* SeaRow.swift */,
 			);
 			path = SeaItems;

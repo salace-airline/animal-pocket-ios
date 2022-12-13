@@ -42,10 +42,10 @@ extension Fish: Decodable {
 // MARK: - Fish availability check
 extension Fish {
   var period: String {
-    if self.availability.time.self == .empty || self.availability.isAllYear == true {
+    if self.availability.isAllYear == true {
       return "Toute l'année"
     } else {
-      return self.availability.time.self.rawValue
+      return self.availability.monthNorthern
     }
   }
   

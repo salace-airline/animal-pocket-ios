@@ -16,7 +16,7 @@ struct SeaDetails: View {
       
       VStack {
         Text(self.sea.name.nameEUfr)
-          .font(.system(size: 20))
+          .font(.system(size: 15))
           .bold()
       }
       .padding(.bottom, 0.5)
@@ -58,11 +58,12 @@ struct SeaDetails: View {
           Text("\(self.sea.price) clochettes")
         }
       }
-      .font(.system(size: 15))
+      .font(.system(size: 11))
       .padding(.bottom, 5)
     }
     .frame(width: 175)
-    .background(Colors.beige100)
+    .background(Colors.blue200.opacity(0.1))
+    .cornerRadius(4)
   }
 }
 

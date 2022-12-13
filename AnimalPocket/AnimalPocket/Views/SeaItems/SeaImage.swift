@@ -15,12 +15,9 @@ struct SeaImage: View {
       image
         .resizable()
         .scaledToFit()
-        .background(Image("fond"))
+        .background(Image("fond_violet"))
         .frame(maxWidth: .infinity)
         .clipShape(Rectangle())
-        .overlay {
-          Rectangle().stroke(Colors.blue200, lineWidth: 2)
-        }
     } placeholder: {
       ProgressView()
     }
