@@ -1,21 +1,21 @@
 //
-//  FishDetails.swift
+//  SeaDetails.swift
 //  AnimalPocket
 //
-//  Created by Sarah Watremet on 28/10/2022.
+//  Created by Sarah Watremet on 13/12/2022.
 //
 
 import SwiftUI
 
-struct FishDetails: View {
-  var fish: Fish
+struct SeaDetails: View {
+  var sea: SeaCreature
   
   var body: some View {
     VStack {
-      FishImage(fish: self.fish)
-
+      SeaImage(sea: self.sea)
+      
       VStack {
-        Text(self.fish.name.nameEUfr)
+        Text(self.sea.name.nameEUfr)
           .font(.system(size: 20))
           .bold()
       }
@@ -25,37 +25,37 @@ struct FishDetails: View {
       VStack(alignment: .leading) {
         HStack {
           Text("Période:")
-            .foregroundColor(Colors.blue100)
+            .foregroundColor(Colors.blue200)
             .bold()
-          Text(self.fish.period)
+          Text(self.sea.period)
         }
         
         HStack {
           Text("Heure:")
-            .foregroundColor(Colors.blue100)
+            .foregroundColor(Colors.blue200)
             .bold()
-          Text(self.fish.hour)
-        }
-        
-        HStack {
-          Text("Lieu:")
-            .foregroundColor(Colors.blue100)
-            .bold()
-          Text(self.fish.availability.location)
+          Text(self.sea.hour)
         }
         
         HStack {
           Text("Ombre:")
-            .foregroundColor(Colors.blue100)
+            .foregroundColor(Colors.blue200)
             .bold()
-          Text(self.fish.shadow)
+          Text(self.sea.shadow)
+        }
+        
+        HStack {
+          Text("Vitesse:")
+            .foregroundColor(Colors.blue200)
+            .bold()
+          Text(self.sea.speed)
         }
         
         HStack {
           Text("Prix:")
-            .foregroundColor(Colors.blue100)
+            .foregroundColor(Colors.blue200)
             .bold()
-          Text("\(self.fish.price) clochettes")
+          Text("\(self.sea.price) clochettes")
         }
       }
       .font(.system(size: 15))
@@ -66,8 +66,8 @@ struct FishDetails: View {
   }
 }
 
-struct GridItem_Previews: PreviewProvider {
-    static var previews: some View {
-      FishDetails(fish: Fish.sample)
-    }
+struct SeaDetails_Previews: PreviewProvider {
+  static var previews: some View {
+    SeaDetails(sea: SeaCreature.sample)
+  }
 }

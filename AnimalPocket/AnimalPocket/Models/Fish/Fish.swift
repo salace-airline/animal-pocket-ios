@@ -60,11 +60,11 @@ extension Fish {
 
 // MARK: - Fish sample
 extension Fish {
-  static let sample = Fish(id: 1,
-                               name: Name(nameEUen: "bitterling", nameEUfr: "bouvière"),
-                               availability: Availability.init(monthNorthern: "11-3", monthSouthern: "5-9", time: Time.empty, isAllDay: true, isAllYear: false, location: "River", rarity: "Common", monthArrayNorthern: [11, 12, 1, 2, 3], monthArraySouthern: [5, 6, 7, 8, 9], timeArray: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]),
-                               shadow: "Smallest (1)",
-                               price: 900,
-                               imageURI: "https://acnhapi.com/v1/images/fish/1",
-                               iconURI: "https://acnhapi.com/v1/icons/fish/1")
+  static let sample = Fish(id: 78,
+                               name: Name(nameEUen: "oarfish", nameEUfr: "poisson ruban"),
+                               availability: Availability.init(monthNorthern: "12-5", monthSouthern: "6-11", time: Time.empty, isAllDay: true, isAllYear: false, location: "Sea", rarity: "Rare", monthArrayNorthern: [12,1,2,3,4,5], monthArraySouthern: [6,7,8,9,10,11], timeArray: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]),
+                               shadow: "Largest (6)",
+                               price: 9000,
+                               imageURI: "https://acnhapi.com/v1/images/fish/78",
+                               iconURI: "https://acnhapi.com/v1/icons/fish/78")
 }

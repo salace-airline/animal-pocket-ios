@@ -16,6 +16,17 @@ struct SeaCreature: Identifiable {
   let price: Int
   let imageURI: String
   let iconURI: String
+  
+  init(id: Int, name: Name, seaCreatureAvailability: SeaCreatureAvailability, speed: String, shadow: String, price: Int, imageURI: String, iconURI: String) {
+    self.id = id
+    self.name = name
+    self.seaCreatureAvailability = seaCreatureAvailability
+    self.speed = speed
+    self.shadow = shadow
+    self.price = price
+    self.imageURI = imageURI
+    self.iconURI = iconURI
+  }
 }
 
 extension SeaCreature: Decodable {
@@ -30,3 +41,35 @@ extension SeaCreature: Decodable {
     case iconURI = "icon_uri"
   }
 }
+
+// MARK: - Sea Creature availability check
+extension SeaCreature {
+  var period: String {
+    if self.seaCreatureAvailability.time.self == .empty || self.seaCreatureAvailability.isAllYear == true {
+      return "Toute l'année"
+    } else {
+      return self.seaCreatureAvailability.time.self.rawValue
+    }
+  }
+  
+  var hour: String {
+    if self.seaCreatureAvailability.time.self == .empty || self.seaCreatureAvailability.isAllDay == true {
+      return "Toute la journée"
+    } else {
+      return self.seaCreatureAvailability.time.self.rawValue
+    }
+  }
+}
+
+// MARK: - Sea Creature sample
+extension SeaCreature {
+  static let sample = SeaCreature(id: 26,
+                                  name: Name(nameEUen: "snow crab", nameEUfr: "crabe des neiges"),
+                                  seaCreatureAvailability: SeaCreatureAvailability(monthNorthern: "11-4", monthSouthern: "5-10", time: Time.empty, isAllDay: true, isAllYear: false, monthArrayNorthern: [11,12,1,2,3,4], monthArraySouthern: [5,6,7,8,9,10], timeArray: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]),
+                                  speed: "Fast",
+                                  shadow: "Large",
+                                  price: 6000,
+                                  imageURI: "https://acnhapi.com/v1/images/sea/26",
+                                  iconURI: "https://acnhapi.com/v1/icons/sea/26")
+}
+
