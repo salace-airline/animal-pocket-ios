@@ -16,7 +16,7 @@ struct BugDetails: View {
       
       VStack {
         Text(self.bug.name.nameEUfr)
-          .font(.system(size: 20))
+          .font(.system(size: 15))
           .bold()
       }
       .padding(.bottom, 0.5)
@@ -51,11 +51,12 @@ struct BugDetails: View {
           Text("\(self.bug.price) clochettes")
         }
       }
-      .font(.system(size: 15))
+      .font(.system(size: 11))
       .padding(.bottom, 5)
     }
     .frame(width: 175)
-    .background(Colors.beige100)
+    .background(Colors.green100.opacity(0.1))
+    .cornerRadius(4)
   }
 }
 

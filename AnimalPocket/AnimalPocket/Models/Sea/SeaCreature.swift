@@ -45,10 +45,10 @@ extension SeaCreature: Decodable {
 // MARK: - Sea Creature availability check
 extension SeaCreature {
   var period: String {
-    if self.seaCreatureAvailability.time.self == .empty || self.seaCreatureAvailability.isAllYear == true {
+    if self.seaCreatureAvailability.isAllYear == true {
       return "Toute l'année"
     } else {
-      return self.seaCreatureAvailability.time.self.rawValue
+      return self.seaCreatureAvailability.monthNorthern
     }
   }
   
