@@ -1,5 +1,5 @@
 //
-//  GridItem.swift
+//  FishDetails.swift
 //  AnimalPocket
 //
 //  Created by Sarah Watremet on 28/10/2022.
@@ -7,21 +7,15 @@
 
 import SwiftUI
 
-struct GridItemDetails: View {
+struct FishDetails: View {
+  var fish: Fish
+  
   var body: some View {
     VStack {
-      // Image below will be a URL and can go into a separate "item image" component
-      Image("Abeille naine")
-        .background(Image("fond"))
-        .frame(width: 175)
-        .clipShape(Rectangle())
-        .overlay {
-          Rectangle().stroke(Colors.green100, lineWidth: 2)
-        }
-        .padding(.bottom, 2)
-      
+      FishImage(fish: self.fish)
+
       VStack {
-        Text("Abeille Naine")
+        Text(self.fish.name.nameEUfr)
           .font(.system(size: 20))
           .bold()
       }
@@ -33,29 +27,28 @@ struct GridItemDetails: View {
           Text("Période:")
             .foregroundColor(Colors.green100)
             .bold()
-          Text("Toute l'année")
+          Text(self.fish.period)
         }
         
         HStack {
           Text("Heure:")
             .foregroundColor(Colors.green100)
             .bold()
-          Text("Toute la journée")
+          Text(self.fish.hour)
         }
         
         HStack {
           Text("Lieu:")
             .foregroundColor(Colors.green100)
             .bold()
-          Text("Fleurs")
+          Text(self.fish.availability.location)
         }
         
         HStack {
           Text("Prix:")
             .foregroundColor(Colors.green100)
             .bold()
-          Text("200")
-          Text("clochettes")
+          Text("\(self.fish.price) clochettes")
         }
       }
       .font(.system(size: 15))
@@ -68,6 +61,6 @@ struct GridItemDetails: View {
 
 struct GridItem_Previews: PreviewProvider {
     static var previews: some View {
-        GridItemDetails()
+      FishDetails(fish: Fish.sample)
     }
 }

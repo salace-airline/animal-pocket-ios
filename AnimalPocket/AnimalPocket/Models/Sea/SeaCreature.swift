@@ -9,7 +9,7 @@ import Foundation
 
 struct SeaCreature: Identifiable {
   let id: Int
-  let seaCreatureName: SeaCreatureName
+  let name: Name
   let seaCreatureAvailability: SeaCreatureAvailability
   let speed: String
   let shadow: String
@@ -21,7 +21,7 @@ struct SeaCreature: Identifiable {
 extension SeaCreature: Decodable {
   enum CodingKeys: String, CodingKey {
     case id
-    case seaCreatureName = "name"
+    case name
     case seaCreatureAvailability = "availability"
     case speed
     case shadow
