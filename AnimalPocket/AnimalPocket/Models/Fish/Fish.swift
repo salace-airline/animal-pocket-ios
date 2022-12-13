@@ -39,6 +39,7 @@ extension Fish: Decodable {
   }
 }
 
+// MARK: - Fish availability check
 extension Fish {
   var period: String {
     if self.availability.time.self == .empty || self.availability.isAllYear == true {
@@ -57,6 +58,7 @@ extension Fish {
   }
 }
 
+// MARK: - Fish sample
 extension Fish {
   static let sample = Fish(id: 1,
                                name: Name(nameEUen: "bitterling", nameEUfr: "bouvière"),

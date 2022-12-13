@@ -1,21 +1,21 @@
 //
-//  FishDetails.swift
+//  BugDetails.swift
 //  AnimalPocket
 //
-//  Created by Sarah Watremet on 28/10/2022.
+//  Created by Sarah Watremet on 13/12/2022.
 //
 
 import SwiftUI
 
-struct FishDetails: View {
-  var fish: Fish
+struct BugDetails: View {
+  var bug: Bug
   
   var body: some View {
     VStack {
-      FishImage(fish: self.fish)
-
+      BugImage(bug: self.bug)
+      
       VStack {
-        Text(self.fish.name.nameEUfr)
+        Text(self.bug.name.nameEUfr)
           .font(.system(size: 20))
           .bold()
       }
@@ -27,28 +27,28 @@ struct FishDetails: View {
           Text("Période:")
             .foregroundColor(Colors.green100)
             .bold()
-          Text(self.fish.period)
+          Text(self.bug.period)
         }
         
         HStack {
           Text("Heure:")
             .foregroundColor(Colors.green100)
             .bold()
-          Text(self.fish.hour)
+          Text(self.bug.hour)
         }
         
         HStack {
           Text("Lieu:")
             .foregroundColor(Colors.green100)
             .bold()
-          Text(self.fish.availability.location)
+          Text(self.bug.availability.location)
         }
         
         HStack {
           Text("Prix:")
             .foregroundColor(Colors.green100)
             .bold()
-          Text("\(self.fish.price) clochettes")
+          Text("\(self.bug.price) clochettes")
         }
       }
       .font(.system(size: 15))
@@ -59,8 +59,8 @@ struct FishDetails: View {
   }
 }
 
-struct GridItem_Previews: PreviewProvider {
-    static var previews: some View {
-      FishDetails(fish: Fish.sample)
-    }
+struct BugDetails_Previews: PreviewProvider {
+  static var previews: some View {
+    BugDetails(bug: Bug.sample)
+  }
 }

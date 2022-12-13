@@ -22,6 +22,9 @@
 		005DF1DA29437F1E00F964CE /* SeaCreatureNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005DF1D929437F1E00F964CE /* SeaCreatureNetworkService.swift */; };
 		005DF1DC29437F9600F964CE /* SeaCreatureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005DF1DB29437F9600F964CE /* SeaCreatureViewModel.swift */; };
 		005DF1DE2943915400F964CE /* FishImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005DF1DD2943915400F964CE /* FishImage.swift */; };
+		005DF1E32948807100F964CE /* BugImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005DF1E22948807100F964CE /* BugImage.swift */; };
+		005DF1E5294881FD00F964CE /* BugRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005DF1E4294881FD00F964CE /* BugRow.swift */; };
+		005DF1E72948825A00F964CE /* BugDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005DF1E62948825900F964CE /* BugDetails.swift */; };
 		006E8C7E2931083700127551 /* BugsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006E8C7D2931083700127551 /* BugsViewModel.swift */; };
 		006E8C8029310A3A00127551 /* Bug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006E8C7F29310A3A00127551 /* Bug.swift */; };
 		00CFC9EE2931014500A291DB /* Availability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CFC9EB2931014500A291DB /* Availability.swift */; };
@@ -67,6 +70,9 @@
 		005DF1D929437F1E00F964CE /* SeaCreatureNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeaCreatureNetworkService.swift; sourceTree = "<group>"; };
 		005DF1DB29437F9600F964CE /* SeaCreatureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeaCreatureViewModel.swift; sourceTree = "<group>"; };
 		005DF1DD2943915400F964CE /* FishImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FishImage.swift; path = ../../../../../FishImage.swift; sourceTree = "<group>"; };
+		005DF1E22948807100F964CE /* BugImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugImage.swift; sourceTree = "<group>"; };
+		005DF1E4294881FD00F964CE /* BugRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugRow.swift; sourceTree = "<group>"; };
+		005DF1E62948825900F964CE /* BugDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugDetails.swift; sourceTree = "<group>"; };
 		006E8C7D2931083700127551 /* BugsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugsViewModel.swift; sourceTree = "<group>"; };
 		006E8C7F29310A3A00127551 /* Bug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bug.swift; sourceTree = "<group>"; };
 		00CFC9EB2931014500A291DB /* Availability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Availability.swift; sourceTree = "<group>"; };
@@ -118,6 +124,7 @@
 		004A258C290BD9A3009281E4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				005DF1E12948805C00F964CE /* BugItems */,
 				004A258E290BDB17009281E4 /* HomePage.swift */,
 				004A2599290BDC42009281E4 /* Helpers */,
 				004A2590290BDB63009281E4 /* FishItems */,
@@ -173,6 +180,16 @@
 				005DF1D529437AF100F964CE /* SeaCreatureAvailability.swift */,
 			);
 			path = Sea;
+			sourceTree = "<group>";
+		};
+		005DF1E12948805C00F964CE /* BugItems */ = {
+			isa = PBXGroup;
+			children = (
+				005DF1E22948807100F964CE /* BugImage.swift */,
+				005DF1E4294881FD00F964CE /* BugRow.swift */,
+				005DF1E62948825900F964CE /* BugDetails.swift */,
+			);
+			path = BugItems;
 			sourceTree = "<group>";
 		};
 		00CFC9E92931014500A291DB /* Bugs */ = {
@@ -393,16 +410,19 @@
 				004A258F290BDB17009281E4 /* HomePage.swift in Sources */,
 				005DF1DA29437F1E00F964CE /* SeaCreatureNetworkService.swift in Sources */,
 				0000E8C2290C1D6700BE076D /* Colors.swift in Sources */,
+				005DF1E5294881FD00F964CE /* BugRow.swift in Sources */,
 				00CFC9EE2931014500A291DB /* Availability.swift in Sources */,
 				002CB1B829433AB20093B974 /* FishNetworkService.swift in Sources */,
 				005DF1DE2943915400F964CE /* FishImage.swift in Sources */,
 				002CB1B2294339650093B974 /* Fish.swift in Sources */,
 				005DF1D22943795000F964CE /* SeaCreature.swift in Sources */,
+				005DF1E32948807100F964CE /* BugImage.swift in Sources */,
 				005DF1D629437AF100F964CE /* SeaCreatureAvailability.swift in Sources */,
 				101AF9E6290BBD9100855FA6 /* AnimalPocketApp.swift in Sources */,
 				002CB1B629433A480093B974 /* Name.swift in Sources */,
 				006E8C8029310A3A00127551 /* Bug.swift in Sources */,
 				006E8C7E2931083700127551 /* BugsViewModel.swift in Sources */,
+				005DF1E72948825A00F964CE /* BugDetails.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
