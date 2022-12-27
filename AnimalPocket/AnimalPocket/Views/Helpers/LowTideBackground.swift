@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LowTideBackground: View {
     var body: some View {
-        Image("maree_basse")
+        Image("lowTide")
         .resizable()
         .aspectRatio(contentMode: .fill)
         .ignoresSafeArea()
