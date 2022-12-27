@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0000E8C0290C1CCC00BE076D /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0000E8BF290C1CCB00BE076D /* Color.xcassets */; };
 		0000E8C2290C1D6700BE076D /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000E8C1290C1D6700BE076D /* Colors.swift */; };
+		00160191295B4E5C0000A92B /* FinkHeavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 00160190295B4E5C0000A92B /* FinkHeavy.ttf */; };
 		002CB1B2294339650093B974 /* Fish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002CB1B1294339650093B974 /* Fish.swift */; };
 		002CB1B629433A480093B974 /* Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002CB1B529433A480093B974 /* Name.swift */; };
 		002CB1B829433AB20093B974 /* FishNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002CB1B729433AB20093B974 /* FishNetworkService.swift */; };
@@ -60,6 +61,7 @@
 /* Begin PBXFileReference section */
 		0000E8BF290C1CCB00BE076D /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Color.xcassets; path = Assets.xcassets/Color.xcassets; sourceTree = "<group>"; };
 		0000E8C1290C1D6700BE076D /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		00160190295B4E5C0000A92B /* FinkHeavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FinkHeavy.ttf; sourceTree = "<group>"; };
 		002CB1B1294339650093B974 /* Fish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fish.swift; sourceTree = "<group>"; };
 		002CB1B529433A480093B974 /* Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Name.swift; sourceTree = "<group>"; };
 		002CB1B729433AB20093B974 /* FishNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishNetworkService.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 		006E8C7F29310A3A00127551 /* Bug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bug.swift; sourceTree = "<group>"; };
 		00CFC9EB2931014500A291DB /* Availability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Availability.swift; sourceTree = "<group>"; };
 		00CFC9F12931016100A291DB /* BugsNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BugsNetworkService.swift; sourceTree = "<group>"; };
+		00F790F4295B0101004E4B02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		101AF9E2290BBD9100855FA6 /* AnimalPocket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimalPocket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		101AF9E5290BBD9100855FA6 /* AnimalPocketApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalPocketApp.swift; sourceTree = "<group>"; };
 		101AF9E9290BBD9200855FA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -152,6 +155,7 @@
 		004A2599290BDC42009281E4 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				00160190295B4E5C0000A92B /* FinkHeavy.ttf */,
 				0000E8C1290C1D6700BE076D /* Colors.swift */,
 			);
 			path = Helpers;
@@ -250,6 +254,7 @@
 		101AF9E4290BBD9100855FA6 /* AnimalPocket */ = {
 			isa = PBXGroup;
 			children = (
+				00F790F4295B0101004E4B02 /* Info.plist */,
 				101AF9EB290BBD9200855FA6 /* Preview Content */,
 				00CFC9F02931016100A291DB /* Services */,
 				004A259B290BDC61009281E4 /* Models */,
@@ -393,6 +398,7 @@
 			files = (
 				0000E8C0290C1CCC00BE076D /* Color.xcassets in Resources */,
 				101AF9ED290BBD9200855FA6 /* Preview Assets.xcassets in Resources */,
+				00160191295B4E5C0000A92B /* FinkHeavy.ttf in Resources */,
 				101AF9EA290BBD9200855FA6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -603,7 +609,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"AnimalPocket/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = AnimalPocket/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -631,7 +637,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"AnimalPocket/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = AnimalPocket/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
