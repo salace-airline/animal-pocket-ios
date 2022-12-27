@@ -12,14 +12,14 @@ struct HomePage: View {
     NavigationView {
       ZStack {
         LowTideBackground()
-        VStack {
+        VStack(alignment: .center) {
           Text("En ce moment")
             .font(.custom("FinkHeavy", size: 20))
             .font(.subheadline)
           
           ScrollView {
             HStack {
-              VStack {
+              LazyVStack {
                 Text("Fish")
                 FishRow()
               }
