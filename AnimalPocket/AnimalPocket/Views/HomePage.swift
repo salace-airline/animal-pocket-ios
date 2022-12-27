@@ -10,30 +10,33 @@ import SwiftUI
 struct HomePage: View {
   var body: some View {
     NavigationView {
-      VStack {
-        Text("En ce moment")
-          .font(.custom("FinkHeavy", size: 20))
-          .font(.subheadline)
-        
-        ScrollView {
-          HStack {
-            VStack {
-              Text("Fish")
-              FishRow()
-            }
-          }
+      ZStack {
+        LowTideBackground()
+        VStack {
+          Text("En ce moment")
+            .font(.custom("FinkHeavy", size: 20))
+            .font(.subheadline)
           
-          HStack {
-            VStack {
-              Text("Bugs")
-              BugRow()
+          ScrollView {
+            HStack {
+              VStack {
+                Text("Fish")
+                FishRow()
+              }
             }
-          }
-          
-          HStack {
-            VStack {
-              Text("Sea Creatures")
-              SeaRow()
+            
+            HStack {
+              VStack {
+                Text("Bugs")
+                BugRow()
+              }
+            }
+            
+            HStack {
+              VStack {
+                Text("Sea Creatures")
+                SeaRow()
+              }
             }
           }
         }
