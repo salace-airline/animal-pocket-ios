@@ -9,7 +9,7 @@ import Foundation
 
 public struct Name {
   public let nameEUen: String
-  public let nameEUfr : String
+  public let nameEUfr: String
   
   init(nameEUen: String, nameEUfr: String) {
     self.nameEUen = nameEUen.capitalized

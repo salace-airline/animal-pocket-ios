@@ -16,7 +16,7 @@ struct FishDetails: View {
 
         VStack {
           Text(self.fish.name.nameEUfr)
-            .font(.system(size: 20))
+            .font(.system(size: 15))
             .bold()
         }
         .padding(.bottom, 0.5)

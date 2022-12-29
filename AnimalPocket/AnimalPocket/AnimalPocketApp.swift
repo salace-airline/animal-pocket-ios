@@ -8,12 +8,10 @@
 import SwiftUI
 
 @main
-struct AnimalPocketApp: App {
-  private var viewModel = FishViewModel()
-  
+struct AnimalPocketApp: App {  
   var body: some Scene {
     WindowGroup {
-      FishRow(viewModel: viewModel)
+      HomePage()
     }
   }
 }
