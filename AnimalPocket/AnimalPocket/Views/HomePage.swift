@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomePage: View {
   var body: some View {
-    NavigationView {
+    NavigationStack {
       ZStack {
         LowTideBackground()
         VStack(alignment: .center) {
@@ -19,22 +19,31 @@ struct HomePage: View {
           
           ScrollView {
             HStack {
-              LazyVStack {
-                Text("Fish")
+              VStack {
+                NavigationLink("Poissons \(Image(systemName: "chevron.right"))") {
+                  FishCategory()
+                }
+                .buttonStyle(.plain)
                 FishRow()
               }
             }
             
             HStack {
               VStack {
-                Text("Bugs")
+                NavigationLink("Insectes \(Image(systemName: "chevron.right"))") {
+                  BugCategory()
+                }
+                .buttonStyle(.plain)
                 BugRow()
               }
             }
             
             HStack {
               VStack {
-                Text("Sea Creatures")
+                NavigationLink("Créatures Marines \(Image(systemName: "chevron.right"))") {
+                  SeaCategory()
+                }
+                .buttonStyle(.plain)
                 SeaRow()
               }
             }
