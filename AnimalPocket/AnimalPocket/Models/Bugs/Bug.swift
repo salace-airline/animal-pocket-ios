@@ -43,7 +43,7 @@ extension Bug {
     if self.availability.isAllYear == true {
       return "Toute l'année"
     } else {
-      return "\(monthsString)"
+      return monthsString
     }
   }
   
