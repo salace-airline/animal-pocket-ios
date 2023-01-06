@@ -50,6 +50,8 @@ struct BugDetails: View {
             .bold()
           Text("\(self.bug.price) clochettes")
         }
+        
+        RarityBadge(rarity: RarityViewModel(rarityLevel: bug.availability.rarity))
       }
       .font(.system(size: 11))
       .padding(.bottom, 5)

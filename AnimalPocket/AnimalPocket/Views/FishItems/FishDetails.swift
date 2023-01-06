@@ -57,6 +57,8 @@ struct FishDetails: View {
               .bold()
             Text("\(self.fish.price) clochettes")
           }
+          
+          RarityBadge(rarity: RarityViewModel(rarityLevel: fish.availability.rarity))
         }
         .font(.system(size: 11))
         .padding(.bottom, 5)

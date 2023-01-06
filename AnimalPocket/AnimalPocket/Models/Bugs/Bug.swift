@@ -59,7 +59,7 @@ extension Bug {
 extension Bug {
   static let sample = Bug(id: 80,
                           name: Name(nameEUen: "scorpion", nameEUfr: "scorpion"),
-                          availability: Availability(monthNorthern: "5-10", monthSouthern: "11-4", time: Time.bet7pm4am, isAllDay: false, isAllYear: false, location: "On the ground", rarity: "Very Rare", monthArrayNorthern: [5,6,7,8,9,10], monthArraySouthern: [11,12,1,2,3,4], timeArray: [19,20,21,22,23,0,1,2,3]),
+                          availability: Availability(monthNorthern: "5-10", monthSouthern: "11-4", time: Time.bet7pm4am, isAllDay: false, isAllYear: false, location: "On the ground", rarity: Rarity.ultraRare, monthArrayNorthern: [5,6,7,8,9,10], monthArraySouthern: [11,12,1,2,3,4], timeArray: [19,20,21,22,23,0,1,2,3]),
                           price: 8000,
                           imageURI: "https://acnhapi.com/v1/images/bugs/80",
                           iconURI: "https://acnhapi.com/v1/icons/bugs/80")
