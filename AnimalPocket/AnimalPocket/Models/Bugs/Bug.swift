@@ -37,69 +37,6 @@ extension Bug: Decodable {
   }
 }
 
-// MARK: - Bug availability check
-extension Bug {
-  var period: String {
-    if self.availability.isAllYear == true {
-      return "Toute l'année"
-    } else {
-      return monthsString
-    }
-  }
-  
-  var hour: String {
-    if self.availability.time.self == .empty || self.availability.isAllDay == true {
-      return "Toute la journée"
-    } else {
-      return self.availability.time.self.rawValue
-    }
-  }
-  
-  var monthsString: String {
-    var monthArray: [String] = []
-    
-    for month in self.availability.monthArrayNorthern {
-      switch month {
-        case 1:
-          monthArray.append("January")
-        case 2:
-          monthArray.append("February")
-        case 3:
-          monthArray.append("March")
-        case 4:
-          monthArray.append("April")
-        case 5:
-          monthArray.append("May")
-        case 6:
-          monthArray.append("June")
-        case 7:
-          monthArray.append("July")
-        case 8:
-          monthArray.append("August")
-        case 9:
-          monthArray.append("September")
-        case 10:
-          monthArray.append("October")
-        case 11:
-          monthArray.append("November")
-        case 12:
-          monthArray.append("December")
-        default:
-          monthArray.append("R")
-      }
-    }
-    
-    var finalMonthString: String {
-      if monthArray.first! == monthArray.last! {
-        return monthArray.first!
-      } else {
-        return [monthArray.first!, monthArray.last!].joined(separator: " - ")
-      }
-    }
-    return finalMonthString
-  }
-}
-
 // MARK: - Bug sample
 extension Bug {
   static let sample = Bug(id: 80,

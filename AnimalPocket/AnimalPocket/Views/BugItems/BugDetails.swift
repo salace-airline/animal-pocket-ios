@@ -27,14 +27,14 @@ struct BugDetails: View {
           Text("Période:")
             .foregroundColor(Colors.green100)
             .bold()
-          Text(self.bug.period)
+          Text(self.bug.availability.period)
         }
         
         HStack {
           Text("Heure:")
             .foregroundColor(Colors.green100)
             .bold()
-          Text(self.bug.hour)
+          Text(self.bug.availability.hour)
         }
         
         HStack {

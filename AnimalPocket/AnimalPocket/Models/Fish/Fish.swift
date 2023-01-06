@@ -39,25 +39,6 @@ extension Fish: Decodable {
   }
 }
 
-// MARK: - Fish availability check
-extension Fish {
-  var period: String {
-    if self.availability.isAllYear == true {
-      return "Toute l'année"
-    } else {
-      return self.availability.monthNorthern
-    }
-  }
-  
-  var hour: String {
-    if self.availability.time.self == .empty || self.availability.isAllDay == true {
-      return "Toute la journée"
-    } else {
-      return self.availability.time.self.rawValue
-    }
-  }
-}
-
 // MARK: - Fish sample
 extension Fish {
   static let sample = Fish(id: 78,
