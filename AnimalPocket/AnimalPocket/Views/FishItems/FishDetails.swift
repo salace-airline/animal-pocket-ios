@@ -27,14 +27,14 @@ struct FishDetails: View {
             Text("Période:")
               .foregroundColor(Colors.blue100)
               .bold()
-            Text(self.fish.period)
+            Text(self.fish.availability.period)
           }
           
           HStack {
             Text("Heure:")
               .foregroundColor(Colors.blue100)
               .bold()
-            Text(self.fish.hour)
+            Text(self.fish.availability.hour)
           }
           
           HStack {
