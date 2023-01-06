@@ -13,7 +13,8 @@ struct Availability {
   let isAllDay, isAllYear: Bool
   let location: String
   let rarity: Rarity
-  let monthArrayNorthern, monthArraySouthern: [Int]
+  let monthArrayNorthern: [Int]
+  let monthArraySouthern: [Int]
   let timeArray: [Int]
 }
 
