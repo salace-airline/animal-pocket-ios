@@ -30,6 +30,6 @@ struct BugRow: View {
 
 struct BugRow_Previews: PreviewProvider {
   static var previews: some View {
-    BugRow(viewModel: BugsViewModel())
+    BugRow()
   }
 }
