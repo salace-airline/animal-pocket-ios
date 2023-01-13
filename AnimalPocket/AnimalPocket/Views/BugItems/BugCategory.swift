@@ -21,7 +21,6 @@ struct BugCategory: View {
         .font(.custom("FinkHeavy", size: 20))
         .font(.subheadline)
       
-      
       HStack {        
         Button(action: {
           viewModel.filter = .alphatically
@@ -67,18 +66,16 @@ struct BugCategory: View {
   
   func loadedBugs(bugs: [Bug]) -> some View {
     NavigationStack {
-      VStack {
-        ScrollView(.vertical) {
-          LazyVGrid(columns: columns) {
-            ForEach(bugs) { bug in
-              BugDetails(bug: bug)
-            }
+      ScrollView(.vertical) {
+        LazyVGrid(columns: columns) {
+          ForEach(bugs) { bug in
+            BugDetails(bug: bug)
           }
         }
-        .onAppear(perform: {
-          viewModel.loadBugs()
-        })
       }
+      .onAppear(perform: {
+        viewModel.loadBugs()
+      })
     }
   }
 }
