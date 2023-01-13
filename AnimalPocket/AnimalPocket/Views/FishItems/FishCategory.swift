@@ -68,18 +68,16 @@ struct FishCategory: View {
   
   func loadedFish(fish: [Fish]) -> some View {
     NavigationStack {
-      VStack {
-        ScrollView(.vertical) {
-          LazyVGrid(columns: columns) {
-            ForEach(fish) { fish in
-              FishDetails(fish: fish)
-            }
+      ScrollView(.vertical) {
+        LazyVGrid(columns: columns) {
+          ForEach(fish) { fish in
+            FishDetails(fish: fish)
           }
         }
-        .onAppear(perform: {
-          viewModel.loadFish()
-        })
       }
+      .onAppear(perform: {
+        viewModel.loadFish()
+      })
     }
   }
 }
