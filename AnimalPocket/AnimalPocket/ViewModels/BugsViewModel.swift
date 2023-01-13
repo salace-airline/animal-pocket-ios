@@ -46,12 +46,3 @@ extension BugsViewModel {
   }
 }
 
-extension BugsViewModel {
-  enum Filter {
-    case noFilter
-    case increasingPrice
-    case decreasingPrice
-    case alphatically
-  }
-}
-

@@ -16,24 +16,74 @@ struct FishCategory: View {
   ]
   
   var body: some View {
-    VStack {
+    NavigationStack {
       Text("Poissons")
         .font(.custom("FinkHeavy", size: 20))
         .font(.subheadline)
       
-      ScrollView(.vertical) {
-        LazyVGrid(columns: columns) {
-          ForEach(viewModel.fishArray) { fish in
-            FishDetails(fish: fish)
+      
+      HStack {
+        Button(action: {
+          viewModel.filter = .alphatically
+          viewModel.alphabeticalOrder = true
+        }, label: {
+          Text("Nom")
+        })
+        
+        Button(action: {
+          viewModel.filter = .increasingPrice
+          viewModel.increasingPrice = true
+        }, label: {
+          Text("Prix + -")
+        })
+        
+        Button(action: {
+          viewModel.filter = .decreasingPrice
+          viewModel.decreasingPrice = true
+        }, label: {
+          Text("Prix - +")
+        })
+        
+        Button(action: {
+          viewModel.filter = .noFilter
+        }, label: {
+          Image(systemName: "eraser")
+        })
+      }
+      .buttonStyle(.bordered)
+      
+      switch viewModel.filter {
+        case .noFilter:
+          loadedFish(fish: viewModel.fishArray)
+        case .increasingPrice:
+          loadedFish(fish: viewModel.sortedIncreasingPrice)
+        case .decreasingPrice:
+          loadedFish(fish: viewModel.sortedDecreasingPrice)
+        case .alphatically:
+          loadedFish(fish: viewModel.sortedAlphabetically)
+      }
+    }
+  }
+  
+  
+  func loadedFish(fish: [Fish]) -> some View {
+    NavigationStack {
+      VStack {
+        ScrollView(.vertical) {
+          LazyVGrid(columns: columns) {
+            ForEach(fish) { fish in
+              FishDetails(fish: fish)
+            }
           }
         }
+        .onAppear(perform: {
+          viewModel.loadFish()
+        })
       }
-      .onAppear(perform: {
-        viewModel.loadFish()
-      })
     }
   }
 }
+
 
 
 struct FishCategory_Previews: PreviewProvider {

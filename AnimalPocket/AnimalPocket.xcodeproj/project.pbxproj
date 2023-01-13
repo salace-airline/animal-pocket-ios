@@ -38,6 +38,7 @@
 		0083A5BC295DEACB00007ED4 /* Rarity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0083A5BB295DEACB00007ED4 /* Rarity.swift */; };
 		0083A5BE295DEB1600007ED4 /* RarityBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0083A5BD295DEB1600007ED4 /* RarityBadge.swift */; };
 		0083A5C0295DEC4700007ED4 /* RarityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0083A5BF295DEC4700007ED4 /* RarityViewModel.swift */; };
+		0083A5C82971B16600007ED4 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0083A5C72971B16600007ED4 /* Filter.swift */; };
 		00CFC9EE2931014500A291DB /* Availability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CFC9EB2931014500A291DB /* Availability.swift */; };
 		00CFC9F22931016100A291DB /* BugsNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CFC9F12931016100A291DB /* BugsNetworkService.swift */; };
 		101AF9E6290BBD9100855FA6 /* AnimalPocketApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101AF9E5290BBD9100855FA6 /* AnimalPocketApp.swift */; };
@@ -97,6 +98,7 @@
 		0083A5BB295DEACB00007ED4 /* Rarity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rarity.swift; sourceTree = "<group>"; };
 		0083A5BD295DEB1600007ED4 /* RarityBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RarityBadge.swift; sourceTree = "<group>"; };
 		0083A5BF295DEC4700007ED4 /* RarityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RarityViewModel.swift; sourceTree = "<group>"; };
+		0083A5C72971B16600007ED4 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 		00CFC9EB2931014500A291DB /* Availability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Availability.swift; sourceTree = "<group>"; };
 		00CFC9F12931016100A291DB /* BugsNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BugsNetworkService.swift; sourceTree = "<group>"; };
 		00F790F4295B0101004E4B02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				002CB1B529433A480093B974 /* Name.swift */,
 				0083A5BB295DEACB00007ED4 /* Rarity.swift */,
 				005DF1D729437E0C00F964CE /* Time.swift */,
+				0083A5C72971B16600007ED4 /* Filter.swift */,
 				005DF1D02943793900F964CE /* Sea */,
 				002CB1B0294339580093B974 /* Fish */,
 				00CFC9E92931014500A291DB /* Bugs */,
@@ -458,6 +461,7 @@
 				0083A5B0295B648400007ED4 /* LowTideBackground.swift in Sources */,
 				005DF1DA29437F1E00F964CE /* SeaCreatureNetworkService.swift in Sources */,
 				0000E8C2290C1D6700BE076D /* Colors.swift in Sources */,
+				0083A5C82971B16600007ED4 /* Filter.swift in Sources */,
 				005DF1E5294881FD00F964CE /* BugRow.swift in Sources */,
 				0083A5B4295C533600007ED4 /* BugCategory.swift in Sources */,
 				005DF1EC29488EA300F964CE /* SeaDetails.swift in Sources */,
