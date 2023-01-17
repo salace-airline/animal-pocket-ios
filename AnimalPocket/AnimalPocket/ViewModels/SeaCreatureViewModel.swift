@@ -9,20 +9,39 @@ import Foundation
 
 final class SeaCreatureViewModel: ObservableObject {
   @Published var seaArray: [SeaCreature] = []
-  
-  func getSea(seaID: Int) -> SeaCreature? {
-    return self.seaArray.first(where: {$0.id == seaID})
-  }
+  @Published var filter: Filter = .noFilter
+  @Published var increasingPrice = false
+  @Published var decreasingPrice = false
+  @Published var alphabeticalOrder = false
   
   @MainActor func loadSeaCreature() {
     Task {
       do {
         let response = try await SeaCreatureNetworkService.fetchSeaCreature()
         self.seaArray = response
-        print(response)
       } catch {
         print("Error", error)
       }
     }
+  }
+}
+
+extension SeaCreatureViewModel {
+  var sortedIncreasingPrice: [SeaCreature] {
+    seaArray.sorted(by: {
+      $0.price > $1.price
+    })
+  }
+  
+  var sortedDecreasingPrice: [SeaCreature] {
+    seaArray.sorted(by: {
+      $0.price < $1.price
+    })
+  }
+  
+  var sortedAlphabetically: [SeaCreature] {
+    seaArray.sorted(by: {
+      $0.name.nameEUfr < $1.name.nameEUfr 
+    })
   }
 }
