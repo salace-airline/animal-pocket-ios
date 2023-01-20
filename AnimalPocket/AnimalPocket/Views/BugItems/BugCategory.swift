@@ -31,66 +31,68 @@ struct BugCategory: View {
         case .alphatically:
           loadedBugs(with: viewModel.sortedAlphabetically)
       }
-      
-      BugsFilterButtons()
-      
-//      HStack {
-//        SelectButton(isSelected: $viewModel.alphabeticalOrder,
-//                     color: .green,
-//                     buttonText: "Nom")
-//        .onTapGesture(perform: {
-//          viewModel.alphabeticalOrder.toggle()
-//          viewModel.filter = .alphatically
-//
-//          if viewModel.alphabeticalOrder {
-//            viewModel.increasingPrice = false
-//            viewModel.decreasingPrice = false
-//            viewModel.noFilter = false
-//          }
-//        })
-//
-//        SelectButton(isSelected: $viewModel.decreasingPrice,
-//                     color: .green,
-//                     buttonText: "Prix + -")
-//        .onTapGesture(perform: {
-//          viewModel.decreasingPrice.toggle()
-//          viewModel.filter = .decreasingPrice
-//
-//          if viewModel.decreasingPrice {
-//            viewModel.alphabeticalOrder = false
-//            viewModel.increasingPrice = false
-//            viewModel.noFilter = false
-//          }
-//        })
-//
-//        SelectButton(isSelected: $viewModel.increasingPrice,
-//                     color: .green,
-//                     buttonText: "Prix + -")
-//        .onTapGesture(perform: {
-//          viewModel.increasingPrice.toggle()
-//          viewModel.filter = .increasingPrice
-//
-//          if viewModel.increasingPrice {
-//            viewModel.alphabeticalOrder = false
-//            viewModel.decreasingPrice = false
-//            viewModel.noFilter = false
-//          }
-//        })
-//
-//        SelectButton(isSelected: $viewModel.noFilter,
-//                     color: .green,
-//                     buttonText: "🧽")
-//        .onTapGesture(perform: {
-//          viewModel.noFilter.toggle()
-//          viewModel.filter = .noFilter
-//
-//          if viewModel.noFilter {
-//            viewModel.alphabeticalOrder = false
-//            viewModel.increasingPrice = false
-//            viewModel.decreasingPrice = false
-//          }
-//        })
-//      }
+            
+      HStack {
+        SelectButton(isSelected: $viewModel.alphabeticalOrder,
+                     color: .green,
+                     buttonText: "Nom")
+        .onTapGesture(perform: {
+          viewModel.alphabeticalOrder.toggle()
+          viewModel.filter = .alphatically
+          viewModel.alphabeticalOrder = true
+
+          if viewModel.alphabeticalOrder {
+            viewModel.increasingPrice = false
+            viewModel.decreasingPrice = false
+            viewModel.noFilter = false
+          }
+        })
+
+        SelectButton(isSelected: $viewModel.decreasingPrice,
+                     color: .green,
+                     buttonText: "Prix + -")
+        .onTapGesture(perform: {
+          viewModel.decreasingPrice.toggle()
+          viewModel.filter = .decreasingPrice
+          viewModel.decreasingPrice = true
+
+          if viewModel.decreasingPrice {
+            viewModel.alphabeticalOrder = false
+            viewModel.increasingPrice = false
+            viewModel.noFilter = false
+          }
+        })
+
+        SelectButton(isSelected: $viewModel.increasingPrice,
+                     color: .green,
+                     buttonText: "Prix - +")
+        .onTapGesture(perform: {
+          viewModel.increasingPrice.toggle()
+          viewModel.filter = .increasingPrice
+          viewModel.increasingPrice = true
+
+          if viewModel.increasingPrice {
+            viewModel.alphabeticalOrder = false
+            viewModel.decreasingPrice = false
+            viewModel.noFilter = false
+          }
+        })
+
+        SelectButton(isSelected: $viewModel.noFilter,
+                     color: .green,
+                     buttonText: "🧽")
+        .onTapGesture(perform: {
+          viewModel.noFilter.toggle()
+          viewModel.filter = .noFilter
+          viewModel.noFilter = true
+
+          if viewModel.noFilter {
+            viewModel.alphabeticalOrder = false
+            viewModel.increasingPrice = false
+            viewModel.decreasingPrice = false
+          }
+        })
+      }
     }
   }
   
