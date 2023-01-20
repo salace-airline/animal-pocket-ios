@@ -53,3 +53,17 @@ extension BugsViewModel {
   }
 }
 
+extension BugsViewModel {
+  var currentMonthBugs: [Bug] {
+    var currentBugs:[Bug] = []
+    for bug in bugsArray {
+      for month in bug.availability.timeArray {
+        if month == 1 {
+          currentBugs.append(bug)
+        }
+      }
+    }
+    return currentBugs
+  }
+}
+
