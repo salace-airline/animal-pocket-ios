@@ -10,6 +10,7 @@ import Foundation
 final class FishViewModel: ObservableObject {
   @Published var fishArray: [Fish] = []
   @Published var filter: Filter = .noFilter
+  @Published var noFilter = false
   @Published var increasingPrice = false
   @Published var decreasingPrice = false
   @Published var alphabeticalOrder = false
@@ -27,13 +28,13 @@ final class FishViewModel: ObservableObject {
 }
 
 extension FishViewModel {
-  var sortedIncreasingPrice: [Fish] {
+  var sortedDecreasingPrice: [Fish] {
     fishArray.sorted(by: {
       $0.price > $1.price
     })
   }
   
-  var sortedDecreasingPrice: [Fish] {
+  var sortedIncreasingPrice: [Fish] {
     fishArray.sorted(by: {
       $0.price < $1.price
     })

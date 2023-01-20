@@ -21,50 +21,82 @@ struct BugCategory: View {
         .font(.custom("FinkHeavy", size: 20))
         .font(.subheadline)
       
-      HStack {        
-        Button(action: {
-          viewModel.filter = .alphatically
-          viewModel.alphabeticalOrder = true
-        }, label: {
-          Text("Nom")
-        })
-        
-        Button(action: {
-          viewModel.filter = .increasingPrice
-          viewModel.increasingPrice = true
-        }, label: {
-          Text("Prix + -")
-      })
-        
-        Button(action: {
-          viewModel.filter = .decreasingPrice
-          viewModel.decreasingPrice = true
-        }, label: {
-          Text("Prix - +")
-        })
-        
-        Button(action: {
-          viewModel.filter = .noFilter
-        }, label: {
-          Image(systemName: "eraser")
-        })
-      }
-      .buttonStyle(.bordered)
-      
       switch viewModel.filter {
         case .noFilter:
-          loadedBugs(bugs: viewModel.bugsArray)
+          loadedBugs(with: viewModel.bugsArray)
         case .increasingPrice:
-          loadedBugs(bugs: viewModel.sortedIncreasingPrice)
+          loadedBugs(with: viewModel.sortedIncreasingPrice)
         case .decreasingPrice:
-          loadedBugs(bugs: viewModel.sortedDecreasingPrice)
+          loadedBugs(with: viewModel.sortedDecreasingPrice)
         case .alphatically:
-          loadedBugs(bugs: viewModel.sortedAlphabetically)
+          loadedBugs(with: viewModel.sortedAlphabetically)
+      }
+            
+      HStack {
+        BugFilterButton(isSelected: $viewModel.alphabeticalOrder,
+                     color: Colors.green100,
+                     buttonText: "Nom")
+        .onTapGesture(perform: {
+          viewModel.alphabeticalOrder.toggle()
+          viewModel.filter = .alphatically
+          viewModel.alphabeticalOrder = true
+
+          if viewModel.alphabeticalOrder {
+            viewModel.increasingPrice = false
+            viewModel.decreasingPrice = false
+            viewModel.noFilter = false
+          }
+        })
+
+        BugFilterButton(isSelected: $viewModel.decreasingPrice,
+                     color: Colors.green100,
+                     buttonText: "Prix + -")
+        .onTapGesture(perform: {
+          viewModel.decreasingPrice.toggle()
+          viewModel.filter = .decreasingPrice
+          viewModel.decreasingPrice = true
+
+          if viewModel.decreasingPrice {
+            viewModel.alphabeticalOrder = false
+            viewModel.increasingPrice = false
+            viewModel.noFilter = false
+          }
+        })
+
+        BugFilterButton(isSelected: $viewModel.increasingPrice,
+                     color: Colors.green100,
+                     buttonText: "Prix - +")
+        .onTapGesture(perform: {
+          viewModel.increasingPrice.toggle()
+          viewModel.filter = .increasingPrice
+          viewModel.increasingPrice = true
+
+          if viewModel.increasingPrice {
+            viewModel.alphabeticalOrder = false
+            viewModel.decreasingPrice = false
+            viewModel.noFilter = false
+          }
+        })
+
+        BugFilterButton(isSelected: $viewModel.noFilter,
+                     color: Colors.green100,
+                     buttonText: "🧽")
+        .onTapGesture(perform: {
+          viewModel.noFilter.toggle()
+          viewModel.filter = .noFilter
+          viewModel.noFilter = true
+
+          if viewModel.noFilter {
+            viewModel.alphabeticalOrder = false
+            viewModel.increasingPrice = false
+            viewModel.decreasingPrice = false
+          }
+        })
       }
     }
   }
   
-  func loadedBugs(bugs: [Bug]) -> some View {
+  func loadedBugs(with bugs: [Bug]) -> some View {
     NavigationStack {
       ScrollView(.vertical) {
         LazyVGrid(columns: columns) {

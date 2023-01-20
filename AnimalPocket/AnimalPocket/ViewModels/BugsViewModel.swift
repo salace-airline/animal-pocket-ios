@@ -10,6 +10,7 @@ import Foundation
 final class BugsViewModel: ObservableObject {
   @Published var bugsArray: [Bug] = []
   @Published var filter: Filter = .noFilter
+  @Published var noFilter = false
   @Published var increasingPrice = false
   @Published var decreasingPrice = false
   @Published var alphabeticalOrder = false
@@ -27,13 +28,13 @@ final class BugsViewModel: ObservableObject {
 }
 
 extension BugsViewModel {
-  var sortedIncreasingPrice: [Bug] {
+  var sortedDecreasingPrice: [Bug] {
     bugsArray.sorted(by: {
       $0.price > $1.price
     })
   }
  
-  var sortedDecreasingPrice: [Bug] {
+  var sortedIncreasingPrice: [Bug] {
     bugsArray.sorted(by: {
       $0.price < $1.price
     })
@@ -42,6 +43,12 @@ extension BugsViewModel {
   var sortedAlphabetically: [Bug] {
     bugsArray.sorted(by: {
       $0.name.nameEUfr < $1.name.nameEUfr 
+    })
+  }
+  
+  var itemSortedAlphabetically: [Bug] {
+    bugsArray.sorted(by: {
+      $0.name.nameEUfr < $1.name.nameEUfr
     })
   }
 }

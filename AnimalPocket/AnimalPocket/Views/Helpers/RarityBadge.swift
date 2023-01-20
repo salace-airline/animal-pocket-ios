@@ -21,7 +21,7 @@ struct RarityBadge: View {
             .padding(2)
             .fontWeight(.bold)
             .foregroundColor(Color.white)
-            .background(Color.green)
+            .background(Colors.green100)
             .cornerRadius(4)
         case .rare:
           Text(" Rare ")

@@ -21,37 +21,6 @@ struct FishCategory: View {
         .font(.custom("FinkHeavy", size: 20))
         .font(.subheadline)
       
-      
-      HStack {
-        Button(action: {
-          viewModel.filter = .alphatically
-          viewModel.alphabeticalOrder = true
-        }, label: {
-          Text("Nom")
-        })
-        
-        Button(action: {
-          viewModel.filter = .increasingPrice
-          viewModel.increasingPrice = true
-        }, label: {
-          Text("Prix + -")
-        })
-        
-        Button(action: {
-          viewModel.filter = .decreasingPrice
-          viewModel.decreasingPrice = true
-        }, label: {
-          Text("Prix - +")
-        })
-        
-        Button(action: {
-          viewModel.filter = .noFilter
-        }, label: {
-          Image(systemName: "eraser")
-        })
-      }
-      .buttonStyle(.bordered)
-      
       switch viewModel.filter {
         case .noFilter:
           loadedFish(fish: viewModel.fishArray)
@@ -62,10 +31,71 @@ struct FishCategory: View {
         case .alphatically:
           loadedFish(fish: viewModel.sortedAlphabetically)
       }
+      
+      HStack {
+        FishFilterButton(isSelected: $viewModel.alphabeticalOrder,
+                     color: Colors.blue100,
+                     buttonText: "Nom")
+        .onTapGesture(perform: {
+          viewModel.alphabeticalOrder.toggle()
+          viewModel.filter = .alphatically
+          viewModel.alphabeticalOrder = true
+          
+          if viewModel.alphabeticalOrder {
+            viewModel.increasingPrice = false
+            viewModel.decreasingPrice = false
+            viewModel.noFilter = false
+          }
+        })
+        
+        FishFilterButton(isSelected: $viewModel.decreasingPrice,
+                     color: Colors.blue100,
+                     buttonText: "Prix + -")
+        .onTapGesture(perform: {
+          viewModel.decreasingPrice.toggle()
+          viewModel.filter = .decreasingPrice
+          viewModel.decreasingPrice = true
+          
+          if viewModel.decreasingPrice {
+            viewModel.alphabeticalOrder = false
+            viewModel.increasingPrice = false
+            viewModel.noFilter = false
+          }
+        })
+        
+        FishFilterButton(isSelected: $viewModel.increasingPrice,
+                     color: Colors.blue100,
+                     buttonText: "Prix - +")
+        .onTapGesture(perform: {
+          viewModel.increasingPrice.toggle()
+          viewModel.filter = .increasingPrice
+          viewModel.increasingPrice = true
+          
+          if viewModel.increasingPrice {
+            viewModel.alphabeticalOrder = false
+            viewModel.decreasingPrice = false
+            viewModel.noFilter = false
+          }
+        })
+        
+        FishFilterButton(isSelected: $viewModel.noFilter,
+                     color: Colors.blue100,
+                     buttonText: "🧽")
+        .onTapGesture(perform: {
+          viewModel.noFilter.toggle()
+          viewModel.filter = .noFilter
+          viewModel.noFilter = true
+          
+          if viewModel.noFilter {
+            viewModel.alphabeticalOrder = false
+            viewModel.increasingPrice = false
+            viewModel.decreasingPrice = false
+          }
+        })
+      }
     }
   }
-  
-  
+
   func loadedFish(fish: [Fish]) -> some View {
     NavigationStack {
       ScrollView(.vertical) {
@@ -81,8 +111,6 @@ struct FishCategory: View {
     }
   }
 }
-
-
 
 struct FishCategory_Previews: PreviewProvider {
   static var previews: some View {

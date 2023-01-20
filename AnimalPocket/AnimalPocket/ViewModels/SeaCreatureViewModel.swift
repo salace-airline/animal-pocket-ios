@@ -10,6 +10,7 @@ import Foundation
 final class SeaCreatureViewModel: ObservableObject {
   @Published var seaArray: [SeaCreature] = []
   @Published var filter: Filter = .noFilter
+  @Published var noFilter = false
   @Published var increasingPrice = false
   @Published var decreasingPrice = false
   @Published var alphabeticalOrder = false
@@ -27,13 +28,13 @@ final class SeaCreatureViewModel: ObservableObject {
 }
 
 extension SeaCreatureViewModel {
-  var sortedIncreasingPrice: [SeaCreature] {
+  var sortedDecreasingPrice: [SeaCreature] {
     seaArray.sorted(by: {
       $0.price > $1.price
     })
   }
   
-  var sortedDecreasingPrice: [SeaCreature] {
+  var sortedIncreasingPrice: [SeaCreature] {
     seaArray.sorted(by: {
       $0.price < $1.price
     })
