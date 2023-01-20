@@ -34,7 +34,7 @@ struct BugCategory: View {
             
       HStack {
         SelectButton(isSelected: $viewModel.alphabeticalOrder,
-                     color: .green,
+                     color: Colors.green100,
                      buttonText: "Nom")
         .onTapGesture(perform: {
           viewModel.alphabeticalOrder.toggle()
@@ -49,7 +49,7 @@ struct BugCategory: View {
         })
 
         SelectButton(isSelected: $viewModel.decreasingPrice,
-                     color: .green,
+                     color: Colors.green100,
                      buttonText: "Prix + -")
         .onTapGesture(perform: {
           viewModel.decreasingPrice.toggle()
@@ -64,7 +64,7 @@ struct BugCategory: View {
         })
 
         SelectButton(isSelected: $viewModel.increasingPrice,
-                     color: .green,
+                     color: Colors.green100,
                      buttonText: "Prix - +")
         .onTapGesture(perform: {
           viewModel.increasingPrice.toggle()
@@ -79,7 +79,7 @@ struct BugCategory: View {
         })
 
         SelectButton(isSelected: $viewModel.noFilter,
-                     color: .green,
+                     color: Colors.green100,
                      buttonText: "🧽")
         .onTapGesture(perform: {
           viewModel.noFilter.toggle()

@@ -15,7 +15,7 @@ struct SelectButton: View {
   var body: some View {
     Text(buttonText)
       .padding(5)
-      .background(isSelected ? color : .gray)
+      .background(isSelected ? color : Colors.greenLight)
       .foregroundColor(.white)
       .cornerRadius(4)
   }
