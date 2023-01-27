@@ -54,20 +54,23 @@ extension BugsViewModel {
 }
 
 extension BugsViewModel {
-  // returns user's current month in a numeric format
-  var currentMonth: Int? {
-    let currentDate = Date.now
-    let formatter = DateFormatter()
-    formatter.dateFormat = "M"
-    
-    return Int(formatter.string(from: currentDate))
-  }
-  
   var currentMonthBugs: [Bug] {
     var currentBugs:[Bug] = []
     for bug in bugsArray {
       for month in bug.availability.timeArray {
-        if month == currentMonth {
+        if month == bug.availability.currentMonth {
+          currentBugs.append(bug)
+        }
+      }
+    }
+    return currentBugs
+  }
+  
+  var currentTimeBugs: [Bug] {
+    var currentBugs: [Bug] = []
+    for bug in bugsArray {
+      for time in bug.availability.timeArray {
+        if time == bug.availability.currentTime {
           currentBugs.append(bug)
         }
       }
