@@ -11,7 +11,6 @@ struct HomePage: View {
   var body: some View {
     NavigationStack {
       ZStack {
-        LowTideBackground()
         VStack(alignment: .center) {
           Text("En ce moment")
             .font(.custom("FinkHeavy", size: 20))
