@@ -57,7 +57,7 @@ extension BugsViewModel {
   var currentMonthBugs: [Bug] {
     var currentBugs:[Bug] = []
     for bug in bugsArray {
-      for month in bug.availability.timeArray {
+      for month in bug.availability.monthArrayNorthern {
         if month == bug.availability.currentMonth {
           currentBugs.append(bug)
         }
@@ -72,6 +72,22 @@ extension BugsViewModel {
       for time in bug.availability.timeArray {
         if time == bug.availability.currentTime {
           currentBugs.append(bug)
+        }
+      }
+    }
+    return currentBugs
+  }
+
+  var currentlyAvailable: [Bug] {
+    var currentBugs: [Bug] = []
+    for bug in bugsArray {
+      for time in bug.availability.timeArray {
+        if time == bug.availability.currentTime {
+          for month in bug.availability.monthArrayNorthern {
+            if month == bug.availability.currentMonth {
+              currentBugs.append(bug)
+            }
+          }
         }
       }
     }
