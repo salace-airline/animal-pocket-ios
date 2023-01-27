@@ -1,13 +1,13 @@
 //
-//  BugFilterButton.swift
+//  BugFilterButtons.swift
 //  AnimalPocket
 //
-//  Created by Sarah WATREMET on 18/01/2023.
+//  Created by Sarah Watremet on 27/01/2023.
 //
 
 import SwiftUI
 
-struct BugFilterButton: View {
+struct BugFilterButtons: View {
   @Binding var isSelected: Bool
   @State var color: Color
   @State var buttonText: String
@@ -23,8 +23,6 @@ struct BugFilterButton: View {
 
 struct BugFilterButton_Previews: PreviewProvider {
   static var previews: some View {
-    BugFilterButton(isSelected: .constant(false), color: Colors.greenLight, buttonText: "Filter Off")
+    BugFilterButtons(isSelected: .constant(false), color: Colors.greenLight, buttonText: "Filter Off")
   }
 }
-
-

@@ -29,14 +29,14 @@ final class BugsViewModel: ObservableObject {
 
 // Price filters
 extension BugsViewModel {
-  var sortedDecreasingPrice: [Bug] {
-    bugsArray.sorted(by: {
+  func decreasePrice(of bugs: [Bug]) -> [Bug] {
+    bugs.sorted(by: {
       $0.price > $1.price
     })
   }
  
-  var sortedIncreasingPrice: [Bug] {
-    bugsArray.sorted(by: {
+  func increasePrice(of bugs: [Bug]) -> [Bug] {
+    bugs.sorted(by: {
       $0.price < $1.price
     })
   }
@@ -44,8 +44,8 @@ extension BugsViewModel {
 
 // Alphabetical filter
 extension BugsViewModel {
-  var sortedAlphabetically: [Bug] {
-    bugsArray.sorted(by: {
+  func sortAlphabetically(bugs: [Bug]) -> [Bug] {
+    bugs.sorted(by: {
       $0.name.nameEUfr < $1.name.nameEUfr
     })
   }

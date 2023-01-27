@@ -25,11 +25,11 @@ struct SeaCategory: View {
         case .noFilter:
           loadedSea(sea: viewModel.seaArray)
         case .increasingPrice:
-          loadedSea(sea: viewModel.sortedIncreasingPrice)
+          loadedSea(sea: viewModel.increasePrice(of: viewModel.seaArray))
         case .decreasingPrice:
-          loadedSea(sea: viewModel.sortedDecreasingPrice)
+          loadedSea(sea: viewModel.decreasePrice(of: viewModel.seaArray))
         case .alphatically:
-          loadedSea(sea: viewModel.sortedAlphabetically)
+          loadedSea(sea: viewModel.sortAlphabetically(viewModel.seaArray))
       }
       
       HStack {

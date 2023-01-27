@@ -25,11 +25,11 @@ struct FishCategory: View {
         case .noFilter:
           loadedFish(fish: viewModel.fishArray)
         case .increasingPrice:
-          loadedFish(fish: viewModel.sortedIncreasingPrice)
+          loadedFish(fish: viewModel.increasePrice(of: viewModel.fishArray))
         case .decreasingPrice:
-          loadedFish(fish: viewModel.sortedDecreasingPrice)
+          loadedFish(fish: viewModel.decreasePrice(of: viewModel.fishArray))
         case .alphatically:
-          loadedFish(fish: viewModel.sortedAlphabetically)
+          loadedFish(fish: viewModel.sortAlphabetically(fish: viewModel.fishArray))
       }
       
       HStack {

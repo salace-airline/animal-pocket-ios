@@ -29,14 +29,14 @@ final class FishViewModel: ObservableObject {
 
 // Price filters
 extension FishViewModel {
-  var sortedDecreasingPrice: [Fish] {
-    fishArray.sorted(by: {
+  func decreasePrice(of fish: [Fish]) -> [Fish] {
+    fish.sorted(by: {
       $0.price > $1.price
     })
   }
   
-  var sortedIncreasingPrice: [Fish] {
-    fishArray.sorted(by: {
+  func increasePrice(of fish: [Fish]) -> [Fish] {
+    fish.sorted(by: {
       $0.price < $1.price
     })
   }
@@ -44,8 +44,8 @@ extension FishViewModel {
 
 // Alphabetical filter
 extension FishViewModel {
-  var sortedAlphabetically: [Fish] {
-    fishArray.sorted(by: {
+  func sortAlphabetically(fish: [Fish]) -> [Fish] {
+    fish.sorted(by: {
       $0.name.nameEUfr < $1.name.nameEUfr
     })
   }

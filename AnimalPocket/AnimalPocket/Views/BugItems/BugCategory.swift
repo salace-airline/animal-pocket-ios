@@ -25,15 +25,15 @@ struct BugCategory: View {
         case .noFilter:
           loadedBugs(with: viewModel.bugsArray)
         case .increasingPrice:
-          loadedBugs(with: viewModel.sortedIncreasingPrice)
+          loadedBugs(with: viewModel.increasePrice(of: viewModel.bugsArray))
         case .decreasingPrice:
-          loadedBugs(with: viewModel.sortedDecreasingPrice)
+          loadedBugs(with: viewModel.decreasePrice(of: viewModel.bugsArray))
         case .alphatically:
-          loadedBugs(with: viewModel.sortedAlphabetically)
+          loadedBugs(with: viewModel.sortAlphabetically(bugs: viewModel.bugsArray))
       }
             
       HStack {
-        BugFilterButton(isSelected: $viewModel.alphabeticalOrder,
+        BugFilterButtons(isSelected: $viewModel.alphabeticalOrder,
                      color: Colors.green100,
                      buttonText: "Nom")
         .onTapGesture(perform: {
@@ -48,7 +48,7 @@ struct BugCategory: View {
           }
         })
 
-        BugFilterButton(isSelected: $viewModel.decreasingPrice,
+        BugFilterButtons(isSelected: $viewModel.decreasingPrice,
                      color: Colors.green100,
                      buttonText: "Prix + -")
         .onTapGesture(perform: {
@@ -63,7 +63,7 @@ struct BugCategory: View {
           }
         })
 
-        BugFilterButton(isSelected: $viewModel.increasingPrice,
+        BugFilterButtons(isSelected: $viewModel.increasingPrice,
                      color: Colors.green100,
                      buttonText: "Prix - +")
         .onTapGesture(perform: {
@@ -78,7 +78,7 @@ struct BugCategory: View {
           }
         })
 
-        BugFilterButton(isSelected: $viewModel.noFilter,
+        BugFilterButtons(isSelected: $viewModel.noFilter,
                      color: Colors.green100,
                      buttonText: "🧽")
         .onTapGesture(perform: {

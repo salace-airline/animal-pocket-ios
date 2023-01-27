@@ -29,14 +29,14 @@ final class SeaCreatureViewModel: ObservableObject {
 
 // Price filters
 extension SeaCreatureViewModel {
-  var sortedDecreasingPrice: [SeaCreature] {
-    seaArray.sorted(by: {
+  func decreasePrice(of sea: [SeaCreature]) -> [SeaCreature] {
+    sea.sorted(by: {
       $0.price > $1.price
     })
   }
   
-  var sortedIncreasingPrice: [SeaCreature] {
-    seaArray.sorted(by: {
+  func increasePrice(of sea: [SeaCreature]) -> [SeaCreature] {
+    sea.sorted(by: {
       $0.price < $1.price
     })
   }
@@ -44,8 +44,8 @@ extension SeaCreatureViewModel {
 
 // Alphabetical filter
 extension SeaCreatureViewModel {
-  var sortedAlphabetically: [SeaCreature] {
-    seaArray.sorted(by: {
+  func sortAlphabetically(_ sea: [SeaCreature]) -> [SeaCreature] {
+    sea.sorted(by: {
       $0.name.nameEUfr < $1.name.nameEUfr
     })
   }
