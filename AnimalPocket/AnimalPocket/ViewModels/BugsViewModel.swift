@@ -27,6 +27,7 @@ final class BugsViewModel: ObservableObject {
   }
 }
 
+// Price filters
 extension BugsViewModel {
   var sortedDecreasingPrice: [Bug] {
     bugsArray.sorted(by: {
@@ -39,38 +40,24 @@ extension BugsViewModel {
       $0.price < $1.price
     })
   }
-  
+}
+
+// Alphabetical filter
+extension BugsViewModel {
   var sortedAlphabetically: [Bug] {
-    bugsArray.sorted(by: {
-      $0.name.nameEUfr < $1.name.nameEUfr 
-    })
-  }
-  
-  var itemSortedAlphabetically: [Bug] {
     bugsArray.sorted(by: {
       $0.name.nameEUfr < $1.name.nameEUfr
     })
   }
 }
 
+// Month & current filters
 extension BugsViewModel {
   var currentMonthBugs: [Bug] {
-    var currentBugs:[Bug] = []
+    var currentBugs: [Bug] = []
     for bug in bugsArray {
       for month in bug.availability.monthArrayNorthern {
         if month == bug.availability.currentMonth {
-          currentBugs.append(bug)
-        }
-      }
-    }
-    return currentBugs
-  }
-  
-  var currentTimeBugs: [Bug] {
-    var currentBugs: [Bug] = []
-    for bug in bugsArray {
-      for time in bug.availability.timeArray {
-        if time == bug.availability.currentTime {
           currentBugs.append(bug)
         }
       }

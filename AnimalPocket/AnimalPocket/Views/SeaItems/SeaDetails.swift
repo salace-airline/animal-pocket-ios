@@ -27,7 +27,7 @@ struct SeaDetails: View {
           Text("Période:")
             .foregroundColor(Colors.blue200)
             .bold()
-          Text(self.sea.period)
+          Text(self.sea.seaCreatureAvailability.period)
         }
         
         HStack {

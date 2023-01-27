@@ -27,6 +27,7 @@ final class FishViewModel: ObservableObject {
   }
 }
 
+// Price filters
 extension FishViewModel {
   var sortedDecreasingPrice: [Fish] {
     fishArray.sorted(by: {
@@ -39,10 +40,44 @@ extension FishViewModel {
       $0.price < $1.price
     })
   }
-  
+}
+
+// Alphabetical filter
+extension FishViewModel {
   var sortedAlphabetically: [Fish] {
     fishArray.sorted(by: {
       $0.name.nameEUfr < $1.name.nameEUfr
     })
+  }
+}
+
+// Month & current filters
+extension FishViewModel {
+  var currentMonthFish: [Fish] {
+    var currentFish: [Fish] = []
+    for fish in fishArray {
+      for month in fish.availability.monthArrayNorthern {
+        if month == fish.availability.currentMonth {
+          currentFish.append(fish)
+        }
+      }
+    }
+    return currentFish
+  }
+  
+  var currentlyAvailable: [Fish] {
+    var currentFish: [Fish] = []
+    for fish in fishArray {
+      for time in fish.availability.timeArray {
+        if time == fish.availability.currentTime {
+          for month in fish.availability.monthArrayNorthern {
+            if month == fish.availability.currentMonth {
+              currentFish.append(fish)
+            }
+          }
+        }
+      }
+    }
+    return currentFish
   }
 }
