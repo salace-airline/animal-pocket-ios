@@ -44,8 +44,8 @@ extension BugsViewModel {
 
 // Alphabetical filter
 extension BugsViewModel {
-  func sortAlphabetically(bugs: [Bug]) -> [Bug] {
-    bugs.sorted(by: {
+  func sortAlphabetically(_ bugs: [Bug]) -> [Bug] {
+     bugs.sorted(by: {
       $0.name.nameEUfr < $1.name.nameEUfr
     })
   }

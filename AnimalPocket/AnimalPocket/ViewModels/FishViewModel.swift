@@ -44,7 +44,7 @@ extension FishViewModel {
 
 // Alphabetical filter
 extension FishViewModel {
-  func sortAlphabetically(fish: [Fish]) -> [Fish] {
+  func sortAlphabetically(_ fish: [Fish]) -> [Fish] {
     fish.sorted(by: {
       $0.name.nameEUfr < $1.name.nameEUfr
     })

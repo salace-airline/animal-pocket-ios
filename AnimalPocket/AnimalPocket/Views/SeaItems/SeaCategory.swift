@@ -31,11 +31,23 @@ struct SeaCategory: View {
         case .alphatically:
           loadedSea(sea: viewModel.sortAlphabetically(viewModel.seaArray))
       }
+    }
+  }
+    
+  func loadedSea(sea: [SeaCreature]) -> some View {
+    NavigationStack {
+      ScrollView(.vertical) {
+        LazyVGrid(columns: columns) {
+          ForEach(sea) { sea in
+            SeaDetails(sea: sea)
+          }
+        }
+      }
       
       HStack {
         SeaFilterButton(isSelected: $viewModel.alphabeticalOrder,
-                         color: Colors.blueDark,
-                         buttonText: "Nom")
+                        color: Colors.blueDark,
+                        buttonText: "Nom")
         .onTapGesture(perform: {
           viewModel.alphabeticalOrder.toggle()
           viewModel.filter = .alphatically
@@ -49,8 +61,8 @@ struct SeaCategory: View {
         })
         
         SeaFilterButton(isSelected: $viewModel.decreasingPrice,
-                         color: Colors.blueDark,
-                         buttonText: "Prix + -")
+                        color: Colors.blueDark,
+                        buttonText: "Prix + -")
         .onTapGesture(perform: {
           viewModel.decreasingPrice.toggle()
           viewModel.filter = .decreasingPrice
@@ -64,8 +76,8 @@ struct SeaCategory: View {
         })
         
         SeaFilterButton(isSelected: $viewModel.increasingPrice,
-                         color: Colors.blueDark,
-                         buttonText: "Prix - +")
+                        color: Colors.blueDark,
+                        buttonText: "Prix - +")
         .onTapGesture(perform: {
           viewModel.increasingPrice.toggle()
           viewModel.filter = .increasingPrice
@@ -79,8 +91,8 @@ struct SeaCategory: View {
         })
         
         SeaFilterButton(isSelected: $viewModel.noFilter,
-                         color: Colors.blueDark,
-                         buttonText: "🧽")
+                        color: Colors.blueDark,
+                        buttonText: "🧽")
         .onTapGesture(perform: {
           viewModel.noFilter.toggle()
           viewModel.filter = .noFilter
@@ -94,21 +106,9 @@ struct SeaCategory: View {
         })
       }
     }
-  }
-    
-  func loadedSea(sea: [SeaCreature]) -> some View {
-    NavigationStack {
-      ScrollView(.vertical) {
-        LazyVGrid(columns: columns) {
-          ForEach(sea) { sea in
-            SeaDetails(sea: sea)
-          }
-        }
-      }
-      .onAppear(perform: {
-        viewModel.loadSeaCreature()
-      })
-    }
+    .onAppear(perform: {
+      viewModel.loadSeaCreature()
+    })
   }
 }
 

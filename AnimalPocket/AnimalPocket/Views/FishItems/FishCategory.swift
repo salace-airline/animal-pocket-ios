@@ -29,69 +29,7 @@ struct FishCategory: View {
         case .decreasingPrice:
           loadedFish(fish: viewModel.decreasePrice(of: viewModel.fishArray))
         case .alphatically:
-          loadedFish(fish: viewModel.sortAlphabetically(fish: viewModel.fishArray))
-      }
-      
-      HStack {
-        FishFilterButton(isSelected: $viewModel.alphabeticalOrder,
-                     color: Colors.blue100,
-                     buttonText: "Nom")
-        .onTapGesture(perform: {
-          viewModel.alphabeticalOrder.toggle()
-          viewModel.filter = .alphatically
-          viewModel.alphabeticalOrder = true
-          
-          if viewModel.alphabeticalOrder {
-            viewModel.increasingPrice = false
-            viewModel.decreasingPrice = false
-            viewModel.noFilter = false
-          }
-        })
-        
-        FishFilterButton(isSelected: $viewModel.decreasingPrice,
-                     color: Colors.blue100,
-                     buttonText: "Prix + -")
-        .onTapGesture(perform: {
-          viewModel.decreasingPrice.toggle()
-          viewModel.filter = .decreasingPrice
-          viewModel.decreasingPrice = true
-          
-          if viewModel.decreasingPrice {
-            viewModel.alphabeticalOrder = false
-            viewModel.increasingPrice = false
-            viewModel.noFilter = false
-          }
-        })
-        
-        FishFilterButton(isSelected: $viewModel.increasingPrice,
-                     color: Colors.blue100,
-                     buttonText: "Prix - +")
-        .onTapGesture(perform: {
-          viewModel.increasingPrice.toggle()
-          viewModel.filter = .increasingPrice
-          viewModel.increasingPrice = true
-          
-          if viewModel.increasingPrice {
-            viewModel.alphabeticalOrder = false
-            viewModel.decreasingPrice = false
-            viewModel.noFilter = false
-          }
-        })
-        
-        FishFilterButton(isSelected: $viewModel.noFilter,
-                     color: Colors.blue100,
-                     buttonText: "🧽")
-        .onTapGesture(perform: {
-          viewModel.noFilter.toggle()
-          viewModel.filter = .noFilter
-          viewModel.noFilter = true
-          
-          if viewModel.noFilter {
-            viewModel.alphabeticalOrder = false
-            viewModel.increasingPrice = false
-            viewModel.decreasingPrice = false
-          }
-        })
+          loadedFish(fish: viewModel.sortAlphabetically(viewModel.fishArray))
       }
     }
   }
@@ -105,10 +43,72 @@ struct FishCategory: View {
           }
         }
       }
-      .onAppear(perform: {
-        viewModel.loadFish()
-      })
+      
+      HStack {
+        FishFilterButton(isSelected: $viewModel.alphabeticalOrder,
+                         color: Colors.blue100,
+                         buttonText: "Nom")
+        .onTapGesture(perform: {
+          viewModel.alphabeticalOrder.toggle()
+          viewModel.filter = .alphatically
+          viewModel.alphabeticalOrder = true
+          
+          if viewModel.alphabeticalOrder {
+            viewModel.increasingPrice = false
+            viewModel.decreasingPrice = false
+            viewModel.noFilter = false
+          }
+        })
+        
+        FishFilterButton(isSelected: $viewModel.decreasingPrice,
+                         color: Colors.blue100,
+                         buttonText: "Prix + -")
+        .onTapGesture(perform: {
+          viewModel.decreasingPrice.toggle()
+          viewModel.filter = .decreasingPrice
+          viewModel.decreasingPrice = true
+          
+          if viewModel.decreasingPrice {
+            viewModel.alphabeticalOrder = false
+            viewModel.increasingPrice = false
+            viewModel.noFilter = false
+          }
+        })
+        
+        FishFilterButton(isSelected: $viewModel.increasingPrice,
+                         color: Colors.blue100,
+                         buttonText: "Prix - +")
+        .onTapGesture(perform: {
+          viewModel.increasingPrice.toggle()
+          viewModel.filter = .increasingPrice
+          viewModel.increasingPrice = true
+          
+          if viewModel.increasingPrice {
+            viewModel.alphabeticalOrder = false
+            viewModel.decreasingPrice = false
+            viewModel.noFilter = false
+          }
+        })
+        
+        FishFilterButton(isSelected: $viewModel.noFilter,
+                         color: Colors.blue100,
+                         buttonText: "🧽")
+        .onTapGesture(perform: {
+          viewModel.noFilter.toggle()
+          viewModel.filter = .noFilter
+          viewModel.noFilter = true
+          
+          if viewModel.noFilter {
+            viewModel.alphabeticalOrder = false
+            viewModel.increasingPrice = false
+            viewModel.decreasingPrice = false
+          }
+        })
+      }
     }
+    .onAppear(perform: {
+      viewModel.loadFish()
+    })
   }
 }
 
