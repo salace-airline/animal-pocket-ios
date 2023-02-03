@@ -20,37 +20,43 @@ struct BugCategory: View {
         .font(.subheadline)
       
       ScrollView {
-        Toggle(isOn: $showCurrentBugs, label: {
-          Text("En ce moment")
-            .font(.custom("FinkHeavy", size: 20))
-            .font(.subheadline)
-        })
-        .toggleStyle(MinusToggleStyle())
-        
-        if showCurrentBugs {
-          CurrentBugs()
+        LazyVStack {
+          Toggle(isOn: $showCurrentBugs, label: {
+            Text("En ce moment")
+              .font(.custom("FinkHeavy", size: 20))
+              .font(.subheadline)
+          })
+          .toggleStyle(MinusToggleStyle())
+          
+          if showCurrentBugs {
+            CurrentBugs()
+          }
         }
         
-        Toggle(isOn: $showBugsOfTheMonth, label: {
-          Text("Ce mois-ci")
-            .font(.custom("FinkHeavy", size: 20))
-            .font(.subheadline)
-        })
-        .toggleStyle(MinusToggleStyle())
-        
-        if showBugsOfTheMonth {
-          BugsOfTheMonth()
+        LazyVStack {
+          Toggle(isOn: $showBugsOfTheMonth, label: {
+            Text("Ce mois-ci")
+              .font(.custom("FinkHeavy", size: 20))
+              .font(.subheadline)
+          })
+          .toggleStyle(MinusToggleStyle())
+          
+          if showBugsOfTheMonth {
+            BugsOfTheMonth()
+          }
         }
         
-        Toggle(isOn: $showAllBugs, label: {
-          Text("Tous les Insectes")
-            .font(.custom("FinkHeavy", size: 20))
-            .font(.subheadline)
-        })
-        .toggleStyle(MinusToggleStyle())
-        
-        if showAllBugs {
-          AllBugs()
+        LazyVStack {
+          Toggle(isOn: $showAllBugs, label: {
+            Text("Tous les Insectes")
+              .font(.custom("FinkHeavy", size: 20))
+              .font(.subheadline)
+          })
+          .toggleStyle(MinusToggleStyle())
+          
+          if showAllBugs {
+            AllBugs()
+          }
         }
       }
     }

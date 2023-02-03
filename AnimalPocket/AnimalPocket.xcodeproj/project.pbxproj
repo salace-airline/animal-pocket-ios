@@ -48,6 +48,7 @@
 		00CFC9EE2931014500A291DB /* Availability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CFC9EB2931014500A291DB /* Availability.swift */; };
 		00CFC9F22931016100A291DB /* BugsNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CFC9F12931016100A291DB /* BugsNetworkService.swift */; };
 		00DCEADE298D16D2001D7AF4 /* MinusToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DCEADD298D16D2001D7AF4 /* MinusToggleStyle.swift */; };
+		00DCEAE2298D25EC001D7AF4 /* BugButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DCEAE1298D25EC001D7AF4 /* BugButtons.swift */; };
 		101AF9E6290BBD9100855FA6 /* AnimalPocketApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101AF9E5290BBD9100855FA6 /* AnimalPocketApp.swift */; };
 		101AF9EA290BBD9200855FA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 101AF9E9290BBD9200855FA6 /* Assets.xcassets */; };
 		101AF9ED290BBD9200855FA6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 101AF9EC290BBD9200855FA6 /* Preview Assets.xcassets */; };
@@ -115,6 +116,7 @@
 		00CFC9EB2931014500A291DB /* Availability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Availability.swift; sourceTree = "<group>"; };
 		00CFC9F12931016100A291DB /* BugsNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BugsNetworkService.swift; sourceTree = "<group>"; };
 		00DCEADD298D16D2001D7AF4 /* MinusToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinusToggleStyle.swift; sourceTree = "<group>"; };
+		00DCEAE1298D25EC001D7AF4 /* BugButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugButtons.swift; sourceTree = "<group>"; };
 		00F790F4295B0101004E4B02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		101AF9E2290BBD9100855FA6 /* AnimalPocket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimalPocket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		101AF9E5290BBD9100855FA6 /* AnimalPocketApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalPocketApp.swift; sourceTree = "<group>"; };
@@ -163,9 +165,9 @@
 		004A258C290BD9A3009281E4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				004A258E290BDB17009281E4 /* HomePage.swift */,
 				005DF1E829488DCC00F964CE /* SeaItems */,
 				005DF1E12948805C00F964CE /* BugItems */,
-				004A258E290BDB17009281E4 /* HomePage.swift */,
 				004A2599290BDC42009281E4 /* Helpers */,
 				004A2590290BDB63009281E4 /* FishItems */,
 			);
@@ -234,14 +236,12 @@
 		005DF1E12948805C00F964CE /* BugItems */ = {
 			isa = PBXGroup;
 			children = (
-				005DF1E62948825900F964CE /* BugDetails.swift */,
-				005DF1E22948807100F964CE /* BugImage.swift */,
-				005DF1E4294881FD00F964CE /* BugRow.swift */,
-				0083A5B3295C533600007ED4 /* AllBugs.swift */,
-				0083A5DA298422AE00007ED4 /* BugFilterButtons.swift */,
 				0083A5DC2984301E00007ED4 /* BugCategory.swift */,
-				0083A5DE2984308900007ED4 /* BugsOfTheMonth.swift */,
-				0083A5E02984321A00007ED4 /* CurrentBugs.swift */,
+				00DCEAE0298D2572001D7AF4 /* BugDetails */,
+				00DCEADF298D2547001D7AF4 /* FilteredBugs */,
+				005DF1E4294881FD00F964CE /* BugRow.swift */,
+				0083A5DA298422AE00007ED4 /* BugFilterButtons.swift */,
+				00DCEAE1298D25EC001D7AF4 /* BugButtons.swift */,
 			);
 			path = BugItems;
 			sourceTree = "<group>";
@@ -274,6 +274,25 @@
 				005DF1D929437F1E00F964CE /* SeaCreatureNetworkService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		00DCEADF298D2547001D7AF4 /* FilteredBugs */ = {
+			isa = PBXGroup;
+			children = (
+				0083A5DE2984308900007ED4 /* BugsOfTheMonth.swift */,
+				0083A5E02984321A00007ED4 /* CurrentBugs.swift */,
+				0083A5B3295C533600007ED4 /* AllBugs.swift */,
+			);
+			path = FilteredBugs;
+			sourceTree = "<group>";
+		};
+		00DCEAE0298D2572001D7AF4 /* BugDetails */ = {
+			isa = PBXGroup;
+			children = (
+				005DF1E22948807100F964CE /* BugImage.swift */,
+				005DF1E62948825900F964CE /* BugDetails.swift */,
+			);
+			path = BugDetails;
 			sourceTree = "<group>";
 		};
 		101AF9D9290BBD9100855FA6 = {
@@ -499,6 +518,7 @@
 				0083A5D1297AD0D700007ED4 /* FishFilterButton.swift in Sources */,
 				005DF1D22943795000F964CE /* SeaCreature.swift in Sources */,
 				005DF1E32948807100F964CE /* BugImage.swift in Sources */,
+				00DCEAE2298D25EC001D7AF4 /* BugButtons.swift in Sources */,
 				005DF1D629437AF100F964CE /* SeaCreatureAvailability.swift in Sources */,
 				0083A5C0295DEC4700007ED4 /* RarityViewModel.swift in Sources */,
 				101AF9E6290BBD9100855FA6 /* AnimalPocketApp.swift in Sources */,
