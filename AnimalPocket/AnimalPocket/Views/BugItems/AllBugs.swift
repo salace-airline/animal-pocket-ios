@@ -10,9 +10,9 @@ import SwiftUI
 struct AllBugs: View {
   @ObservedObject var viewModel = BugsViewModel()
     
-  var items: [GridItem] {
-    Array(repeating: .init(.adaptive(minimum: 120)), count: 2)
-  }
+  let columns = [
+    GridItem(.adaptive(minimum: 160))
+  ]
   
   var body: some View {
     NavigationStack {      
@@ -94,7 +94,7 @@ struct AllBugs: View {
       }
       
       ScrollView(.vertical) {
-        LazyVGrid(columns: items, spacing: 10) {
+        LazyVGrid(columns: columns, spacing: 10) {
           ForEach(bugs) { bug in
             BugDetails(bug: bug)
           }
