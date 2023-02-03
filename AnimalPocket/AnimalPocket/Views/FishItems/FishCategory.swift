@@ -9,11 +9,9 @@ import SwiftUI
 
 struct FishCategory: View {
   @ObservedObject var viewModel = FishViewModel()
-  
-  let columns = [
-    GridItem(),
-    GridItem()
-  ]
+  @State private var showCurrentFish = true
+  @State private var showFishOfTheMonth = true
+  @State private var showAllFish = true
   
   var body: some View {
     NavigationStack {
@@ -21,94 +19,47 @@ struct FishCategory: View {
         .font(.custom("FinkHeavy", size: 20))
         .font(.subheadline)
       
-      switch viewModel.filter {
-        case .noFilter:
-          loadedFish(fish: viewModel.fishArray)
-        case .increasingPrice:
-          loadedFish(fish: viewModel.increasePrice(of: viewModel.fishArray))
-        case .decreasingPrice:
-          loadedFish(fish: viewModel.decreasePrice(of: viewModel.fishArray))
-        case .alphatically:
-          loadedFish(fish: viewModel.sortAlphabetically(viewModel.fishArray))
-      }
-    }
-  }
-
-  func loadedFish(fish: [Fish]) -> some View {
-    NavigationStack {
-      ScrollView(.vertical) {
-        LazyVGrid(columns: columns) {
-          ForEach(fish) { fish in
-            FishDetails(fish: fish)
+      ScrollView {
+        LazyVStack {
+          Toggle(isOn: $showCurrentFish, label: {
+            Text("En ce moment")
+              .font(.custom("FinkHeavy", size: 20))
+              .font(.subheadline)
+          })
+          .toggleStyle(MinusToggleStyle())
+          
+          if showCurrentFish {
+            CurrentFish()
+          }
+        }
+        
+        LazyVStack {
+          Toggle(isOn: $showFishOfTheMonth, label: {
+            Text("Ce mois-ci")
+              .font(.custom("FinkHeavy", size: 20))
+              .font(.subheadline)
+          })
+          .toggleStyle(MinusToggleStyle())
+          
+          if showFishOfTheMonth {
+            FishOfTheMonth()
+          }
+        }
+        
+        LazyVStack {
+          Toggle(isOn: $showAllFish, label: {
+            Text("Tous les Poissons")
+              .font(.custom("FinkHeavy", size: 20))
+              .font(.subheadline)
+          })
+          .toggleStyle(MinusToggleStyle())
+          
+          if showAllFish {
+            AllFish()
           }
         }
       }
-      
-      HStack {
-        FishFilterButton(isSelected: $viewModel.alphabeticalOrder,
-                         color: Colors.blue100,
-                         buttonText: "Nom")
-        .onTapGesture(perform: {
-          viewModel.alphabeticalOrder.toggle()
-          viewModel.filter = .alphatically
-          viewModel.alphabeticalOrder = true
-          
-          if viewModel.alphabeticalOrder {
-            viewModel.increasingPrice = false
-            viewModel.decreasingPrice = false
-            viewModel.noFilter = false
-          }
-        })
-        
-        FishFilterButton(isSelected: $viewModel.decreasingPrice,
-                         color: Colors.blue100,
-                         buttonText: "Prix + -")
-        .onTapGesture(perform: {
-          viewModel.decreasingPrice.toggle()
-          viewModel.filter = .decreasingPrice
-          viewModel.decreasingPrice = true
-          
-          if viewModel.decreasingPrice {
-            viewModel.alphabeticalOrder = false
-            viewModel.increasingPrice = false
-            viewModel.noFilter = false
-          }
-        })
-        
-        FishFilterButton(isSelected: $viewModel.increasingPrice,
-                         color: Colors.blue100,
-                         buttonText: "Prix - +")
-        .onTapGesture(perform: {
-          viewModel.increasingPrice.toggle()
-          viewModel.filter = .increasingPrice
-          viewModel.increasingPrice = true
-          
-          if viewModel.increasingPrice {
-            viewModel.alphabeticalOrder = false
-            viewModel.decreasingPrice = false
-            viewModel.noFilter = false
-          }
-        })
-        
-        FishFilterButton(isSelected: $viewModel.noFilter,
-                         color: Colors.blue100,
-                         buttonText: "🧽")
-        .onTapGesture(perform: {
-          viewModel.noFilter.toggle()
-          viewModel.filter = .noFilter
-          viewModel.noFilter = true
-          
-          if viewModel.noFilter {
-            viewModel.alphabeticalOrder = false
-            viewModel.increasingPrice = false
-            viewModel.decreasingPrice = false
-          }
-        })
-      }
     }
-    .onAppear(perform: {
-      viewModel.loadFish()
-    })
   }
 }
 

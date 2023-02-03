@@ -1,5 +1,5 @@
 //
-//  BugButtons.swift
+//  SeaButtons.swift
 //  AnimalPocket
 //
 //  Created by Sarah Watremet on 03/02/2023.
@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct BugButtons: View {
-  @ObservedObject var viewModel: BugsViewModel
+struct SeaButtons: View {
+  @ObservedObject var viewModel: SeaCreatureViewModel
   
   var body: some View {
     HStack {
-      BugFilterButtons(isSelected: $viewModel.alphabeticalOrder,
-                       color: Colors.green100,
-                       buttonText: "Nom")
+      SeaFilterButton(isSelected: $viewModel.alphabeticalOrder,
+                      color: Colors.blueDark,
+                      buttonText: "Nom")
       .onTapGesture(perform: {
         viewModel.alphabeticalOrder.toggle()
         viewModel.filter = .alphatically
@@ -27,9 +27,9 @@ struct BugButtons: View {
         }
       })
       
-      BugFilterButtons(isSelected: $viewModel.decreasingPrice,
-                       color: Colors.green100,
-                       buttonText: "Prix + -")
+      SeaFilterButton(isSelected: $viewModel.decreasingPrice,
+                      color: Colors.blueDark,
+                      buttonText: "Prix + -")
       .onTapGesture(perform: {
         viewModel.decreasingPrice.toggle()
         viewModel.filter = .decreasingPrice
@@ -42,9 +42,9 @@ struct BugButtons: View {
         }
       })
       
-      BugFilterButtons(isSelected: $viewModel.increasingPrice,
-                       color: Colors.green100,
-                       buttonText: "Prix - +")
+      SeaFilterButton(isSelected: $viewModel.increasingPrice,
+                      color: Colors.blueDark,
+                      buttonText: "Prix - +")
       .onTapGesture(perform: {
         viewModel.increasingPrice.toggle()
         viewModel.filter = .increasingPrice
@@ -57,9 +57,9 @@ struct BugButtons: View {
         }
       })
       
-      BugFilterButtons(isSelected: $viewModel.noFilter,
-                       color: Colors.green100,
-                       buttonText: "🧽")
+      SeaFilterButton(isSelected: $viewModel.noFilter,
+                      color: Colors.blueDark,
+                      buttonText: "🧽")
       .onTapGesture(perform: {
         viewModel.noFilter.toggle()
         viewModel.filter = .noFilter
@@ -74,9 +74,3 @@ struct BugButtons: View {
     }
   }
 }
-
-//struct BugButtons_Previews: PreviewProvider {
-//  static var previews: some View {
-//    BugButtons()
-//  }
-//}
