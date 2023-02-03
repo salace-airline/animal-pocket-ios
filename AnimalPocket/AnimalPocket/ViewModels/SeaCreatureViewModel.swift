@@ -27,22 +27,57 @@ final class SeaCreatureViewModel: ObservableObject {
   }
 }
 
+// Price filters
 extension SeaCreatureViewModel {
-  var sortedDecreasingPrice: [SeaCreature] {
-    seaArray.sorted(by: {
+  func decreasePrice(of sea: [SeaCreature]) -> [SeaCreature] {
+    sea.sorted(by: {
       $0.price > $1.price
     })
   }
   
-  var sortedIncreasingPrice: [SeaCreature] {
-    seaArray.sorted(by: {
+  func increasePrice(of sea: [SeaCreature]) -> [SeaCreature] {
+    sea.sorted(by: {
       $0.price < $1.price
     })
   }
-  
-  var sortedAlphabetically: [SeaCreature] {
-    seaArray.sorted(by: {
-      $0.name.nameEUfr < $1.name.nameEUfr 
+}
+
+// Alphabetical filter
+extension SeaCreatureViewModel {
+  func sortAlphabetically(_ sea: [SeaCreature]) -> [SeaCreature] {
+    sea.sorted(by: {
+      $0.name.nameEUfr < $1.name.nameEUfr
     })
+  }
+}
+
+// Month & current filters
+extension SeaCreatureViewModel {
+  var currentMonthSea: [SeaCreature] {
+    var currentSea: [SeaCreature] = []
+    for sea in seaArray {
+      for month in sea.seaCreatureAvailability.monthArrayNorthern {
+        if month == sea.seaCreatureAvailability.currentMonth {
+          currentSea.append(sea)
+        }
+      }
+    }
+    return currentSea
+  }
+  
+  var currentlyAvailable: [SeaCreature] {
+    var currentSea: [SeaCreature] = []
+    for sea in seaArray {
+      for time in sea.seaCreatureAvailability.timeArray {
+        if time == sea.seaCreatureAvailability.currentTime {
+          for month in sea.seaCreatureAvailability.monthArrayNorthern {
+            if month == sea.seaCreatureAvailability.currentMonth {
+              currentSea.append(sea)
+            }
+          }
+        }
+      }
+    }
+    return currentSea
   }
 }

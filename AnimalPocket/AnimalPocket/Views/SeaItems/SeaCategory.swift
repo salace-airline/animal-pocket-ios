@@ -9,11 +9,9 @@ import SwiftUI
 
 struct SeaCategory: View {
   @ObservedObject var viewModel = SeaCreatureViewModel()
-  
-  let columns = [
-    GridItem(),
-    GridItem()
-  ]
+  @State private var showCurrentSeaCreatures = true
+  @State private var showSeaCreaturesOfTheMonth = true
+  @State private var showAllSeaCreatures = true
   
   var body: some View {
     NavigationStack {
@@ -21,93 +19,46 @@ struct SeaCategory: View {
         .font(.custom("FinkHeavy", size: 20))
         .font(.subheadline)
       
-      switch viewModel.filter {
-        case .noFilter:
-          loadedSea(sea: viewModel.seaArray)
-        case .increasingPrice:
-          loadedSea(sea: viewModel.sortedIncreasingPrice)
-        case .decreasingPrice:
-          loadedSea(sea: viewModel.sortedDecreasingPrice)
-        case .alphatically:
-          loadedSea(sea: viewModel.sortedAlphabetically)
-      }
-      
-      HStack {
-        SeaFilterButton(isSelected: $viewModel.alphabeticalOrder,
-                         color: Colors.blueDark,
-                         buttonText: "Nom")
-        .onTapGesture(perform: {
-          viewModel.alphabeticalOrder.toggle()
-          viewModel.filter = .alphatically
-          viewModel.alphabeticalOrder = true
+      ScrollView {
+        LazyVStack {
+          Toggle(isOn: $showCurrentSeaCreatures, label: {
+            Text("En ce moment")
+              .font(.custom("FinkHeavy", size: 20))
+              .font(.subheadline)
+          })
+          .toggleStyle(MinusToggleStyle())
           
-          if viewModel.alphabeticalOrder {
-            viewModel.increasingPrice = false
-            viewModel.decreasingPrice = false
-            viewModel.noFilter = false
+          if showCurrentSeaCreatures {
+            CurrentSeaCreatures()
           }
-        })
+        }
         
-        SeaFilterButton(isSelected: $viewModel.decreasingPrice,
-                         color: Colors.blueDark,
-                         buttonText: "Prix + -")
-        .onTapGesture(perform: {
-          viewModel.decreasingPrice.toggle()
-          viewModel.filter = .decreasingPrice
-          viewModel.decreasingPrice = true
+        LazyVStack {
+          Toggle(isOn: $showSeaCreaturesOfTheMonth, label: {
+            Text("Ce mois-ci")
+              .font(.custom("FinkHeavy", size: 20))
+              .font(.subheadline)
+          })
+          .toggleStyle(MinusToggleStyle())
           
-          if viewModel.decreasingPrice {
-            viewModel.alphabeticalOrder = false
-            viewModel.increasingPrice = false
-            viewModel.noFilter = false
+          if showSeaCreaturesOfTheMonth {
+            SeaCreaturesOfTheMonth()
           }
-        })
+        }
         
-        SeaFilterButton(isSelected: $viewModel.increasingPrice,
-                         color: Colors.blueDark,
-                         buttonText: "Prix - +")
-        .onTapGesture(perform: {
-          viewModel.increasingPrice.toggle()
-          viewModel.filter = .increasingPrice
-          viewModel.increasingPrice = true
+        LazyVStack {
+          Toggle(isOn: $showAllSeaCreatures, label: {
+            Text("Toutes les Créatures Marines")
+              .font(.custom("FinkHeavy", size: 20))
+              .font(.subheadline)
+          })
+          .toggleStyle(MinusToggleStyle())
           
-          if viewModel.increasingPrice {
-            viewModel.alphabeticalOrder = false
-            viewModel.decreasingPrice = false
-            viewModel.noFilter = false
-          }
-        })
-        
-        SeaFilterButton(isSelected: $viewModel.noFilter,
-                         color: Colors.blueDark,
-                         buttonText: "🧽")
-        .onTapGesture(perform: {
-          viewModel.noFilter.toggle()
-          viewModel.filter = .noFilter
-          viewModel.noFilter = true
-          
-          if viewModel.noFilter {
-            viewModel.alphabeticalOrder = false
-            viewModel.increasingPrice = false
-            viewModel.decreasingPrice = false
-          }
-        })
-      }
-    }
-  }
-    
-  func loadedSea(sea: [SeaCreature]) -> some View {
-    NavigationStack {
-      ScrollView(.vertical) {
-        LazyVGrid(columns: columns) {
-          ForEach(sea) { sea in
-            SeaDetails(sea: sea)
+          if showAllSeaCreatures {
+            AllSeaCreatures()
           }
         }
       }
-      .onAppear(perform: {
-        viewModel.loadSeaCreature()
-      })
     }
   }
 }

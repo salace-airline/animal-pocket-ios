@@ -17,7 +17,7 @@ struct SeaRow: View {
   var body: some View {
     ScrollView(.horizontal) {
       LazyHGrid(rows: rows) {
-        ForEach(viewModel.seaArray) { sea in
+        ForEach(viewModel.currentlyAvailable) { sea in
           SeaDetails(sea: sea)
         }
       }

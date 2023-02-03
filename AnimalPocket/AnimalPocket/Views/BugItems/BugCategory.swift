@@ -2,18 +2,16 @@
 //  BugCategory.swift
 //  AnimalPocket
 //
-//  Created by Sarah Watremet on 28/12/2022.
+//  Created by Sarah Watremet on 27/01/2023.
 //
 
 import SwiftUI
 
 struct BugCategory: View {
   @ObservedObject var viewModel = BugsViewModel()
-  
-  let columns = [
-    GridItem(),
-    GridItem()
-  ]
+  @State private var showCurrentBugs = true
+  @State private var showBugsOfTheMonth = true
+  @State private var showAllBugs = true
   
   var body: some View {
     NavigationStack {
@@ -21,99 +19,52 @@ struct BugCategory: View {
         .font(.custom("FinkHeavy", size: 20))
         .font(.subheadline)
       
-      switch viewModel.filter {
-        case .noFilter:
-          loadedBugs(with: viewModel.bugsArray)
-        case .increasingPrice:
-          loadedBugs(with: viewModel.sortedIncreasingPrice)
-        case .decreasingPrice:
-          loadedBugs(with: viewModel.sortedDecreasingPrice)
-        case .alphatically:
-          loadedBugs(with: viewModel.sortedAlphabetically)
-      }
-            
-      HStack {
-        BugFilterButton(isSelected: $viewModel.alphabeticalOrder,
-                     color: Colors.green100,
-                     buttonText: "Nom")
-        .onTapGesture(perform: {
-          viewModel.alphabeticalOrder.toggle()
-          viewModel.filter = .alphatically
-          viewModel.alphabeticalOrder = true
-
-          if viewModel.alphabeticalOrder {
-            viewModel.increasingPrice = false
-            viewModel.decreasingPrice = false
-            viewModel.noFilter = false
+      ScrollView {
+        LazyVStack {
+          Toggle(isOn: $showCurrentBugs, label: {
+            Text("En ce moment")
+              .font(.custom("FinkHeavy", size: 20))
+              .font(.subheadline)
+          })
+          .toggleStyle(MinusToggleStyle())
+          
+          if showCurrentBugs {
+            CurrentBugs()
           }
-        })
-
-        BugFilterButton(isSelected: $viewModel.decreasingPrice,
-                     color: Colors.green100,
-                     buttonText: "Prix + -")
-        .onTapGesture(perform: {
-          viewModel.decreasingPrice.toggle()
-          viewModel.filter = .decreasingPrice
-          viewModel.decreasingPrice = true
-
-          if viewModel.decreasingPrice {
-            viewModel.alphabeticalOrder = false
-            viewModel.increasingPrice = false
-            viewModel.noFilter = false
+        }
+        
+        LazyVStack {
+          Toggle(isOn: $showBugsOfTheMonth, label: {
+            Text("Ce mois-ci")
+              .font(.custom("FinkHeavy", size: 20))
+              .font(.subheadline)
+          })
+          .toggleStyle(MinusToggleStyle())
+          
+          if showBugsOfTheMonth {
+            BugsOfTheMonth()
           }
-        })
-
-        BugFilterButton(isSelected: $viewModel.increasingPrice,
-                     color: Colors.green100,
-                     buttonText: "Prix - +")
-        .onTapGesture(perform: {
-          viewModel.increasingPrice.toggle()
-          viewModel.filter = .increasingPrice
-          viewModel.increasingPrice = true
-
-          if viewModel.increasingPrice {
-            viewModel.alphabeticalOrder = false
-            viewModel.decreasingPrice = false
-            viewModel.noFilter = false
-          }
-        })
-
-        BugFilterButton(isSelected: $viewModel.noFilter,
-                     color: Colors.green100,
-                     buttonText: "🧽")
-        .onTapGesture(perform: {
-          viewModel.noFilter.toggle()
-          viewModel.filter = .noFilter
-          viewModel.noFilter = true
-
-          if viewModel.noFilter {
-            viewModel.alphabeticalOrder = false
-            viewModel.increasingPrice = false
-            viewModel.decreasingPrice = false
-          }
-        })
-      }
-    }
-  }
-  
-  func loadedBugs(with bugs: [Bug]) -> some View {
-    NavigationStack {
-      ScrollView(.vertical) {
-        LazyVGrid(columns: columns) {
-          ForEach(bugs) { bug in
-            BugDetails(bug: bug)
+        }
+        
+        LazyVStack {
+          Toggle(isOn: $showAllBugs, label: {
+            Text("Tous les Insectes")
+              .font(.custom("FinkHeavy", size: 20))
+              .font(.subheadline)
+          })
+          .toggleStyle(MinusToggleStyle())
+          
+          if showAllBugs {
+            AllBugs()
           }
         }
       }
-      .onAppear(perform: {
-        viewModel.loadBugs()
-      })
     }
   }
 }
 
 struct BugCategory_Previews: PreviewProvider {
-    static var previews: some View {
-      BugCategory()
-    }
+  static var previews: some View {
+    BugCategory()
+  }
 }

@@ -27,29 +27,58 @@ final class BugsViewModel: ObservableObject {
   }
 }
 
+// Price filters
 extension BugsViewModel {
-  var sortedDecreasingPrice: [Bug] {
-    bugsArray.sorted(by: {
+  func decreasePrice(of bugs: [Bug]) -> [Bug] {
+    bugs.sorted(by: {
       $0.price > $1.price
     })
   }
  
-  var sortedIncreasingPrice: [Bug] {
-    bugsArray.sorted(by: {
+  func increasePrice(of bugs: [Bug]) -> [Bug] {
+    bugs.sorted(by: {
       $0.price < $1.price
     })
   }
-  
-  var sortedAlphabetically: [Bug] {
-    bugsArray.sorted(by: {
-      $0.name.nameEUfr < $1.name.nameEUfr 
-    })
-  }
-  
-  var itemSortedAlphabetically: [Bug] {
-    bugsArray.sorted(by: {
+}
+
+// Alphabetical filter
+extension BugsViewModel {
+  func sortAlphabetically(_ bugs: [Bug]) -> [Bug] {
+     bugs.sorted(by: {
       $0.name.nameEUfr < $1.name.nameEUfr
     })
+  }
+}
+
+// Month & current filters
+extension BugsViewModel {
+  var currentMonthBugs: [Bug] {
+    var currentBugs: [Bug] = []
+    for bug in bugsArray {
+      for month in bug.availability.monthArrayNorthern {
+        if month == bug.availability.currentMonth {
+          currentBugs.append(bug)
+        }
+      }
+    }
+    return currentBugs
+  }
+
+  var currentlyAvailable: [Bug] {
+    var currentBugs: [Bug] = []
+    for bug in bugsArray {
+      for time in bug.availability.timeArray {
+        if time == bug.availability.currentTime {
+          for month in bug.availability.monthArrayNorthern {
+            if month == bug.availability.currentMonth {
+              currentBugs.append(bug)
+            }
+          }
+        }
+      }
+    }
+    return currentBugs
   }
 }
 

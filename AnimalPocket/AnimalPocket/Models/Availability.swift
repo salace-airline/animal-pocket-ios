@@ -90,3 +90,23 @@ extension Availability {
     return finalMonthString
   }
 }
+
+extension Availability {
+  // returns user's current month in a numeric format
+  var currentMonth: Int? {
+    let currentDate = Date.now
+    let formatter = DateFormatter()
+    formatter.dateFormat = "M"
+    
+    return Int(formatter.string(from: currentDate))
+  }
+  
+  // returns user's current time of the day in a numeric format
+  var currentTime: Int? {
+    let currentTime = Date.now
+    let formatter = DateFormatter()
+    formatter.dateFormat = "HH"
+    
+    return Int(formatter.string(from: currentTime))
+  }
+}
