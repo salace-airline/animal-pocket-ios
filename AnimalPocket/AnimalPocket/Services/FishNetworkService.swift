@@ -20,7 +20,7 @@ enum FishNetworkService {
       throw BugsError.issueWithURL
     }
     let urlRequest = URLRequest(url: url)
-    
+     
     let (data, response) = try await URLSession.shared.data(for: urlRequest)
     
     guard let response = response as? HTTPURLResponse else {

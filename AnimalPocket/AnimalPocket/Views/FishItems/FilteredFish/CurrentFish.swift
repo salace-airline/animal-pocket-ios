@@ -18,7 +18,7 @@ struct CurrentFish: View {
     NavigationStack {
       switch viewModel.filter {
         case .noFilter:
-          loadedFish(fish: viewModel.fishArray)
+          loadedFish(fish: viewModel.currentlyAvailable)
         case .increasingPrice:
           loadedFish(fish: viewModel.increasePrice(of: viewModel.currentlyAvailable))
         case .decreasingPrice:
