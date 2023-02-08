@@ -27,30 +27,6 @@ final class FishViewModel: ObservableObject {
   }
 }
 
-// Price filters
-extension FishViewModel {
-  func decreasePrice(of fish: [Collectible]) -> [Collectible] {
-    fish.sorted(by: {
-      $0.price > $1.price
-    })
-  }
-  
-  func increasePrice(of fish: [Collectible]) -> [Collectible] {
-    fish.sorted(by: {
-      $0.price < $1.price
-    })
-  }
-}
-
-// Alphabetical filter
-extension FishViewModel {
-  func sortAlphabetically(_ fish: [Collectible]) -> [Collectible] {
-    fish.sorted(by: {
-      $0.name.nameEUfr < $1.name.nameEUfr
-    })
-  }
-}
-
 // Month & current filters
 extension FishViewModel {
   var currentMonthFish: [Collectible] {

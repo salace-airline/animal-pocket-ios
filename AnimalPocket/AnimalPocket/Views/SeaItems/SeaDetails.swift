@@ -12,7 +12,7 @@ struct SeaDetails: View {
   
   var body: some View {
     VStack {
-      SeaImage(sea: self.sea)
+      CollectibleImage(item: self.sea, background: "fond_violet")
       
       VStack {
         Text(self.sea.name.nameEUfr)
@@ -69,6 +69,6 @@ struct SeaDetails: View {
 
 struct SeaDetails_Previews: PreviewProvider {
   static var previews: some View {
-    SeaDetails(sea: Collectible.sample)
+    SeaDetails(sea: Collectible.seaSample)
   }
 }

@@ -27,58 +27,35 @@ final class BugsViewModel: ObservableObject {
   }
 }
 
-// Price filters
 extension BugsViewModel {
-  func decreasePrice(of bugs: [Collectible]) -> [Collectible] {
-    bugs.sorted(by: {
-      $0.price > $1.price
-    })
-  }
- 
-  func increasePrice(of bugs: [Collectible]) -> [Collectible] {
-    bugs.sorted(by: {
-      $0.price < $1.price
-    })
-  }
-}
-
-// Alphabetical filter
-extension BugsViewModel {
-  func sortAlphabetically(_ bugs: [Collectible]) -> [Collectible] {
-     bugs.sorted(by: {
-      $0.name.nameEUfr < $1.name.nameEUfr
-    })
-  }
-}
-
-// Month & current filters
-extension BugsViewModel {
-  var currentMonthBugs: [Collectible] {
-    var currentBugs: [Collectible] = []
-    for bug in bugsArray {
-      for month in bug.availability.monthArrayNorthern {
-        if month == bug.availability.currentMonth {
-          currentBugs.append(bug)
+  // Month & current filters
+  var currentMonth: [Collectible] {
+    var currentItems: [Collectible] = []
+    for item in bugsArray {
+      for month in item.availability.monthArrayNorthern {
+        if month == item.availability.currentMonth {
+          currentItems.append(item)
         }
       }
     }
-    return currentBugs
+    return currentItems
   }
-
+  
   var currentlyAvailable: [Collectible] {
-    var currentBugs: [Collectible] = []
-    for bug in bugsArray {
-      for time in bug.availability.timeArray {
-        if time == bug.availability.currentTime {
-          for month in bug.availability.monthArrayNorthern {
-            if month == bug.availability.currentMonth {
-              currentBugs.append(bug)
+    var currentItems: [Collectible] = []
+    for item in bugsArray {
+      for time in item.availability.timeArray {
+        if time == item.availability.currentTime {
+          for month in item.availability.monthArrayNorthern {
+            if month == item.availability.currentMonth {
+              currentItems.append(item)
             }
           }
         }
       }
     }
-    return currentBugs
+    return currentItems
   }
 }
+
 

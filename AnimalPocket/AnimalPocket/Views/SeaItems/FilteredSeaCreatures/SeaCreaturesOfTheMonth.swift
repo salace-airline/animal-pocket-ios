@@ -20,11 +20,11 @@ struct SeaCreaturesOfTheMonth: View {
         case .noFilter:
           loadedSea(sea: viewModel.currentMonthSea)
         case .increasingPrice:
-          loadedSea(sea: viewModel.increasePrice(of: viewModel.currentMonthSea))
+          loadedSea(sea: viewModel.filter.increasePrice(of: viewModel.currentMonthSea))
         case .decreasingPrice:
-          loadedSea(sea: viewModel.decreasePrice(of: viewModel.currentMonthSea))
+          loadedSea(sea: viewModel.filter.decreasePrice(of: viewModel.currentMonthSea))
         case .alphatically:
-          loadedSea(sea: viewModel.sortAlphabetically(viewModel.currentMonthSea))
+          loadedSea(sea: viewModel.filter.sortAlphabetically(viewModel.currentMonthSea))
       }
     }
   }

@@ -20,11 +20,11 @@ struct CurrentSeaCreatures: View {
         case .noFilter:
           loadedSea(sea: viewModel.currentlyAvailable)
         case .increasingPrice:
-          loadedSea(sea: viewModel.increasePrice(of: viewModel.currentlyAvailable))
+          loadedSea(sea: viewModel.filter.increasePrice(of: viewModel.currentlyAvailable))
         case .decreasingPrice:
-          loadedSea(sea: viewModel.decreasePrice(of: viewModel.currentlyAvailable))
+          loadedSea(sea: viewModel.filter.decreasePrice(of: viewModel.currentlyAvailable))
         case .alphatically:
-          loadedSea(sea: viewModel.sortAlphabetically(viewModel.currentlyAvailable))
+          loadedSea(sea: viewModel.filter.sortAlphabetically(viewModel.currentlyAvailable))
       }
     }
   }

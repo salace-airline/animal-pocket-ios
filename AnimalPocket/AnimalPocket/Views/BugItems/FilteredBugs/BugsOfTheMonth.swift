@@ -18,13 +18,13 @@ struct BugsOfTheMonth: View {
     NavigationStack {
       switch viewModel.filter {
         case .noFilter:
-          loadedBugs(with: viewModel.currentMonthBugs)
+          loadedBugs(with: viewModel.currentMonth)
         case .increasingPrice:
-          loadedBugs(with: viewModel.increasePrice(of: viewModel.currentMonthBugs))
+          loadedBugs(with: viewModel.filter.increasePrice(of: viewModel.currentMonth))
         case .decreasingPrice:
-          loadedBugs(with: viewModel.decreasePrice(of: viewModel.currentMonthBugs))
+          loadedBugs(with: viewModel.filter.decreasePrice(of: viewModel.currentMonth))
         case .alphatically:
-          loadedBugs(with: viewModel.sortAlphabetically(viewModel.currentMonthBugs))
+          loadedBugs(with: viewModel.filter.sortAlphabetically(viewModel.currentMonth))
       }
     }
   }

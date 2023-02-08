@@ -12,7 +12,7 @@ struct FishDetails: View {
   
   var body: some View {
       VStack {
-        FishImage(fish: self.fish)
+        CollectibleImage(item: self.fish, background: "fond_bleu")
 
         VStack {
           Text(self.fish.name.nameEUfr)
@@ -71,6 +71,6 @@ struct FishDetails: View {
 
 struct GridItem_Previews: PreviewProvider {
     static var previews: some View {
-      FishDetails(fish: Collectible.sample)
+      FishDetails(fish: Collectible.fishSample)
     }
 }

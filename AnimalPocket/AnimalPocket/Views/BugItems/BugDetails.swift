@@ -12,7 +12,7 @@ struct BugDetails: View {
   
   var body: some View {
     VStack {
-      BugImage(bug: self.bug)
+      CollectibleImage(item: self.bug, background: "fond")
       
       VStack {
         Text(self.bug.name.nameEUfr)
@@ -64,6 +64,6 @@ struct BugDetails: View {
 
 struct BugDetails_Previews: PreviewProvider {
   static var previews: some View {
-    BugDetails(bug: Collectible.sample)
+    BugDetails(bug: Collectible.bugSample)
   }
 }

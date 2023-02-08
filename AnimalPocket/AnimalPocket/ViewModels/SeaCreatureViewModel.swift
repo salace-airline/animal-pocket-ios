@@ -20,34 +20,11 @@ final class SeaCreatureViewModel: ObservableObject {
       do {
         let response = try await CollectibleNetworkService.fetchCollectibles(path: "sea")
         self.seaArray = response
+        print(response[39])
       } catch {
         print("Error", error)
       }
     }
-  }
-}
-
-// Price filters
-extension SeaCreatureViewModel {
-  func decreasePrice(of sea: [Collectible]) -> [Collectible] {
-    sea.sorted(by: {
-      $0.price > $1.price
-    })
-  }
-  
-  func increasePrice(of sea: [Collectible]) -> [Collectible] {
-    sea.sorted(by: {
-      $0.price < $1.price
-    })
-  }
-}
-
-// Alphabetical filter
-extension SeaCreatureViewModel {
-  func sortAlphabetically(_ sea: [Collectible]) -> [Collectible] {
-    sea.sorted(by: {
-      $0.name.nameEUfr < $1.name.nameEUfr
-    })
   }
 }
 
