@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct FishImage: View {
-  var fish: Fish
+  var fish: Collectible
   
   var body: some View {
     AsyncImage(url: URL(string: fish.iconURI)) { image in
@@ -28,6 +28,6 @@ struct FishImage: View {
 
 struct FishImage_Previews: PreviewProvider {
   static var previews: some View {
-    FishImage(fish: Fish.sample)
+    FishImage(fish: Collectible.sample)
   }
 }

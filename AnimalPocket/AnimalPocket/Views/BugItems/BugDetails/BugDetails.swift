@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BugDetails: View {
-  var bug: Bug
+  var bug: Collectible
   
   var body: some View {
     VStack {
@@ -41,7 +41,7 @@ struct BugDetails: View {
           Text("Lieu:")
             .foregroundColor(Colors.green100)
             .bold()
-          Text(self.bug.availability.location)
+          Text(self.bug.availability.location ?? "")
         }
         
         HStack {
@@ -51,7 +51,7 @@ struct BugDetails: View {
           Text("\(self.bug.price) clochettes")
         }
         
-        RarityBadge(rarity: RarityViewModel(rarityLevel: bug.availability.rarity))
+        RarityBadge(rarity: RarityViewModel(rarityLevel: bug.availability.rarity ?? .common))
       }
       .font(.system(size: 11))
       .padding(.bottom, 5)
@@ -64,6 +64,6 @@ struct BugDetails: View {
 
 struct BugDetails_Previews: PreviewProvider {
   static var previews: some View {
-    BugDetails(bug: Bug.sample)
+    BugDetails(bug: Collectible.sample)
   }
 }

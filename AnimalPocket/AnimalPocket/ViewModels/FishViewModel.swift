@@ -8,7 +8,7 @@
 import Foundation
 
 final class FishViewModel: ObservableObject {
-  @Published var fishArray: [Fish] = []
+  @Published var fishArray: [Collectible] = []
   @Published var filter: Filter = .noFilter
   @Published var noFilter = false
   @Published var increasingPrice = false
@@ -18,7 +18,7 @@ final class FishViewModel: ObservableObject {
   @MainActor func loadFish() {
     Task {
       do {
-        let response = try await FishNetworkService.fetchFish()
+        let response = try await CollectibleNetworkService.fetchCollectibles(path: "fish")
         self.fishArray = response
       } catch {
         print("Error", error)
@@ -29,13 +29,13 @@ final class FishViewModel: ObservableObject {
 
 // Price filters
 extension FishViewModel {
-  func decreasePrice(of fish: [Fish]) -> [Fish] {
+  func decreasePrice(of fish: [Collectible]) -> [Collectible] {
     fish.sorted(by: {
       $0.price > $1.price
     })
   }
   
-  func increasePrice(of fish: [Fish]) -> [Fish] {
+  func increasePrice(of fish: [Collectible]) -> [Collectible] {
     fish.sorted(by: {
       $0.price < $1.price
     })
@@ -44,7 +44,7 @@ extension FishViewModel {
 
 // Alphabetical filter
 extension FishViewModel {
-  func sortAlphabetically(_ fish: [Fish]) -> [Fish] {
+  func sortAlphabetically(_ fish: [Collectible]) -> [Collectible] {
     fish.sorted(by: {
       $0.name.nameEUfr < $1.name.nameEUfr
     })
@@ -53,8 +53,8 @@ extension FishViewModel {
 
 // Month & current filters
 extension FishViewModel {
-  var currentMonthFish: [Fish] {
-    var currentFish: [Fish] = []
+  var currentMonthFish: [Collectible] {
+    var currentFish: [Collectible] = []
     for fish in fishArray {
       for month in fish.availability.monthArrayNorthern {
         if month == fish.availability.currentMonth {
@@ -65,8 +65,8 @@ extension FishViewModel {
     return currentFish
   }
   
-  var currentlyAvailable: [Fish] {
-    var currentFish: [Fish] = []
+  var currentlyAvailable: [Collectible] {
+    var currentFish: [Collectible] = []
     for fish in fishArray {
       for time in fish.availability.timeArray {
         if time == fish.availability.currentTime {

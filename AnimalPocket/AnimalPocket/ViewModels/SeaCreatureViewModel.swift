@@ -8,7 +8,7 @@
 import Foundation
 
 final class SeaCreatureViewModel: ObservableObject {
-  @Published var seaArray: [SeaCreature] = []
+  @Published var seaArray: [Collectible] = []
   @Published var filter: Filter = .noFilter
   @Published var noFilter = false
   @Published var increasingPrice = false
@@ -18,7 +18,7 @@ final class SeaCreatureViewModel: ObservableObject {
   @MainActor func loadSeaCreature() {
     Task {
       do {
-        let response = try await SeaCreatureNetworkService.fetchSeaCreature()
+        let response = try await CollectibleNetworkService.fetchCollectibles(path: "sea")
         self.seaArray = response
       } catch {
         print("Error", error)
@@ -29,13 +29,13 @@ final class SeaCreatureViewModel: ObservableObject {
 
 // Price filters
 extension SeaCreatureViewModel {
-  func decreasePrice(of sea: [SeaCreature]) -> [SeaCreature] {
+  func decreasePrice(of sea: [Collectible]) -> [Collectible] {
     sea.sorted(by: {
       $0.price > $1.price
     })
   }
   
-  func increasePrice(of sea: [SeaCreature]) -> [SeaCreature] {
+  func increasePrice(of sea: [Collectible]) -> [Collectible] {
     sea.sorted(by: {
       $0.price < $1.price
     })
@@ -44,7 +44,7 @@ extension SeaCreatureViewModel {
 
 // Alphabetical filter
 extension SeaCreatureViewModel {
-  func sortAlphabetically(_ sea: [SeaCreature]) -> [SeaCreature] {
+  func sortAlphabetically(_ sea: [Collectible]) -> [Collectible] {
     sea.sorted(by: {
       $0.name.nameEUfr < $1.name.nameEUfr
     })
@@ -53,11 +53,11 @@ extension SeaCreatureViewModel {
 
 // Month & current filters
 extension SeaCreatureViewModel {
-  var currentMonthSea: [SeaCreature] {
-    var currentSea: [SeaCreature] = []
+  var currentMonthSea: [Collectible] {
+    var currentSea: [Collectible] = []
     for sea in seaArray {
-      for month in sea.seaCreatureAvailability.monthArrayNorthern {
-        if month == sea.seaCreatureAvailability.currentMonth {
+      for month in sea.availability.monthArrayNorthern {
+        if month == sea.availability.currentMonth {
           currentSea.append(sea)
         }
       }
@@ -65,13 +65,13 @@ extension SeaCreatureViewModel {
     return currentSea
   }
   
-  var currentlyAvailable: [SeaCreature] {
-    var currentSea: [SeaCreature] = []
+  var currentlyAvailable: [Collectible] {
+    var currentSea: [Collectible] = []
     for sea in seaArray {
-      for time in sea.seaCreatureAvailability.timeArray {
-        if time == sea.seaCreatureAvailability.currentTime {
-          for month in sea.seaCreatureAvailability.monthArrayNorthern {
-            if month == sea.seaCreatureAvailability.currentMonth {
+      for time in sea.availability.timeArray {
+        if time == sea.availability.currentTime {
+          for month in sea.availability.monthArrayNorthern {
+            if month == sea.availability.currentMonth {
               currentSea.append(sea)
             }
           }

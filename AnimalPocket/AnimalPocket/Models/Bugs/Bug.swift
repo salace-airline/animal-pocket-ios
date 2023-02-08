@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import SwiftUI
 
 struct Bug: Identifiable {
   let id: Int

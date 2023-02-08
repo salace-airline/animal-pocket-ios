@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BugImage: View {
-  var bug: Bug
+  var bug: Collectible
   
   var body: some View {
     AsyncImage(url: URL(string: bug.iconURI)) { image in
@@ -27,6 +27,6 @@ struct BugImage: View {
 
 struct BugImage_Previews: PreviewProvider {
   static var previews: some View {
-    BugImage(bug: Bug.sample)
+    BugImage(bug: Collectible.sample)
   }
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SeaImage: View {
-  var sea: SeaCreature
+  var sea: Collectible
   
   var body: some View {
     AsyncImage(url: URL(string: sea.iconURI)) { image in
@@ -27,7 +27,7 @@ struct SeaImage: View {
 
 struct SeaImage_Previews: PreviewProvider {
   static var previews: some View {
-    SeaImage(sea: SeaCreature.sample)
+    SeaImage(sea: Collectible.sample)
   }
 }
 

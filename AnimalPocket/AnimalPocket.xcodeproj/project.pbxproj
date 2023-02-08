@@ -47,6 +47,14 @@
 		0083A5E12984321A00007ED4 /* CurrentBugs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0083A5E02984321A00007ED4 /* CurrentBugs.swift */; };
 		00CFC9EE2931014500A291DB /* Availability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CFC9EB2931014500A291DB /* Availability.swift */; };
 		00CFC9F22931016100A291DB /* BugsNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CFC9F12931016100A291DB /* BugsNetworkService.swift */; };
+		00D9B9592993A4FA001B9FF6 /* Collectible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D9B9582993A4FA001B9FF6 /* Collectible.swift */; };
+		00D9B95E2993A98B001B9FF6 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D9B95D2993A98B001B9FF6 /* Request.swift */; };
+		00D9B9602993A9B7001B9FF6 /* URLRequest+Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D9B95F2993A9B7001B9FF6 /* URLRequest+Networking.swift */; };
+		00D9B9622993A9DA001B9FF6 /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D9B9612993A9DA001B9FF6 /* NetworkingError.swift */; };
+		00D9B9642993AB5C001B9FF6 /* CollectibleRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D9B9632993AB5C001B9FF6 /* CollectibleRequest.swift */; };
+		00D9B9672993AD21001B9FF6 /* CategoryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D9B9662993AD21001B9FF6 /* CategoryRequest.swift */; };
+		00D9B96B2993ADE7001B9FF6 /* CollectibleNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D9B96A2993ADE7001B9FF6 /* CollectibleNetworkService.swift */; };
+		00D9B96D2993AE61001B9FF6 /* CollectibleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D9B96C2993AE61001B9FF6 /* CollectibleService.swift */; };
 		00DCEADE298D16D2001D7AF4 /* MinusToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DCEADD298D16D2001D7AF4 /* MinusToggleStyle.swift */; };
 		00DCEAE2298D25EC001D7AF4 /* BugButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DCEAE1298D25EC001D7AF4 /* BugButtons.swift */; };
 		00DCEAE5298D3E3C001D7AF4 /* FishButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DCEAE4298D3E3C001D7AF4 /* FishButtons.swift */; };
@@ -123,6 +131,14 @@
 		0083A5E02984321A00007ED4 /* CurrentBugs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentBugs.swift; sourceTree = "<group>"; };
 		00CFC9EB2931014500A291DB /* Availability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Availability.swift; sourceTree = "<group>"; };
 		00CFC9F12931016100A291DB /* BugsNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BugsNetworkService.swift; sourceTree = "<group>"; };
+		00D9B9582993A4FA001B9FF6 /* Collectible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collectible.swift; sourceTree = "<group>"; };
+		00D9B95D2993A98B001B9FF6 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		00D9B95F2993A9B7001B9FF6 /* URLRequest+Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Networking.swift"; sourceTree = "<group>"; };
+		00D9B9612993A9DA001B9FF6 /* NetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingError.swift; sourceTree = "<group>"; };
+		00D9B9632993AB5C001B9FF6 /* CollectibleRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectibleRequest.swift; sourceTree = "<group>"; };
+		00D9B9662993AD21001B9FF6 /* CategoryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRequest.swift; sourceTree = "<group>"; };
+		00D9B96A2993ADE7001B9FF6 /* CollectibleNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectibleNetworkService.swift; sourceTree = "<group>"; };
+		00D9B96C2993AE61001B9FF6 /* CollectibleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectibleService.swift; sourceTree = "<group>"; };
 		00DCEADD298D16D2001D7AF4 /* MinusToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinusToggleStyle.swift; sourceTree = "<group>"; };
 		00DCEAE1298D25EC001D7AF4 /* BugButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugButtons.swift; sourceTree = "<group>"; };
 		00DCEAE4298D3E3C001D7AF4 /* FishButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishButtons.swift; sourceTree = "<group>"; };
@@ -228,6 +244,7 @@
 		004A259B290BDC61009281E4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				00D9B9582993A4FA001B9FF6 /* Collectible.swift */,
 				00CFC9EB2931014500A291DB /* Availability.swift */,
 				002CB1B529433A480093B974 /* Name.swift */,
 				0083A5BB295DEACB00007ED4 /* Rarity.swift */,
@@ -287,6 +304,43 @@
 				00CFC9F12931016100A291DB /* BugsNetworkService.swift */,
 				002CB1B729433AB20093B974 /* FishNetworkService.swift */,
 				005DF1D929437F1E00F964CE /* SeaCreatureNetworkService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		00D9B95C2993A97F001B9FF6 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				00D9B95D2993A98B001B9FF6 /* Request.swift */,
+				00D9B95F2993A9B7001B9FF6 /* URLRequest+Networking.swift */,
+				00D9B9612993A9DA001B9FF6 /* NetworkingError.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		00D9B9652993AC2E001B9FF6 /* Collectibles */ = {
+			isa = PBXGroup;
+			children = (
+				00D9B9692993ADD3001B9FF6 /* Services */,
+				00D9B9682993ADBE001B9FF6 /* Request */,
+			);
+			path = Collectibles;
+			sourceTree = "<group>";
+		};
+		00D9B9682993ADBE001B9FF6 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				00D9B9632993AB5C001B9FF6 /* CollectibleRequest.swift */,
+				00D9B9662993AD21001B9FF6 /* CategoryRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		00D9B9692993ADD3001B9FF6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				00D9B96A2993ADE7001B9FF6 /* CollectibleNetworkService.swift */,
+				00D9B96C2993AE61001B9FF6 /* CollectibleService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -400,6 +454,8 @@
 			children = (
 				00F790F4295B0101004E4B02 /* Info.plist */,
 				101AF9EB290BBD9200855FA6 /* Preview Content */,
+				00D9B9652993AC2E001B9FF6 /* Collectibles */,
+				00D9B95C2993A97F001B9FF6 /* Networking */,
 				00CFC9F02931016100A291DB /* Services */,
 				004A259B290BDC61009281E4 /* Models */,
 				004A259A290BDC54009281E4 /* ViewModels */,
@@ -569,10 +625,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				00DCEADE298D16D2001D7AF4 /* MinusToggleStyle.swift in Sources */,
+				00D9B95E2993A98B001B9FF6 /* Request.swift in Sources */,
 				0083A5DD2984301E00007ED4 /* BugCategory.swift in Sources */,
 				002CB1BA29433B1E0093B974 /* FishViewModel.swift in Sources */,
+				00D9B9622993A9DA001B9FF6 /* NetworkingError.swift in Sources */,
 				005DF1F02948B6C800F964CE /* FishImage.swift in Sources */,
 				0083A5BC295DEACB00007ED4 /* Rarity.swift in Sources */,
+				00D9B9592993A4FA001B9FF6 /* Collectible.swift in Sources */,
+				00D9B9602993A9B7001B9FF6 /* URLRequest+Networking.swift in Sources */,
 				00CFC9F22931016100A291DB /* BugsNetworkService.swift in Sources */,
 				005DF1D829437E0C00F964CE /* Time.swift in Sources */,
 				0083A5DB298422AE00007ED4 /* BugFilterButtons.swift in Sources */,
@@ -582,10 +642,12 @@
 				004A2598290BDC03009281E4 /* FishRow.swift in Sources */,
 				0083A5B6295C53CB00007ED4 /* SeaCategory.swift in Sources */,
 				004A258F290BDB17009281E4 /* HomePage.swift in Sources */,
+				00D9B96B2993ADE7001B9FF6 /* CollectibleNetworkService.swift in Sources */,
 				0083A5B0295B648400007ED4 /* LowTideBackground.swift in Sources */,
 				0083A5E12984321A00007ED4 /* CurrentBugs.swift in Sources */,
 				0083A5D3297AD26300007ED4 /* SeaFilterButton.swift in Sources */,
 				005DF1DA29437F1E00F964CE /* SeaCreatureNetworkService.swift in Sources */,
+				00D9B9672993AD21001B9FF6 /* CategoryRequest.swift in Sources */,
 				0000E8C2290C1D6700BE076D /* Colors.swift in Sources */,
 				0083A5C82971B16600007ED4 /* Filter.swift in Sources */,
 				00DCEAE5298D3E3C001D7AF4 /* FishButtons.swift in Sources */,
@@ -608,6 +670,7 @@
 				00DCEAE2298D25EC001D7AF4 /* BugButtons.swift in Sources */,
 				005DF1D629437AF100F964CE /* SeaCreatureAvailability.swift in Sources */,
 				0083A5C0295DEC4700007ED4 /* RarityViewModel.swift in Sources */,
+				00D9B96D2993AE61001B9FF6 /* CollectibleService.swift in Sources */,
 				101AF9E6290BBD9100855FA6 /* AnimalPocketApp.swift in Sources */,
 				005DF1EA29488DDC00F964CE /* SeaImage.swift in Sources */,
 				002CB1B629433A480093B974 /* Name.swift in Sources */,
@@ -617,6 +680,7 @@
 				00DCEAF6298D540E001D7AF4 /* AllSeaCreatures.swift in Sources */,
 				006E8C7E2931083700127551 /* BugsViewModel.swift in Sources */,
 				005DF1E72948825A00F964CE /* BugDetails.swift in Sources */,
+				00D9B9642993AB5C001B9FF6 /* CollectibleRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

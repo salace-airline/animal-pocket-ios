@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FishDetails: View {
-  var fish: Fish
+  var fish: Collectible
   
   var body: some View {
       VStack {
@@ -41,14 +41,14 @@ struct FishDetails: View {
             Text("Lieu:")
               .foregroundColor(Colors.blue100)
               .bold()
-            Text(self.fish.availability.location)
+            Text(self.fish.availability.location ?? "")
           }
           
           HStack {
             Text("Ombre:")
               .foregroundColor(Colors.blue100)
               .bold()
-            Text(self.fish.shadow)
+            Text(self.fish.shadow ?? "")
           }
           
           HStack {
@@ -58,7 +58,7 @@ struct FishDetails: View {
             Text("\(self.fish.price) clochettes")
           }
           
-          RarityBadge(rarity: RarityViewModel(rarityLevel: fish.availability.rarity))
+          RarityBadge(rarity: RarityViewModel(rarityLevel: fish.availability.rarity ?? .common))
         }
         .font(.system(size: 11))
         .padding(.bottom, 5)
@@ -71,6 +71,6 @@ struct FishDetails: View {
 
 struct GridItem_Previews: PreviewProvider {
     static var previews: some View {
-      FishDetails(fish: Fish.sample)
+      FishDetails(fish: Collectible.sample)
     }
 }

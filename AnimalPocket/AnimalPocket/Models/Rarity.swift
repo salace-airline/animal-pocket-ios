@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Rarity: String, Codable {
+public enum Rarity: String, Codable {
   case common = "Common"
   case rare = "Rare"
   case ultraRare = "Ultra-rare"
