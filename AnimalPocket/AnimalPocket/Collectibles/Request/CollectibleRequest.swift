@@ -7,6 +7,7 @@
 
 import Foundation
 
+// Request for the common URL
 class CollectibleRequest: Request {
   private let baseURL = URL(string: "https://acnhapi.com/v1a")
   private let path: String

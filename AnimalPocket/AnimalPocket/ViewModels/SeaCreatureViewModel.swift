@@ -29,7 +29,7 @@ final class SeaCreatureViewModel: ObservableObject {
 }
 
 // Month & current filters
-extension SeaCreatureViewModel {
+extension SeaCreatureViewModel {  
   var currentMonthSea: [Collectible] {
     var currentSea: [Collectible] = []
     for sea in seaArray {

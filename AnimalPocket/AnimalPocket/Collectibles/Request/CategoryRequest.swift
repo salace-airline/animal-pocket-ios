@@ -7,6 +7,7 @@
 
 import Foundation
 
+// Request that will take the path as parameter
 final class CategoryRequest: CollectibleRequest {
   override init(path: String) {
     super.init(path: path)
