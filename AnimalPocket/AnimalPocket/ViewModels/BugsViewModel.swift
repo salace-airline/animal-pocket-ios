@@ -8,7 +8,7 @@
 import Foundation
 
 final class BugsViewModel: ObservableObject {
-  @Published var bugsArray: [Bug] = []
+  @Published var bugsArray: [Collectible] = []
   @Published var filter: Filter = .noFilter
   @Published var noFilter = false
   @Published var increasingPrice = false
@@ -18,7 +18,7 @@ final class BugsViewModel: ObservableObject {
   @MainActor func loadBugs() {
     Task {
       do {
-        let response = try await BugsNetworkService.fetchBugs()
+        let response = try await CollectibleService.fetchCollectibles(path: "bugs")
         self.bugsArray = response
       } catch {
         print("Error", error)
@@ -27,58 +27,35 @@ final class BugsViewModel: ObservableObject {
   }
 }
 
-// Price filters
 extension BugsViewModel {
-  func decreasePrice(of bugs: [Bug]) -> [Bug] {
-    bugs.sorted(by: {
-      $0.price > $1.price
-    })
-  }
- 
-  func increasePrice(of bugs: [Bug]) -> [Bug] {
-    bugs.sorted(by: {
-      $0.price < $1.price
-    })
-  }
-}
-
-// Alphabetical filter
-extension BugsViewModel {
-  func sortAlphabetically(_ bugs: [Bug]) -> [Bug] {
-     bugs.sorted(by: {
-      $0.name.nameEUfr < $1.name.nameEUfr
-    })
-  }
-}
-
-// Month & current filters
-extension BugsViewModel {
-  var currentMonthBugs: [Bug] {
-    var currentBugs: [Bug] = []
-    for bug in bugsArray {
-      for month in bug.availability.monthArrayNorthern {
-        if month == bug.availability.currentMonth {
-          currentBugs.append(bug)
+  // Month & current filters
+  var currentMonth: [Collectible] {
+    var currentItems: [Collectible] = []
+    for item in bugsArray {
+      for month in item.availability.monthArrayNorthern {
+        if month == item.availability.currentMonth {
+          currentItems.append(item)
         }
       }
     }
-    return currentBugs
+    return currentItems
   }
-
-  var currentlyAvailable: [Bug] {
-    var currentBugs: [Bug] = []
-    for bug in bugsArray {
-      for time in bug.availability.timeArray {
-        if time == bug.availability.currentTime {
-          for month in bug.availability.monthArrayNorthern {
-            if month == bug.availability.currentMonth {
-              currentBugs.append(bug)
+  
+  var currentlyAvailable: [Collectible] {
+    var currentItems: [Collectible] = []
+    for item in bugsArray {
+      for time in item.availability.timeArray {
+        if time == item.availability.currentTime {
+          for month in item.availability.monthArrayNorthern {
+            if month == item.availability.currentMonth {
+              currentItems.append(item)
             }
           }
         }
       }
     }
-    return currentBugs
+    return currentItems
   }
 }
+
 

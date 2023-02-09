@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct SeaDetails: View {
-  var sea: SeaCreature
+  var sea: Collectible
   
   var body: some View {
     VStack {
-      SeaImage(sea: self.sea)
+      CollectibleImage(item: self.sea, background: "fond_violet")
       
       VStack {
         Text(self.sea.name.nameEUfr)
@@ -27,28 +27,28 @@ struct SeaDetails: View {
           Text("Période:")
             .foregroundColor(Colors.blue200)
             .bold()
-          Text(self.sea.seaCreatureAvailability.period)
+          Text(self.sea.availability.period)
         }
         
         HStack {
           Text("Heure:")
             .foregroundColor(Colors.blue200)
             .bold()
-          Text(self.sea.hour)
+          Text(self.sea.availability.hour)
         }
         
         HStack {
           Text("Ombre:")
             .foregroundColor(Colors.blue200)
             .bold()
-          Text(self.sea.shadow)
+          Text(self.sea.shadow ?? "")
         }
         
         HStack {
           Text("Vitesse:")
             .foregroundColor(Colors.blue200)
             .bold()
-          Text(self.sea.speed)
+          Text(self.sea.speed ?? "")
         }
         
         HStack {
@@ -69,6 +69,6 @@ struct SeaDetails: View {
 
 struct SeaDetails_Previews: PreviewProvider {
   static var previews: some View {
-    SeaDetails(sea: SeaCreature.sample)
+    SeaDetails(sea: Collectible.seaSample)
   }
 }

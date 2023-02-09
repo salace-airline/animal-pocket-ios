@@ -7,15 +7,15 @@
 
 import Foundation
 
-struct Availability {
-  let monthNorthern, monthSouthern: String
-  let time: Time
-  let isAllDay, isAllYear: Bool
-  let location: String
-  let rarity: Rarity
-  let monthArrayNorthern: [Int]
-  let monthArraySouthern: [Int]
-  let timeArray: [Int]
+public struct Availability {
+  public let monthNorthern, monthSouthern: String
+  public let time: Time
+  public let isAllDay, isAllYear: Bool
+  public let location: String?
+  public let rarity: Rarity?
+  public let monthArrayNorthern: [Int]
+  public let monthArraySouthern: [Int]
+  public let timeArray: [Int]
 }
 
 extension Availability: Decodable {

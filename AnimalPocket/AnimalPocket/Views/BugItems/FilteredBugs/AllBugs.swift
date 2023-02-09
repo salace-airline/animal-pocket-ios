@@ -20,16 +20,16 @@ struct AllBugs: View {
         case .noFilter:
           loadedBugs(with: viewModel.bugsArray)
         case .increasingPrice:
-          loadedBugs(with: viewModel.increasePrice(of: viewModel.bugsArray))
+          loadedBugs(with: viewModel.filter.increasePrice(of: viewModel.bugsArray))
         case .decreasingPrice:
-          loadedBugs(with: viewModel.decreasePrice(of: viewModel.bugsArray))
+          loadedBugs(with: viewModel.filter.decreasePrice(of: viewModel.bugsArray))
         case .alphatically:
-          loadedBugs(with: viewModel.sortAlphabetically(viewModel.bugsArray))
+          loadedBugs(with: viewModel.filter.sortAlphabetically(viewModel.bugsArray))
       }
     }
   }
   
-  func loadedBugs(with bugs: [Bug]) -> some View {
+  func loadedBugs(with bugs: [Collectible]) -> some View {
     NavigationStack {
       BugButtons(viewModel: viewModel)
       

@@ -18,18 +18,18 @@ struct CurrentFish: View {
     NavigationStack {
       switch viewModel.filter {
         case .noFilter:
-          loadedFish(fish: viewModel.fishArray)
+          loadedFish(fish: viewModel.currentlyAvailable)
         case .increasingPrice:
-          loadedFish(fish: viewModel.increasePrice(of: viewModel.currentlyAvailable))
+          loadedFish(fish: viewModel.filter.increasePrice(of: viewModel.currentlyAvailable))
         case .decreasingPrice:
-          loadedFish(fish: viewModel.decreasePrice(of: viewModel.currentlyAvailable))
+          loadedFish(fish: viewModel.filter.decreasePrice(of: viewModel.currentlyAvailable))
         case .alphatically:
-          loadedFish(fish: viewModel.sortAlphabetically(viewModel.currentlyAvailable))
+          loadedFish(fish: viewModel.filter.sortAlphabetically(viewModel.currentlyAvailable))
       }
     }
   }
   
-  func loadedFish(fish: [Fish]) -> some View {
+  func loadedFish(fish: [Collectible]) -> some View {
     NavigationStack {
       FishButtons(viewModel: viewModel)
       

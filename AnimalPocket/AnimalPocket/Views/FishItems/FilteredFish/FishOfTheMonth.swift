@@ -18,18 +18,18 @@ struct FishOfTheMonth: View {
     NavigationStack {
       switch viewModel.filter {
         case .noFilter:
-          loadedFish(fish: viewModel.fishArray)
+          loadedFish(fish: viewModel.currentMonthFish)
         case .increasingPrice:
-          loadedFish(fish: viewModel.increasePrice(of: viewModel.currentMonthFish))
+          loadedFish(fish: viewModel.filter.increasePrice(of: viewModel.currentMonthFish))
         case .decreasingPrice:
-          loadedFish(fish: viewModel.decreasePrice(of: viewModel.currentMonthFish))
+          loadedFish(fish: viewModel.filter.decreasePrice(of: viewModel.currentMonthFish))
         case .alphatically:
-          loadedFish(fish: viewModel.sortAlphabetically(viewModel.currentMonthFish))
+          loadedFish(fish: viewModel.filter.sortAlphabetically(viewModel.currentMonthFish))
       }
     }
   }
   
-  func loadedFish(fish: [Fish]) -> some View {
+  func loadedFish(fish: [Collectible]) -> some View {
     NavigationStack {
       FishButtons(viewModel: viewModel)
       

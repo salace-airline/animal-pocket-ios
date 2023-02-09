@@ -20,16 +20,16 @@ struct AllFish: View {
         case .noFilter:
           loadedFish(fish: viewModel.fishArray)
         case .increasingPrice:
-          loadedFish(fish: viewModel.increasePrice(of: viewModel.fishArray))
+          loadedFish(fish: viewModel.filter.increasePrice(of: viewModel.fishArray))
         case .decreasingPrice:
-          loadedFish(fish: viewModel.decreasePrice(of: viewModel.fishArray))
+          loadedFish(fish: viewModel.filter.decreasePrice(of: viewModel.fishArray))
         case .alphatically:
-          loadedFish(fish: viewModel.sortAlphabetically(viewModel.fishArray))
+          loadedFish(fish: viewModel.filter.sortAlphabetically(viewModel.fishArray))
       }
     }
   }
   
-  func loadedFish(fish: [Fish]) -> some View {
+  func loadedFish(fish: [Collectible]) -> some View {
     NavigationStack {
       FishButtons(viewModel: viewModel)
       

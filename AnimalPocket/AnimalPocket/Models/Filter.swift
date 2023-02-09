@@ -13,3 +13,27 @@ enum Filter {
   case decreasingPrice
   case alphatically
 }
+
+// Price filters
+extension Filter {
+  func decreasePrice(of items: [Collectible]) -> [Collectible] {
+    items.sorted(by: {
+      $0.price > $1.price
+    })
+  }
+  
+  func increasePrice(of items: [Collectible]) -> [Collectible] {
+    items.sorted(by: {
+      $0.price < $1.price
+    })
+  }
+}
+
+// Alphabetical filter
+extension Filter {
+  func sortAlphabetically(_ items: [Collectible]) -> [Collectible] {
+    items.sorted(by: {
+      $0.name.nameEUfr < $1.name.nameEUfr
+    })
+  }
+}
