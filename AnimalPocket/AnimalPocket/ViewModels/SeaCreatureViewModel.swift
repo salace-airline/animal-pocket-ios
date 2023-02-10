@@ -20,7 +20,6 @@ final class SeaCreatureViewModel: ObservableObject {
       do {
         let response = try await CollectibleNetworkService.fetchCollectibles(path: "sea")
         self.seaArray = response
-        print(response[39])
       } catch {
         print("Error", error)
       }
