@@ -10,6 +10,8 @@
 		0000E8C0290C1CCC00BE076D /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0000E8BF290C1CCB00BE076D /* Color.xcassets */; };
 		0000E8C2290C1D6700BE076D /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000E8C1290C1D6700BE076D /* Colors.swift */; };
 		00160191295B4E5C0000A92B /* FinkHeavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 00160190295B4E5C0000A92B /* FinkHeavy.ttf */; };
+		00274F82299F7FA500DAA28F /* FishTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00274F81299F7FA500DAA28F /* FishTests.swift */; };
+		00274F84299F800400DAA28F /* SeaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00274F83299F800400DAA28F /* SeaTests.swift */; };
 		002CB1B629433A480093B974 /* Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002CB1B529433A480093B974 /* Name.swift */; };
 		002CB1BA29433B1E0093B974 /* FishViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002CB1B929433B1E0093B974 /* FishViewModel.swift */; };
 		004A258F290BDB17009281E4 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A258E290BDB17009281E4 /* HomePage.swift */; };
@@ -60,7 +62,7 @@
 		101AF9E6290BBD9100855FA6 /* AnimalPocketApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101AF9E5290BBD9100855FA6 /* AnimalPocketApp.swift */; };
 		101AF9EA290BBD9200855FA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 101AF9E9290BBD9200855FA6 /* Assets.xcassets */; };
 		101AF9ED290BBD9200855FA6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 101AF9EC290BBD9200855FA6 /* Preview Assets.xcassets */; };
-		101AF9F7290BBD9200855FA6 /* AnimalPocketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101AF9F6290BBD9200855FA6 /* AnimalPocketTests.swift */; };
+		101AF9F7290BBD9200855FA6 /* BugsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101AF9F6290BBD9200855FA6 /* BugsTests.swift */; };
 		101AFA01290BBD9200855FA6 /* AnimalPocketUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101AFA00290BBD9200855FA6 /* AnimalPocketUITests.swift */; };
 		101AFA03290BBD9200855FA6 /* AnimalPocketUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101AFA02290BBD9200855FA6 /* AnimalPocketUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
@@ -93,6 +95,8 @@
 		0000E8BF290C1CCB00BE076D /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Color.xcassets; path = Assets.xcassets/Color.xcassets; sourceTree = "<group>"; };
 		0000E8C1290C1D6700BE076D /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		00160190295B4E5C0000A92B /* FinkHeavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FinkHeavy.ttf; sourceTree = "<group>"; };
+		00274F81299F7FA500DAA28F /* FishTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishTests.swift; sourceTree = "<group>"; };
+		00274F83299F800400DAA28F /* SeaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeaTests.swift; sourceTree = "<group>"; };
 		002CB1B529433A480093B974 /* Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Name.swift; sourceTree = "<group>"; };
 		002CB1B929433B1E0093B974 /* FishViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishViewModel.swift; sourceTree = "<group>"; };
 		004A258E290BDB17009281E4 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
@@ -147,7 +151,7 @@
 		101AF9E9290BBD9200855FA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		101AF9EC290BBD9200855FA6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		101AF9F2290BBD9200855FA6 /* AnimalPocketTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnimalPocketTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		101AF9F6290BBD9200855FA6 /* AnimalPocketTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalPocketTests.swift; sourceTree = "<group>"; };
+		101AF9F6290BBD9200855FA6 /* BugsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugsTests.swift; sourceTree = "<group>"; };
 		101AF9FC290BBD9200855FA6 /* AnimalPocketUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnimalPocketUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		101AFA00290BBD9200855FA6 /* AnimalPocketUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalPocketUITests.swift; sourceTree = "<group>"; };
 		101AFA02290BBD9200855FA6 /* AnimalPocketUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalPocketUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -422,7 +426,9 @@
 		101AF9F5290BBD9200855FA6 /* AnimalPocketTests */ = {
 			isa = PBXGroup;
 			children = (
-				101AF9F6290BBD9200855FA6 /* AnimalPocketTests.swift */,
+				101AF9F6290BBD9200855FA6 /* BugsTests.swift */,
+				00274F81299F7FA500DAA28F /* FishTests.swift */,
+				00274F83299F800400DAA28F /* SeaTests.swift */,
 			);
 			path = AnimalPocketTests;
 			sourceTree = "<group>";
@@ -661,7 +667,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				101AF9F7290BBD9200855FA6 /* AnimalPocketTests.swift in Sources */,
+				00274F84299F800400DAA28F /* SeaTests.swift in Sources */,
+				101AF9F7290BBD9200855FA6 /* BugsTests.swift in Sources */,
+				00274F82299F7FA500DAA28F /* FishTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

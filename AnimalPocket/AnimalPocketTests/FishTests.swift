@@ -1,19 +1,19 @@
 //
-//  AnimalPocketTests.swift
+//  FishTests.swift
 //  AnimalPocketTests
 //
-//  Created by Céline Barbe on 28/10/2022.
+//  Created by Sarah Watremet on 17/02/2023.
 //
 
 import XCTest
 @testable import AnimalPocket
 
-final class AnimalPocketTests: XCTestCase {
-  var sut: BugsViewModel!
+final class FishTests: XCTestCase {
+  var sut: FishViewModel!
   
   override func setUpWithError() throws {
     try super.setUpWithError()
-    sut = BugsViewModel()
+    sut = FishViewModel()
   }
   
   override func tearDownWithError() throws {
@@ -53,5 +53,5 @@ final class AnimalPocketTests: XCTestCase {
     // then
     XCTAssertTrue(filteredArray[0].name.nameEUfr < filteredArray[1].name.nameEUfr)
   }
-  
+
 }
