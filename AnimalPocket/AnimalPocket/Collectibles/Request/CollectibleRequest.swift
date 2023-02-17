@@ -20,9 +20,11 @@ class CollectibleRequest: Request {
     guard var baseURL else {
       throw NetworkingError.issueWithURL
     }
+    
     if !path.isEmpty {
       baseURL.appendPathComponent(path)
     }
+    
     let request = URLRequest(url: baseURL)
     return request
   }
