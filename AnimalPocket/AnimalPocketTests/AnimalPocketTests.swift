@@ -43,4 +43,15 @@ final class AnimalPocketTests: XCTestCase {
     XCTAssertTrue(filteredArray[0].price < filteredArray[1].price, "The prices have not been filtered correctly")
   }
   
+  func testAlphabeticalOrder() throws {
+    // given
+    let itemsArray = [Collectible.bugSample, Collectible.fishSample]
+    
+    // when
+    let filteredArray = sut.filter.sortAlphabetically(itemsArray)
+    
+    // then
+    XCTAssertTrue(filteredArray[0].name.nameEUfr < filteredArray[1].name.nameEUfr)
+  }
+  
 }
