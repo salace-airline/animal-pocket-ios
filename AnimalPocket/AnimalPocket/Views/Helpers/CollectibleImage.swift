@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CollectibleImage: View {
-  var item: Collectible
+  var item: CollectibleItem
   var background: String
   
   var body: some View {
@@ -28,6 +28,6 @@ struct CollectibleImage: View {
 
 struct CollectibleImage_Previews: PreviewProvider {
   static var previews: some View {
-    CollectibleImage(item: Collectible.bugSample, background: "fond_violet")
+    CollectibleImage(item: CollectibleItem.bugSample, background: "fond_violet")
   }
 }

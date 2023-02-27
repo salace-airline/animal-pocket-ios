@@ -8,18 +8,35 @@
 import Foundation
 
 final class BugsViewModel: ObservableObject {
-  @Published var bugsArray: [Collectible] = []
+  @Published var bugsArray: [CollectibleItem] = []
   @Published var filter: Filter = .noFilter
+  
+  @Published var showCurrentBugs = true
+  @Published var showBugsOfTheMonth = true
+  @Published var showAllBugs = true
+  
   @Published var noFilter = false
   @Published var increasingPrice = false
   @Published var decreasingPrice = false
   @Published var alphabeticalOrder = false
   
+  @Published var isCollected = false
+  @Published var showMissingItemsOnly = false
+  
   @MainActor func loadBugs() {
     Task {
       do {
         let response = try await CollectibleService.fetchCollectibles(path: "bugs")
-        self.bugsArray = response
+        let bugs = response.map {
+          CollectibleItem(id: $0.id,
+                          name: $0.name,
+                          availability: $0.availability,
+                          speed: $0.speed,
+                          shadow: $0.shadow,
+                          price: $0.price,
+                          iconURI: $0.iconURI)
+        }
+        self.bugsArray = bugs
       } catch {
         print("Error", error)
       }
@@ -27,10 +44,11 @@ final class BugsViewModel: ObservableObject {
   }
 }
 
+
+// Month & current filters
 extension BugsViewModel {
-  // Month & current filters
-  var currentMonth: [Collectible] {
-    var currentItems: [Collectible] = []
+  var currentMonth: [CollectibleItem] {
+    var currentItems: [CollectibleItem] = []
     for item in bugsArray {
       for month in item.availability.monthArrayNorthern {
         if month == item.availability.currentMonth {
@@ -41,8 +59,8 @@ extension BugsViewModel {
     return currentItems
   }
   
-  var currentlyAvailable: [Collectible] {
-    var currentItems: [Collectible] = []
+  var currentlyAvailable: [CollectibleItem] {
+    var currentItems: [CollectibleItem] = []
     for item in bugsArray {
       for time in item.availability.timeArray {
         if time == item.availability.currentTime {
@@ -55,6 +73,15 @@ extension BugsViewModel {
       }
     }
     return currentItems
+  }
+}
+
+// Collection filter
+extension BugsViewModel {
+  var missingItems: [CollectibleItem] {
+    bugsArray.filter { bug in
+      (showMissingItemsOnly || !bug.isCollected)
+    }
   }
 }
 

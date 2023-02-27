@@ -18,7 +18,7 @@ struct AllBugs: View {
     NavigationStack {      
       switch viewModel.filter {
         case .noFilter:
-          loadedBugs(with: viewModel.bugsArray)
+          loadedBugs(with: viewModel.missingItems)
         case .increasingPrice:
           loadedBugs(with: viewModel.filter.increasePrice(of: viewModel.bugsArray))
         case .decreasingPrice:
@@ -29,8 +29,12 @@ struct AllBugs: View {
     }
   }
   
-  func loadedBugs(with bugs: [Collectible]) -> some View {
+  func loadedBugs(with bugs: [CollectibleItem]) -> some View {
     NavigationStack {
+      Toggle(isOn: $viewModel.showMissingItemsOnly) {
+        Text("Missing Items Only")
+      }
+      
       BugButtons(viewModel: viewModel)
       
       ScrollView(.vertical) {

@@ -29,7 +29,7 @@ struct CurrentBugs: View {
     }
   }
   
-  func loadedBugs(with bugs: [Collectible]) -> some View {
+  func loadedBugs(with bugs: [CollectibleItem]) -> some View {
     NavigationStack {
       BugButtons(viewModel: viewModel)
       

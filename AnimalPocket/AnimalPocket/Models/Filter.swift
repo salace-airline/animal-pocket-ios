@@ -16,13 +16,13 @@ enum Filter {
 
 // Price filters
 extension Filter {
-  func decreasePrice(of items: [Collectible]) -> [Collectible] {
+  func decreasePrice(of items: [CollectibleItem]) -> [CollectibleItem] {
     items.sorted(by: {
       $0.price > $1.price
     })
   }
   
-  func increasePrice(of items: [Collectible]) -> [Collectible] {
+  func increasePrice(of items: [CollectibleItem]) -> [CollectibleItem] {
     items.sorted(by: {
       $0.price < $1.price
     })
@@ -31,7 +31,7 @@ extension Filter {
 
 // Alphabetical filter
 extension Filter {
-  func sortAlphabetically(_ items: [Collectible]) -> [Collectible] {
+  func sortAlphabetically(_ items: [CollectibleItem]) -> [CollectibleItem] {
     items.sorted(by: {
       $0.name.nameEUfr < $1.name.nameEUfr
     })

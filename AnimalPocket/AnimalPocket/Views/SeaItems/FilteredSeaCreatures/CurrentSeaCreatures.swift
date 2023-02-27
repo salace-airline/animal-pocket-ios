@@ -29,7 +29,7 @@ struct CurrentSeaCreatures: View {
     }
   }
   
-  func loadedSea(sea: [Collectible]) -> some View {
+  func loadedSea(sea: [CollectibleItem]) -> some View {
     NavigationStack {
       SeaButtons(viewModel: viewModel)
       

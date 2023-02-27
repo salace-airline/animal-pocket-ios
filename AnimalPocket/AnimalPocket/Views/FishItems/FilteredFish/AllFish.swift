@@ -29,7 +29,7 @@ struct AllFish: View {
     }
   }
   
-  func loadedFish(fish: [Collectible]) -> some View {
+  func loadedFish(fish: [CollectibleItem]) -> some View {
     NavigationStack {
       FishButtons(viewModel: viewModel)
       

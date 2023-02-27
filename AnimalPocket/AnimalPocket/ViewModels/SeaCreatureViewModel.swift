@@ -8,7 +8,7 @@
 import Foundation
 
 final class SeaCreatureViewModel: ObservableObject {
-  @Published var seaArray: [Collectible] = []
+  @Published var seaArray: [CollectibleItem] = []
   @Published var filter: Filter = .noFilter
   @Published var noFilter = false
   @Published var increasingPrice = false
@@ -19,7 +19,16 @@ final class SeaCreatureViewModel: ObservableObject {
     Task {
       do {
         let response = try await CollectibleNetworkService.fetchCollectibles(path: "sea")
-        self.seaArray = response
+        let sea = response.map {
+          CollectibleItem(id: $0.id,
+                          name: $0.name,
+                          availability: $0.availability,
+                          speed: $0.speed,
+                          shadow: $0.shadow,
+                          price: $0.price,
+                          iconURI: $0.iconURI)
+        }
+        self.seaArray = sea
       } catch {
         print("Error", error)
       }
@@ -29,8 +38,8 @@ final class SeaCreatureViewModel: ObservableObject {
 
 // Month & current filters
 extension SeaCreatureViewModel {  
-  var currentMonthSea: [Collectible] {
-    var currentSea: [Collectible] = []
+  var currentMonthSea: [CollectibleItem] {
+    var currentSea: [CollectibleItem] = []
     for sea in seaArray {
       for month in sea.availability.monthArrayNorthern {
         if month == sea.availability.currentMonth {
@@ -41,8 +50,8 @@ extension SeaCreatureViewModel {
     return currentSea
   }
   
-  var currentlyAvailable: [Collectible] {
-    var currentSea: [Collectible] = []
+  var currentlyAvailable: [CollectibleItem] {
+    var currentSea: [CollectibleItem] = []
     for sea in seaArray {
       for time in sea.availability.timeArray {
         if time == sea.availability.currentTime {

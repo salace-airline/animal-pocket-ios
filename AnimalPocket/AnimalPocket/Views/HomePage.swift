@@ -53,6 +53,8 @@ struct HomePage: View {
 }
 
 struct HomePage_Previews: PreviewProvider {
+  static let items = BugsViewModel()
+  
   static var previews: some View {
     HomePage()
   }

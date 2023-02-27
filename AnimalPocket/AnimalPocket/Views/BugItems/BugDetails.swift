@@ -8,16 +8,23 @@
 import SwiftUI
 
 struct BugDetails: View {
-  var bug: Collectible
+  var bug: CollectibleItem
   
   var body: some View {
     VStack {
       CollectibleImage(item: self.bug, background: "fond")
       
-      VStack {
+      HStack {
         Text(self.bug.name.nameEUfr)
           .font(.system(size: 15))
           .bold()
+        
+        CollectedButton(isSet: bug.isCollected,
+                        setImage: "ant.circle.fill",
+                        unsetImage: "ant.circle",
+                        setColor: Colors.green100,
+                        action: () // bug.isCollected.toggle()
+        )
       }
       .padding(.bottom, 0.5)
       
@@ -64,6 +71,6 @@ struct BugDetails: View {
 
 struct BugDetails_Previews: PreviewProvider {
   static var previews: some View {
-    BugDetails(bug: Collectible.bugSample)
+    BugDetails(bug: CollectibleItem.bugSample)
   }
 }

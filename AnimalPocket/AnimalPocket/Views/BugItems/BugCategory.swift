@@ -9,9 +9,6 @@ import SwiftUI
 
 struct BugCategory: View {
   @ObservedObject var viewModel = BugsViewModel()
-  @State private var showCurrentBugs = true
-  @State private var showBugsOfTheMonth = true
-  @State private var showAllBugs = true
   
   var body: some View {
     NavigationStack {
@@ -21,40 +18,40 @@ struct BugCategory: View {
       
       ScrollView {
         LazyVStack {
-          Toggle(isOn: $showCurrentBugs, label: {
+          Toggle(isOn: $viewModel.showCurrentBugs, label: {
             Text("En ce moment")
               .font(.custom("FinkHeavy", size: 20))
               .font(.subheadline)
           })
           .toggleStyle(MinusToggleStyle())
           
-          if showCurrentBugs {
+          if viewModel.showCurrentBugs {
             CurrentBugs()
           }
         }
         
         LazyVStack {
-          Toggle(isOn: $showBugsOfTheMonth, label: {
+          Toggle(isOn: $viewModel.showBugsOfTheMonth, label: {
             Text("Ce mois-ci")
               .font(.custom("FinkHeavy", size: 20))
               .font(.subheadline)
           })
           .toggleStyle(MinusToggleStyle())
           
-          if showBugsOfTheMonth {
+          if viewModel.showBugsOfTheMonth {
             BugsOfTheMonth()
           }
         }
         
         LazyVStack {
-          Toggle(isOn: $showAllBugs, label: {
+          Toggle(isOn: $viewModel.showAllBugs, label: {
             Text("Tous les Insectes")
               .font(.custom("FinkHeavy", size: 20))
               .font(.subheadline)
           })
           .toggleStyle(MinusToggleStyle())
           
-          if showAllBugs {
+          if viewModel.showAllBugs {
             AllBugs()
           }
         }
