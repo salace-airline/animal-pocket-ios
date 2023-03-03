@@ -32,6 +32,9 @@ struct AllCollectibles: View {
   func loadedItems(with items: [CollectibleItem]) -> some View {
     NavigationStack {
 //      BugButtons(viewModel: viewModel)
+      Toggle(isOn: $viewModel.showMissingItemsOnly) {
+        Text("Missing Items Only")
+      }
       
       ScrollView(.vertical) {
         LazyVGrid(columns: columns, spacing: 10) {

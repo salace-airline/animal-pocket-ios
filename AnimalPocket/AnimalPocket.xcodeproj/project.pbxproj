@@ -40,6 +40,9 @@
 		0083A5DD2984301E00007ED4 /* BugCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0083A5DC2984301E00007ED4 /* BugCategory.swift */; };
 		0083A5DF2984308900007ED4 /* BugsOfTheMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0083A5DE2984308900007ED4 /* BugsOfTheMonth.swift */; };
 		0083A5E12984321A00007ED4 /* CurrentBugs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0083A5E02984321A00007ED4 /* CurrentBugs.swift */; };
+		00B191EC29B23E37007D87AC /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = 00B191EB29B23E37007D87AC /* Nuke */; };
+		00B191EE29B23E37007D87AC /* NukeExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = 00B191ED29B23E37007D87AC /* NukeExtensions */; };
+		00B191F029B23E37007D87AC /* NukeUI in Frameworks */ = {isa = PBXBuildFile; productRef = 00B191EF29B23E37007D87AC /* NukeUI */; };
 		00CFC9EE2931014500A291DB /* Availability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CFC9EB2931014500A291DB /* Availability.swift */; };
 		00D9B9592993A4FA001B9FF6 /* Collectible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D9B9582993A4FA001B9FF6 /* Collectible.swift */; };
 		00D9B95E2993A98B001B9FF6 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D9B95D2993A98B001B9FF6 /* Request.swift */; };
@@ -181,6 +184,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00B191F029B23E37007D87AC /* NukeUI in Frameworks */,
+				00B191EC29B23E37007D87AC /* Nuke in Frameworks */,
+				00B191EE29B23E37007D87AC /* NukeExtensions in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,6 +508,11 @@
 			dependencies = (
 			);
 			name = AnimalPocket;
+			packageProductDependencies = (
+				00B191EB29B23E37007D87AC /* Nuke */,
+				00B191ED29B23E37007D87AC /* NukeExtensions */,
+				00B191EF29B23E37007D87AC /* NukeUI */,
+			);
 			productName = AnimalPocket;
 			productReference = 101AF9E2290BBD9100855FA6 /* AnimalPocket.app */;
 			productType = "com.apple.product-type.application";
@@ -578,6 +589,9 @@
 				Base,
 			);
 			mainGroup = 101AF9D9290BBD9100855FA6;
+			packageReferences = (
+				00B191EA29B23E37007D87AC /* XCRemoteSwiftPackageReference "Nuke" */,
+			);
 			productRefGroup = 101AF9E3290BBD9100855FA6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1070,6 +1084,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		00B191EA29B23E37007D87AC /* XCRemoteSwiftPackageReference "Nuke" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Nuke.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		00B191EB29B23E37007D87AC /* Nuke */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 00B191EA29B23E37007D87AC /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = Nuke;
+		};
+		00B191ED29B23E37007D87AC /* NukeExtensions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 00B191EA29B23E37007D87AC /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = NukeExtensions;
+		};
+		00B191EF29B23E37007D87AC /* NukeUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 00B191EA29B23E37007D87AC /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = NukeUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 101AF9DA290BBD9100855FA6 /* Project object */;
 }

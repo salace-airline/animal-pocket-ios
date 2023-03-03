@@ -23,7 +23,7 @@ final class SeaTests: XCTestCase {
   
   func testDecreasingPrices() throws {
     // given
-    let itemsArray = [Collectible.seaSample, Collectible.fishSample]
+    let itemsArray = [CollectibleItem.seaSample, CollectibleItem.fishSample]
     
     // when
     let filteredArray = sut.filter.decreasePrice(of: itemsArray)
@@ -34,7 +34,7 @@ final class SeaTests: XCTestCase {
   
   func testIncreasingPrices() throws {
     // given
-    let itemsArray = [Collectible.seaSample, Collectible.fishSample]
+    let itemsArray = [CollectibleItem.seaSample, CollectibleItem.fishSample]
     
     // when
     let filteredArray = sut.filter.increasePrice(of: itemsArray)
@@ -45,7 +45,7 @@ final class SeaTests: XCTestCase {
   
   func testAlphabeticalOrder() throws {
     // given
-    let itemsArray = [Collectible.seaSample, Collectible.fishSample]
+    let itemsArray = [CollectibleItem.seaSample, CollectibleItem.fishSample]
     
     // when
     let filteredArray = sut.filter.sortAlphabetically(itemsArray)

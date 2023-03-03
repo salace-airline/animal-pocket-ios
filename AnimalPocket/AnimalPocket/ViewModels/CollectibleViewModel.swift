@@ -9,7 +9,6 @@ import Foundation
 
 final class CollectibleViewModel: ObservableObject {
   @Published var itemsArray: [CollectibleItem] = []
-  @Published var bugsArray: [CollectibleItem] = []
   @Published var filter: Filter = .noFilter
   
   @Published var showCurrentItem = false
@@ -118,13 +117,3 @@ extension CollectibleViewModel {
     }
   }
 }
-
-//extension CollectibleViewModel {
-//  var checkCategory: [CollectibleItem] {
-//    for item in itemsArray {
-//      if item.itemNumber >= 0 && item.itemNumber <= 79 {
-//        bugsArray.append(item)
-//      }
-//    }
-//  }
-//}

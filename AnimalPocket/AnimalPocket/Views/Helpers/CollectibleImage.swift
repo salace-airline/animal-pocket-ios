@@ -6,23 +6,22 @@
 //
 
 import SwiftUI
+import NukeUI
 
 struct CollectibleImage: View {
   var item: CollectibleItem
   var background: String
   
   var body: some View {
-    AsyncImage(url: URL(string: item.iconURI)) { image in
-      image
-        .resizable()
+    VStack {
+      LazyImage(url: URL(string: item.iconURI))
+        .animation(nil)
         .scaledToFit()
         .background(Image(background))
         .frame(maxWidth: .infinity)
         .clipShape(Rectangle())
-    } placeholder: {
-      ProgressView()
+        .aspectRatio(2, contentMode: .fit)
     }
-    .aspectRatio(2, contentMode: .fit)
   }
 }
 

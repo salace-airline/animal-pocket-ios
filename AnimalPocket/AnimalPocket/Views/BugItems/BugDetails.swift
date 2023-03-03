@@ -24,6 +24,7 @@ struct BugDetails: View {
           .font(.system(size: 15))
           .bold()
         
+        
         CollectedButton(isSet: $viewModel.bugsArray[bugIndex].isCollected,
                         setImage: "ant.circle.fill",
                         unsetImage: "ant.circle",
