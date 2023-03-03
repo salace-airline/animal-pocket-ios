@@ -7,30 +7,36 @@
 
 import Foundation
 
-struct CollectibleItem: Identifiable {
-  let id: Int
-  let name: Name
-  let availability: Availability
-  let speed: String?
-  let shadow: String?
-  let price: Int
-  let iconURI: String
-  var isCollected: Bool
+struct Categories: Codable {
+  var fish: [CollectibleItem]
+  var bugs: [CollectibleItem]
+  var sea: [CollectibleItem]
+}
+
+struct CollectibleItem: Identifiable, Codable {
+  var id = UUID()
+  var itemNumber: Int
+  var name: Name
+  var availability: Availability
+  var speed: String?
+  var shadow: String?
+  var price: Int
+  var iconURI: String
+  var isCollected = false
   
-  init(id: Int, name: Name, availability: Availability, speed: String?, shadow: String?, price: Int, iconURI: String, isCollected: Bool = false) {
-    self.id = id
+  init(itemNumber: Int, name: Name, availability: Availability, speed: String?, shadow: String?, price: Int, iconURI: String) {
+    self.itemNumber = itemNumber
     self.name = name
     self.availability = availability
     self.speed = speed
     self.shadow = shadow
     self.price = price
     self.iconURI = iconURI
-    self.isCollected = isCollected
   }
 }
 
 extension CollectibleItem {
-  static let bugSample = CollectibleItem(id: 80,
+  static let bugSample = CollectibleItem(itemNumber: 80,
                                          name: Name(nameEUen: "scorpion", nameEUfr: "scorpion"),
                                          availability: Availability(monthNorthern: "5-10",
                                                                     monthSouthern: "11-4",
@@ -45,11 +51,10 @@ extension CollectibleItem {
                                          speed: nil,
                                          shadow: nil,
                                          price: 8000,
-                                         iconURI: "https://acnhapi.com/v1/icons/bugs/80",
-                                         isCollected: false
+                                         iconURI: "https://acnhapi.com/v1/icons/bugs/80"
   )
   
-  static let fishSample = CollectibleItem(id: 80,
+  static let fishSample = CollectibleItem(itemNumber: 80,
                                           name: Name(nameEUen: "coelacanth", nameEUfr: "cœlacanthe"),
                                           availability: Availability(monthNorthern: "",
                                                                      monthSouthern: "",
@@ -64,11 +69,10 @@ extension CollectibleItem {
                                           speed: nil,
                                           shadow: "Largest (6)",
                                           price: 15000,
-                                          iconURI: "https://acnhapi.com/v1/icons/fish/80",
-                                          isCollected: false
+                                          iconURI: "https://acnhapi.com/v1/icons/fish/80"
   )
   
-  static let seaSample = CollectibleItem(id: 40,
+  static let seaSample = CollectibleItem(itemNumber: 40,
                                          name: Name(nameEUen: "Venus' flower basket", nameEUfr: "Corbeille de Vénus"),
                                          availability: Availability(monthNorthern: "10-2",
                                                                     monthSouthern: "4-8",
@@ -83,7 +87,6 @@ extension CollectibleItem {
                                          speed: "Fast",
                                          shadow: "Medium",
                                          price: 5000,
-                                         iconURI: "https://acnhapi.com/v1/icons/sea/40",
-                                         isCollected: true
+                                         iconURI: "https://acnhapi.com/v1/icons/sea/40"
   )
 }

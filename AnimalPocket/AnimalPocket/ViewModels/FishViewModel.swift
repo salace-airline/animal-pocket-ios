@@ -20,13 +20,15 @@ final class FishViewModel: ObservableObject {
       do {
         let response = try await CollectibleNetworkService.fetchCollectibles(path: "fish")
         let fish = response.map {
-          CollectibleItem(id: $0.id,
-                          name: $0.name,
-                          availability: $0.availability,
-                          speed: $0.speed,
-                          shadow: $0.shadow,
-                          price: $0.price,
-                          iconURI: $0.iconURI)
+          CollectibleItem(
+            itemNumber: $0.id,
+            name: $0.name,
+            availability: $0.availability,
+            speed: $0.speed,
+            shadow: $0.shadow,
+            price: $0.price,
+            iconURI: $0.iconURI
+          )
         }
         self.fishArray = fish
       } catch {

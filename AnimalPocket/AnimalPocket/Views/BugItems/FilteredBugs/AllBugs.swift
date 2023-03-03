@@ -15,16 +15,29 @@ struct AllBugs: View {
   ]
   
   var body: some View {
-    NavigationStack {      
-      switch viewModel.filter {
-        case .noFilter:
-          loadedBugs(with: viewModel.missingItems)
-        case .increasingPrice:
-          loadedBugs(with: viewModel.filter.increasePrice(of: viewModel.bugsArray))
-        case .decreasingPrice:
-          loadedBugs(with: viewModel.filter.decreasePrice(of: viewModel.bugsArray))
-        case .alphatically:
-          loadedBugs(with: viewModel.filter.sortAlphabetically(viewModel.bugsArray))
+    NavigationStack {
+      if viewModel.showMissingItemsOnly {
+        switch viewModel.filter {
+          case .noFilter:
+            loadedBugs(with: viewModel.missingItems)
+          case .increasingPrice:
+            loadedBugs(with: viewModel.filter.increasePrice(of: viewModel.missingItems))
+          case .decreasingPrice:
+            loadedBugs(with: viewModel.filter.decreasePrice(of: viewModel.missingItems))
+          case .alphatically:
+            loadedBugs(with: viewModel.filter.sortAlphabetically(viewModel.missingItems))
+        }
+      } else {
+        switch viewModel.filter {
+          case .noFilter:
+            loadedBugs(with: viewModel.bugsArray)
+          case .increasingPrice:
+            loadedBugs(with: viewModel.filter.increasePrice(of: viewModel.bugsArray))
+          case .decreasingPrice:
+            loadedBugs(with: viewModel.filter.decreasePrice(of: viewModel.bugsArray))
+          case .alphatically:
+            loadedBugs(with: viewModel.filter.sortAlphabetically(viewModel.bugsArray))
+        }
       }
     }
   }
@@ -40,7 +53,7 @@ struct AllBugs: View {
       ScrollView(.vertical) {
         LazyVGrid(columns: columns, spacing: 10) {
           ForEach(bugs) { bug in
-            BugDetails(bug: bug)
+            BugDetails(viewModel: viewModel, bug: bug)
           }
         }
       }

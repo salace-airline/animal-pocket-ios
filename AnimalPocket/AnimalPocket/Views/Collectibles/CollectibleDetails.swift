@@ -1,30 +1,30 @@
 //
-//  BugDetails.swift
+//  CollectibleDetails.swift
 //  AnimalPocket
 //
-//  Created by Sarah Watremet on 13/12/2022.
+//  Created by Sarah WATREMET on 28/02/2023.
 //
 
 import SwiftUI
 
-struct BugDetails: View {
-  @ObservedObject var viewModel = BugsViewModel()
-  var bug: CollectibleItem
+struct CollectibleDetails: View {
+  @ObservedObject var viewModel: CollectibleViewModel
+  var item: CollectibleItem
   
-  var bugIndex: Int {
-    viewModel.bugsArray.firstIndex(where: { $0.itemNumber == bug.itemNumber }) ?? 404
+  var itemIndex: Int {
+    viewModel.itemsArray.firstIndex(where: { $0.id == item.id }) ?? 404
   }
   
   var body: some View {
     VStack {
-      CollectibleImage(item: self.bug, background: "fond")
+      CollectibleImage(item: self.item, background: "fond")
       
       HStack {
-        Text(self.bug.name.nameEUfr)
+        Text(self.item.name.nameEUfr)
           .font(.system(size: 15))
           .bold()
         
-        CollectedButton(isSet: $viewModel.bugsArray[bugIndex].isCollected,
+        CollectedButton(isSet: $viewModel.itemsArray[itemIndex].isCollected,
                         setImage: "ant.circle.fill",
                         unsetImage: "ant.circle",
                         setColor: Colors.green100
@@ -32,37 +32,36 @@ struct BugDetails: View {
       }
       .padding(.bottom, 0.5)
       
-      // VStack below should go into a separate "item description" component
       VStack(alignment: .leading) {
         HStack {
           Text("Période:")
             .foregroundColor(Colors.green100)
             .bold()
-          Text(self.bug.availability.period)
+          Text(self.item.availability.period)
         }
         
         HStack {
           Text("Heure:")
             .foregroundColor(Colors.green100)
             .bold()
-          Text(self.bug.availability.hour)
+          Text(self.item.availability.hour)
         }
         
         HStack {
           Text("Lieu:")
             .foregroundColor(Colors.green100)
             .bold()
-          Text(self.bug.availability.location ?? "")
+          Text(self.item.availability.location ?? "")
         }
         
         HStack {
           Text("Prix:")
             .foregroundColor(Colors.green100)
             .bold()
-          Text("\(self.bug.price) clochettes")
+          Text("\(self.item.price) clochettes")
         }
         
-        RarityBadge(rarity: RarityViewModel(rarityLevel: bug.availability.rarity ?? .common))
+        RarityBadge(rarity: RarityViewModel(rarityLevel: item.availability.rarity ?? .common))
       }
       .font(.system(size: 11))
       .padding(.bottom, 5)
@@ -73,10 +72,3 @@ struct BugDetails: View {
   }
 }
 
-//struct BugDetails_Previews: PreviewProvider {
-//  static let viewModel = BugsViewModel()
-//  
-//  static var previews: some View {
-//    BugDetails(viewModel: viewModel, bug: viewModel.bugsArray[0])
-//  }
-//}

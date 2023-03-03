@@ -11,8 +11,8 @@ final class BugsViewModel: ObservableObject {
   @Published var bugsArray: [CollectibleItem] = []
   @Published var filter: Filter = .noFilter
   
-  @Published var showCurrentBugs = true
-  @Published var showBugsOfTheMonth = true
+  @Published var showCurrentBugs = false
+  @Published var showBugsOfTheMonth = false
   @Published var showAllBugs = true
   
   @Published var noFilter = false
@@ -20,21 +20,23 @@ final class BugsViewModel: ObservableObject {
   @Published var decreasingPrice = false
   @Published var alphabeticalOrder = false
   
-  @Published var isCollected = false
   @Published var showMissingItemsOnly = false
   
   @MainActor func loadBugs() {
     Task {
       do {
-        let response = try await CollectibleService.fetchCollectibles(path: "bugs")
-        let bugs = response.map {
-          CollectibleItem(id: $0.id,
-                          name: $0.name,
-                          availability: $0.availability,
-                          speed: $0.speed,
-                          shadow: $0.shadow,
-                          price: $0.price,
-                          iconURI: $0.iconURI)
+        // bugs
+        let bugResponse = try await CollectibleService.fetchCollectibles(path: "bugs")
+        let bugs = bugResponse.map {
+          CollectibleItem(
+            itemNumber: $0.id,
+            name: $0.name,
+            availability: $0.availability,
+            speed: $0.speed,
+            shadow: $0.shadow,
+            price: $0.price,
+            iconURI: $0.iconURI
+          )
         }
         self.bugsArray = bugs
       } catch {
@@ -80,7 +82,7 @@ extension BugsViewModel {
 extension BugsViewModel {
   var missingItems: [CollectibleItem] {
     bugsArray.filter { bug in
-      (showMissingItemsOnly || !bug.isCollected)
+      (!showMissingItemsOnly || !bug.isCollected)
     }
   }
 }

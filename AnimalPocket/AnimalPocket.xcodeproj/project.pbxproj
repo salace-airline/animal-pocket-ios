@@ -67,6 +67,10 @@
 		101AF9F7290BBD9200855FA6 /* BugsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101AF9F6290BBD9200855FA6 /* BugsTests.swift */; };
 		101AFA01290BBD9200855FA6 /* AnimalPocketUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101AFA00290BBD9200855FA6 /* AnimalPocketUITests.swift */; };
 		101AFA03290BBD9200855FA6 /* AnimalPocketUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101AFA02290BBD9200855FA6 /* AnimalPocketUITestsLaunchTests.swift */; };
+		DC43DDAC29AE2FEC00DECFA4 /* CollectibleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC43DDAB29AE2FEC00DECFA4 /* CollectibleViewModel.swift */; };
+		DC43DDAF29AE319A00DECFA4 /* CollectibleDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC43DDAE29AE319A00DECFA4 /* CollectibleDetails.swift */; };
+		DC43DDB329AE3A1200DECFA4 /* CategoryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC43DDB229AE3A1200DECFA4 /* CategoryRouter.swift */; };
+		DC872ACE29AF5E2400E2DC47 /* AllCollectibles.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC872ACD29AF5E2400E2DC47 /* AllCollectibles.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -159,6 +163,10 @@
 		101AF9FC290BBD9200855FA6 /* AnimalPocketUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnimalPocketUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		101AFA00290BBD9200855FA6 /* AnimalPocketUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalPocketUITests.swift; sourceTree = "<group>"; };
 		101AFA02290BBD9200855FA6 /* AnimalPocketUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalPocketUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		DC43DDAB29AE2FEC00DECFA4 /* CollectibleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectibleViewModel.swift; sourceTree = "<group>"; };
+		DC43DDAE29AE319A00DECFA4 /* CollectibleDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectibleDetails.swift; sourceTree = "<group>"; };
+		DC43DDB229AE3A1200DECFA4 /* CategoryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRouter.swift; sourceTree = "<group>"; };
+		DC872ACD29AF5E2400E2DC47 /* AllCollectibles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCollectibles.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +204,7 @@
 		004A258C290BD9A3009281E4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DC43DDAD29AE318400DECFA4 /* Collectibles */,
 				004A258E290BDB17009281E4 /* HomePage.swift */,
 				00730FD6299FCD5E004E8C37 /* CollectibleItem.swift */,
 				005DF1E829488DCC00F964CE /* SeaItems */,
@@ -236,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				006E8C7D2931083700127551 /* BugsViewModel.swift */,
+				DC43DDAB29AE2FEC00DECFA4 /* CollectibleViewModel.swift */,
 				002CB1B929433B1E0093B974 /* FishViewModel.swift */,
 				005DF1DB29437F9600F964CE /* SeaCreatureViewModel.swift */,
 				0083A5BF295DEC4700007ED4 /* RarityViewModel.swift */,
@@ -304,6 +314,7 @@
 			children = (
 				00D9B9632993AB5C001B9FF6 /* CollectibleRequest.swift */,
 				00D9B9662993AD21001B9FF6 /* CategoryRequest.swift */,
+				DC43DDB229AE3A1200DECFA4 /* CategoryRouter.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -446,6 +457,15 @@
 				101AFA02290BBD9200855FA6 /* AnimalPocketUITestsLaunchTests.swift */,
 			);
 			path = AnimalPocketUITests;
+			sourceTree = "<group>";
+		};
+		DC43DDAD29AE318400DECFA4 /* Collectibles */ = {
+			isa = PBXGroup;
+			children = (
+				DC43DDAE29AE319A00DECFA4 /* CollectibleDetails.swift */,
+				DC872ACD29AF5E2400E2DC47 /* AllCollectibles.swift */,
+			);
+			path = Collectibles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -620,6 +640,7 @@
 			files = (
 				00DCEADE298D16D2001D7AF4 /* MinusToggleStyle.swift in Sources */,
 				00D9B95E2993A98B001B9FF6 /* Request.swift in Sources */,
+				DC43DDB329AE3A1200DECFA4 /* CategoryRouter.swift in Sources */,
 				0083A5DD2984301E00007ED4 /* BugCategory.swift in Sources */,
 				002CB1BA29433B1E0093B974 /* FishViewModel.swift in Sources */,
 				00D9B9622993A9DA001B9FF6 /* NetworkingError.swift in Sources */,
@@ -641,10 +662,12 @@
 				0083A5D3297AD26300007ED4 /* SeaFilterButton.swift in Sources */,
 				00D9B9672993AD21001B9FF6 /* CategoryRequest.swift in Sources */,
 				0000E8C2290C1D6700BE076D /* Colors.swift in Sources */,
+				DC872ACE29AF5E2400E2DC47 /* AllCollectibles.swift in Sources */,
 				0083A5C82971B16600007ED4 /* Filter.swift in Sources */,
 				00DCEAE5298D3E3C001D7AF4 /* FishButtons.swift in Sources */,
 				005DF1E5294881FD00F964CE /* BugRow.swift in Sources */,
 				0083A5B4295C533600007ED4 /* AllBugs.swift in Sources */,
+				DC43DDAF29AE319A00DECFA4 /* CollectibleDetails.swift in Sources */,
 				001839FD299FD95700617F89 /* CollectedButton.swift in Sources */,
 				005DF1EC29488EA300F964CE /* SeaDetails.swift in Sources */,
 				00730FD7299FCD5E004E8C37 /* CollectibleItem.swift in Sources */,
@@ -661,6 +684,7 @@
 				0083A5C0295DEC4700007ED4 /* RarityViewModel.swift in Sources */,
 				00D9B96D2993AE61001B9FF6 /* CollectibleService.swift in Sources */,
 				101AF9E6290BBD9100855FA6 /* AnimalPocketApp.swift in Sources */,
+				DC43DDAC29AE2FEC00DECFA4 /* CollectibleViewModel.swift in Sources */,
 				002CB1B629433A480093B974 /* Name.swift in Sources */,
 				005DF1EE29488FE900F964CE /* SeaRow.swift in Sources */,
 				0083A5BE295DEB1600007ED4 /* RarityBadge.swift in Sources */,

@@ -7,18 +7,18 @@
 
 import Foundation
 
-public struct Availability {
-  public let monthNorthern, monthSouthern: String
-  public let time: Time
-  public let isAllDay, isAllYear: Bool
-  public let location: String?
-  public let rarity: Rarity?
-  public let monthArrayNorthern: [Int]
-  public let monthArraySouthern: [Int]
-  public let timeArray: [Int]
+public struct Availability: Codable {
+  public var monthNorthern, monthSouthern: String
+  public var time: Time
+  public var isAllDay, isAllYear: Bool
+  public var location: String?
+  public var rarity: Rarity?
+  public var monthArrayNorthern: [Int]
+  public var monthArraySouthern: [Int]
+  public var timeArray: [Int]
 }
 
-extension Availability: Decodable {
+extension Availability {
   enum CodingKeys: String, CodingKey {
     case monthNorthern = "month-northern"
     case monthSouthern = "month-southern"

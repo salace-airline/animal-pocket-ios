@@ -9,7 +9,6 @@ import SwiftUI
 
 @main
 struct AnimalPocketApp: App {
-  
   var body: some Scene {
     WindowGroup {
       HomePage()
