@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct Categories: Codable {
+class Categories: Codable, ObservableObject {
   var fish: [CollectibleItem]
   var bugs: [CollectibleItem]
   var sea: [CollectibleItem]
 }
 
-struct CollectibleItem: Identifiable, Codable {
+class CollectibleItem: Identifiable, Codable, ObservableObject {
   var id = UUID()
   var itemNumber: Int
   var name: Name
