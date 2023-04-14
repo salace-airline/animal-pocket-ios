@@ -15,7 +15,7 @@ struct FishOfTheMonth: View {
   ]
 
   var body: some View {
-    NavigationStack {
+    VStack {
       switch viewModel.filter {
         case .noFilter:
           loadedFish(fish: viewModel.currentMonthFish)
@@ -30,7 +30,7 @@ struct FishOfTheMonth: View {
   }
   
   func loadedFish(fish: [CollectibleItem]) -> some View {
-    NavigationStack {
+    VStack {
       FishButtons(viewModel: viewModel)
       
       ScrollView(.vertical) {

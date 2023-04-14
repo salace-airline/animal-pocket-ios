@@ -15,7 +15,7 @@ struct AllBugs: View {
   ]
   
   var body: some View {
-    NavigationStack {
+    VStack {
       if viewModel.showMissingItemsOnly {
         switch viewModel.filter {
           case .noFilter:
@@ -43,7 +43,7 @@ struct AllBugs: View {
   }
   
   func loadedBugs(with bugs: [CollectibleItem]) -> some View {
-    NavigationStack {
+    VStack {
       Toggle(isOn: $viewModel.showMissingItemsOnly) {
         Text("Missing Items Only")
       }

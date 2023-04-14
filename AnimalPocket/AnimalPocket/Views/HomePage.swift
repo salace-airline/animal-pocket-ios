@@ -46,7 +46,12 @@ struct HomePage: View {
             }
           }
         }
+                
+        Image("tide3")
+          .resizable()
+          .aspectRatio(contentMode: .fit)
       }
+      .edgesIgnoringSafeArea(.bottom)
     }
     .font(.custom("FinkHeavy", size: 15))
   }

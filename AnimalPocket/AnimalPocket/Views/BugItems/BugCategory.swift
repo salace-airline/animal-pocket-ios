@@ -11,7 +11,7 @@ struct BugCategory: View {
   @ObservedObject var viewModel = BugsViewModel()
   
   var body: some View {
-    NavigationStack {
+    VStack {
       Text("Insectes")
         .font(.custom("FinkHeavy", size: 20))
         .font(.subheadline)

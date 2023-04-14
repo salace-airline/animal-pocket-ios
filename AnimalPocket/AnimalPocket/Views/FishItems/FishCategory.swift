@@ -14,7 +14,7 @@ struct FishCategory: View {
   @State private var showAllFish = true
   
   var body: some View {
-    NavigationStack {
+    VStack {
       Text("Poissons")
         .font(.custom("FinkHeavy", size: 20))
         .font(.subheadline)
