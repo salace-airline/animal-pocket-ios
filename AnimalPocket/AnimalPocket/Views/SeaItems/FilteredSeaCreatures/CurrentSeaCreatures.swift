@@ -15,7 +15,7 @@ struct CurrentSeaCreatures: View {
   ]
   
   var body: some View {
-    NavigationStack {
+    VStack {
       switch viewModel.filter {
         case .noFilter:
           loadedSea(sea: viewModel.currentlyAvailable)
@@ -29,8 +29,8 @@ struct CurrentSeaCreatures: View {
     }
   }
   
-  func loadedSea(sea: [Collectible]) -> some View {
-    NavigationStack {
+  func loadedSea(sea: [CollectibleItem]) -> some View {
+    VStack {
       SeaButtons(viewModel: viewModel)
       
       ScrollView(.vertical) {

@@ -15,7 +15,7 @@ struct CurrentFish: View {
   ]
   
   var body: some View {
-    NavigationStack {
+    VStack {
       switch viewModel.filter {
         case .noFilter:
           loadedFish(fish: viewModel.currentlyAvailable)
@@ -29,8 +29,8 @@ struct CurrentFish: View {
     }
   }
   
-  func loadedFish(fish: [Collectible]) -> some View {
-    NavigationStack {
+  func loadedFish(fish: [CollectibleItem]) -> some View {
+    VStack {
       FishButtons(viewModel: viewModel)
       
       ScrollView(.vertical) {

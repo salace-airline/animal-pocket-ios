@@ -6,28 +6,27 @@
 //
 
 import SwiftUI
+import NukeUI
 
 struct CollectibleImage: View {
-  var item: Collectible
+  var item: CollectibleItem
   var background: String
   
   var body: some View {
-    AsyncImage(url: URL(string: item.iconURI)) { image in
-      image
-        .resizable()
+    VStack {
+      LazyImage(url: URL(string: item.iconURI))
+        .animation(nil)
         .scaledToFit()
         .background(Image(background))
         .frame(maxWidth: .infinity)
         .clipShape(Rectangle())
-    } placeholder: {
-      ProgressView()
+        .aspectRatio(2, contentMode: .fit)
     }
-    .aspectRatio(2, contentMode: .fit)
   }
 }
 
 struct CollectibleImage_Previews: PreviewProvider {
   static var previews: some View {
-    CollectibleImage(item: Collectible.bugSample, background: "fond_violet")
+    CollectibleImage(item: CollectibleItem.bugSample, background: "fond_violet")
   }
 }

@@ -15,7 +15,7 @@ struct BugsOfTheMonth: View {
   ]
   
   var body: some View {
-    NavigationStack {
+    VStack {
       switch viewModel.filter {
         case .noFilter:
           loadedBugs(with: viewModel.currentMonth)
@@ -29,8 +29,8 @@ struct BugsOfTheMonth: View {
     }
   }
   
-  func loadedBugs(with bugs: [Collectible]) -> some View {
-    NavigationStack {
+  func loadedBugs(with bugs: [CollectibleItem]) -> some View {
+    VStack {
       BugButtons(viewModel: viewModel)
       
       ScrollView(.vertical) {

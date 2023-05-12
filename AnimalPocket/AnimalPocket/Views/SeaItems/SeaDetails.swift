@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SeaDetails: View {
-  var sea: Collectible
+  var sea: CollectibleItem
   
   var body: some View {
     VStack {
@@ -69,6 +69,6 @@ struct SeaDetails: View {
 
 struct SeaDetails_Previews: PreviewProvider {
   static var previews: some View {
-    SeaDetails(sea: Collectible.seaSample)
+    SeaDetails(sea: CollectibleItem.seaSample)
   }
 }

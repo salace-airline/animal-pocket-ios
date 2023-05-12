@@ -46,13 +46,20 @@ struct HomePage: View {
             }
           }
         }
+                
+        Image("tide3")
+          .resizable()
+          .aspectRatio(contentMode: .fit)
       }
+      .edgesIgnoringSafeArea(.bottom)
     }
     .font(.custom("FinkHeavy", size: 15))
   }
 }
 
 struct HomePage_Previews: PreviewProvider {
+  static let items = BugsViewModel()
+  
   static var previews: some View {
     HomePage()
   }

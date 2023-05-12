@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct BugDetails: View {
-  var bug: Collectible
+  var bug: CollectibleItem
   
   var body: some View {
     VStack {
       CollectibleImage(item: self.bug, background: "fond")
       
-      VStack {
+      HStack {
         Text(self.bug.name.nameEUfr)
           .font(.system(size: 15))
           .bold()
@@ -64,6 +64,6 @@ struct BugDetails: View {
 
 struct BugDetails_Previews: PreviewProvider {
   static var previews: some View {
-    BugDetails(bug: Collectible.bugSample)
+    BugDetails(bug: CollectibleItem.bugSample)
   }
 }

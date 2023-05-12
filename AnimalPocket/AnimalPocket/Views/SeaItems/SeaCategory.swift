@@ -14,7 +14,7 @@ struct SeaCategory: View {
   @State private var showAllSeaCreatures = true
   
   var body: some View {
-    NavigationStack {
+    VStack {
       Text("Créatures Marines")
         .font(.custom("FinkHeavy", size: 20))
         .font(.subheadline)

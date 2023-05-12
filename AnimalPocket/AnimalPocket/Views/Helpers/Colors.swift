@@ -17,4 +17,6 @@ public enum Colors {
   public static let bluePaleDark = Color("blue_pale_dark")
   public static let blueDark = Color("blue_dark")
   public static let blue200 = Color("blue200")
+  public static let beige200 = Color("beige200")
+  public static let blueTide = Color("blueTide")
 }

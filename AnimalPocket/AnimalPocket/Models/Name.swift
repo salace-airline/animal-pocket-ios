@@ -7,9 +7,9 @@
 
 import Foundation
 
-public struct Name {
-  public let nameEUen: String
-  public let nameEUfr: String
+public struct Name: Codable {
+  public var nameEUen: String
+  public var nameEUfr: String
   
   init(nameEUen: String, nameEUfr: String) {
     self.nameEUen = nameEUen.capitalized
@@ -17,7 +17,7 @@ public struct Name {
   }
 }
 
-extension Name: Decodable {
+extension Name {
   enum CodingKeys: String, CodingKey {
     case nameEUen = "name-EUen"
     case nameEUfr = "name-EUfr"

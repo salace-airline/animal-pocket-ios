@@ -1,19 +1,19 @@
 //
-//  BugsViewModel.swift
+//  CollectibleViewModel.swift
 //  AnimalPocket
 //
-//  Created by Sarah Watremet on 25/11/2022.
+//  Created by Sarah WATREMET on 28/02/2023.
 //
 
 import Foundation
 
-final class BugsViewModel: ObservableObject {
-  @Published var bugsArray: [CollectibleItem] = []
+final class CollectibleViewModel: ObservableObject {
+  @Published var itemsArray: [CollectibleItem] = []
   @Published var filter: Filter = .noFilter
   
-  @Published var showCurrentBugs = true
-  @Published var showBugsOfTheMonth = true
-  @Published var showAllBugs = true
+  @Published var showCurrentItem = false
+  @Published var showItemsOfTheMonth = false
+  @Published var showAllItems = true
   
   @Published var noFilter = false
   @Published var increasingPrice = false
@@ -22,7 +22,7 @@ final class BugsViewModel: ObservableObject {
   
   @Published var showMissingItemsOnly = false
   
-  @MainActor func loadBugs() {
+  @MainActor func loadItems() {
     Task {
       do {
         // bugs
@@ -38,7 +38,39 @@ final class BugsViewModel: ObservableObject {
             iconURI: $0.iconURI
           )
         }
-        self.bugsArray = bugs
+        self.itemsArray.append(contentsOf: bugs)
+        
+        // fish
+        let fishResponse = try await CollectibleService.fetchCollectibles(path: "fish")
+        let fish = fishResponse.map {
+          CollectibleItem(
+            itemNumber: $0.id,
+            name: $0.name,
+            availability: $0.availability,
+            speed: $0.speed,
+            shadow: $0.shadow,
+            price: $0.price,
+            iconURI: $0.iconURI
+          )
+        }
+        self.itemsArray.append(contentsOf: fish)
+        
+        // sea creatures
+        let seaResponse = try await CollectibleService.fetchCollectibles(path: "sea")
+        let sea = seaResponse.map{
+          CollectibleItem(
+            itemNumber: $0.id,
+            name: $0.name,
+            availability: $0.availability,
+            speed: $0.speed,
+            shadow: $0.shadow,
+            price: $0.price,
+            iconURI: $0.iconURI
+          )
+        }
+        self.itemsArray.append(contentsOf: sea)
+        
+        print(itemsArray)
       } catch {
         print("Error", error)
       }
@@ -46,12 +78,11 @@ final class BugsViewModel: ObservableObject {
   }
 }
 
-
 // Month & current filters
-extension BugsViewModel {
+extension CollectibleViewModel {
   var currentMonth: [CollectibleItem] {
     var currentItems: [CollectibleItem] = []
-    for item in bugsArray {
+    for item in itemsArray {
       for month in item.availability.monthArrayNorthern {
         if month == item.availability.currentMonth {
           currentItems.append(item)
@@ -63,7 +94,7 @@ extension BugsViewModel {
   
   var currentlyAvailable: [CollectibleItem] {
     var currentItems: [CollectibleItem] = []
-    for item in bugsArray {
+    for item in itemsArray {
       for time in item.availability.timeArray {
         if time == item.availability.currentTime {
           for month in item.availability.monthArrayNorthern {
@@ -79,12 +110,10 @@ extension BugsViewModel {
 }
 
 // Collection filter
-extension BugsViewModel {
+extension CollectibleViewModel {
   var missingItems: [CollectibleItem] {
-    bugsArray.filter { bug in
-      (!showMissingItemsOnly || !bug.isCollected)
+    itemsArray.filter { item in
+      (!showMissingItemsOnly || !item.isCollected)
     }
   }
 }
-
-

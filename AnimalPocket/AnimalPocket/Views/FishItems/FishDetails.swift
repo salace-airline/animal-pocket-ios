@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FishDetails: View {
-  var fish: Collectible
+  var fish: CollectibleItem
   
   var body: some View {
       VStack {
@@ -71,6 +71,6 @@ struct FishDetails: View {
 
 struct GridItem_Previews: PreviewProvider {
     static var previews: some View {
-      FishDetails(fish: Collectible.fishSample)
+      FishDetails(fish: CollectibleItem.fishSample)
     }
 }

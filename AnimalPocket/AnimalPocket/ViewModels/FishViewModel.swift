@@ -8,7 +8,7 @@
 import Foundation
 
 final class FishViewModel: ObservableObject {
-  @Published var fishArray: [Collectible] = []
+  @Published var fishArray: [CollectibleItem] = []
   @Published var filter: Filter = .noFilter
   @Published var noFilter = false
   @Published var increasingPrice = false
@@ -19,7 +19,18 @@ final class FishViewModel: ObservableObject {
     Task {
       do {
         let response = try await CollectibleNetworkService.fetchCollectibles(path: "fish")
-        self.fishArray = response
+        let fish = response.map {
+          CollectibleItem(
+            itemNumber: $0.id,
+            name: $0.name,
+            availability: $0.availability,
+            speed: $0.speed,
+            shadow: $0.shadow,
+            price: $0.price,
+            iconURI: $0.iconURI
+          )
+        }
+        self.fishArray = fish
       } catch {
         print("Error", error)
       }
@@ -29,8 +40,8 @@ final class FishViewModel: ObservableObject {
 
 // Month & current filters
 extension FishViewModel {
-  var currentMonthFish: [Collectible] {
-    var currentFish: [Collectible] = []
+  var currentMonthFish: [CollectibleItem] {
+    var currentFish: [CollectibleItem] = []
     for fish in fishArray {
       for month in fish.availability.monthArrayNorthern {
         if month == fish.availability.currentMonth {
@@ -41,8 +52,8 @@ extension FishViewModel {
     return currentFish
   }
   
-  var currentlyAvailable: [Collectible] {
-    var currentFish: [Collectible] = []
+  var currentlyAvailable: [CollectibleItem] {
+    var currentFish: [CollectibleItem] = []
     for fish in fishArray {
       for time in fish.availability.timeArray {
         if time == fish.availability.currentTime {
