@@ -18,7 +18,7 @@ struct BugRow: View {
     ScrollView(.horizontal) {
       LazyHGrid(rows: rows) {
         ForEach(viewModel.currentlyAvailable) { bug in
-          BugDetails(viewModel: viewModel, bug: bug)
+          BugDetails(bug: bug)
         }
       }
     }

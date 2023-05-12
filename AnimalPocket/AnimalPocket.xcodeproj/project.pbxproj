@@ -74,9 +74,7 @@
 		101AFA01290BBD9200855FA6 /* AnimalPocketUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101AFA00290BBD9200855FA6 /* AnimalPocketUITests.swift */; };
 		101AFA03290BBD9200855FA6 /* AnimalPocketUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101AFA02290BBD9200855FA6 /* AnimalPocketUITestsLaunchTests.swift */; };
 		DC43DDAC29AE2FEC00DECFA4 /* CollectibleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC43DDAB29AE2FEC00DECFA4 /* CollectibleViewModel.swift */; };
-		DC43DDAF29AE319A00DECFA4 /* CollectibleDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC43DDAE29AE319A00DECFA4 /* CollectibleDetails.swift */; };
 		DC43DDB329AE3A1200DECFA4 /* CategoryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC43DDB229AE3A1200DECFA4 /* CategoryRouter.swift */; };
-		DC872ACE29AF5E2400E2DC47 /* AllCollectibles.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC872ACD29AF5E2400E2DC47 /* AllCollectibles.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -173,9 +171,7 @@
 		101AFA00290BBD9200855FA6 /* AnimalPocketUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalPocketUITests.swift; sourceTree = "<group>"; };
 		101AFA02290BBD9200855FA6 /* AnimalPocketUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalPocketUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		DC43DDAB29AE2FEC00DECFA4 /* CollectibleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectibleViewModel.swift; sourceTree = "<group>"; };
-		DC43DDAE29AE319A00DECFA4 /* CollectibleDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectibleDetails.swift; sourceTree = "<group>"; };
 		DC43DDB229AE3A1200DECFA4 /* CategoryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRouter.swift; sourceTree = "<group>"; };
-		DC872ACD29AF5E2400E2DC47 /* AllCollectibles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCollectibles.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,7 +215,6 @@
 				00ADF74929E956C100729CAF /* MainView.swift */,
 				004A258E290BDB17009281E4 /* HomePage.swift */,
 				00ADF74B29E9581600729CAF /* User */,
-				DC43DDAD29AE318400DECFA4 /* Collectibles */,
 				00730FD6299FCD5E004E8C37 /* CollectibleItem.swift */,
 				005DF1E829488DCC00F964CE /* SeaItems */,
 				005DF1E12948805C00F964CE /* BugItems */,
@@ -482,15 +477,6 @@
 			path = AnimalPocketUITests;
 			sourceTree = "<group>";
 		};
-		DC43DDAD29AE318400DECFA4 /* Collectibles */ = {
-			isa = PBXGroup;
-			children = (
-				DC43DDAE29AE319A00DECFA4 /* CollectibleDetails.swift */,
-				DC872ACD29AF5E2400E2DC47 /* AllCollectibles.swift */,
-			);
-			path = Collectibles;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -695,12 +681,10 @@
 				0083A5D3297AD26300007ED4 /* SeaFilterButton.swift in Sources */,
 				00D9B9672993AD21001B9FF6 /* CategoryRequest.swift in Sources */,
 				0000E8C2290C1D6700BE076D /* Colors.swift in Sources */,
-				DC872ACE29AF5E2400E2DC47 /* AllCollectibles.swift in Sources */,
 				0083A5C82971B16600007ED4 /* Filter.swift in Sources */,
 				00DCEAE5298D3E3C001D7AF4 /* FishButtons.swift in Sources */,
 				005DF1E5294881FD00F964CE /* BugRow.swift in Sources */,
 				0083A5B4295C533600007ED4 /* AllBugs.swift in Sources */,
-				DC43DDAF29AE319A00DECFA4 /* CollectibleDetails.swift in Sources */,
 				001839FD299FD95700617F89 /* CollectedButton.swift in Sources */,
 				005DF1EC29488EA300F964CE /* SeaDetails.swift in Sources */,
 				00730FD7299FCD5E004E8C37 /* CollectibleItem.swift in Sources */,

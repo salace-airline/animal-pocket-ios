@@ -36,7 +36,7 @@ struct CurrentBugs: View {
       ScrollView(.vertical) {
         LazyVGrid(columns: columns, spacing: 10) {
           ForEach(bugs) { bug in
-            BugDetails(viewModel: viewModel, bug: bug)
+            BugDetails(bug: bug)
           }
         }
       }

@@ -22,9 +22,9 @@ class CollectibleItem: Identifiable, Codable, ObservableObject {
   var shadow: String?
   var price: Int
   var iconURI: String
-  var isCollected = false
+  var isCollected: Bool
   
-  init(itemNumber: Int, name: Name, availability: Availability, speed: String?, shadow: String?, price: Int, iconURI: String) {
+  init(itemNumber: Int, name: Name, availability: Availability, speed: String?, shadow: String?, price: Int, iconURI: String, isCollected: Bool = false) {
     self.itemNumber = itemNumber
     self.name = name
     self.availability = availability
@@ -32,6 +32,7 @@ class CollectibleItem: Identifiable, Codable, ObservableObject {
     self.shadow = shadow
     self.price = price
     self.iconURI = iconURI
+    self.isCollected = isCollected
   }
 }
 

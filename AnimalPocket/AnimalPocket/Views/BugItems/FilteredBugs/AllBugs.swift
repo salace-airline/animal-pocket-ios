@@ -16,44 +16,28 @@ struct AllBugs: View {
   
   var body: some View {
     VStack {
-      if viewModel.showMissingItemsOnly {
-        switch viewModel.filter {
-          case .noFilter:
-            loadedBugs(with: viewModel.missingItems)
-          case .increasingPrice:
-            loadedBugs(with: viewModel.filter.increasePrice(of: viewModel.missingItems))
-          case .decreasingPrice:
-            loadedBugs(with: viewModel.filter.decreasePrice(of: viewModel.missingItems))
-          case .alphatically:
-            loadedBugs(with: viewModel.filter.sortAlphabetically(viewModel.missingItems))
-        }
-      } else {
-        switch viewModel.filter {
-          case .noFilter:
-            loadedBugs(with: viewModel.bugsArray)
-          case .increasingPrice:
-            loadedBugs(with: viewModel.filter.increasePrice(of: viewModel.bugsArray))
-          case .decreasingPrice:
-            loadedBugs(with: viewModel.filter.decreasePrice(of: viewModel.bugsArray))
-          case .alphatically:
-            loadedBugs(with: viewModel.filter.sortAlphabetically(viewModel.bugsArray))
-        }
+      switch viewModel.filter {
+        case .noFilter:
+          loadedBugs(with: viewModel.bugsArray)
+        case .increasingPrice:
+          loadedBugs(with: viewModel.filter.increasePrice(of: viewModel.bugsArray))
+        case .decreasingPrice:
+          loadedBugs(with: viewModel.filter.decreasePrice(of: viewModel.bugsArray))
+        case .alphatically:
+          loadedBugs(with: viewModel.filter.sortAlphabetically(viewModel.bugsArray))
       }
     }
   }
   
   func loadedBugs(with bugs: [CollectibleItem]) -> some View {
     VStack {
-      Toggle(isOn: $viewModel.showMissingItemsOnly) {
-        Text("Missing Items Only")
-      }
       
       BugButtons(viewModel: viewModel)
       
       ScrollView(.vertical) {
         LazyVGrid(columns: columns, spacing: 10) {
           ForEach(bugs) { bug in
-            BugDetails(viewModel: viewModel, bug: bug)
+            BugDetails(bug: bug)
           }
         }
       }

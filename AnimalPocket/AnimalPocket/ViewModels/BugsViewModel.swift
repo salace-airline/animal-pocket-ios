@@ -11,8 +11,8 @@ final class BugsViewModel: ObservableObject {
   @Published var bugsArray: [CollectibleItem] = []
   @Published var filter: Filter = .noFilter
   
-  @Published var showCurrentBugs = false
-  @Published var showBugsOfTheMonth = false
+  @Published var showCurrentBugs = true
+  @Published var showBugsOfTheMonth = true
   @Published var showAllBugs = true
   
   @Published var noFilter = false

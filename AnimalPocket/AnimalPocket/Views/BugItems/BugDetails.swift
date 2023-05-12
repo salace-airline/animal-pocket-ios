@@ -8,12 +8,7 @@
 import SwiftUI
 
 struct BugDetails: View {
-  @ObservedObject var viewModel = BugsViewModel()
   var bug: CollectibleItem
-  
-  var bugIndex: Int {
-    viewModel.bugsArray.firstIndex(where: { $0.itemNumber == bug.itemNumber }) ?? 404
-  }
   
   var body: some View {
     VStack {
@@ -23,13 +18,6 @@ struct BugDetails: View {
         Text(self.bug.name.nameEUfr)
           .font(.system(size: 15))
           .bold()
-        
-        
-        CollectedButton(isSet: $viewModel.bugsArray[bugIndex].isCollected,
-                        setImage: "ant.circle.fill",
-                        unsetImage: "ant.circle",
-                        setColor: Colors.green100
-        )
       }
       .padding(.bottom, 0.5)
       
@@ -74,10 +62,8 @@ struct BugDetails: View {
   }
 }
 
-//struct BugDetails_Previews: PreviewProvider {
-//  static let viewModel = BugsViewModel()
-//  
-//  static var previews: some View {
-//    BugDetails(viewModel: viewModel, bug: viewModel.bugsArray[0])
-//  }
-//}
+struct BugDetails_Previews: PreviewProvider {
+  static var previews: some View {
+    BugDetails(bug: CollectibleItem.bugSample)
+  }
+}
