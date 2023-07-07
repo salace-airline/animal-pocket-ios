@@ -32,7 +32,7 @@ extension Availability {
 extension Availability {
   var period: String {
     if self.isAllYear == true {
-      return "Toute l'année"
+      return "All year long"
     } else {
       return monthsString
     }
@@ -40,7 +40,7 @@ extension Availability {
   
   var hour: String {
     if self.time.self == .empty || self.isAllDay == true {
-      return "Toute la journée"
+      return "All day long"
     } else {
       return self.time.self.rawValue
     }

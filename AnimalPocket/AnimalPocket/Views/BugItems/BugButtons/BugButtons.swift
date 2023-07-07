@@ -14,7 +14,7 @@ struct BugButtons: View {
     HStack {
       BugFilterButtons(isSelected: $viewModel.alphabeticalOrder,
                        color: Colors.green100,
-                       buttonText: "Nom")
+                       buttonText: "Name")
       .onTapGesture(perform: {
         viewModel.alphabeticalOrder.toggle()
         viewModel.filter = .alphatically
@@ -29,7 +29,7 @@ struct BugButtons: View {
       
       BugFilterButtons(isSelected: $viewModel.decreasingPrice,
                        color: Colors.green100,
-                       buttonText: "Prix + -")
+                       buttonText: "Price + -")
       .onTapGesture(perform: {
         viewModel.decreasingPrice.toggle()
         viewModel.filter = .decreasingPrice
@@ -44,7 +44,7 @@ struct BugButtons: View {
       
       BugFilterButtons(isSelected: $viewModel.increasingPrice,
                        color: Colors.green100,
-                       buttonText: "Prix - +")
+                       buttonText: "Price - +")
       .onTapGesture(perform: {
         viewModel.increasingPrice.toggle()
         viewModel.filter = .increasingPrice

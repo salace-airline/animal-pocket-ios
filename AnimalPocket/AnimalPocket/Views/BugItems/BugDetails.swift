@@ -15,7 +15,7 @@ struct BugDetails: View {
       CollectibleImage(item: self.bug, background: "fond")
       
       HStack {
-        Text(self.bug.name.nameEUfr)
+        Text(self.bug.name.nameEUen.capitalized)
           .font(.system(size: 15))
           .bold()
       }
@@ -24,31 +24,31 @@ struct BugDetails: View {
       // VStack below should go into a separate "item description" component
       VStack(alignment: .leading) {
         HStack {
-          Text("Période:")
+          Text("Period:")
             .foregroundColor(Colors.green100)
             .bold()
           Text(self.bug.availability.period)
         }
         
         HStack {
-          Text("Heure:")
+          Text("Time:")
             .foregroundColor(Colors.green100)
             .bold()
           Text(self.bug.availability.hour)
         }
         
         HStack {
-          Text("Lieu:")
+          Text("Place:")
             .foregroundColor(Colors.green100)
             .bold()
           Text(self.bug.availability.location ?? "")
         }
         
         HStack {
-          Text("Prix:")
+          Text("Price:")
             .foregroundColor(Colors.green100)
             .bold()
-          Text("\(self.bug.price) clochettes")
+          Text("\(self.bug.price) bells")
         }
         
         RarityBadge(rarity: RarityViewModel(rarityLevel: bug.availability.rarity ?? .common))

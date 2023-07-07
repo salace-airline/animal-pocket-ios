@@ -12,14 +12,14 @@ struct BugCategory: View {
   
   var body: some View {
     VStack {
-      Text("Insectes")
+      Text("Bugs")
         .font(.custom("FinkHeavy", size: 20))
         .font(.subheadline)
       
       ScrollView {
         LazyVStack {
           Toggle(isOn: $viewModel.showCurrentBugs, label: {
-            Text("En ce moment")
+            Text("Currently")
               .font(.custom("FinkHeavy", size: 20))
               .font(.subheadline)
           })
@@ -32,7 +32,7 @@ struct BugCategory: View {
         
         LazyVStack {
           Toggle(isOn: $viewModel.showBugsOfTheMonth, label: {
-            Text("Ce mois-ci")
+            Text("This Month")
               .font(.custom("FinkHeavy", size: 20))
               .font(.subheadline)
           })
@@ -45,7 +45,7 @@ struct BugCategory: View {
         
         LazyVStack {
           Toggle(isOn: $viewModel.showAllBugs, label: {
-            Text("Tous les Insectes")
+            Text("All Bugs")
               .font(.custom("FinkHeavy", size: 20))
               .font(.subheadline)
           })
@@ -56,7 +56,11 @@ struct BugCategory: View {
           }
         }
       }
+      Image("tide3")
+        .resizable()
+        .aspectRatio(contentMode: .fit)
     }
+    .edgesIgnoringSafeArea(.bottom)
   }
 }
 

@@ -14,7 +14,7 @@ struct SeaButtons: View {
     HStack {
       SeaFilterButton(isSelected: $viewModel.alphabeticalOrder,
                       color: Colors.blueDark,
-                      buttonText: "Nom")
+                      buttonText: "Name")
       .onTapGesture(perform: {
         viewModel.alphabeticalOrder.toggle()
         viewModel.filter = .alphatically
@@ -29,7 +29,7 @@ struct SeaButtons: View {
       
       SeaFilterButton(isSelected: $viewModel.decreasingPrice,
                       color: Colors.blueDark,
-                      buttonText: "Prix + -")
+                      buttonText: "Price + -")
       .onTapGesture(perform: {
         viewModel.decreasingPrice.toggle()
         viewModel.filter = .decreasingPrice
@@ -44,7 +44,7 @@ struct SeaButtons: View {
       
       SeaFilterButton(isSelected: $viewModel.increasingPrice,
                       color: Colors.blueDark,
-                      buttonText: "Prix - +")
+                      buttonText: "Price - +")
       .onTapGesture(perform: {
         viewModel.increasingPrice.toggle()
         viewModel.filter = .increasingPrice

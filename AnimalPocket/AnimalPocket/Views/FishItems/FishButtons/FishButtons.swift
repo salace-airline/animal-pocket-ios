@@ -14,7 +14,7 @@ struct FishButtons: View {
     HStack {
       FishFilterButton(isSelected: $viewModel.alphabeticalOrder,
                        color: Colors.blue100,
-                       buttonText: "Nom")
+                       buttonText: "Name")
       .onTapGesture(perform: {
         viewModel.alphabeticalOrder.toggle()
         viewModel.filter = .alphatically
@@ -29,7 +29,7 @@ struct FishButtons: View {
       
       FishFilterButton(isSelected: $viewModel.decreasingPrice,
                        color: Colors.blue100,
-                       buttonText: "Prix + -")
+                       buttonText: "Price + -")
       .onTapGesture(perform: {
         viewModel.decreasingPrice.toggle()
         viewModel.filter = .decreasingPrice
@@ -44,7 +44,7 @@ struct FishButtons: View {
       
       FishFilterButton(isSelected: $viewModel.increasingPrice,
                        color: Colors.blue100,
-                       buttonText: "Prix - +")
+                       buttonText: "Price - +")
       .onTapGesture(perform: {
         viewModel.increasingPrice.toggle()
         viewModel.filter = .increasingPrice

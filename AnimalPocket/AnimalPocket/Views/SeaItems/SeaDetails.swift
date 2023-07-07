@@ -15,7 +15,7 @@ struct SeaDetails: View {
       CollectibleImage(item: self.sea, background: "fond_violet")
       
       VStack {
-        Text(self.sea.name.nameEUfr)
+        Text(self.sea.name.nameEUen.capitalized)
           .font(.system(size: 15))
           .bold()
       }
@@ -24,38 +24,38 @@ struct SeaDetails: View {
       // VStack below should go into a separate "item description" component
       VStack(alignment: .leading) {
         HStack {
-          Text("Période:")
+          Text("Period:")
             .foregroundColor(Colors.blue200)
             .bold()
           Text(self.sea.availability.period)
         }
         
         HStack {
-          Text("Heure:")
+          Text("Time:")
             .foregroundColor(Colors.blue200)
             .bold()
           Text(self.sea.availability.hour)
         }
         
         HStack {
-          Text("Ombre:")
+          Text("Shadow:")
             .foregroundColor(Colors.blue200)
             .bold()
           Text(self.sea.shadow ?? "")
         }
         
         HStack {
-          Text("Vitesse:")
+          Text("Speed:")
             .foregroundColor(Colors.blue200)
             .bold()
           Text(self.sea.speed ?? "")
         }
         
         HStack {
-          Text("Prix:")
+          Text("Price:")
             .foregroundColor(Colors.blue200)
             .bold()
-          Text("\(self.sea.price) clochettes")
+          Text("\(self.sea.price) bells")
         }
       }
       .font(.system(size: 11))

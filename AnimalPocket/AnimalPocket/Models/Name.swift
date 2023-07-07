@@ -12,8 +12,8 @@ public struct Name: Codable {
   public var nameEUfr: String
   
   init(nameEUen: String, nameEUfr: String) {
-    self.nameEUen = nameEUen.capitalized
-    self.nameEUfr = nameEUfr.capitalized
+    self.nameEUen = nameEUen
+    self.nameEUfr = nameEUfr
   }
 }
 
