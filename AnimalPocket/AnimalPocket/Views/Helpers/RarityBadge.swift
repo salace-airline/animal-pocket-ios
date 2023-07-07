@@ -17,7 +17,7 @@ struct RarityBadge: View {
           Text("")
             .padding(2)
         case .uncommon:
-          Text(" Peu Commun ")
+          Text(" Uncommon ")
             .padding(2)
             .fontWeight(.bold)
             .foregroundColor(Color.white)
@@ -31,7 +31,7 @@ struct RarityBadge: View {
             .background(Color.orange)
             .cornerRadius(4)
         case .ultraRare:
-          Text(" Très Rare ")
+          Text(" Very Rare ")
             .padding(2)
             .fontWeight(.bold)
             .foregroundColor(Color.white)

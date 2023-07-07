@@ -9,53 +9,40 @@ import SwiftUI
 
 struct HomePage: View {
   var body: some View {
-    NavigationStack {
       VStack(alignment: .center) {
-        Text("En ce moment")
+        Text("Currently Available")
           .font(.custom("FinkHeavy", size: 20))
           .font(.subheadline)
         
         ScrollView {
-          HStack {
-            VStack {
-              NavigationLink("Poissons \(Image(systemName: "chevron.right"))") {
-                FishCategory()
-              }
-              .buttonStyle(.plain)
-              FishRow()
-            }
+          VStack {
+            Text("Fish")
+              .font(.custom("FinkHeavy", size: 15))
+            FishRow()
           }
           
-          HStack {
-            VStack {
-              NavigationLink("Insectes \(Image(systemName: "chevron.right"))") {
-                BugCategory()
-              }
-              .buttonStyle(.plain)
-              BugRow()
-            }
+          VStack {
+            Text("Bugs")
+              .font(.custom("FinkHeavy", size: 15))
+            BugRow()
           }
           
-          HStack {
-            VStack {
-              NavigationLink("Créatures Marines \(Image(systemName: "chevron.right"))") {
-                SeaCategory()
-              }
-              .buttonStyle(.plain)
-              SeaRow()
-            }
+          VStack {
+            Text("Sea Creatures")
+              .font(.custom("FinkHeavy", size: 15))
+            SeaRow()
           }
         }
                 
         Image("tide3")
           .resizable()
           .aspectRatio(contentMode: .fit)
+        
       }
       .edgesIgnoringSafeArea(.bottom)
     }
-    .font(.custom("FinkHeavy", size: 15))
   }
-}
+
 
 struct HomePage_Previews: PreviewProvider {
   static let items = BugsViewModel()

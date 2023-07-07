@@ -15,7 +15,7 @@ struct FishDetails: View {
         CollectibleImage(item: self.fish, background: "fond_bleu")
 
         VStack {
-          Text(self.fish.name.nameEUfr)
+          Text(self.fish.name.nameEUen.capitalized)
             .font(.system(size: 15))
             .bold()
         }
@@ -24,38 +24,38 @@ struct FishDetails: View {
         // VStack below should go into a separate "item description" component
         VStack(alignment: .leading) {
           HStack {
-            Text("Période:")
+            Text("Period:")
               .foregroundColor(Colors.blue100)
               .bold()
             Text(self.fish.availability.period)
           }
           
           HStack {
-            Text("Heure:")
+            Text("Time:")
               .foregroundColor(Colors.blue100)
               .bold()
             Text(self.fish.availability.hour)
           }
           
           HStack {
-            Text("Lieu:")
+            Text("Place:")
               .foregroundColor(Colors.blue100)
               .bold()
             Text(self.fish.availability.location ?? "")
           }
           
           HStack {
-            Text("Ombre:")
+            Text("Shadow:")
               .foregroundColor(Colors.blue100)
               .bold()
             Text(self.fish.shadow ?? "")
           }
           
           HStack {
-            Text("Prix:")
+            Text("Price:")
               .foregroundColor(Colors.blue100)
               .bold()
-            Text("\(self.fish.price) clochettes")
+            Text("\(self.fish.price) bells")
           }
           
           RarityBadge(rarity: RarityViewModel(rarityLevel: fish.availability.rarity ?? .common))

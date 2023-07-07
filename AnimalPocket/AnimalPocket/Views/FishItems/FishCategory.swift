@@ -15,14 +15,14 @@ struct FishCategory: View {
   
   var body: some View {
     VStack {
-      Text("Poissons")
+      Text("Fish")
         .font(.custom("FinkHeavy", size: 20))
         .font(.subheadline)
       
       ScrollView {
         LazyVStack {
           Toggle(isOn: $showCurrentFish, label: {
-            Text("En ce moment")
+            Text("Currently")
               .font(.custom("FinkHeavy", size: 20))
               .font(.subheadline)
           })
@@ -35,7 +35,7 @@ struct FishCategory: View {
         
         LazyVStack {
           Toggle(isOn: $showFishOfTheMonth, label: {
-            Text("Ce mois-ci")
+            Text("This Month")
               .font(.custom("FinkHeavy", size: 20))
               .font(.subheadline)
           })
@@ -48,7 +48,7 @@ struct FishCategory: View {
         
         LazyVStack {
           Toggle(isOn: $showAllFish, label: {
-            Text("Tous les Poissons")
+            Text("All Fish")
               .font(.custom("FinkHeavy", size: 20))
               .font(.subheadline)
           })
@@ -59,7 +59,11 @@ struct FishCategory: View {
           }
         }
       }
+      Image("tide3")
+        .resizable()
+        .aspectRatio(contentMode: .fit)
     }
+    .edgesIgnoringSafeArea(.bottom)
   }
 }
 

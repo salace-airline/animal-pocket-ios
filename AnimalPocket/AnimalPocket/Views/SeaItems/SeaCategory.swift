@@ -15,14 +15,14 @@ struct SeaCategory: View {
   
   var body: some View {
     VStack {
-      Text("Créatures Marines")
+      Text("Sea Creatures")
         .font(.custom("FinkHeavy", size: 20))
         .font(.subheadline)
       
       ScrollView {
         LazyVStack {
           Toggle(isOn: $showCurrentSeaCreatures, label: {
-            Text("En ce moment")
+            Text("Currently")
               .font(.custom("FinkHeavy", size: 20))
               .font(.subheadline)
           })
@@ -35,7 +35,7 @@ struct SeaCategory: View {
         
         LazyVStack {
           Toggle(isOn: $showSeaCreaturesOfTheMonth, label: {
-            Text("Ce mois-ci")
+            Text("This Month")
               .font(.custom("FinkHeavy", size: 20))
               .font(.subheadline)
           })
@@ -48,7 +48,7 @@ struct SeaCategory: View {
         
         LazyVStack {
           Toggle(isOn: $showAllSeaCreatures, label: {
-            Text("Toutes les Créatures Marines")
+            Text("All Sea Creatures")
               .font(.custom("FinkHeavy", size: 20))
               .font(.subheadline)
           })
@@ -59,7 +59,11 @@ struct SeaCategory: View {
           }
         }
       }
+      Image("tide3")
+        .resizable()
+        .aspectRatio(contentMode: .fit)
     }
+    .edgesIgnoringSafeArea(.bottom)
   }
 }
 
