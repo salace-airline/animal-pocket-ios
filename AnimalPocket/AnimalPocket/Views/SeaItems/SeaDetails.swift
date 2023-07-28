@@ -11,61 +11,80 @@ struct SeaDetails: View {
   var sea: CollectibleItem
   
   var body: some View {
-    VStack {
-      CollectibleImage(item: self.sea, background: "fond_violet")
-      
+    VStack(alignment: .leading) {
       VStack {
-        Text(self.sea.name.nameEUen.capitalized)
-          .font(.system(size: 15))
-          .bold()
+        CollectibleImage(item: sea, background: "fond_violet")
+        
+        HStack {
+          Text(sea.name.nameEUen.capitalized)
+            .font(.system(size: 15))
+            .bold()
+        }
+        .padding(.bottom, 0.5)
       }
-      .padding(.bottom, 0.5)
       
-      // VStack below should go into a separate "item description" component
-      VStack(alignment: .leading) {
-        HStack {
-          Text("Period:")
-            .foregroundColor(Colors.blue200)
-            .bold()
-          Text(self.sea.availability.period)
+      HStack {
+        VStack(alignment: .leading) {
+          HStack {
+            Text("Period:")
+          }
+          HStack {
+            Text("Time:")
+          }
+          HStack {
+            Text("Shadow:")
+          }
+          HStack {
+            Text("Speed:")
+          }
+          HStack {
+            Text("Price:")
+          }
         }
+        .foregroundColor(Colors.blue200)
+        .bold()
         
-        HStack {
-          Text("Time:")
-            .foregroundColor(Colors.blue200)
-            .bold()
-          Text(self.sea.availability.hour)
-        }
         
-        HStack {
-          Text("Shadow:")
-            .foregroundColor(Colors.blue200)
-            .bold()
-          Text(self.sea.shadow ?? "")
-        }
-        
-        HStack {
-          Text("Speed:")
-            .foregroundColor(Colors.blue200)
-            .bold()
-          Text(self.sea.speed ?? "")
-        }
-        
-        HStack {
-          Text("Price:")
-            .foregroundColor(Colors.blue200)
-            .bold()
-          Text("\(self.sea.price) bells")
+        VStack(alignment: .leading) {
+          HStack {
+            Text(sea.availability.period)
+          }
+          
+          HStack {
+            Text(sea.availability.hour)
+          }
+          
+          HStack {
+            Text(sea.shadow ?? "")
+          }
+          
+          HStack {
+            Text(sea.speed ?? "")
+          }
+          
+          HStack {
+            Text("\(sea.price) bells")
+          }
         }
       }
+      .padding(.leading, 10)
+      
       .font(.system(size: 11))
-      .padding(.bottom, 5)
+      .padding(
+        EdgeInsets(
+          top: 0,
+          leading: 10,
+          bottom: 10,
+          trailing: 0
+        )
+      )
     }
     .frame(width: 175)
     .background(Colors.blue200.opacity(0.1))
     .cornerRadius(4)
   }
 }
+
 
 struct SeaDetails_Previews: PreviewProvider {
   static var previews: some View {
