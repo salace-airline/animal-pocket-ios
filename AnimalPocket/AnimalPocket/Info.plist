@@ -6,12 +6,14 @@
 	<array>
 		<string>FinkHeavy.ttf</string>
 	</array>
-	<key>UIApplicationSceneManifest</key>
+	<key>UILaunchScreen</key>
 	<dict>
-		<key>UIApplicationSupportsMultipleScenes</key>
-		<true/>
-		<key>UISceneConfigurations</key>
-		<dict/>
+		<key>UIColorName</key>
+		<string>blueTide</string>
+		<key>UIImageName</key>
+		<string>launch_screen</string>
+		<key>UIImageRespectsSafeAreaInsets</key>
+		<false/>
 	</dict>
 </dict>
 </plist>

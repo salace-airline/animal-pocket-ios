@@ -11,66 +11,79 @@ struct FishDetails: View {
   var fish: CollectibleItem
   
   var body: some View {
+    VStack(alignment: .leading) {
       VStack {
-        CollectibleImage(item: self.fish, background: "fond_bleu")
-
-        VStack {
-          Text(self.fish.name.nameEUen.capitalized)
+        CollectibleImage(item: fish, background: "fond_bleu")
+        
+        HStack {
+          Text(fish.name.nameEUen.capitalized)
             .font(.system(size: 15))
             .bold()
         }
         .padding(.bottom, 0.5)
-        
-        // VStack below should go into a separate "item description" component
+      }
+      
+      HStack {
         VStack(alignment: .leading) {
           HStack {
             Text("Period:")
-              .foregroundColor(Colors.blue100)
-              .bold()
-            Text(self.fish.availability.period)
           }
-          
           HStack {
             Text("Time:")
-              .foregroundColor(Colors.blue100)
-              .bold()
-            Text(self.fish.availability.hour)
           }
-          
           HStack {
             Text("Place:")
-              .foregroundColor(Colors.blue100)
-              .bold()
-            Text(self.fish.availability.location ?? "")
           }
-          
-          HStack {
-            Text("Shadow:")
-              .foregroundColor(Colors.blue100)
-              .bold()
-            Text(self.fish.shadow ?? "")
-          }
-          
           HStack {
             Text("Price:")
-              .foregroundColor(Colors.blue100)
-              .bold()
-            Text("\(self.fish.price) bells")
+          }
+        }
+        .foregroundColor(Colors.blue100)
+        .bold()
+        
+        
+        VStack(alignment: .leading) {
+          HStack {
+            Text(fish.availability.period)
           }
           
-          RarityBadge(rarity: RarityViewModel(rarityLevel: fish.availability.rarity ?? .common))
+          HStack {
+            Text(fish.availability.hour)
+          }
+          
+          HStack {
+            Text(fish.availability.location ?? "")
+          }
+          
+          HStack {
+            Text("\(fish.price) bells")
+          }
         }
-        .font(.system(size: 11))
-        .padding(.bottom, 5)
       }
-      .frame(width: 175)
-      .background(Colors.blue100.opacity(0.1))
-      .cornerRadius(4)
+      .padding(.leading, 10)
+      
+      
+      RarityBadge(rarity: RarityViewModel(rarityLevel: fish.availability.rarity ?? .common)
+      )
+      .padding(
+        EdgeInsets(
+          top: 0,
+          leading: 10,
+          bottom: 10,
+          trailing: 0
+        )
+      )
+    }
+    .font(.system(size: 11))
+    .frame(width: 175)
+    .background(Colors.blue100.opacity(0.1))
+    .cornerRadius(4)
   }
 }
 
+
 struct GridItem_Previews: PreviewProvider {
-    static var previews: some View {
-      FishDetails(fish: CollectibleItem.fishSample)
-    }
+  static var previews: some View {
+    FishDetails(fish: CollectibleItem.fishSample)
+  }
 }

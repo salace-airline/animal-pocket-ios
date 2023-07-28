@@ -11,51 +11,69 @@ struct BugDetails: View {
   var bug: CollectibleItem
   
   var body: some View {
-    VStack {
-      CollectibleImage(item: self.bug, background: "fond")
+    VStack(alignment: .leading) {
+      VStack {
+        CollectibleImage(item: bug, background: "fond")
+        
+        HStack {
+          Text(bug.name.nameEUen.capitalized)
+            .font(.system(size: 15))
+            .bold()
+        }
+        .padding(.bottom, 0.5)
+      }
       
       HStack {
-        Text(self.bug.name.nameEUen.capitalized)
-          .font(.system(size: 15))
-          .bold()
+        VStack(alignment: .leading) {
+          HStack {
+            Text("Period:")
+          }
+          HStack {
+            Text("Time:")
+          }
+          HStack {
+            Text("Place:")
+          }
+          HStack {
+            Text("Price:")
+          }
+        }
+        .foregroundColor(Colors.green100)
+        .bold()
+        
+        VStack(alignment: .leading) {
+          HStack {
+            Text(bug.availability.period)
+          }
+          
+          HStack {
+            Text(bug.availability.hour)
+          }
+          
+          HStack {
+            Text(bug.availability.location ?? "")
+          }
+          
+          HStack {
+            Text("\(bug.price) bells")
+          }
+        }
       }
-      .padding(.bottom, 0.5)
+      .padding(.leading, 10)
       
-      // VStack below should go into a separate "item description" component
-      VStack(alignment: .leading) {
-        HStack {
-          Text("Period:")
-            .foregroundColor(Colors.green100)
-            .bold()
-          Text(self.bug.availability.period)
-        }
-        
-        HStack {
-          Text("Time:")
-            .foregroundColor(Colors.green100)
-            .bold()
-          Text(self.bug.availability.hour)
-        }
-        
-        HStack {
-          Text("Place:")
-            .foregroundColor(Colors.green100)
-            .bold()
-          Text(self.bug.availability.location ?? "")
-        }
-        
-        HStack {
-          Text("Price:")
-            .foregroundColor(Colors.green100)
-            .bold()
-          Text("\(self.bug.price) bells")
-        }
-        
-        RarityBadge(rarity: RarityViewModel(rarityLevel: bug.availability.rarity ?? .common))
-      }
-      .font(.system(size: 11))
-      .padding(.bottom, 5)
+      RarityBadge(rarity: RarityViewModel(
+        rarityLevel: bug.availability.rarity ?? .common)
+      )
+      .padding(
+        EdgeInsets(
+          top: 0,
+          leading: 10,
+          bottom: 10,
+          trailing: 0
+        )
+      )
     }
+    .font(.system(size: 11))
     .frame(width: 175)
     .background(Colors.green100.opacity(0.1))
     .cornerRadius(4)
