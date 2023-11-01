@@ -16,7 +16,7 @@ struct BugDetails: View {
         CollectibleImage(item: bug, background: "fond")
         
         HStack {
-          Text(bug.name.nameEUen.capitalized)
+          Text(bug.name.capitalized)
             .font(.system(size: 15))
             .bold()
         }
@@ -43,15 +43,15 @@ struct BugDetails: View {
         
         VStack(alignment: .leading) {
           HStack {
-            Text(bug.availability.period)
+            Text(bug.period)
           }
           
           HStack {
-            Text(bug.availability.hour)
+            Text(bug.hour)
           }
           
           HStack {
-            Text(bug.availability.location ?? "")
+            Text(bug.location ?? "")
           }
           
           HStack {
@@ -62,7 +62,7 @@ struct BugDetails: View {
       .padding(.leading, 10)
       
       RarityBadge(rarity: RarityViewModel(
-        rarityLevel: bug.availability.rarity ?? .common)
+        rarityLevel: bug.rarity ?? .common)
       )
       .padding(
         EdgeInsets(

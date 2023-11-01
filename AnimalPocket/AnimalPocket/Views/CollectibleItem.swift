@@ -16,18 +16,53 @@ class Categories: Codable, ObservableObject {
 class CollectibleItem: Identifiable, Codable, ObservableObject {
   var id = UUID()
   var itemNumber: Int
-  var name: Name
-  var availability: Availability
+  var name: String
+  var monthNorthern: String
+  var monthSouthern: String
+  var monthArrayNorthern: [Int]
+  var monthArraySouthern: [Int]
+  var availableTime: Time
+  var availableTimeArray: [Int]
+  var isAllDay, isAllYear: Bool
+  var location: String?
+  var rarity: Rarity?
   var speed: String?
   var shadow: String?
   var price: Int
   var iconURI: String
   var isCollected: Bool
   
-  init(itemNumber: Int, name: Name, availability: Availability, speed: String?, shadow: String?, price: Int, iconURI: String, isCollected: Bool = false) {
+  init(
+    itemNumber: Int,
+    name: String,
+    monthNorthern: String,
+    monthSouthern: String,
+    monthArrayNorthern: [Int],
+    monthArraySouthern: [Int],
+    availableTime: Time,
+    availableTimeArray: [Int],
+    isAllDay: Bool,
+    isAllYear: Bool,
+    location: String?,
+    rarity: Rarity?,
+    speed: String?,
+    shadow: String?,
+    price: Int,
+    iconURI: String,
+    isCollected: Bool = false
+  ) {
     self.itemNumber = itemNumber
     self.name = name
-    self.availability = availability
+    self.monthNorthern = monthNorthern
+    self.monthSouthern = monthSouthern
+    self.monthArrayNorthern = monthArrayNorthern
+    self.monthArraySouthern = monthArraySouthern
+    self.availableTime = availableTime
+    self.availableTimeArray = availableTimeArray
+    self.isAllDay = isAllDay
+    self.isAllYear = isAllYear
+    self.location = location
+    self.rarity = rarity
     self.speed = speed
     self.shadow = shadow
     self.price = price
@@ -36,58 +71,144 @@ class CollectibleItem: Identifiable, Codable, ObservableObject {
   }
 }
 
+// MARK - Availability helpers
 extension CollectibleItem {
-  static let bugSample = CollectibleItem(itemNumber: 80,
-                                         name: Name(nameEUen: "scorpion", nameEUfr: "scorpion"),
-                                         availability: Availability(monthNorthern: "5-10",
-                                                                    monthSouthern: "11-4",
-                                                                    time: Time.bet7pm4am,
-                                                                    isAllDay: false,
-                                                                    isAllYear: false,
-                                                                    location: "On the ground",
-                                                                    rarity: Rarity.ultraRare,
-                                                                    monthArrayNorthern: [5,6,7,8,9,10],
-                                                                    monthArraySouthern: [11,12,1,2,3,4],
-                                                                    timeArray: [19,20,21,22,23,0,1,2,3]),
-                                         speed: nil,
-                                         shadow: nil,
-                                         price: 8000,
-                                         iconURI: "https://acnhapi.com/v1/icons/bugs/80"
+  var period: String {
+    if self.isAllYear == true {
+      return "All year long"
+    } else {
+      return monthsString
+    }
+  }
+  
+  var hour: String {
+    if self.availableTime.self == .empty || self.isAllDay == true {
+      return "All day long"
+    } else {
+      return self.availableTime.self.rawValue
+    }
+  }
+  
+  var monthsString: String {
+    var monthArray: [String] = []
+    
+    for month in self.monthArrayNorthern {
+      switch month {
+        case 1:
+          monthArray.append("January")
+        case 2:
+          monthArray.append("February")
+        case 3:
+          monthArray.append("March")
+        case 4:
+          monthArray.append("April")
+        case 5:
+          monthArray.append("May")
+        case 6:
+          monthArray.append("June")
+        case 7:
+          monthArray.append("July")
+        case 8:
+          monthArray.append("August")
+        case 9:
+          monthArray.append("September")
+        case 10:
+          monthArray.append("October")
+        case 11:
+          monthArray.append("November")
+        case 12:
+          monthArray.append("December")
+        default:
+          monthArray.append("R")
+      }
+    }
+    
+    var finalMonthString: String {
+      if monthArray.first! == monthArray.last! {
+        return monthArray.first!
+      } else {
+        return [monthArray.first!, monthArray.last!].joined(separator: " - ")
+      }
+    }
+    return finalMonthString
+  }
+}
+
+extension CollectibleItem {
+  // returns user's current month in a numeric format
+  var currentMonth: Int? {
+    let currentDate = Date.now
+    let formatter = DateFormatter()
+    formatter.dateFormat = "M"
+    
+    return Int(formatter.string(from: currentDate))
+  }
+  
+  // returns user's current time of the day in a numeric format
+  var currentTime: Int? {
+    let currentTime = Date.now
+    let formatter = DateFormatter()
+    formatter.dateFormat = "HH"
+    
+    return Int(formatter.string(from: currentTime))
+  }
+}
+
+extension CollectibleItem {
+  static let bugSample = CollectibleItem(
+    itemNumber: 80,
+    name: "scorpion",
+    monthNorthern: "5-10",
+    monthSouthern: "11-4",
+    monthArrayNorthern: [5,6,7,8,9,10],
+    monthArraySouthern: [11,12,1,2,3,4],
+    availableTime: Time.bet7pm4am,
+    availableTimeArray: [19,20,21,22,23,0,1,2,3],
+    isAllDay: false,
+    isAllYear: false,
+    location: "On the ground",
+    rarity: .ultraRare,
+    speed: nil,
+    shadow: nil,
+    price: 8000,
+    iconURI: "https://github.com/salace-airline/ACNHAPI/blob/master/icons/bugs/scorpion.png"
   )
   
-  static let fishSample = CollectibleItem(itemNumber: 80,
-                                          name: Name(nameEUen: "coelacanth", nameEUfr: "cœlacanthe"),
-                                          availability: Availability(monthNorthern: "",
-                                                                     monthSouthern: "",
-                                                                     time: .empty,
-                                                                     isAllDay: true,
-                                                                     isAllYear: true,
-                                                                     location: "Sea (when raining or snowing)",
-                                                                     rarity: Rarity.ultraRare,
-                                                                     monthArrayNorthern: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
-                                                                     monthArraySouthern: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
-                                                                     timeArray: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]),
-                                          speed: nil,
-                                          shadow: "Largest (6)",
-                                          price: 15000,
-                                          iconURI: "https://acnhapi.com/v1/icons/fish/80"
+  static let fishSample = CollectibleItem(
+    itemNumber: 80,
+    name: "coelacanth",
+    monthNorthern: "",
+    monthSouthern: "",
+    monthArrayNorthern: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    monthArraySouthern: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    availableTime: .empty,
+    availableTimeArray: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23],
+    isAllDay: true,
+    isAllYear: true,
+    location: "Sea (when raining or snowing)",
+    rarity: .ultraRare,
+    speed: nil,
+    shadow: "Largest (6)",
+    price: 15000,
+    iconURI: "https://github.com/salace-airline/ACNHAPI/blob/master/icons/fish/coelacanth.png"
   )
   
-  static let seaSample = CollectibleItem(itemNumber: 40,
-                                         name: Name(nameEUen: "Venus' flower basket", nameEUfr: "Corbeille de Vénus"),
-                                         availability: Availability(monthNorthern: "10-2",
-                                                                    monthSouthern: "4-8",
-                                                                    time: .empty,
-                                                                    isAllDay: true,
-                                                                    isAllYear: false,
-                                                                    location: nil,
-                                                                    rarity: nil,
-                                                                    monthArrayNorthern: [10, 11, 12, 1, 2],
-                                                                    monthArraySouthern: [4, 5, 6, 7, 8],
-                                                                    timeArray: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]),
-                                         speed: "Fast",
-                                         shadow: "Medium",
-                                         price: 5000,
-                                         iconURI: "https://acnhapi.com/v1/icons/sea/40"
+  static let seaSample = CollectibleItem(
+    itemNumber: 40,
+    name: "Venus' flower basket",
+    monthNorthern: "10-2",
+    monthSouthern: "4-8",
+    monthArrayNorthern: [10, 11, 12, 1, 2],
+    monthArraySouthern: [4, 5, 6, 7, 8],
+    availableTime: .empty,
+    availableTimeArray: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23],
+    isAllDay: true,
+    isAllYear: false,
+    location: nil,
+    rarity: nil,
+    speed: "Fast",
+    shadow: "Medium",
+    price: 5000,
+    iconURI: "https://github.com/salace-airline/ACNHAPI/blob/master/icons/bugs/scorpion.png"
   )
 }

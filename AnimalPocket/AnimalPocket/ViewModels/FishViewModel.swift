@@ -23,7 +23,16 @@ final class FishViewModel: ObservableObject {
           CollectibleItem(
             itemNumber: $0.id,
             name: $0.name,
-            availability: $0.availability,
+            monthNorthern: $0.monthNorthern,
+            monthSouthern: $0.monthSouthern,
+            monthArrayNorthern: $0.monthArrayNorthern,
+            monthArraySouthern: $0.monthArraySouthern,
+            availableTime: $0.availableTime,
+            availableTimeArray: $0.availableTimeArray,
+            isAllDay: $0.isAllDay,
+            isAllYear: $0.isAllYear,
+            location: $0.location,
+            rarity: $0.rarity,
             speed: $0.speed,
             shadow: $0.shadow,
             price: $0.price,
@@ -43,8 +52,8 @@ extension FishViewModel {
   var currentMonthFish: [CollectibleItem] {
     var currentFish: [CollectibleItem] = []
     for fish in fishArray {
-      for month in fish.availability.monthArrayNorthern {
-        if month == fish.availability.currentMonth {
+      for month in fish.monthArrayNorthern {
+        if month == fish.currentMonth {
           currentFish.append(fish)
         }
       }
@@ -55,10 +64,10 @@ extension FishViewModel {
   var currentlyAvailable: [CollectibleItem] {
     var currentFish: [CollectibleItem] = []
     for fish in fishArray {
-      for time in fish.availability.timeArray {
-        if time == fish.availability.currentTime {
-          for month in fish.availability.monthArrayNorthern {
-            if month == fish.availability.currentMonth {
+      for time in fish.availableTimeArray {
+        if time == fish.currentTime {
+          for month in fish.monthArrayNorthern {
+            if month == fish.currentMonth {
               currentFish.append(fish)
             }
           }

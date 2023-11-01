@@ -14,9 +14,10 @@ struct FishDetails: View {
     VStack(alignment: .leading) {
       VStack {
         CollectibleImage(item: fish, background: "fond_bleu")
+          .accessibilityLabel(fish.name)
         
         HStack {
-          Text(fish.name.nameEUen.capitalized)
+          Text(fish.name.capitalized)
             .font(.system(size: 15))
             .bold()
         }
@@ -44,15 +45,15 @@ struct FishDetails: View {
         
         VStack(alignment: .leading) {
           HStack {
-            Text(fish.availability.period)
+            Text(fish.period)
           }
           
           HStack {
-            Text(fish.availability.hour)
+            Text(fish.hour)
           }
           
           HStack {
-            Text(fish.availability.location ?? "")
+            Text(fish.location ?? "")
           }
           
           HStack {
@@ -63,7 +64,7 @@ struct FishDetails: View {
       .padding(.leading, 10)
       
       
-      RarityBadge(rarity: RarityViewModel(rarityLevel: fish.availability.rarity ?? .common)
+      RarityBadge(rarity: RarityViewModel(rarityLevel: fish.rarity ?? .common)
       )
       .padding(
         EdgeInsets(

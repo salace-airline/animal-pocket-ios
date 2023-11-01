@@ -21,7 +21,7 @@ struct UserLoginView: View {
           .clipShape(Circle())
           .padding(.bottom, 50)
         
-        Text("Hello User Name!")
+        Text("Hello!")
           .font(.largeTitle).foregroundColor(Colors.blueDark)
           .padding([.top, .bottom], 40)
               
