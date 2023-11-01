@@ -33,7 +33,7 @@ extension Filter {
 extension Filter {
   func sortAlphabetically(_ items: [CollectibleItem]) -> [CollectibleItem] {
     items.sorted(by: {
-      $0.name.nameEUfr < $1.name.nameEUfr
+      $0.name < $1.name
     })
   }
 }

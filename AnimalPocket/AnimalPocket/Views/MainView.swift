@@ -20,6 +20,7 @@ struct MainView: View {
           Label("Home", systemImage: "house.circle")
         }
         .tag(0)
+        .accessibilityLabel("Home Page Tab Button")
       
       FishCategory()
         .onTapGesture {
@@ -29,6 +30,7 @@ struct MainView: View {
           Label("Fish", systemImage: "fish")
         }
         .tag(1)
+        .accessibilityLabel("Fish Category Tab Button")
       
       BugCategory()
         .onTapGesture {
@@ -38,6 +40,7 @@ struct MainView: View {
           Label("Bugs", systemImage: "ant")
         }
         .tag(2)
+        .accessibilityLabel("Bug Category Tab Button")
       
       SeaCategory()
         .onTapGesture {
@@ -47,6 +50,7 @@ struct MainView: View {
           Label("Sea", systemImage: "water.waves")
         }
         .tag(3)
+        .accessibilityLabel("Sea Creature Category Tab Button")
       
       UserLoginView()
         .onTapGesture {
@@ -56,6 +60,7 @@ struct MainView: View {
           Label("User", systemImage: "person.circle")
         }
         .tag(4)
+        .accessibilityLabel("User connexion Tab Button")
     }
   }
 }

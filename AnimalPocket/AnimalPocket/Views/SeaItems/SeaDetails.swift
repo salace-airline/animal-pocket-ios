@@ -16,7 +16,7 @@ struct SeaDetails: View {
         CollectibleImage(item: sea, background: "fond_violet")
         
         HStack {
-          Text(sea.name.nameEUen.capitalized)
+          Text(sea.name.capitalized)
             .font(.system(size: 15))
             .bold()
         }
@@ -47,11 +47,11 @@ struct SeaDetails: View {
         
         VStack(alignment: .leading) {
           HStack {
-            Text(sea.availability.period)
+            Text(sea.period)
           }
           
           HStack {
-            Text(sea.availability.hour)
+            Text(sea.hour)
           }
           
           HStack {

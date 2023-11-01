@@ -18,12 +18,21 @@ final class SeaCreatureViewModel: ObservableObject {
   @MainActor func loadSeaCreature() {
     Task {
       do {
-        let response = try await CollectibleNetworkService.fetchCollectibles(path: "sea")
+        let response = try await CollectibleNetworkService.fetchCollectibles(path: "sea-creature")
         let sea = response.map {
           CollectibleItem(
             itemNumber: $0.id,
             name: $0.name,
-            availability: $0.availability,
+            monthNorthern: $0.monthNorthern,
+            monthSouthern: $0.monthSouthern,
+            monthArrayNorthern: $0.monthArrayNorthern,
+            monthArraySouthern: $0.monthArraySouthern,
+            availableTime: $0.availableTime,
+            availableTimeArray: $0.availableTimeArray,
+            isAllDay: $0.isAllDay,
+            isAllYear: $0.isAllYear,
+            location: $0.location,
+            rarity: $0.rarity,
             speed: $0.speed,
             shadow: $0.shadow,
             price: $0.price,
@@ -43,8 +52,8 @@ extension SeaCreatureViewModel {
   var currentMonthSea: [CollectibleItem] {
     var currentSea: [CollectibleItem] = []
     for sea in seaArray {
-      for month in sea.availability.monthArrayNorthern {
-        if month == sea.availability.currentMonth {
+      for month in sea.monthArrayNorthern {
+        if month == sea.currentMonth {
           currentSea.append(sea)
         }
       }
@@ -55,10 +64,10 @@ extension SeaCreatureViewModel {
   var currentlyAvailable: [CollectibleItem] {
     var currentSea: [CollectibleItem] = []
     for sea in seaArray {
-      for time in sea.availability.timeArray {
-        if time == sea.availability.currentTime {
-          for month in sea.availability.monthArrayNorthern {
-            if month == sea.availability.currentMonth {
+      for time in sea.availableTimeArray {
+        if time == sea.currentTime {
+          for month in sea.monthArrayNorthern {
+            if month == sea.currentMonth {
               currentSea.append(sea)
             }
           }

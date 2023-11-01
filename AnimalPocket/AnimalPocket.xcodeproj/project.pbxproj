@@ -69,7 +69,6 @@
 		00DCEAFA298D5510001D7AF4 /* CurrentSeaCreatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DCEAF9298D5510001D7AF4 /* CurrentSeaCreatures.swift */; };
 		101AF9E6290BBD9100855FA6 /* AnimalPocketApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101AF9E5290BBD9100855FA6 /* AnimalPocketApp.swift */; };
 		101AF9EA290BBD9200855FA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 101AF9E9290BBD9200855FA6 /* Assets.xcassets */; };
-		101AF9ED290BBD9200855FA6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 101AF9EC290BBD9200855FA6 /* Preview Assets.xcassets */; };
 		101AF9F7290BBD9200855FA6 /* BugsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101AF9F6290BBD9200855FA6 /* BugsTests.swift */; };
 		101AFA01290BBD9200855FA6 /* AnimalPocketUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101AFA00290BBD9200855FA6 /* AnimalPocketUITests.swift */; };
 		101AFA03290BBD9200855FA6 /* AnimalPocketUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101AFA02290BBD9200855FA6 /* AnimalPocketUITestsLaunchTests.swift */; };
@@ -164,7 +163,6 @@
 		101AF9E2290BBD9100855FA6 /* AnimalPocket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimalPocket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		101AF9E5290BBD9100855FA6 /* AnimalPocketApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalPocketApp.swift; sourceTree = "<group>"; };
 		101AF9E9290BBD9200855FA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		101AF9EC290BBD9200855FA6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		101AF9F2290BBD9200855FA6 /* AnimalPocketTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnimalPocketTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		101AF9F6290BBD9200855FA6 /* BugsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugsTests.swift; sourceTree = "<group>"; };
 		101AF9FC290BBD9200855FA6 /* AnimalPocketUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnimalPocketUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -212,14 +210,14 @@
 		004A258C290BD9A3009281E4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				00ADF74B29E9581600729CAF /* User */,
 				00ADF74929E956C100729CAF /* MainView.swift */,
 				004A258E290BDB17009281E4 /* HomePage.swift */,
-				00ADF74B29E9581600729CAF /* User */,
 				00730FD6299FCD5E004E8C37 /* CollectibleItem.swift */,
+				004A2590290BDB63009281E4 /* FishItems */,
 				005DF1E829488DCC00F964CE /* SeaItems */,
 				005DF1E12948805C00F964CE /* BugItems */,
 				004A2599290BDC42009281E4 /* Helpers */,
-				004A2590290BDB63009281E4 /* FishItems */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -438,7 +436,6 @@
 			children = (
 				101AF9E5290BBD9100855FA6 /* AnimalPocketApp.swift */,
 				00F790F4295B0101004E4B02 /* Info.plist */,
-				101AF9EB290BBD9200855FA6 /* Preview Content */,
 				00D9B9652993AC2E001B9FF6 /* Collectibles */,
 				00D9B95C2993A97F001B9FF6 /* Networking */,
 				004A259B290BDC61009281E4 /* Models */,
@@ -448,14 +445,6 @@
 				0000E8BF290C1CCB00BE076D /* Color.xcassets */,
 			);
 			path = AnimalPocket;
-			sourceTree = "<group>";
-		};
-		101AF9EB290BBD9200855FA6 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				101AF9EC290BBD9200855FA6 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		101AF9F5290BBD9200855FA6 /* AnimalPocketTests */ = {
@@ -620,7 +609,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0000E8C0290C1CCC00BE076D /* Color.xcassets in Resources */,
-				101AF9ED290BBD9200855FA6 /* Preview Assets.xcassets in Resources */,
 				00160191295B4E5C0000A92B /* FinkHeavy.ttf in Resources */,
 				101AF9EA290BBD9200855FA6 /* Assets.xcassets in Resources */,
 			);

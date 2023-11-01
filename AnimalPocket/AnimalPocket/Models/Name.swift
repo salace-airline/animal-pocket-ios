@@ -10,11 +10,6 @@ import Foundation
 public struct Name: Codable {
   public var nameEUen: String
   public var nameEUfr: String
-  
-  init(nameEUen: String, nameEUfr: String) {
-    self.nameEUen = nameEUen
-    self.nameEUfr = nameEUfr
-  }
 }
 
 extension Name {

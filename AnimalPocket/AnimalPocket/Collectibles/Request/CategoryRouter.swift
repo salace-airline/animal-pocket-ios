@@ -9,17 +9,17 @@ import Foundation
 
 enum CategoryRouter {
   case fish
-  case bugs
-  case sea
+  case bug
+  case seaCreature
   
   var path: String {
     switch self {
       case .fish:
         return "fish"
-      case .bugs:
-        return "bugs"
-      case .sea:
-        return "sea"
+      case .bug:
+        return "bug"
+      case .seaCreature:
+        return "sea-creature"
     }
   }
 }

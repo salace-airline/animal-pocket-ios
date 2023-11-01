@@ -26,12 +26,21 @@ final class BugsViewModel: ObservableObject {
     Task {
       do {
         // bugs
-        let bugResponse = try await CollectibleService.fetchCollectibles(path: "bugs")
+        let bugResponse = try await CollectibleService.fetchCollectibles(path: "bug")
         let bugs = bugResponse.map {
           CollectibleItem(
             itemNumber: $0.id,
             name: $0.name,
-            availability: $0.availability,
+            monthNorthern: $0.monthNorthern,
+            monthSouthern: $0.monthSouthern,
+            monthArrayNorthern: $0.monthArrayNorthern,
+            monthArraySouthern: $0.monthArraySouthern,
+            availableTime: $0.availableTime,
+            availableTimeArray: $0.availableTimeArray,
+            isAllDay: $0.isAllDay,
+            isAllYear: $0.isAllYear,
+            location: $0.location,
+            rarity: $0.rarity,
             speed: $0.speed,
             shadow: $0.shadow,
             price: $0.price,
@@ -52,8 +61,8 @@ extension BugsViewModel {
   var currentMonth: [CollectibleItem] {
     var currentItems: [CollectibleItem] = []
     for item in bugsArray {
-      for month in item.availability.monthArrayNorthern {
-        if month == item.availability.currentMonth {
+      for month in item.monthArrayNorthern {
+        if month == item.currentMonth {
           currentItems.append(item)
         }
       }
@@ -64,10 +73,10 @@ extension BugsViewModel {
   var currentlyAvailable: [CollectibleItem] {
     var currentItems: [CollectibleItem] = []
     for item in bugsArray {
-      for time in item.availability.timeArray {
-        if time == item.availability.currentTime {
-          for month in item.availability.monthArrayNorthern {
-            if month == item.availability.currentMonth {
+      for time in item.availableTimeArray {
+        if time == item.currentTime {
+          for month in item.monthArrayNorthern {
+            if month == item.currentMonth {
               currentItems.append(item)
             }
           }
