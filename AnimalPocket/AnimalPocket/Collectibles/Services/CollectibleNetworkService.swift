@@ -9,7 +9,7 @@ import Foundation
 
 enum CollectibleNetworkService {
   static func fetchCollectibles(path: String) async throws -> [Collectible] {
-    try await CollectibleRequest(path: path)
+    try await APIRequest(path: path)
       .asURLRequest()
       .fetch(responseType: [Collectible].self)
   }

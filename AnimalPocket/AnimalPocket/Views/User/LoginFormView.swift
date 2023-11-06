@@ -8,28 +8,23 @@
 import SwiftUI
 
 struct LoginFormView: View {
-  @State private var userEmail: String = ""
-  @State private var userPassword: String = ""
+  @ObservedObject var viewModel: LoginViewModel
   
   var body: some View {
     VStack(alignment: .leading, spacing: 15) {
-      TextField("Email address", text: $userEmail)
+      TextField("Email address", text: $viewModel.userEmail)
         .textContentType(.emailAddress)
+        .autocapitalization(.none)
+        .disableAutocorrection(true)
         .padding()
         .background(Colors.blueTide.opacity(0.7))
         .cornerRadius(10)
       
-      SecureField("Password", text: $userPassword)
+      SecureField("Password", text: $viewModel.userPassword)
         .padding()
         .background(Colors.blueTide.opacity(0.7))
         .cornerRadius(10)
     }
     .padding([.leading, .trailing], 15)
-  }
-}
-
-struct LoginFormView_Previews: PreviewProvider {
-  static var previews: some View {
-    LoginFormView()
   }
 }
