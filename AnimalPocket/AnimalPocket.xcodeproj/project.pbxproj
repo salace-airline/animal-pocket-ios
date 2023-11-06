@@ -51,7 +51,7 @@
 		00D9B95E2993A98B001B9FF6 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D9B95D2993A98B001B9FF6 /* Request.swift */; };
 		00D9B9602993A9B7001B9FF6 /* URLRequest+Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D9B95F2993A9B7001B9FF6 /* URLRequest+Networking.swift */; };
 		00D9B9622993A9DA001B9FF6 /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D9B9612993A9DA001B9FF6 /* NetworkingError.swift */; };
-		00D9B9642993AB5C001B9FF6 /* CollectibleRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D9B9632993AB5C001B9FF6 /* CollectibleRequest.swift */; };
+		00D9B9642993AB5C001B9FF6 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D9B9632993AB5C001B9FF6 /* APIRequest.swift */; };
 		00D9B9672993AD21001B9FF6 /* CategoryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D9B9662993AD21001B9FF6 /* CategoryRequest.swift */; };
 		00D9B96B2993ADE7001B9FF6 /* CollectibleNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D9B96A2993ADE7001B9FF6 /* CollectibleNetworkService.swift */; };
 		00D9B96D2993AE61001B9FF6 /* CollectibleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D9B96C2993AE61001B9FF6 /* CollectibleService.swift */; };
@@ -74,6 +74,12 @@
 		101AFA03290BBD9200855FA6 /* AnimalPocketUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101AFA02290BBD9200855FA6 /* AnimalPocketUITestsLaunchTests.swift */; };
 		DC43DDAC29AE2FEC00DECFA4 /* CollectibleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC43DDAB29AE2FEC00DECFA4 /* CollectibleViewModel.swift */; };
 		DC43DDB329AE3A1200DECFA4 /* CategoryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC43DDB229AE3A1200DECFA4 /* CategoryRouter.swift */; };
+		DCA36E252AF264120009508E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA36E242AF264120009508E /* LoginViewModel.swift */; };
+		DCA36E272AF267060009508E /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA36E262AF267060009508E /* UserInfo.swift */; };
+		DCA36E292AF26A1B0009508E /* AuthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA36E282AF26A1B0009508E /* AuthRequest.swift */; };
+		DCA36E2B2AF284C10009508E /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA36E2A2AF284C10009508E /* UserService.swift */; };
+		DCA36E2D2AF284D00009508E /* UserNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA36E2C2AF284D00009508E /* UserNetworkService.swift */; };
+		DCFC43922AF41599003A8587 /* UserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFC43912AF41599003A8587 /* UserRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,7 +148,7 @@
 		00D9B95D2993A98B001B9FF6 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		00D9B95F2993A9B7001B9FF6 /* URLRequest+Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Networking.swift"; sourceTree = "<group>"; };
 		00D9B9612993A9DA001B9FF6 /* NetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingError.swift; sourceTree = "<group>"; };
-		00D9B9632993AB5C001B9FF6 /* CollectibleRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectibleRequest.swift; sourceTree = "<group>"; };
+		00D9B9632993AB5C001B9FF6 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		00D9B9662993AD21001B9FF6 /* CategoryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRequest.swift; sourceTree = "<group>"; };
 		00D9B96A2993ADE7001B9FF6 /* CollectibleNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectibleNetworkService.swift; sourceTree = "<group>"; };
 		00D9B96C2993AE61001B9FF6 /* CollectibleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectibleService.swift; sourceTree = "<group>"; };
@@ -170,6 +176,12 @@
 		101AFA02290BBD9200855FA6 /* AnimalPocketUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalPocketUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		DC43DDAB29AE2FEC00DECFA4 /* CollectibleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectibleViewModel.swift; sourceTree = "<group>"; };
 		DC43DDB229AE3A1200DECFA4 /* CategoryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRouter.swift; sourceTree = "<group>"; };
+		DCA36E242AF264120009508E /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		DCA36E262AF267060009508E /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		DCA36E282AF26A1B0009508E /* AuthRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRequest.swift; sourceTree = "<group>"; };
+		DCA36E2A2AF284C10009508E /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		DCA36E2C2AF284D00009508E /* UserNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNetworkService.swift; sourceTree = "<group>"; };
+		DCFC43912AF41599003A8587 /* UserRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,6 +268,7 @@
 				002CB1B929433B1E0093B974 /* FishViewModel.swift */,
 				005DF1DB29437F9600F964CE /* SeaCreatureViewModel.swift */,
 				0083A5BF295DEC4700007ED4 /* RarityViewModel.swift */,
+				DCA36E242AF264120009508E /* LoginViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -269,6 +282,7 @@
 				0083A5BB295DEACB00007ED4 /* Rarity.swift */,
 				005DF1D729437E0C00F964CE /* Time.swift */,
 				0083A5C72971B16600007ED4 /* Filter.swift */,
+				DCA36E262AF267060009508E /* UserInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -328,9 +342,11 @@
 		00D9B9682993ADBE001B9FF6 /* Request */ = {
 			isa = PBXGroup;
 			children = (
-				00D9B9632993AB5C001B9FF6 /* CollectibleRequest.swift */,
+				00D9B9632993AB5C001B9FF6 /* APIRequest.swift */,
 				00D9B9662993AD21001B9FF6 /* CategoryRequest.swift */,
 				DC43DDB229AE3A1200DECFA4 /* CategoryRouter.swift */,
+				DCA36E282AF26A1B0009508E /* AuthRequest.swift */,
+				DCFC43912AF41599003A8587 /* UserRouter.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -340,6 +356,8 @@
 			children = (
 				00D9B96A2993ADE7001B9FF6 /* CollectibleNetworkService.swift */,
 				00D9B96C2993AE61001B9FF6 /* CollectibleService.swift */,
+				DCA36E2A2AF284C10009508E /* UserService.swift */,
+				DCA36E2C2AF284D00009508E /* UserNetworkService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -656,6 +674,7 @@
 				00D9B9602993A9B7001B9FF6 /* URLRequest+Networking.swift in Sources */,
 				005DF1D829437E0C00F964CE /* Time.swift in Sources */,
 				0083A5DB298422AE00007ED4 /* BugFilterButtons.swift in Sources */,
+				DCA36E2D2AF284D00009508E /* UserNetworkService.swift in Sources */,
 				004A259C290C0D71009281E4 /* FishDetails.swift in Sources */,
 				005DF1DC29437F9600F964CE /* SeaCreatureViewModel.swift in Sources */,
 				00DCEAF8298D54C8001D7AF4 /* SeaCreaturesOfTheMonth.swift in Sources */,
@@ -663,7 +682,9 @@
 				0083A5B6295C53CB00007ED4 /* SeaCategory.swift in Sources */,
 				00D9B96F2993F306001B9FF6 /* CollectibleImage.swift in Sources */,
 				004A258F290BDB17009281E4 /* HomePage.swift in Sources */,
+				DCA36E252AF264120009508E /* LoginViewModel.swift in Sources */,
 				00D9B96B2993ADE7001B9FF6 /* CollectibleNetworkService.swift in Sources */,
+				DCA36E292AF26A1B0009508E /* AuthRequest.swift in Sources */,
 				0083A5B0295B648400007ED4 /* LowTideBackground.swift in Sources */,
 				0083A5E12984321A00007ED4 /* CurrentBugs.swift in Sources */,
 				0083A5D3297AD26300007ED4 /* SeaFilterButton.swift in Sources */,
@@ -671,10 +692,12 @@
 				0000E8C2290C1D6700BE076D /* Colors.swift in Sources */,
 				0083A5C82971B16600007ED4 /* Filter.swift in Sources */,
 				00DCEAE5298D3E3C001D7AF4 /* FishButtons.swift in Sources */,
+				DCA36E272AF267060009508E /* UserInfo.swift in Sources */,
 				005DF1E5294881FD00F964CE /* BugRow.swift in Sources */,
 				0083A5B4295C533600007ED4 /* AllBugs.swift in Sources */,
 				001839FD299FD95700617F89 /* CollectedButton.swift in Sources */,
 				005DF1EC29488EA300F964CE /* SeaDetails.swift in Sources */,
+				DCA36E2B2AF284C10009508E /* UserService.swift in Sources */,
 				00730FD7299FCD5E004E8C37 /* CollectibleItem.swift in Sources */,
 				00CFC9EE2931014500A291DB /* Availability.swift in Sources */,
 				00DCEAFA298D5510001D7AF4 /* CurrentSeaCreatures.swift in Sources */,
@@ -695,9 +718,10 @@
 				005DF1EE29488FE900F964CE /* SeaRow.swift in Sources */,
 				0083A5BE295DEB1600007ED4 /* RarityBadge.swift in Sources */,
 				00DCEAF6298D540E001D7AF4 /* AllSeaCreatures.swift in Sources */,
+				DCFC43922AF41599003A8587 /* UserRouter.swift in Sources */,
 				006E8C7E2931083700127551 /* BugsViewModel.swift in Sources */,
 				005DF1E72948825A00F964CE /* BugDetails.swift in Sources */,
-				00D9B9642993AB5C001B9FF6 /* CollectibleRequest.swift in Sources */,
+				00D9B9642993AB5C001B9FF6 /* APIRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct UserLoginView: View {
+  @ObservedObject var viewModel = LoginViewModel()
   var body: some View {
     ZStack {
       Colors.beige200.ignoresSafeArea()
@@ -25,11 +26,15 @@ struct UserLoginView: View {
           .font(.largeTitle).foregroundColor(Colors.blueDark)
           .padding([.top, .bottom], 40)
               
-        LoginFormView()
+        LoginFormView(viewModel: viewModel)
         
         Spacer()
         
-        Button(action: {}) {
+        Button(action: {
+          Task {
+            await viewModel.login()
+          }
+        }) {
           Text("Sign In")
             .font(.headline)
             .foregroundColor(.white)
@@ -42,7 +47,11 @@ struct UserLoginView: View {
                 
         HStack(spacing: 0) {
           Text("Don't have an account? ")
-          Button(action: {}) {
+          Button(action: {
+            Task {
+              await viewModel.register()
+            }
+          }) {
             Text("Sign Up")
               .foregroundColor(Colors.greenLight)
           }
