@@ -10,6 +10,7 @@ import Foundation
 enum UserRouter {
   case register
   case login
+  case update
   
   var path: String {
     switch self {
@@ -17,6 +18,8 @@ enum UserRouter {
         return "register"
       case .login:
         return "login"
+      case .update:
+        return "user"
     }
   }
 }

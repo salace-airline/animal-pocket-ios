@@ -8,7 +8,15 @@
 import SwiftUI
 
 struct BugDetails: View {
+//  @ObservedObject var viewModel: CollectionViewModel
   var bug: CollectibleItem
+//  @Binding var isCollected: Bool
+  
+//  init(viewModel: CollectionViewModel, bug: CollectibleItem, isCollected: Bool) {
+//    self.viewModel = viewModel
+//    self.bug = bug
+//    self.$isCollected = isCollected
+//  }
   
   var body: some View {
     VStack(alignment: .leading) {
@@ -19,6 +27,18 @@ struct BugDetails: View {
           Text(bug.name.capitalized)
             .font(.system(size: 15))
             .bold()
+          
+          CollectedButton(
+            isCollected: .constant(true),
+            setImage: "leaf.fill",
+            unsetImage: "leaf",
+            setColor: .green
+//            updateCollection: {
+//              Task {
+//                await viewModel.updateCollection()
+//              }
+//            }
+          )
         }
         .padding(.bottom, 0.5)
       }
@@ -82,6 +102,8 @@ struct BugDetails: View {
 
 struct BugDetails_Previews: PreviewProvider {
   static var previews: some View {
-    BugDetails(bug: CollectibleItem.bugSample)
+    BugDetails(
+      bug: CollectibleItem.bugSample
+    )
   }
 }

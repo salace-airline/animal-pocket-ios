@@ -14,11 +14,12 @@ final class SeaCreatureViewModel: ObservableObject {
   @Published var increasingPrice = false
   @Published var decreasingPrice = false
   @Published var alphabeticalOrder = false
+  @Published var isCollected = false
   
   @MainActor func loadSeaCreature() {
     Task {
       do {
-        let response = try await CollectibleNetworkService.fetchCollectibles(path: "sea-creature")
+        let response = try await CollectibleNetworkService.fetchCollectibles(path: CategoryRouter.seaCreature.path)
         let sea = response.map {
           CollectibleItem(
             itemNumber: $0.id,
@@ -37,6 +38,7 @@ final class SeaCreatureViewModel: ObservableObject {
             shadow: $0.shadow,
             price: $0.price,
             iconURI: $0.iconURI
+//            isCollected: isCollected
           )
         }
         self.seaArray = sea

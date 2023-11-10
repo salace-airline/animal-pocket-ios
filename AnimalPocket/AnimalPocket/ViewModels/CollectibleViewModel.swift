@@ -9,6 +9,9 @@ import Foundation
 
 final class CollectibleViewModel: ObservableObject {
   @Published var itemsArray: [CollectibleItem] = []
+//  @Published var bugsArray: [CollectibleItem] = []
+//  @Published var fishArray: [CollectibleItem] = []
+//  @Published var seaArray: [CollectibleItem] = []
   @Published var filter: Filter = .noFilter
   
   @Published var showCurrentItem = false
@@ -22,11 +25,13 @@ final class CollectibleViewModel: ObservableObject {
   
   @Published var showMissingItemsOnly = false
   
+  @Published var isCollected = false
+  
   @MainActor func loadItems() {
     Task {
       do {
         // bugs
-        let bugResponse = try await CollectibleService.fetchCollectibles(path: "bugs")
+        let bugResponse = try await CollectibleService.fetchCollectibles(path: CategoryRouter.bug.path)
         let bugs = bugResponse.map {
           CollectibleItem(
             itemNumber: $0.id,
@@ -45,12 +50,13 @@ final class CollectibleViewModel: ObservableObject {
             shadow: $0.shadow,
             price: $0.price,
             iconURI: $0.iconURI
+//            isCollected: isCollected
           )
         }
         self.itemsArray.append(contentsOf: bugs)
         
         // fish
-        let fishResponse = try await CollectibleService.fetchCollectibles(path: "fish")
+        let fishResponse = try await CollectibleService.fetchCollectibles(path: CategoryRouter.fish.path)
         let fish = fishResponse.map {
           CollectibleItem(
             itemNumber: $0.id,
@@ -69,12 +75,13 @@ final class CollectibleViewModel: ObservableObject {
             shadow: $0.shadow,
             price: $0.price,
             iconURI: $0.iconURI
+//            isCollected: isCollected
           )
         }
         self.itemsArray.append(contentsOf: fish)
         
         // sea creatures
-        let seaResponse = try await CollectibleService.fetchCollectibles(path: "sea")
+        let seaResponse = try await CollectibleService.fetchCollectibles(path: CategoryRouter.seaCreature.path)
         let sea = seaResponse.map{
           CollectibleItem(
             itemNumber: $0.id,
@@ -93,6 +100,7 @@ final class CollectibleViewModel: ObservableObject {
             shadow: $0.shadow,
             price: $0.price,
             iconURI: $0.iconURI
+//            isCollected: isCollected
           )
         }
         self.itemsArray.append(contentsOf: sea)
@@ -137,10 +145,10 @@ extension CollectibleViewModel {
 }
 
 // Collection filter
-extension CollectibleViewModel {
-  var missingItems: [CollectibleItem] {
-    itemsArray.filter { item in
-      (!showMissingItemsOnly || !item.isCollected)
-    }
-  }
-}
+//extension CollectibleViewModel {
+//  var missingItems: [CollectibleItem] {
+//    itemsArray.filter { item in
+//      (!showMissingItemsOnly || !item.isCollected)
+//    }
+//  }
+//}

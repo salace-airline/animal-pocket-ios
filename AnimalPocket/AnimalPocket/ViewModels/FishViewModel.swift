@@ -14,11 +14,12 @@ final class FishViewModel: ObservableObject {
   @Published var increasingPrice = false
   @Published var decreasingPrice = false
   @Published var alphabeticalOrder = false
+  @Published var isCollected = false
 
   @MainActor func loadFish() {
     Task {
       do {
-        let response = try await CollectibleNetworkService.fetchCollectibles(path: "fish")
+        let response = try await CollectibleNetworkService.fetchCollectibles(path: CategoryRouter.fish.path)
         let fish = response.map {
           CollectibleItem(
             itemNumber: $0.id,
@@ -37,6 +38,7 @@ final class FishViewModel: ObservableObject {
             shadow: $0.shadow,
             price: $0.price,
             iconURI: $0.iconURI
+//            isCollected: isCollected
           )
         }
         self.fishArray = fish
