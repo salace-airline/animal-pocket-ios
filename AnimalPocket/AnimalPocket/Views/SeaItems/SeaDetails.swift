@@ -19,6 +19,18 @@ struct SeaDetails: View {
           Text(sea.name.capitalized)
             .font(.system(size: 15))
             .bold()
+          
+          CollectedButton(
+            isCollected: sea.isCollected,
+            setImage: "drop.fill",
+            unsetImage: "drop",
+            setColor: .black
+//            updateCollection: {
+//              Task {
+//                await viewModel.updateCollection()
+//              }
+//            }
+          )
         }
         .padding(.bottom, 0.5)
       }

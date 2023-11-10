@@ -20,6 +20,18 @@ struct FishDetails: View {
           Text(fish.name.capitalized)
             .font(.system(size: 15))
             .bold()
+          
+          CollectedButton(
+            isCollected: fish.isCollected,
+            setImage: "fish.fill",
+            unsetImage: "fish",
+            setColor: .blue
+//            updateCollection: {
+//              Task {
+//                await viewModel.updateCollection()
+//              }
+//            }
+          )
         }
         .padding(.bottom, 0.5)
       }
