@@ -29,7 +29,7 @@ struct BugDetails: View {
             .bold()
           
           CollectedButton(
-            isCollected: .constant(true),
+            isCollected: bug.isCollected,
             setImage: "leaf.fill",
             unsetImage: "leaf",
             setColor: .green

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CollectedButton: View {
-  @Binding var isCollected: Bool
+  @State var isCollected: Bool
   var setImage: String
   var unsetImage: String
   var setColor: Color

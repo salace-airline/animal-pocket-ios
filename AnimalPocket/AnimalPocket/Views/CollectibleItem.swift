@@ -30,7 +30,6 @@ class CollectibleItem: Identifiable, Codable, ObservableObject {
   var shadow: String?
   var price: Int
   var iconURI: String
-//  var isCollected: Bool
   
   init(
     itemNumber: Int,
@@ -49,7 +48,6 @@ class CollectibleItem: Identifiable, Codable, ObservableObject {
     shadow: String?,
     price: Int,
     iconURI: String
-//    isCollected: Bool
   ) {
     self.itemNumber = itemNumber
     self.name = name
@@ -67,7 +65,29 @@ class CollectibleItem: Identifiable, Codable, ObservableObject {
     self.shadow = shadow
     self.price = price
     self.iconURI = iconURI
-//    self.isCollected = isCollected
+  }
+}
+
+// MARK - isCollected
+extension CollectibleItem {
+  var isCollected: Bool {
+    let caughtItems = CollectionViewModel().collectedItems
+    for item in caughtItems.caughtBug {
+      if self.itemNumber == item.self {
+        return true
+      }
+    }
+    for item in caughtItems.caughtFish {
+      if self.itemNumber == item.self {
+        return true
+      }
+    }
+    for item in caughtItems.caughtSeaCreature {
+      if self.itemNumber == item.self {
+        return true
+      }
+    }
+    return false
   }
 }
 

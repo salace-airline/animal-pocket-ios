@@ -20,9 +20,9 @@ enum UserNetworkService {
       .fetch(responseType: AuthResponse.self)
   }
   
-  static func updateUserCollection(with parameters: UserItems, path: String) async throws -> UserResponse {
+  static func updateUserCollection(with parameters: UserItems, path: String) async throws -> UserItems {
     try await UpdateRequest(userUpdate: parameters, path: path)
       .asURLRequest()
-      .fetch(responseType: UserResponse.self)
+      .fetch(responseType: UserItems.self)
   }
 }

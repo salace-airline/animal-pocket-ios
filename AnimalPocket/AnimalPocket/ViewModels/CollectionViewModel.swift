@@ -7,18 +7,19 @@
 
 import Foundation
 
-class CollectionViewModel: ObservableObject {
-  @Published var collectedItems: UserItems
-  
-  init(collectedItems: UserItems) {
-    self.collectedItems = collectedItems
-  }
+final class CollectionViewModel: ObservableObject {
+  @Published var collectedItems = UserItems(
+    caughtFish: [],
+    caughtBug: [],
+    caughtSeaCreature: []
+  )
   
   @MainActor
-  func updateCollection(with fish: Int, bug: Int, sea: Int) async {
+  func updateCollection(with collectedItems: UserItems) async {
     Task {
       do {
         let update = try await UserService.updateUserCollection(with: collectedItems, path: UserRouter.update.path)
+        self.collectedItems = update
         print("Collection updated successfully! \(update)")
       } catch {
         print("Error", error)

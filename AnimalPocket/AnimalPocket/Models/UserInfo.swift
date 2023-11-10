@@ -21,9 +21,9 @@ public struct AuthResponse: Decodable {
 public struct UserResponse {
   public let id: Int?
   public let email: String
-  public let caughtFish: [Int]?
-  public let caughtBug: [Int]?
-  public let caughtSeaCreature: [Int]?
+  public let caughtFish: [Int]
+  public let caughtBug: [Int]
+  public let caughtSeaCreature: [Int]
 }
 
 extension UserResponse: Decodable {

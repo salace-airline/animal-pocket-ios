@@ -9,9 +9,6 @@ import Foundation
 
 final class CollectibleViewModel: ObservableObject {
   @Published var itemsArray: [CollectibleItem] = []
-//  @Published var bugsArray: [CollectibleItem] = []
-//  @Published var fishArray: [CollectibleItem] = []
-//  @Published var seaArray: [CollectibleItem] = []
   @Published var filter: Filter = .noFilter
   
   @Published var showCurrentItem = false

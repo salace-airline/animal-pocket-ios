@@ -72,7 +72,6 @@
 		101AF9F7290BBD9200855FA6 /* BugsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101AF9F6290BBD9200855FA6 /* BugsTests.swift */; };
 		101AFA01290BBD9200855FA6 /* AnimalPocketUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101AFA00290BBD9200855FA6 /* AnimalPocketUITests.swift */; };
 		101AFA03290BBD9200855FA6 /* AnimalPocketUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101AFA02290BBD9200855FA6 /* AnimalPocketUITestsLaunchTests.swift */; };
-		DC2133972AFCEF9F0032FAE9 /* CollectedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2133962AFCEF9F0032FAE9 /* CollectedItem.swift */; };
 		DC2133992AFD05FA0032FAE9 /* UserItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2133982AFD05FA0032FAE9 /* UserItems.swift */; };
 		DC21339B2AFD0A420032FAE9 /* CollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC21339A2AFD0A420032FAE9 /* CollectionViewModel.swift */; };
 		DC21339D2AFD0C760032FAE9 /* UpdateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC21339C2AFD0C760032FAE9 /* UpdateRequest.swift */; };
@@ -178,7 +177,6 @@
 		101AF9FC290BBD9200855FA6 /* AnimalPocketUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnimalPocketUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		101AFA00290BBD9200855FA6 /* AnimalPocketUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalPocketUITests.swift; sourceTree = "<group>"; };
 		101AFA02290BBD9200855FA6 /* AnimalPocketUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalPocketUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		DC2133962AFCEF9F0032FAE9 /* CollectedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectedItem.swift; sourceTree = "<group>"; };
 		DC2133982AFD05FA0032FAE9 /* UserItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserItems.swift; sourceTree = "<group>"; };
 		DC21339A2AFD0A420032FAE9 /* CollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewModel.swift; sourceTree = "<group>"; };
 		DC21339C2AFD0C760032FAE9 /* UpdateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateRequest.swift; sourceTree = "<group>"; };
@@ -293,7 +291,6 @@
 				005DF1D729437E0C00F964CE /* Time.swift */,
 				0083A5C72971B16600007ED4 /* Filter.swift */,
 				DCA36E262AF267060009508E /* UserInfo.swift */,
-				DC2133962AFCEF9F0032FAE9 /* CollectedItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -721,7 +718,6 @@
 				0083A5DF2984308900007ED4 /* BugsOfTheMonth.swift in Sources */,
 				0083A5D1297AD0D700007ED4 /* FishFilterButton.swift in Sources */,
 				00DCEAEE298D40E8001D7AF4 /* FishOfTheMonth.swift in Sources */,
-				DC2133972AFCEF9F0032FAE9 /* CollectedItem.swift in Sources */,
 				00DCEAF2298D42B7001D7AF4 /* SeaButtons.swift in Sources */,
 				00DCEAE2298D25EC001D7AF4 /* BugButtons.swift in Sources */,
 				0083A5C0295DEC4700007ED4 /* RarityViewModel.swift in Sources */,

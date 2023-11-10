@@ -18,7 +18,7 @@ public struct UserService {
     return loginResponse
   }
   
-  public static func updateUserCollection(with parameters: UserItems, path: String) async throws -> UserResponse {
+  public static func updateUserCollection(with parameters: UserItems, path: String) async throws -> UserItems {
     let updateResponse = try await UserNetworkService.updateUserCollection(with: parameters, path: path)
     return updateResponse
   }
