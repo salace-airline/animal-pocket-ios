@@ -9,6 +9,8 @@ import SwiftUI
 
 struct BugRow: View {
   @ObservedObject var viewModel = BugsViewModel()
+  @ObservedObject var collectionViewModel: CollectionViewModel
+//  @EnvironmentObject var collection: CollectionViewModel
   
   let rows = [
     GridItem()
@@ -18,7 +20,7 @@ struct BugRow: View {
     ScrollView(.horizontal) {
       LazyHGrid(rows: rows) {
         ForEach(viewModel.currentlyAvailable) { bug in
-          BugDetails(bug: bug)
+          BugDetails(viewModel: collectionViewModel, bug: bug)
         }
       }
     }
@@ -30,6 +32,6 @@ struct BugRow: View {
 
 struct BugRow_Previews: PreviewProvider {
   static var previews: some View {
-    BugRow()
+    BugRow(collectionViewModel: CollectionViewModel())
   }
 }

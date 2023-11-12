@@ -110,6 +110,12 @@ final class CollectibleViewModel: ObservableObject {
   }
 }
 
+extension CollectibleViewModel {
+  func updateCollection() {
+    
+  }
+}
+
 // Month & current filters
 extension CollectibleViewModel {
   var currentMonth: [CollectibleItem] {

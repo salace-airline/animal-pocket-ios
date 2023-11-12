@@ -27,3 +27,17 @@ final class CollectionViewModel: ObservableObject {
     }
   }
 }
+
+extension CollectionViewModel {
+  func addCollectedBug(with id: Int) {
+    collectedItems.caughtBug.append(id)
+  }
+  
+  func addCollectedFish(with id: Int) {
+    collectedItems.caughtFish.append(id)
+  }
+  
+  func addCollectedSeaCreature(with id: Int) {
+    collectedItems.caughtSeaCreature.append(id)
+  }
+}

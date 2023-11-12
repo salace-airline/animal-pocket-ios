@@ -9,6 +9,7 @@ import SwiftUI
 
 struct BugsOfTheMonth: View {
   @ObservedObject var viewModel = BugsViewModel()
+  @ObservedObject var collectionViewModel: CollectionViewModel
   
   let columns = [
     GridItem(.adaptive(minimum: 160))
@@ -36,7 +37,7 @@ struct BugsOfTheMonth: View {
       ScrollView(.vertical) {
         LazyVGrid(columns: columns, spacing: 10) {
           ForEach(bugs) { bug in
-            BugDetails(bug: bug)
+            BugDetails(viewModel: collectionViewModel, bug: bug)
           }
         }
       }
@@ -49,6 +50,8 @@ struct BugsOfTheMonth: View {
 
 struct BugsOfTheMonth_Previews: PreviewProvider {
   static var previews: some View {
-    BugsOfTheMonth()
+    BugsOfTheMonth(viewModel: BugsViewModel(),
+                   collectionViewModel: CollectionViewModel()
+    )
   }
 }

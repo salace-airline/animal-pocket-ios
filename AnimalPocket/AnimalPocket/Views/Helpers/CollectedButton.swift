@@ -8,16 +8,16 @@
 import SwiftUI
 
 struct CollectedButton: View {
-  @State var isCollected: Bool
+  @Binding var isCollected: Bool
   var setImage: String
   var unsetImage: String
   var setColor: Color
-//  var updateCollection: () -> Void
+  var updateCollection: () -> Void
   
   var body: some View {
     Button {
       isCollected.toggle()
-//      updateCollection()
+      updateCollection()
     } label: {
       Label("Toggle Collected", systemImage: isCollected ? setImage : unsetImage)
         .labelStyle(.iconOnly)

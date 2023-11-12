@@ -8,9 +8,9 @@
 import Foundation
 
 public class UserItems: Codable, ObservableObject {
-  public let caughtFish: [Int]
-  public let caughtBug: [Int]
-  public let caughtSeaCreature: [Int]
+  public var caughtFish: [Int]
+  public var caughtBug: [Int]
+  public var caughtSeaCreature: [Int]
   
   init(caughtFish: [Int], caughtBug: [Int], caughtSeaCreature: [Int]) {
     self.caughtFish = caughtFish

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct FishCategory: View {
   @ObservedObject var viewModel = FishViewModel()
+  @ObservedObject var collectionViewModel: CollectionViewModel
   @State private var showCurrentFish = true
   @State private var showFishOfTheMonth = true
   @State private var showAllFish = true
@@ -29,7 +30,7 @@ struct FishCategory: View {
           .toggleStyle(MinusToggleStyle())
           
           if showCurrentFish {
-            CurrentFish()
+            CurrentFish(collectionViewModel: collectionViewModel)
           }
         }
         
@@ -42,7 +43,7 @@ struct FishCategory: View {
           .toggleStyle(MinusToggleStyle())
           
           if showFishOfTheMonth {
-            FishOfTheMonth()
+            FishOfTheMonth(collectionViewModel: collectionViewModel)
           }
         }
         
@@ -55,7 +56,7 @@ struct FishCategory: View {
           .toggleStyle(MinusToggleStyle())
           
           if showAllFish {
-            AllFish()
+            AllFish(collectionViewModel: collectionViewModel)
           }
         }
       }
@@ -69,6 +70,6 @@ struct FishCategory: View {
 
 struct FishCategory_Previews: PreviewProvider {
   static var previews: some View {
-    FishCategory()
+    FishCategory(collectionViewModel: CollectionViewModel())
   }
 }
