@@ -8,12 +8,11 @@
 import SwiftUI
 
 struct MainView: View {
-  @StateObject var collection = CollectionViewModel()
   @State private var selection = 4
   
   var body: some View {
     TabView(selection: $selection) {
-      HomePage(collectionViewModel: collection)
+      HomePage()
         .onTapGesture {
           selection = 0
         }
@@ -23,7 +22,7 @@ struct MainView: View {
         .tag(0)
         .accessibilityLabel("Home Page Tab Button")
       
-      FishCategory(collectionViewModel: collection)
+      FishCategory()
         .onTapGesture {
           selection = 1
         }
@@ -33,7 +32,7 @@ struct MainView: View {
         .tag(1)
         .accessibilityLabel("Fish Category Tab Button")
       
-      BugCategory(collectionViewModel: collection)
+      BugCategory()
         .onTapGesture {
           selection = 2
         }
@@ -43,7 +42,7 @@ struct MainView: View {
         .tag(2)
         .accessibilityLabel("Bug Category Tab Button")
       
-      SeaCategory(collectionViewModel: collection)
+      SeaCategory()
         .onTapGesture {
           selection = 3
         }
@@ -63,7 +62,6 @@ struct MainView: View {
         .tag(4)
         .accessibilityLabel("User connexion Tab Button")
     }
-    .environmentObject(collection)
   }
 }
 

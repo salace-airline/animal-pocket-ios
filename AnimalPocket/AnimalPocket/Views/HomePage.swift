@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct HomePage: View {
-  @ObservedObject var collectionViewModel: CollectionViewModel
+//  @ObservedObject var collectionViewModel: CollectionViewModel
+//  @StateObject var collection = CollectionViewModel()
   
   var body: some View {
       VStack(alignment: .center) {
@@ -20,19 +21,19 @@ struct HomePage: View {
           VStack {
             Text("Fish")
               .font(.custom("FinkHeavy", size: 15))
-            FishRow(collectionViewModel: collectionViewModel)
+            FishRow()
           }
           
           VStack {
             Text("Bugs")
               .font(.custom("FinkHeavy", size: 15))
-            BugRow(collectionViewModel: collectionViewModel)
+            BugRow()
           }
           
           VStack {
             Text("Sea Creatures")
               .font(.custom("FinkHeavy", size: 15))
-            SeaRow(collectionViewModel: collectionViewModel)
+            SeaRow()
           }
         }
                 
@@ -50,6 +51,6 @@ struct HomePage_Previews: PreviewProvider {
   static let items = BugsViewModel()
   
   static var previews: some View {
-    HomePage(collectionViewModel: CollectionViewModel())
+    HomePage()
   }
 }

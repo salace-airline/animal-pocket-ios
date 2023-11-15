@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FishDetails: View {
-  @ObservedObject var viewModel: CollectionViewModel
+  @EnvironmentObject var collection: CollectionViewModel
   var fish: CollectibleItem
   
   var body: some View {
@@ -23,13 +23,18 @@ struct FishDetails: View {
             .bold()
           
           CollectedButton(
-            isCollected: .constant(fish.isCollected),
+            isCollected: .constant(collection.contains(fish)),
             setImage: "fish.fill",
             unsetImage: "fish",
             setColor: .blue,
             updateCollection: {
               Task {
-                viewModel.addCollectedFish(with: fish.itemNumber)
+//                viewModel.addCollectedFish(with: fish.itemNumber)
+                if collection.contains(fish) {
+                  collection.remove(fish)
+                } else {
+                  collection.add(fish)
+                }
               }
             }
           )
@@ -99,7 +104,6 @@ struct FishDetails: View {
 struct GridItem_Previews: PreviewProvider {
   static var previews: some View {
     FishDetails(
-      viewModel: CollectionViewModel(),
       fish: CollectibleItem.fishSample
     )
   }

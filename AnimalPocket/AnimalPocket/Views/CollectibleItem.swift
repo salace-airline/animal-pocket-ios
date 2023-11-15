@@ -69,27 +69,27 @@ class CollectibleItem: Identifiable, Codable, ObservableObject {
 }
 
 // MARK - isCollected
-extension CollectibleItem {
-  var isCollected: Bool {
-    let caughtItems = CollectionViewModel().collectedItems
-    for item in caughtItems.caughtBug {
-      if self.itemNumber == item.self {
-        return true
-      }
-    }
-    for item in caughtItems.caughtFish {
-      if self.itemNumber == item.self {
-        return true
-      }
-    }
-    for item in caughtItems.caughtSeaCreature {
-      if self.itemNumber == item.self {
-        return true
-      }
-    }
-    return false
-  }
-}
+//extension CollectibleItem {
+//  var isCollected: Bool {
+//    let caughtItems = CollectionViewModel().collectedItems
+//    for item in caughtItems.caughtBug {
+//      if self.itemNumber == item.self {
+//        return true
+//      }
+//    }
+//    for item in caughtItems.caughtFish {
+//      if self.itemNumber == item.self {
+//        return true
+//      }
+//    }
+//    for item in caughtItems.caughtSeaCreature {
+//      if self.itemNumber == item.self {
+//        return true
+//      }
+//    }
+//    return false
+//  }
+//}
 
 // MARK - Availability helpers
 extension CollectibleItem {

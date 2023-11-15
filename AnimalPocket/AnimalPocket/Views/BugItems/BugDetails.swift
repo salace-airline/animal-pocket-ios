@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BugDetails: View {
-  @ObservedObject var viewModel: CollectionViewModel
+  @EnvironmentObject var collection: CollectionViewModel
   var bug: CollectibleItem
   
   var body: some View {
@@ -22,13 +22,18 @@ struct BugDetails: View {
             .bold()
           
           CollectedButton(
-            isCollected: .constant(bug.isCollected),
+            isCollected: .constant(collection.contains(bug)), // .constant(bug.isCollected)
             setImage: "leaf.fill",
             unsetImage: "leaf",
             setColor: .green,
             updateCollection: {
               Task {
-                viewModel.addCollectedBug(with: bug.itemNumber)
+//                viewModel.addCollectedBug(with: bug.itemNumber)
+                if collection.contains(bug) {
+                  collection.remove(bug)
+                } else {
+                  collection.add(bug)
+                }
               }
             }
           )
@@ -96,7 +101,6 @@ struct BugDetails: View {
 struct BugDetails_Previews: PreviewProvider {
   static var previews: some View {
     BugDetails(
-      viewModel: CollectionViewModel(),
       bug: CollectibleItem.bugSample
     )
   }

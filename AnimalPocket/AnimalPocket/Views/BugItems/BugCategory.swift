@@ -9,7 +9,6 @@ import SwiftUI
 
 struct BugCategory: View {
   @ObservedObject var viewModel = BugsViewModel()
-  @ObservedObject var collectionViewModel: CollectionViewModel
   
   var body: some View {
     VStack {
@@ -27,7 +26,7 @@ struct BugCategory: View {
           .toggleStyle(MinusToggleStyle())
           
           if viewModel.showCurrentBugs {
-            CurrentBugs(collectionViewModel: collectionViewModel)
+            CurrentBugs()
           }
         }
         
@@ -40,7 +39,7 @@ struct BugCategory: View {
           .toggleStyle(MinusToggleStyle())
           
           if viewModel.showBugsOfTheMonth {
-            BugsOfTheMonth(collectionViewModel: collectionViewModel)
+            BugsOfTheMonth()
           }
         }
         
@@ -53,7 +52,7 @@ struct BugCategory: View {
           .toggleStyle(MinusToggleStyle())
           
           if viewModel.showAllBugs {
-            AllBugs(collectionViewModel: collectionViewModel)
+            AllBugs()
           }
         }
       }
@@ -67,6 +66,6 @@ struct BugCategory: View {
 
 struct BugCategory_Previews: PreviewProvider {
   static var previews: some View {
-    BugCategory(collectionViewModel: CollectionViewModel())
+    BugCategory()
   }
 }

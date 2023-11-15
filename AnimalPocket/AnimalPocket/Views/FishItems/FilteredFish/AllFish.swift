@@ -9,7 +9,6 @@ import SwiftUI
 
 struct AllFish: View {
   @ObservedObject var viewModel = FishViewModel()
-  @ObservedObject var collectionViewModel: CollectionViewModel
   
   let columns = [
     GridItem(.adaptive(minimum: 160))
@@ -37,7 +36,7 @@ struct AllFish: View {
       ScrollView(.vertical) {
         LazyVGrid(columns: columns, spacing: 10) {
           ForEach(fish) { fish in
-            FishDetails(viewModel: collectionViewModel, fish: fish)
+            FishDetails(fish: fish)
           }
         }
       }
@@ -50,6 +49,6 @@ struct AllFish: View {
 
 struct AllFish_Previews: PreviewProvider {
   static var previews: some View {
-    AllFish(collectionViewModel: CollectionViewModel())
+    AllFish()
   }
 }

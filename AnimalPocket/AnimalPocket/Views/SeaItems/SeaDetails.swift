@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SeaDetails: View {
-  @ObservedObject var viewModel: CollectionViewModel
+  @EnvironmentObject var collection: CollectionViewModel
   var sea: CollectibleItem
   
   var body: some View {
@@ -22,13 +22,17 @@ struct SeaDetails: View {
             .bold()
           
           CollectedButton(
-            isCollected: .constant(sea.isCollected),
+            isCollected: .constant(collection.contains(sea)),
             setImage: "drop.fill",
             unsetImage: "drop",
             setColor: .black,
             updateCollection: {
               Task {
-                viewModel.addCollectedSeaCreature(with: sea.itemNumber)
+                if collection.contains(sea) {
+                  collection.remove(sea)
+                } else {
+                  collection.add(sea)
+                }
               }
             }
           )
@@ -102,7 +106,6 @@ struct SeaDetails: View {
 struct SeaDetails_Previews: PreviewProvider {
   static var previews: some View {
     SeaDetails(
-      viewModel: CollectionViewModel(),
       sea: CollectibleItem.seaSample
     )
   }

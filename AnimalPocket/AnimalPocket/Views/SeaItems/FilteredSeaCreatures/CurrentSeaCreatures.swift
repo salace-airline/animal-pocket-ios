@@ -9,7 +9,6 @@ import SwiftUI
 
 struct CurrentSeaCreatures: View {
   @ObservedObject var viewModel = SeaCreatureViewModel()
-  @ObservedObject var collectionViewModel = CollectionViewModel()
   
   let columns = [
     GridItem(.adaptive(minimum: 160))
@@ -37,10 +36,7 @@ struct CurrentSeaCreatures: View {
       ScrollView(.vertical) {
         LazyVGrid(columns: columns, spacing: 10) {
           ForEach(sea) { sea in
-            SeaDetails(
-              viewModel: collectionViewModel,
-              sea: sea
-            )
+            SeaDetails(sea: sea)
           }
         }
       }

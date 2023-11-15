@@ -9,7 +9,6 @@ import SwiftUI
 
 struct SeaRow: View {
   @ObservedObject var viewModel = SeaCreatureViewModel()
-  @ObservedObject var collectionViewModel: CollectionViewModel
   
   let rows = [
     GridItem()
@@ -19,7 +18,7 @@ struct SeaRow: View {
     ScrollView(.horizontal) {
       LazyHGrid(rows: rows) {
         ForEach(viewModel.currentlyAvailable) { sea in
-          SeaDetails(viewModel: collectionViewModel, sea: sea)
+          SeaDetails(sea: sea)
         }
       }
     }
@@ -31,6 +30,7 @@ struct SeaRow: View {
 
 struct SeaRow_Previews: PreviewProvider {
   static var previews: some View {
-    SeaRow(viewModel: SeaCreatureViewModel(), collectionViewModel: CollectionViewModel())
+    SeaRow(viewModel: SeaCreatureViewModel()
+    )
   }
 }
