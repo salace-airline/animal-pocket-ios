@@ -14,13 +14,13 @@ final class CollectionViewModel: ObservableObject {
 //    caughtSeaCreature: []
 //  )
   
-  private var collectedItems: Set<UUID>
+  private var collectedItems: Set<String>
   
   private let saveKey = "CollectedItems"
   
   init() {
     if let data = UserDefaults.standard.data(forKey: saveKey) {
-      if let decoded = try? JSONDecoder().decode(Set<UUID>.self, from: data) {
+      if let decoded = try? JSONDecoder().decode(Set<String>.self, from: data) {
         self.collectedItems = decoded
         return
       }
@@ -29,18 +29,18 @@ final class CollectionViewModel: ObservableObject {
   }
   
   func contains(_ collectedItem: CollectibleItem) -> Bool {
-    collectedItems.contains(collectedItem.id)
+    collectedItems.contains(collectedItem.name)
   }
   
   func add(_ collectedItem: CollectibleItem) {
     objectWillChange.send()
-    collectedItems.insert(collectedItem.id)
+    collectedItems.insert(collectedItem.name)
     save()
   }
   
   func remove(_ collectedItem: CollectibleItem) {
     objectWillChange.send()
-    collectedItems.remove(collectedItem.id)
+    collectedItems.remove(collectedItem.name)
     save()
   }
   
