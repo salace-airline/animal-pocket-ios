@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SeaDetails: View {
   @EnvironmentObject var collection: CollectionViewModel
+  @EnvironmentObject var user: LoginViewModel
   var sea: CollectibleItem
   
   var body: some View {
@@ -22,17 +23,24 @@ struct SeaDetails: View {
             .bold()
           
           CollectedButton(
-            isCollected: .constant(collection.contains(sea)),
+            isCollected: .constant(collection.contains(sea) && user.containsSeaCreature(sea.itemNumber)),
             setImage: "drop.fill",
             unsetImage: "drop",
             setColor: .black,
             updateCollection: {
-              Task {
-                if collection.contains(sea) {
-                  collection.remove(sea)
-                } else {
-                  collection.add(sea)
+              if user.isUserLoggedIn == true {
+                Task {
+                  if collection.contains(sea) {
+                    collection.remove(sea)
+                    await collection.updateSeaCollection(with: sea.itemNumber)
+                  } else {
+                    collection.add(sea)
+                    await collection.updateSeaCollection(with: sea.itemNumber)
+                  }
                 }
+              } else {
+                // alert to tell the user they need to login to update their collection
+                print("You need to login first!")
               }
             }
           )

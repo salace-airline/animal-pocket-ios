@@ -9,6 +9,7 @@ import SwiftUI
 
 struct BugDetails: View {
   @EnvironmentObject var collection: CollectionViewModel
+  @EnvironmentObject var user: LoginViewModel
   var bug: CollectibleItem
   
   var body: some View {
@@ -22,18 +23,24 @@ struct BugDetails: View {
             .bold()
           
           CollectedButton(
-            isCollected: .constant(collection.contains(bug)), // .constant(bug.isCollected)
+            isCollected: .constant(collection.contains(bug) && user.containsBug(bug.itemNumber)),
             setImage: "leaf.fill",
             unsetImage: "leaf",
             setColor: .green,
             updateCollection: {
-              Task {
-//                viewModel.addCollectedBug(with: bug.itemNumber)
-                if collection.contains(bug) {
-                  collection.remove(bug)
-                } else {
-                  collection.add(bug)
+              if user.isUserLoggedIn == true {
+                Task {
+                  if collection.contains(bug) {
+                    collection.remove(bug)
+                    await collection.updateBugCollection(with: bug.itemNumber)
+                  } else {
+                    collection.add(bug)
+                    await collection.updateBugCollection(with: bug.itemNumber)
+                  }
                 }
+              } else {
+                // alert to tell the user they need to login to update their collection
+                print("You need to login first!")
               }
             }
           )
