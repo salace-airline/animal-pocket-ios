@@ -10,10 +10,12 @@ import SwiftUI
 @main
 struct AnimalPocketApp: App {
   @StateObject var collection = CollectionViewModel()
+  @StateObject var user = LoginViewModel()
   
   var body: some Scene {
     WindowGroup {
       MainView()
+        .environmentObject(user)
         .environmentObject(collection)
     }
   }

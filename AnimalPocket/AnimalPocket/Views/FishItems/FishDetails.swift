@@ -9,6 +9,7 @@ import SwiftUI
 
 struct FishDetails: View {
   @EnvironmentObject var collection: CollectionViewModel
+  @EnvironmentObject var user: LoginViewModel
   var fish: CollectibleItem
   
   var body: some View {
@@ -23,18 +24,24 @@ struct FishDetails: View {
             .bold()
           
           CollectedButton(
-            isCollected: .constant(collection.contains(fish)),
+            isCollected: .constant(collection.contains(fish) && user.containsFish(fish.itemNumber)),
             setImage: "fish.fill",
             unsetImage: "fish",
             setColor: .blue,
             updateCollection: {
-              Task {
-//                viewModel.addCollectedFish(with: fish.itemNumber)
-                if collection.contains(fish) {
-                  collection.remove(fish)
-                } else {
-                  collection.add(fish)
+              if user.isUserLoggedIn == true {
+                Task {
+                  if collection.contains(fish) {
+                    collection.remove(fish)
+                    await collection.updateFishCollection(with: fish.itemNumber)
+                  } else {
+                    collection.add(fish)
+                    await collection.updateFishCollection(with: fish.itemNumber)
+                  }
                 }
+              } else {
+                // alert to tell the user they need to login to update their collection
+                print("You need to login first!")
               }
             }
           )

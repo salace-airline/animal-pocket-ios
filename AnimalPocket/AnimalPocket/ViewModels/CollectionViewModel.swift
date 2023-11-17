@@ -8,12 +8,6 @@
 import Foundation
 
 final class CollectionViewModel: ObservableObject {
-//  @Published var collectedItems = UserItems(
-//    caughtFish: [],
-//    caughtBug: [],
-//    caughtSeaCreature: []
-//  )
-  
   private var collectedItems: Set<String>
   
   private let saveKey = "CollectedItems"
@@ -44,36 +38,27 @@ final class CollectionViewModel: ObservableObject {
     save()
   }
   
+  func emptyCollection() {
+    objectWillChange.send()
+    collectedItems.removeAll()
+    save()
+  }
+  
   func save() {
     if let encoded = try? JSONEncoder().encode(collectedItems) {
       UserDefaults.standard.set(encoded, forKey: saveKey)
     }
   }
   
-//  @MainActor
-//  func updateCollection(with collectedItems: UserItems) async {
-//    Task {
-//      do {
-//        let update = try await UserService.updateUserCollection(with: collectedItems, path: UserRouter.update.path)
-//        self.collectedItems = update
-//        print("Collection updated successfully! \(update)")
-//      } catch {
-//        print("Error", error)
-//      }
-//    }
-//  }
+  @MainActor
+  func updateFishCollection(with collectedFish: Int) async {
+    Task {
+      do {
+        let update = try await UserService.updateUserCollection(with: collectedFish, path: UserRouter.updateFish.path)
+        print("Fish collection updated successfully! \(update)")
+      } catch {
+        print("Error", error)
+      }
+    }
+  }
 }
-
-//extension CollectionViewModel {
-//  func addCollectedBug(with id: Int) {
-//    collectedItems.caughtBug.append(id)
-//  }
-//
-//  func addCollectedFish(with id: Int) {
-//    collectedItems.caughtFish.append(id)
-//  }
-//
-//  func addCollectedSeaCreature(with id: Int) {
-//    collectedItems.caughtSeaCreature.append(id)
-//  }
-//}

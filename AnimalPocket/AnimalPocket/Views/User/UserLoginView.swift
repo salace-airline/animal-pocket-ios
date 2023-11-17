@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct UserLoginView: View {
-  @ObservedObject var viewModel = LoginViewModel()
+  @EnvironmentObject var collection: CollectionViewModel
+  @EnvironmentObject var viewModel: LoginViewModel
+  
   var body: some View {
     ZStack {
       Colors.beige200.ignoresSafeArea()
@@ -25,15 +27,26 @@ struct UserLoginView: View {
         Text("Hello!")
           .font(.largeTitle).foregroundColor(Colors.blueDark)
           .padding([.top, .bottom], 40)
-              
+        
         LoginFormView(viewModel: viewModel)
         
         Spacer()
         
         Button(action: {
-          Task {
-            await viewModel.login()
-          }
+//          if viewModel.isUserRegistered == true {
+//            if viewModel.isUserLoggedIn == false {
+              Task {
+                await viewModel.login()
+                viewModel.isUserLoggedIn = true
+              }
+//            } else {
+//              // alert to tell the user they're already logged-in
+//              print("You're already logged-in!")
+//            }
+//          } else {
+//            // alert to tell the user they need to register first
+//            print("You need to register first!")
+//          }
         }) {
           Text("Sign In")
             .font(.headline)
@@ -44,12 +57,17 @@ struct UserLoginView: View {
             .cornerRadius(10)
         }
         .padding(15)
-                
+        
         HStack(spacing: 0) {
           Text("Don't have an account? ")
           Button(action: {
-            Task {
-              await viewModel.register()
+            if viewModel.isUserRegistered == false {
+              Task {
+                await viewModel.register()
+              }
+            } else {
+              // alert to tell the user they're already registered
+              print("You're already registered!")
             }
           }) {
             Text("Sign Up")
@@ -64,11 +82,13 @@ struct UserLoginView: View {
       }
       .edgesIgnoringSafeArea(.bottom)
     }
-  }
-}
-
-struct UserLoginView_Previews: PreviewProvider {
-  static var previews: some View {
-    UserLoginView()
+//    .onAppear {
+//      Task {
+//        let doesUserExist = await viewModel.checkExistingUser()
+//        if doesUserExist == false {
+//          collection.emptyCollection()
+//        }
+//      }
+//    }
   }
 }

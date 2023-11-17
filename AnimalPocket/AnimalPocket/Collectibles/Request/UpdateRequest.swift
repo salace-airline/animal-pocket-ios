@@ -8,10 +8,10 @@
 import Foundation
 
 final class UpdateRequest: APIRequest {
-  let userUpdate: UserItems
+  let itemNumber: Int
   
-  init(userUpdate: UserItems, path: String) {
-    self.userUpdate = userUpdate
+  init(itemNumber: Int, path: String) {
+    self.itemNumber = itemNumber
     super.init(path: path)
   }
   
@@ -22,7 +22,7 @@ final class UpdateRequest: APIRequest {
     request.addValue("application/json", forHTTPHeaderField: "Accept")
     request.httpMethod = "PATCH"
     
-    request.httpBody = try JSONEncoder().encode(userUpdate)
+    request.httpBody = try JSONEncoder().encode(itemNumber)
     
     return request
   }
