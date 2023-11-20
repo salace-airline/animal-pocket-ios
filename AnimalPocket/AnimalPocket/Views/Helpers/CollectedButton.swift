@@ -25,15 +25,3 @@ struct CollectedButton: View {
     }
   }
 }
-
-//struct CollectedButton_Previews: PreviewProvider {
-//  static var previews: some View {
-//    CollectedButton(
-//      isCollected: .constant(true),
-//      setImage: "leaf.fill",
-//      unsetImage: "leaf",
-//      setColor: .green,
-//      updateCollection: <#T##() -> ()#>
-//    )
-//  }
-//}

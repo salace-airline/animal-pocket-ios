@@ -9,9 +9,6 @@ import SwiftUI
 
 struct FishCategory: View {
   @ObservedObject var viewModel = FishViewModel()
-  @State private var showCurrentFish = true
-  @State private var showFishOfTheMonth = true
-  @State private var showAllFish = true
   
   var body: some View {
     VStack {
@@ -21,40 +18,40 @@ struct FishCategory: View {
       
       ScrollView {
         LazyVStack {
-          Toggle(isOn: $showCurrentFish, label: {
+          Toggle(isOn: $viewModel.showCurrentFish, label: {
             Text("Currently")
               .font(.custom("FinkHeavy", size: 20))
               .font(.subheadline)
           })
           .toggleStyle(MinusToggleStyle())
           
-          if showCurrentFish {
+          if viewModel.showCurrentFish {
             CurrentFish()
           }
         }
         
         LazyVStack {
-          Toggle(isOn: $showFishOfTheMonth, label: {
+          Toggle(isOn: $viewModel.showFishOfTheMonth, label: {
             Text("This Month")
               .font(.custom("FinkHeavy", size: 20))
               .font(.subheadline)
           })
           .toggleStyle(MinusToggleStyle())
           
-          if showFishOfTheMonth {
+          if viewModel.showFishOfTheMonth {
             FishOfTheMonth()
           }
         }
         
         LazyVStack {
-          Toggle(isOn: $showAllFish, label: {
+          Toggle(isOn: $viewModel.showAllFish, label: {
             Text("All Fish")
               .font(.custom("FinkHeavy", size: 20))
               .font(.subheadline)
           })
           .toggleStyle(MinusToggleStyle())
           
-          if showAllFish {
+          if viewModel.showAllFish {
             AllFish()
           }
         }

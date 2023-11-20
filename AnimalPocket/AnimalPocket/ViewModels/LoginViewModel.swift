@@ -8,7 +8,6 @@
 import Foundation
 
 class LoginViewModel: ObservableObject {
-  @Published var isUserRegistered = false
   @Published var isUserLoggedIn = false
   @Published var userEmail: String = ""
   @Published var userPassword: String = ""
@@ -17,6 +16,10 @@ class LoginViewModel: ObservableObject {
     caughtBug: [],
     caughtSeaCreature: []
   )
+  
+  @Published var missingFish = [CollectibleItem]()
+  @Published var missingBugs = [CollectibleItem]()
+  @Published var missingSeaCreatures = [CollectibleItem]()
   
   @MainActor
   func checkExistingUser() async -> Bool {
@@ -45,7 +48,6 @@ class LoginViewModel: ObservableObject {
             ),
             path: UserRouter.register.path
           )
-//          isUserRegistered = true
           print("User registered successfully! \(registration)")
         } catch {
           print("Error", error)
@@ -127,5 +129,26 @@ extension LoginViewModel {
   
   func containsSeaCreature(_ collectedItem: Int) -> Bool {
     caughtItems.caughtSeaCreature.contains(collectedItem)
+  }
+}
+
+/// MARK - Handle showing missing items only
+extension LoginViewModel {
+  func showMissingFish(_ collectedItem: CollectibleItem) {
+    if caughtItems.caughtFish.contains(collectedItem.itemNumber) == false {
+      missingFish.append(collectedItem)
+    }
+  }
+  
+  func showMissingBugs(_ collectedItem: CollectibleItem) {
+    if caughtItems.caughtBug.contains(collectedItem.itemNumber) == false {
+      missingBugs.append(collectedItem)
+    }
+  }
+  
+  func showMissingSeaCreatures(_ collectedItem: CollectibleItem) {
+    if caughtItems.caughtSeaCreature.contains(collectedItem.itemNumber) == false {
+      missingSeaCreatures.append(collectedItem)
+    }
   }
 }

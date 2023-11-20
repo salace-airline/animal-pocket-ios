@@ -10,11 +10,15 @@ import Foundation
 final class FishViewModel: ObservableObject {
   @Published var fishArray: [CollectibleItem] = []
   @Published var filter: Filter = .noFilter
+  
+  @Published var showCurrentFish = true
+  @Published var showFishOfTheMonth = true
+  @Published var showAllFish = true
+  
   @Published var noFilter = false
   @Published var increasingPrice = false
   @Published var decreasingPrice = false
   @Published var alphabeticalOrder = false
-  @Published var isCollected = false
 
   @MainActor func loadFish() {
     Task {
@@ -38,7 +42,6 @@ final class FishViewModel: ObservableObject {
             shadow: $0.shadow,
             price: $0.price,
             iconURI: $0.iconURI
-//            isCollected: isCollected
           )
         }
         self.fishArray = fish

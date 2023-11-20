@@ -9,9 +9,6 @@ import SwiftUI
 
 struct SeaCategory: View {
   @ObservedObject var viewModel = SeaCreatureViewModel()
-  @State private var showCurrentSeaCreatures = true
-  @State private var showSeaCreaturesOfTheMonth = true
-  @State private var showAllSeaCreatures = true
   
   var body: some View {
     VStack {
@@ -21,40 +18,40 @@ struct SeaCategory: View {
       
       ScrollView {
         LazyVStack {
-          Toggle(isOn: $showCurrentSeaCreatures, label: {
+          Toggle(isOn: $viewModel.showCurrentSeaCreatures, label: {
             Text("Currently")
               .font(.custom("FinkHeavy", size: 20))
               .font(.subheadline)
           })
           .toggleStyle(MinusToggleStyle())
           
-          if showCurrentSeaCreatures {
+          if viewModel.showCurrentSeaCreatures {
             CurrentSeaCreatures()
           }
         }
         
         LazyVStack {
-          Toggle(isOn: $showSeaCreaturesOfTheMonth, label: {
+          Toggle(isOn: $viewModel.showSeaCreaturesOfTheMonth, label: {
             Text("This Month")
               .font(.custom("FinkHeavy", size: 20))
               .font(.subheadline)
           })
           .toggleStyle(MinusToggleStyle())
           
-          if showSeaCreaturesOfTheMonth {
+          if viewModel.showSeaCreaturesOfTheMonth {
             SeaCreaturesOfTheMonth()
           }
         }
         
         LazyVStack {
-          Toggle(isOn: $showAllSeaCreatures, label: {
+          Toggle(isOn: $viewModel.showAllSeaCreatures, label: {
             Text("All Sea Creatures")
               .font(.custom("FinkHeavy", size: 20))
               .font(.subheadline)
           })
           .toggleStyle(MinusToggleStyle())
           
-          if showAllSeaCreatures {
+          if viewModel.showAllSeaCreatures {
             AllSeaCreatures()
           }
         }

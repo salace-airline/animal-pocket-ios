@@ -10,11 +10,15 @@ import Foundation
 final class SeaCreatureViewModel: ObservableObject {
   @Published var seaArray: [CollectibleItem] = []
   @Published var filter: Filter = .noFilter
+  
+  @Published var showCurrentSeaCreatures = true
+  @Published var showSeaCreaturesOfTheMonth = true
+  @Published var showAllSeaCreatures = true
+  
   @Published var noFilter = false
   @Published var increasingPrice = false
   @Published var decreasingPrice = false
   @Published var alphabeticalOrder = false
-  @Published var isCollected = false
   
   @MainActor func loadSeaCreature() {
     Task {
@@ -38,7 +42,6 @@ final class SeaCreatureViewModel: ObservableObject {
             shadow: $0.shadow,
             price: $0.price,
             iconURI: $0.iconURI
-//            isCollected: isCollected
           )
         }
         self.seaArray = sea

@@ -20,7 +20,6 @@ final class BugsViewModel: ObservableObject {
   @Published var decreasingPrice = false
   @Published var alphabeticalOrder = false
   
-//  @Published var isCollected = false
   @Published var showMissingItemsOnly = false
       
   @MainActor func loadBugs() {
@@ -46,7 +45,6 @@ final class BugsViewModel: ObservableObject {
             shadow: $0.shadow,
             price: $0.price,
             iconURI: $0.iconURI
-//            isCollected: isCollected
           )
         }
         self.bugsArray = bugs
@@ -56,16 +54,6 @@ final class BugsViewModel: ObservableObject {
     }
   }
 }
-
-//extension BugsViewModel {
-//  var collectedBugs: [CollectibleItem] {
-//    var caughtBugs: [CollectibleItem] = []
-//    for bug in bugsArray {
-//      
-//    }
-//  }
-//}
-
 
 // Month & current filters
 extension BugsViewModel {
@@ -97,14 +85,5 @@ extension BugsViewModel {
     return currentItems
   }
 }
-
-// Collection filter
-//extension BugsViewModel {
-//  var missingItems: [CollectibleItem] {
-//    bugsArray.filter { bug in
-//      (!showMissingItemsOnly || !bug.isCollected)
-//    }
-//  }
-//}
 
 

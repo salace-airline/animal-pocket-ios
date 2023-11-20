@@ -63,13 +63,15 @@ struct UserLoginView: View {
         HStack(spacing: 0) {
           Text("Don't have an account? ")
           Button(action: {
-            if viewModel.isUserRegistered == false {
-              Task {
-                await viewModel.register()
+            Task {
+              if await viewModel.checkExistingUser() == false {
+                Task {
+                  await viewModel.register()
+                }
+              } else {
+                // alert to tell the user they're already registered
+                print("You're already registered!")
               }
-            } else {
-              // alert to tell the user they're already registered
-              print("You're already registered!")
             }
           }) {
             Text("Sign Up")

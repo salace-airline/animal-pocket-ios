@@ -86,3 +86,8 @@ final class CollectionViewModel: ObservableObject {
     }
   }
 }
+
+/// MARK - Handle showing missing items only
+extension CollectionViewModel {
+  
+}

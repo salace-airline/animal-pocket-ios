@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct BugsOfTheMonth: View {
+  @EnvironmentObject var user: LoginViewModel
   @ObservedObject var viewModel = BugsViewModel()
   
   let columns = [
