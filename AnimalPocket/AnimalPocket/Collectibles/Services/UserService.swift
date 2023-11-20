@@ -23,7 +23,7 @@ public struct UserService {
     return updateResponse
   }
   
-  public static func getUser(with path: String) async throws -> AuthResponse {
+  public static func getUser(with path: String) async throws -> UserResponse {
     let user = try await UserNetworkService.getUser(with: path)
     return user
   }

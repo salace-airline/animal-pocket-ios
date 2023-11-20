@@ -20,17 +20,14 @@ class LoginViewModel: ObservableObject {
   
   @MainActor
   func checkExistingUser() async -> Bool {
-//    Task {
-      do {
-        let user = try await UserService.getUser(with: UserRouter.user.path)
-        print(user)
-        print("User exists")
-        return true
-      } catch {
-        print("Error", error)
-        return false
-      }
-//    }
+    do {
+      let user = try await UserService.getUser(with: UserRouter.user.path)
+      print("User exists")
+      return true
+    } catch {
+      print("Error", error)
+      return false
+    }
   }
   
   @MainActor
@@ -48,7 +45,7 @@ class LoginViewModel: ObservableObject {
             ),
             path: UserRouter.register.path
           )
-          isUserRegistered = true
+//          isUserRegistered = true
           print("User registered successfully! \(registration)")
         } catch {
           print("Error", error)
@@ -59,7 +56,7 @@ class LoginViewModel: ObservableObject {
   
   @MainActor
   func login() async {
-//    if await checkExistingUser() {
+    if await checkExistingUser() {
       Task {
         do {
           let login = try await UserService.loginUser(
@@ -104,18 +101,18 @@ class LoginViewModel: ObservableObject {
           }
           
           print("User logged in successfully! \(login)")
-          print(caughtItems.caughtBug)
-          print(caughtItems.caughtFish)
-          print(caughtItems.caughtSeaCreature)
+//          print(caughtItems.caughtBug)
+//          print(caughtItems.caughtFish)
+//          print(caughtItems.caughtSeaCreature)
         } catch {
           print("Error", error)
         }
       }
-//    }
-//  else {
-//      // send info that the user needs to register first
-//      print("User is not registered")
-//    }
+    }
+  else {
+      // send info that the user needs to register first
+      print("User is not registered")
+    }
   }
 }
 

@@ -26,9 +26,9 @@ enum UserNetworkService {
       .fetch(responseType: UserItems.self)
   }
   
-  static func getUser(with path: String) async throws -> AuthResponse {
+  static func getUser(with path: String) async throws -> UserResponse {
     try await UserRequest(path: path)
       .asURLRequest()
-      .fetch(responseType: AuthResponse.self)
+      .fetch(responseType: UserResponse.self)
   }
 }
