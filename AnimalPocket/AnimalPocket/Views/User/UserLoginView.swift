@@ -34,20 +34,8 @@ struct UserLoginView: View {
         
         Button(action: {
           Task {
-            if await viewModel.checkExistingUser() {
-              if viewModel.isUserLoggedIn == false {
-                Task {
-                  await viewModel.login()
-                  viewModel.isUserLoggedIn = true
-                }
-              } else {
-                // alert to tell the user they're already logged-in
-                print("You're already logged-in!")
-              }
-            } else {
-              // alert to tell the user they need to register first
-              print("You need to register first!")
-            }
+            await viewModel.login()
+            viewModel.isUserLoggedIn = true
           }
         }) {
           Text("Sign In")
@@ -64,14 +52,7 @@ struct UserLoginView: View {
           Text("Don't have an account? ")
           Button(action: {
             Task {
-              if await viewModel.checkExistingUser() == false {
-                Task {
-                  await viewModel.register()
-                }
-              } else {
-                // alert to tell the user they're already registered
-                print("You're already registered!")
-              }
+              await viewModel.register()
             }
           }) {
             Text("Sign Up")
@@ -86,13 +67,13 @@ struct UserLoginView: View {
       }
       .edgesIgnoringSafeArea(.bottom)
     }
-    .onAppear {
-      Task {
-        let doesUserExist = await viewModel.checkExistingUser()
-        if doesUserExist == false {
-          collection.emptyCollection()
-        }
-      }
-    }
+//    .onAppear {
+//      Task {
+//        let doesUserExist = await viewModel.checkExistingUser()
+//        if doesUserExist == false {
+//          collection.emptyCollection()
+//        }
+//      }
+//    }
   }
 }

@@ -8,7 +8,10 @@
 import Foundation
 
 final class CollectibleViewModel: ObservableObject {
-  @Published var itemsArray: [CollectibleItem] = []
+  @Published var bugsArray: [CollectibleItem] = []
+  @Published var fishArray: [CollectibleItem] = []
+  @Published var seaArray: [CollectibleItem] = []
+  
   @Published var filter: Filter = .noFilter
   
   @Published var showCurrentItem = false
@@ -21,10 +24,8 @@ final class CollectibleViewModel: ObservableObject {
   @Published var alphabeticalOrder = false
   
   @Published var showMissingItemsOnly = false
-  
-  @Published var isCollected = false
-  
-  @MainActor func loadItems() {
+    
+  @MainActor func loadBugs() {
     Task {
       do {
         // bugs
@@ -47,12 +48,19 @@ final class CollectibleViewModel: ObservableObject {
             shadow: $0.shadow,
             price: $0.price,
             iconURI: $0.iconURI
-//            isCollected: isCollected
           )
         }
-        self.itemsArray.append(contentsOf: bugs)
+        self.bugsArray.append(contentsOf: bugs)
+      } catch {
+        print("Error", error)
+      }
+    }
+  }
         
         // fish
+  @MainActor func loadFish() {
+    Task {
+      do {
         let fishResponse = try await CollectibleService.fetchCollectibles(path: CategoryRouter.fish.path)
         let fish = fishResponse.map {
           CollectibleItem(
@@ -72,12 +80,19 @@ final class CollectibleViewModel: ObservableObject {
             shadow: $0.shadow,
             price: $0.price,
             iconURI: $0.iconURI
-//            isCollected: isCollected
           )
         }
-        self.itemsArray.append(contentsOf: fish)
+        self.fishArray.append(contentsOf: fish)
+      } catch {
+        print("Error", error)
+      }
+    }
+  }
         
         // sea creatures
+    @MainActor func loadSeaCreatures() {
+      Task {
+        do {
         let seaResponse = try await CollectibleService.fetchCollectibles(path: CategoryRouter.seaCreature.path)
         let sea = seaResponse.map{
           CollectibleItem(
@@ -97,12 +112,9 @@ final class CollectibleViewModel: ObservableObject {
             shadow: $0.shadow,
             price: $0.price,
             iconURI: $0.iconURI
-//            isCollected: isCollected
           )
         }
-        self.itemsArray.append(contentsOf: sea)
-        
-        print(itemsArray)
+        self.seaArray.append(contentsOf: sea)
       } catch {
         print("Error", error)
       }
@@ -110,17 +122,11 @@ final class CollectibleViewModel: ObservableObject {
   }
 }
 
+/// MARK -  Month & currently available filters
 extension CollectibleViewModel {
-  func updateCollection() {
-    
-  }
-}
-
-// Month & current filters
-extension CollectibleViewModel {
-  var currentMonth: [CollectibleItem] {
+  func filterCurrentMonth(for items: [CollectibleItem]) -> [CollectibleItem] {
     var currentItems: [CollectibleItem] = []
-    for item in itemsArray {
+    for item in items {
       for month in item.monthArrayNorthern {
         if month == item.currentMonth {
           currentItems.append(item)
@@ -129,10 +135,10 @@ extension CollectibleViewModel {
     }
     return currentItems
   }
-  
-  var currentlyAvailable: [CollectibleItem] {
+
+  func filterCurrentItems(for items: [CollectibleItem]) -> [CollectibleItem] {
     var currentItems: [CollectibleItem] = []
-    for item in itemsArray {
+    for item in items {
       for time in item.availableTimeArray {
         if time == item.currentTime {
           for month in item.monthArrayNorthern {
@@ -146,12 +152,3 @@ extension CollectibleViewModel {
     return currentItems
   }
 }
-
-// Collection filter
-//extension CollectibleViewModel {
-//  var missingItems: [CollectibleItem] {
-//    itemsArray.filter { item in
-//      (!showMissingItemsOnly || !item.isCollected)
-//    }
-//  }
-//}

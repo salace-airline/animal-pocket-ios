@@ -24,7 +24,7 @@ struct FishDetails: View {
             .bold()
           
           CollectedButton(
-            isCollected: .constant(collection.contains(fish) && user.containsFish(fish.itemNumber)),
+            isCollected: .constant(collection.contains(fish) || user.containsFish(fish.itemNumber)),
             setImage: "fish.fill",
             unsetImage: "fish",
             setColor: .blue,

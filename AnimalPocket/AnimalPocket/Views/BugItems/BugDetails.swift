@@ -23,7 +23,7 @@ struct BugDetails: View {
             .bold()
           
           CollectedButton(
-            isCollected: .constant(collection.contains(bug) && user.containsBug(bug.itemNumber)),
+            isCollected: .constant(collection.contains(bug) || user.containsBug(bug.itemNumber)),
             setImage: "leaf.fill",
             unsetImage: "leaf",
             setColor: .green,
@@ -32,10 +32,10 @@ struct BugDetails: View {
                 Task {
                   if collection.contains(bug) {
                     collection.remove(bug)
-                    await collection.updateBugCollection(with: bug.itemNumber)
+//                    await collection.updateBugCollection(with: bug.itemNumber)
                   } else {
                     collection.add(bug)
-                    await collection.updateBugCollection(with: bug.itemNumber)
+//                    await collection.updateBugCollection(with: bug.itemNumber)
                   }
                 }
               } else {

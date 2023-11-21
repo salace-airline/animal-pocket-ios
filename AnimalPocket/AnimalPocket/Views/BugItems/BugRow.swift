@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BugRow: View {
-  @ObservedObject var viewModel = BugsViewModel()
+  @ObservedObject var viewModel = CollectibleViewModel()
   
   let rows = [
     GridItem()
@@ -17,7 +17,7 @@ struct BugRow: View {
   var body: some View {
     ScrollView(.horizontal) {
       LazyHGrid(rows: rows) {
-        ForEach(viewModel.currentlyAvailable) { bug in
+        ForEach(viewModel.filterCurrentItems(for: viewModel.bugsArray)) { bug in
           BugDetails(bug: bug)
         }
       }

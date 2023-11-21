@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CurrentBugs: View {
+  @EnvironmentObject var user: LoginViewModel
   @ObservedObject var viewModel = BugsViewModel()
   
   let columns = [
@@ -16,15 +17,28 @@ struct CurrentBugs: View {
   
   var body: some View {
     VStack {
-      switch viewModel.filter {
-        case .noFilter:
-          loadedBugs(with: viewModel.currentlyAvailable)
-        case .increasingPrice:
-          loadedBugs(with: viewModel.filter.increasePrice(of: viewModel.currentlyAvailable))
-        case .decreasingPrice:
-          loadedBugs(with: viewModel.filter.decreasePrice(of: viewModel.currentlyAvailable))
-        case .alphatically:
-          loadedBugs(with: viewModel.filter.sortAlphabetically(viewModel.currentlyAvailable))
+      if viewModel.showMissingItemsOnly {
+        switch viewModel.filter {
+          case .noFilter:
+            loadedBugs(with: viewModel.filterCurrentItems(for: user.missingBugs))
+          case .increasingPrice:
+            loadedBugs(with: viewModel.filter.increasePrice(of: viewModel.filterCurrentItems(for: user.missingBugs)))
+          case .decreasingPrice:
+            loadedBugs(with: viewModel.filter.decreasePrice(of: viewModel.filterCurrentItems(for: user.missingBugs)))
+          case .alphatically:
+            loadedBugs(with: viewModel.filter.sortAlphabetically(viewModel.filterCurrentItems(for: user.missingBugs)))
+        }
+      } else {
+        switch viewModel.filter {
+          case .noFilter:
+            loadedBugs(with: viewModel.filterCurrentItems(for: viewModel.bugsArray))
+          case .increasingPrice:
+            loadedBugs(with: viewModel.filter.increasePrice(of: viewModel.filterCurrentItems(for: viewModel.bugsArray)))
+          case .decreasingPrice:
+            loadedBugs(with: viewModel.filter.decreasePrice(of: viewModel.filterCurrentItems(for: viewModel.bugsArray)))
+          case .alphatically:
+            loadedBugs(with: viewModel.filter.sortAlphabetically(viewModel.filterCurrentItems(for: viewModel.bugsArray)))
+        }
       }
     }
   }

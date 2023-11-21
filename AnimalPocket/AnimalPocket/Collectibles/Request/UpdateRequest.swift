@@ -8,9 +8,9 @@
 import Foundation
 
 final class UpdateRequest: APIRequest {
-  let itemNumber: Int
+  let itemNumber: UpdateFish
   
-  init(itemNumber: Int, path: String) {
+  init(itemNumber: UpdateFish, path: String) {
     self.itemNumber = itemNumber
     super.init(path: path)
   }

@@ -54,37 +54,37 @@ final class CollectionViewModel: ObservableObject {
   func updateFishCollection(with collectedFish: Int) async {
     Task {
       do {
-        let update = try await UserService.updateUserCollection(with: collectedFish, path: UserRouter.updateFish.path)
-        print("Fish collection updated successfully! \(update)")
+        let update = try await UserService.updateFishCollection(with: UpdateFish(caughtFish: collectedFish), path: UserRouter.updateFish.path)
+        print("Fish collection updated successfully! \(update) Fish number \(collectedFish)")
       } catch {
         print("Error", error)
       }
     }
   }
   
-  @MainActor
-  func updateSeaCollection(with collectedSeaCreature: Int) async {
-    Task {
-      do {
-        let update = try await UserService.updateUserCollection(with: collectedSeaCreature, path: UserRouter.updateSea.path)
-        print("Sea Creature collection updated successfully! \(update)")
-      } catch {
-        print("Error", error)
-      }
-    }
-  }
-  
-  @MainActor
-  func updateBugCollection(with collectedBug: Int) async {
-    Task {
-      do {
-        let update = try await UserService.updateUserCollection(with: collectedBug, path: UserRouter.updateBug.path)
-        print("Bug collection updated successfully! \(update)")
-      } catch {
-        print("Error", error)
-      }
-    }
-  }
+//  @MainActor
+//  func updateSeaCollection(with collectedSeaCreature: Int) async {
+//    Task {
+//      do {
+//        let update = try await UserService.updateUserCollection(with: collectedSeaCreature, path: UserRouter.updateSea.path)
+//        print("Sea Creature collection updated successfully! \(update)")
+//      } catch {
+//        print("Error", error)
+//      }
+//    }
+//  }
+//  
+//  @MainActor
+//  func updateBugCollection(with collectedBug: Int) async {
+//    Task {
+//      do {
+//        let update = try await UserService.updateUserCollection(with: collectedBug, path: UserRouter.updateBug.path)
+//        print("Bug collection updated successfully! \(update)")
+//      } catch {
+//        print("Error", error)
+//      }
+//    }
+//  }
 }
 
 /// MARK - Handle showing missing items only

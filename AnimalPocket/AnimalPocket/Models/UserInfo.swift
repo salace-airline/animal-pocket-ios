@@ -26,7 +26,7 @@ public struct UserResponse {
   public let caughtSeaCreature: [Int]
 }
 
-extension UserResponse: Decodable {
+extension UserResponse: Codable {
   enum CodingKeys: String, CodingKey {
     case id
     case email
@@ -35,3 +35,19 @@ extension UserResponse: Decodable {
     case caughtSeaCreature = "caught_sea_creature"
   }
 }
+
+public struct Response: Decodable {
+  public let message: String
+  public let status: String
+}
+
+public struct UpdateFish {
+  public let caughtFish: Int
+}
+
+extension UpdateFish: Codable {
+  enum CodingKeys: String, CodingKey {
+    case caughtFish = "caught_fish"
+  }
+}
+

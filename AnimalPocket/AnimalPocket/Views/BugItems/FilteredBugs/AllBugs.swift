@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AllBugs: View {
+  @EnvironmentObject var user: LoginViewModel
   @ObservedObject var viewModel = BugsViewModel()
     
   let columns = [
@@ -16,15 +17,28 @@ struct AllBugs: View {
   
   var body: some View {
     VStack {
-      switch viewModel.filter {
-        case .noFilter:
-          loadedBugs(with: viewModel.bugsArray)
-        case .increasingPrice:
-          loadedBugs(with: viewModel.filter.increasePrice(of: viewModel.bugsArray))
-        case .decreasingPrice:
-          loadedBugs(with: viewModel.filter.decreasePrice(of: viewModel.bugsArray))
-        case .alphatically:
-          loadedBugs(with: viewModel.filter.sortAlphabetically(viewModel.bugsArray))
+      if viewModel.showMissingItemsOnly {
+        switch viewModel.filter {
+          case .noFilter:
+            loadedBugs(with: user.missingBugs)
+          case .increasingPrice:
+            loadedBugs(with: viewModel.filter.increasePrice(of: user.missingBugs))
+          case .decreasingPrice:
+            loadedBugs(with: viewModel.filter.decreasePrice(of: user.missingBugs))
+          case .alphatically:
+            loadedBugs(with: viewModel.filter.sortAlphabetically(user.missingBugs))
+        }
+      } else {
+        switch viewModel.filter {
+          case .noFilter:
+            loadedBugs(with: viewModel.bugsArray)
+          case .increasingPrice:
+            loadedBugs(with: viewModel.filter.increasePrice(of: viewModel.bugsArray))
+          case .decreasingPrice:
+            loadedBugs(with: viewModel.filter.decreasePrice(of: viewModel.bugsArray))
+          case .alphatically:
+            loadedBugs(with: viewModel.filter.sortAlphabetically(viewModel.bugsArray))
+        }
       }
     }
   }

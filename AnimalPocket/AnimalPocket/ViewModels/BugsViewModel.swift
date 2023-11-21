@@ -57,9 +57,9 @@ final class BugsViewModel: ObservableObject {
 
 // Month & current filters
 extension BugsViewModel {
-  var currentMonth: [CollectibleItem] {
+  func filterCurrentMonth(for items: [CollectibleItem]) -> [CollectibleItem] {
     var currentItems: [CollectibleItem] = []
-    for item in bugsArray {
+    for item in items {
       for month in item.monthArrayNorthern {
         if month == item.currentMonth {
           currentItems.append(item)
@@ -68,10 +68,10 @@ extension BugsViewModel {
     }
     return currentItems
   }
-  
-  var currentlyAvailable: [CollectibleItem] {
+
+  func filterCurrentItems(for items: [CollectibleItem]) -> [CollectibleItem] {
     var currentItems: [CollectibleItem] = []
-    for item in bugsArray {
+    for item in items {
       for time in item.availableTimeArray {
         if time == item.currentTime {
           for month in item.monthArrayNorthern {

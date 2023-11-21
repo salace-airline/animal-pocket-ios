@@ -192,7 +192,6 @@ extension CollectibleItem {
     shadow: nil,
     price: 8000,
     iconURI: "https://raw.githubusercontent.com/salace-airline/ACNHAPI/master/icons/bugs/scorpion.png"
-//    isCollected: true
   )
   
   static let fishSample = CollectibleItem(
@@ -212,7 +211,6 @@ extension CollectibleItem {
     shadow: "Largest (6)",
     price: 15000,
     iconURI: "https://raw.githubusercontent.com/salace-airline/ACNHAPI/master/icons/fish/coelacanth.png"
-//    isCollected: false
   )
   
   static let seaSample = CollectibleItem(
@@ -232,6 +230,5 @@ extension CollectibleItem {
     shadow: "Medium",
     price: 5000,
     iconURI: "https://raw.githubusercontent.com/salace-airline/ACNHAPI/master/icons/sea/venus_flower_basket.png"
-//    isCollected: true
   )
 }
