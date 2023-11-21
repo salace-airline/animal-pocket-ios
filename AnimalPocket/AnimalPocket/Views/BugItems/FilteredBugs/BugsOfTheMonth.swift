@@ -17,17 +17,16 @@ struct BugsOfTheMonth: View {
   
   var body: some View {
     VStack {
-      // TODO: ajouter les logiques de filtre
-      if viewModel.showMissingItemsOnly {
+      if user.showMissingItemsOnly {
         switch viewModel.filter {
           case .noFilter:
-            loadedBugs(with: viewModel.filterCurrentMonth(for: user.missingBugs))
+            loadedBugs(with: viewModel.filterCurrentMonth(for: user.showMissingBugs(viewModel.bugsArray)))
           case .increasingPrice:
-            loadedBugs(with: viewModel.filter.increasePrice(of: viewModel.filterCurrentMonth(for: user.missingBugs)))
+            loadedBugs(with: viewModel.filter.increasePrice(of: viewModel.filterCurrentMonth(for: user.showMissingBugs(viewModel.bugsArray))))
           case .decreasingPrice:
-            loadedBugs(with: viewModel.filter.decreasePrice(of: viewModel.filterCurrentMonth(for: user.missingBugs)))
+            loadedBugs(with: viewModel.filter.decreasePrice(of: viewModel.filterCurrentMonth(for: user.showMissingBugs(viewModel.bugsArray))))
           case .alphatically:
-            loadedBugs(with: viewModel.filter.sortAlphabetically(viewModel.filterCurrentMonth(for: user.missingBugs)))
+            loadedBugs(with: viewModel.filter.sortAlphabetically(viewModel.filterCurrentMonth(for: user.showMissingBugs(viewModel.bugsArray))))
         }
       } else {
         switch viewModel.filter {

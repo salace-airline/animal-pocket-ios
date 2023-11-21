@@ -8,13 +8,25 @@
 import SwiftUI
 
 struct SeaCategory: View {
+  @EnvironmentObject var user: LoginViewModel
   @ObservedObject var viewModel = CollectibleViewModel()
   
   var body: some View {
     VStack {
-      Text("Sea Creatures")
-        .font(.custom("FinkHeavy", size: 20))
-        .font(.subheadline)
+      HStack {
+        Text("Sea Creatures")
+          .font(.custom("FinkHeavy", size: 20))
+          .font(.subheadline)
+        
+        Button {
+          user.showMissingItemsOnly.toggle()
+          print(user.showMissingItemsOnly)
+        } label: {
+          Label("Toggle missing sea creature", systemImage: user.showMissingItemsOnly ? "eye.slash.fill" : "eye.slash")
+            .labelStyle(.iconOnly)
+            .foregroundColor(.blue)
+        }
+      }
       
       ScrollView {
         LazyVStack {

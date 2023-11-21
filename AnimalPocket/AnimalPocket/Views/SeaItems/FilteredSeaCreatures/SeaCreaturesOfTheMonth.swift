@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SeaCreaturesOfTheMonth: View {
+  @EnvironmentObject var user: LoginViewModel
   @ObservedObject var viewModel = CollectibleViewModel()
   
   let columns = [
@@ -16,15 +17,28 @@ struct SeaCreaturesOfTheMonth: View {
   
   var body: some View {
     VStack {
-      switch viewModel.filter {
-        case .noFilter:
-          loadedSea(sea: viewModel.filterCurrentMonth(for: viewModel.seaArray))
-        case .increasingPrice:
-          loadedSea(sea: viewModel.filter.increasePrice(of: viewModel.filterCurrentMonth(for: viewModel.seaArray)))
-        case .decreasingPrice:
-          loadedSea(sea: viewModel.filter.decreasePrice(of: viewModel.filterCurrentMonth(for: viewModel.seaArray)))
-        case .alphatically:
-          loadedSea(sea: viewModel.filter.sortAlphabetically(viewModel.filterCurrentMonth(for: viewModel.seaArray)))
+      if user.showMissingItemsOnly {
+        switch viewModel.filter {
+          case .noFilter:
+            loadedSea(sea: viewModel.filterCurrentMonth(for: user.showMissingSeaCreatures(viewModel.seaArray)))
+          case .increasingPrice:
+            loadedSea(sea: viewModel.filter.increasePrice(of: viewModel.filterCurrentMonth(for: user.showMissingSeaCreatures(viewModel.seaArray))))
+          case .decreasingPrice:
+            loadedSea(sea: viewModel.filter.decreasePrice(of: viewModel.filterCurrentMonth(for: user.showMissingSeaCreatures(viewModel.seaArray))))
+          case .alphatically:
+            loadedSea(sea: viewModel.filter.sortAlphabetically(viewModel.filterCurrentMonth(for: user.showMissingSeaCreatures(viewModel.seaArray))))
+        }
+      } else {
+        switch viewModel.filter {
+          case .noFilter:
+            loadedSea(sea: viewModel.filterCurrentMonth(for: viewModel.seaArray))
+          case .increasingPrice:
+            loadedSea(sea: viewModel.filter.increasePrice(of: viewModel.filterCurrentMonth(for: viewModel.seaArray)))
+          case .decreasingPrice:
+            loadedSea(sea: viewModel.filter.decreasePrice(of: viewModel.filterCurrentMonth(for: viewModel.seaArray)))
+          case .alphatically:
+            loadedSea(sea: viewModel.filter.sortAlphabetically(viewModel.filterCurrentMonth(for: viewModel.seaArray)))
+        }
       }
     }
   }

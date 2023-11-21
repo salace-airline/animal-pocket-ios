@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AllFish: View {
+  @EnvironmentObject var user: LoginViewModel
   @ObservedObject var viewModel = CollectibleViewModel()
   
   let columns = [
@@ -16,15 +17,28 @@ struct AllFish: View {
   
   var body: some View {
     VStack {
-      switch viewModel.filter {
-        case .noFilter:
-          loadedFish(fish: viewModel.fishArray)
-        case .increasingPrice:
-          loadedFish(fish: viewModel.filter.increasePrice(of: viewModel.fishArray))
-        case .decreasingPrice:
-          loadedFish(fish: viewModel.filter.decreasePrice(of: viewModel.fishArray))
-        case .alphatically:
-          loadedFish(fish: viewModel.filter.sortAlphabetically(viewModel.fishArray))
+      if user.showMissingItemsOnly {
+        switch viewModel.filter {
+          case .noFilter:
+            loadedFish(fish: user.showMissingFish(user.showMissingFish(viewModel.fishArray)))
+          case .increasingPrice:
+            loadedFish(fish: viewModel.filter.increasePrice(of: user.showMissingFish(viewModel.fishArray)))
+          case .decreasingPrice:
+            loadedFish(fish: viewModel.filter.decreasePrice(of: user.showMissingFish(viewModel.fishArray)))
+          case .alphatically:
+            loadedFish(fish: viewModel.filter.sortAlphabetically(user.showMissingFish(viewModel.fishArray)))
+        }
+      } else {
+        switch viewModel.filter {
+          case .noFilter:
+            loadedFish(fish: viewModel.fishArray)
+          case .increasingPrice:
+            loadedFish(fish: viewModel.filter.increasePrice(of: viewModel.fishArray))
+          case .decreasingPrice:
+            loadedFish(fish: viewModel.filter.decreasePrice(of: viewModel.fishArray))
+          case .alphatically:
+            loadedFish(fish: viewModel.filter.sortAlphabetically(viewModel.fishArray))
+        }
       }
     }
   }

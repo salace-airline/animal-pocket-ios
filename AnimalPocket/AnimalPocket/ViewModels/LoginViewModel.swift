@@ -17,9 +17,7 @@ class LoginViewModel: ObservableObject {
     caughtSeaCreature: []
   )
   
-  @Published var missingFish = [CollectibleItem]()
-  @Published var missingBugs = [CollectibleItem]()
-  @Published var missingSeaCreatures = [CollectibleItem]()
+  @Published var showMissingItemsOnly = false
   
   //  @MainActor
   //  func checkExistingUser() async -> Bool {
@@ -97,9 +95,9 @@ class LoginViewModel: ObservableObject {
         }
         
         print("User logged in successfully! \(login)")
-        //          print(caughtItems.caughtBug)
-        //          print(caughtItems.caughtFish)
-        //          print(caughtItems.caughtSeaCreature)
+        print(caughtItems.caughtBug)
+        print(caughtItems.caughtFish)
+        print(caughtItems.caughtSeaCreature)
       } catch {
         print("Error", error)
       }
@@ -123,21 +121,36 @@ extension LoginViewModel {
 
 /// MARK - Handle showing missing items only
 extension LoginViewModel {
-  func showMissingFish(_ collectedItem: CollectibleItem) {
-    if caughtItems.caughtFish.contains(collectedItem.itemNumber) == false {
-      missingFish.append(collectedItem)
+  func showMissingFish(_ collectedFish: [CollectibleItem]) -> [CollectibleItem] {
+    var missingFish = [CollectibleItem]()
+    for fish in collectedFish{
+      if caughtItems.caughtFish.contains(fish.itemNumber) == false {
+        missingFish.append(fish)
+        print(fish.itemNumber)
+      }
     }
+    return missingFish
   }
   
-  func showMissingBugs(_ collectedItem: CollectibleItem) {
-    if caughtItems.caughtBug.contains(collectedItem.itemNumber) == false {
-      missingBugs.append(collectedItem)
+  func showMissingBugs(_ collectedBugs: [CollectibleItem]) -> [CollectibleItem] {
+    var missingBugs = [CollectibleItem]()
+    for bug in collectedBugs {
+      if caughtItems.caughtBug.contains(bug.itemNumber) == false {
+        missingBugs.append(bug)
+        print(bug.itemNumber)
+      }
     }
+    return missingBugs
   }
   
-  func showMissingSeaCreatures(_ collectedItem: CollectibleItem) {
-    if caughtItems.caughtSeaCreature.contains(collectedItem.itemNumber) == false {
-      missingSeaCreatures.append(collectedItem)
+  func showMissingSeaCreatures(_ collectedSeaCreatures: [CollectibleItem]) -> [CollectibleItem] {
+    var missingSeaCreatures = [CollectibleItem]()
+    for seaCreature in collectedSeaCreatures {
+      if caughtItems.caughtSeaCreature.contains(seaCreature.itemNumber) == false {
+        missingSeaCreatures.append(seaCreature)
+        print(seaCreature.itemNumber)
+      }
     }
+    return missingSeaCreatures
   }
 }

@@ -17,16 +17,16 @@ struct CurrentBugs: View {
   
   var body: some View {
     VStack {
-      if viewModel.showMissingItemsOnly {
+      if user.showMissingItemsOnly {
         switch viewModel.filter {
           case .noFilter:
-            loadedBugs(with: viewModel.filterCurrentItems(for: user.missingBugs))
+            loadedBugs(with: viewModel.filterCurrentItems(for: user.showMissingBugs(viewModel.bugsArray)))
           case .increasingPrice:
-            loadedBugs(with: viewModel.filter.increasePrice(of: viewModel.filterCurrentItems(for: user.missingBugs)))
+            loadedBugs(with: viewModel.filter.increasePrice(of: viewModel.filterCurrentItems(for: user.showMissingBugs(viewModel.bugsArray))))
           case .decreasingPrice:
-            loadedBugs(with: viewModel.filter.decreasePrice(of: viewModel.filterCurrentItems(for: user.missingBugs)))
+            loadedBugs(with: viewModel.filter.decreasePrice(of: viewModel.filterCurrentItems(for: user.showMissingBugs(viewModel.bugsArray))))
           case .alphatically:
-            loadedBugs(with: viewModel.filter.sortAlphabetically(viewModel.filterCurrentItems(for: user.missingBugs)))
+            loadedBugs(with: viewModel.filter.sortAlphabetically(viewModel.filterCurrentItems(for: user.showMissingBugs(viewModel.bugsArray))))
         }
       } else {
         switch viewModel.filter {

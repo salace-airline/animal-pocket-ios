@@ -19,9 +19,10 @@ struct BugCategory: View {
           .font(.subheadline)
         
         Button {
-          viewModel.showMissingItemsOnly.toggle()
+          user.showMissingItemsOnly.toggle()
+          print(user.showMissingItemsOnly)
         } label: {
-          Label("Toggle missing bugs", systemImage: viewModel.showMissingItemsOnly ? "eye.slash.fill" : "eye.slash")
+          Label("Toggle missing bugs", systemImage: user.showMissingItemsOnly ? "eye.slash.fill" : "eye.slash")
             .labelStyle(.iconOnly)
             .foregroundColor(.red)
         }

@@ -23,7 +23,7 @@ struct BugDetails: View {
             .bold()
           
           CollectedButton(
-            isCollected: .constant(collection.contains(bug) || user.containsBug(bug.itemNumber)),
+            isCollected: .constant(user.containsBug(bug.itemNumber)),
             setImage: "leaf.fill",
             unsetImage: "leaf",
             setColor: .green,

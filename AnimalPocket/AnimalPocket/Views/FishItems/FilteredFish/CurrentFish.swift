@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CurrentFish: View {
+  @EnvironmentObject var user: LoginViewModel
   @ObservedObject var viewModel = CollectibleViewModel()
   
   let columns = [
@@ -16,15 +17,28 @@ struct CurrentFish: View {
   
   var body: some View {
     VStack {
-      switch viewModel.filter {
-        case .noFilter:
-          loadedFish(fish: viewModel.filterCurrentItems(for: viewModel.fishArray))
-        case .increasingPrice:
-          loadedFish(fish: viewModel.filter.increasePrice(of: viewModel.filterCurrentItems(for: viewModel.fishArray)))
-        case .decreasingPrice:
-          loadedFish(fish: viewModel.filter.decreasePrice(of: viewModel.filterCurrentItems(for: viewModel.fishArray)))
-        case .alphatically:
-          loadedFish(fish: viewModel.filter.sortAlphabetically(viewModel.filterCurrentItems(for: viewModel.fishArray)))
+      if user.showMissingItemsOnly {
+        switch viewModel.filter {
+          case .noFilter:
+            loadedFish(fish: viewModel.filterCurrentItems(for: user.showMissingFish(viewModel.fishArray)))
+          case .increasingPrice:
+            loadedFish(fish: viewModel.filter.increasePrice(of: viewModel.filterCurrentItems(for: user.showMissingFish(viewModel.fishArray))))
+          case .decreasingPrice:
+            loadedFish(fish: viewModel.filter.decreasePrice(of: viewModel.filterCurrentItems(for: user.showMissingFish(viewModel.fishArray))))
+          case .alphatically:
+            loadedFish(fish: viewModel.filter.sortAlphabetically(viewModel.filterCurrentItems(for: user.showMissingFish(viewModel.fishArray))))
+        }
+      } else {
+        switch viewModel.filter {
+          case .noFilter:
+            loadedFish(fish: viewModel.filterCurrentItems(for: viewModel.fishArray))
+          case .increasingPrice:
+            loadedFish(fish: viewModel.filter.increasePrice(of: viewModel.filterCurrentItems(for: viewModel.fishArray)))
+          case .decreasingPrice:
+            loadedFish(fish: viewModel.filter.decreasePrice(of: viewModel.filterCurrentItems(for: viewModel.fishArray)))
+          case .alphatically:
+            loadedFish(fish: viewModel.filter.sortAlphabetically(viewModel.filterCurrentItems(for: viewModel.fishArray)))
+        }
       }
     }
   }
