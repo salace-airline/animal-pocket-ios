@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BugCategory: View {
   @EnvironmentObject var user: LoginViewModel
-  @ObservedObject var viewModel = BugsViewModel()
+  @ObservedObject var viewModel = CollectibleViewModel()
   
   var body: some View {
     VStack {
@@ -29,40 +29,40 @@ struct BugCategory: View {
       
       ScrollView {
         LazyVStack {
-          Toggle(isOn: $viewModel.showCurrentBugs, label: {
+          Toggle(isOn: $viewModel.showCurrentItem, label: {
             Text("Currently")
               .font(.custom("FinkHeavy", size: 20))
               .font(.subheadline)
           })
           .toggleStyle(MinusToggleStyle())
           
-          if viewModel.showCurrentBugs {
+          if viewModel.showCurrentItem {
             CurrentBugs()
           }
         }
         
         LazyVStack {
-          Toggle(isOn: $viewModel.showBugsOfTheMonth, label: {
+          Toggle(isOn: $viewModel.showItemsOfTheMonth, label: {
             Text("This Month")
               .font(.custom("FinkHeavy", size: 20))
               .font(.subheadline)
           })
           .toggleStyle(MinusToggleStyle())
           
-          if viewModel.showBugsOfTheMonth {
+          if viewModel.showItemsOfTheMonth {
             BugsOfTheMonth()
           }
         }
         
         LazyVStack {
-          Toggle(isOn: $viewModel.showAllBugs, label: {
+          Toggle(isOn: $viewModel.showAllItems, label: {
             Text("All Bugs")
               .font(.custom("FinkHeavy", size: 20))
               .font(.subheadline)
           })
           .toggleStyle(MinusToggleStyle())
           
-          if viewModel.showAllBugs {
+          if viewModel.showAllItems {
             AllBugs()
           }
         }

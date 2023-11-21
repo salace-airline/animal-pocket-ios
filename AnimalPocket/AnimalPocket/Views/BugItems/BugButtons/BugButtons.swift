@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BugButtons: View {
-  @ObservedObject var viewModel: BugsViewModel
+  @ObservedObject var viewModel: CollectibleViewModel
   
   var body: some View {
     HStack {

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CurrentSeaCreatures: View {
-  @ObservedObject var viewModel = SeaCreatureViewModel()
+  @ObservedObject var viewModel = CollectibleViewModel()
   
   let columns = [
     GridItem(.adaptive(minimum: 160))
@@ -18,13 +18,13 @@ struct CurrentSeaCreatures: View {
     VStack {
       switch viewModel.filter {
         case .noFilter:
-          loadedSea(sea: viewModel.currentlyAvailable)
+          loadedSea(sea: viewModel.filterCurrentItems(for: viewModel.seaArray))
         case .increasingPrice:
-          loadedSea(sea: viewModel.filter.increasePrice(of: viewModel.currentlyAvailable))
+          loadedSea(sea: viewModel.filter.increasePrice(of: viewModel.filterCurrentItems(for: viewModel.seaArray)))
         case .decreasingPrice:
-          loadedSea(sea: viewModel.filter.decreasePrice(of: viewModel.currentlyAvailable))
+          loadedSea(sea: viewModel.filter.decreasePrice(of: viewModel.filterCurrentItems(for: viewModel.seaArray)))
         case .alphatically:
-          loadedSea(sea: viewModel.filter.sortAlphabetically(viewModel.currentlyAvailable))
+          loadedSea(sea: viewModel.filter.sortAlphabetically(viewModel.filterCurrentItems(for: viewModel.seaArray)))
       }
     }
   }
@@ -42,7 +42,7 @@ struct CurrentSeaCreatures: View {
       }
     }
     .onAppear(perform: {
-      viewModel.loadSeaCreature()
+      viewModel.loadSeaCreatures()
     })
   }
 }

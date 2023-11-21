@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AllSeaCreatures: View {
-  @ObservedObject var viewModel = SeaCreatureViewModel()
+  @ObservedObject var viewModel = CollectibleViewModel()
   
   let columns = [
     GridItem(.adaptive(minimum: 160))
@@ -42,7 +42,7 @@ struct AllSeaCreatures: View {
       }
     }
     .onAppear(perform: {
-      viewModel.loadSeaCreature()
+      viewModel.loadSeaCreatures()
     })
   }
 }

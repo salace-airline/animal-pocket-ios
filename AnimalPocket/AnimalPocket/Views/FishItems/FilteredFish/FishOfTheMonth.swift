@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FishOfTheMonth: View {
-  @ObservedObject var viewModel = FishViewModel()
+  @ObservedObject var viewModel = CollectibleViewModel()
   
   let columns = [
     GridItem(.adaptive(minimum: 160))
@@ -18,13 +18,13 @@ struct FishOfTheMonth: View {
     VStack {
       switch viewModel.filter {
         case .noFilter:
-          loadedFish(fish: viewModel.currentMonthFish)
+          loadedFish(fish: viewModel.filterCurrentMonth(for: viewModel.fishArray))
         case .increasingPrice:
-          loadedFish(fish: viewModel.filter.increasePrice(of: viewModel.currentMonthFish))
+          loadedFish(fish: viewModel.filter.increasePrice(of: viewModel.filterCurrentMonth(for: viewModel.fishArray)))
         case .decreasingPrice:
-          loadedFish(fish: viewModel.filter.decreasePrice(of: viewModel.currentMonthFish))
+          loadedFish(fish: viewModel.filter.decreasePrice(of: viewModel.filterCurrentMonth(for: viewModel.fishArray)))
         case .alphatically:
-          loadedFish(fish: viewModel.filter.sortAlphabetically(viewModel.currentMonthFish))
+          loadedFish(fish: viewModel.filter.sortAlphabetically(viewModel.filterCurrentMonth(for: viewModel.fishArray)))
       }
     }
   }

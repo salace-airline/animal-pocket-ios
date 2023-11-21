@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CurrentFish: View {
-  @ObservedObject var viewModel = FishViewModel()
+  @ObservedObject var viewModel = CollectibleViewModel()
   
   let columns = [
     GridItem(.adaptive(minimum: 160))
@@ -18,13 +18,13 @@ struct CurrentFish: View {
     VStack {
       switch viewModel.filter {
         case .noFilter:
-          loadedFish(fish: viewModel.currentlyAvailable)
+          loadedFish(fish: viewModel.filterCurrentItems(for: viewModel.fishArray))
         case .increasingPrice:
-          loadedFish(fish: viewModel.filter.increasePrice(of: viewModel.currentlyAvailable))
+          loadedFish(fish: viewModel.filter.increasePrice(of: viewModel.filterCurrentItems(for: viewModel.fishArray)))
         case .decreasingPrice:
-          loadedFish(fish: viewModel.filter.decreasePrice(of: viewModel.currentlyAvailable))
+          loadedFish(fish: viewModel.filter.decreasePrice(of: viewModel.filterCurrentItems(for: viewModel.fishArray)))
         case .alphatically:
-          loadedFish(fish: viewModel.filter.sortAlphabetically(viewModel.currentlyAvailable))
+          loadedFish(fish: viewModel.filter.sortAlphabetically(viewModel.filterCurrentItems(for: viewModel.fishArray)))
       }
     }
   }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BugsOfTheMonth: View {
   @EnvironmentObject var user: LoginViewModel
-  @ObservedObject var viewModel = BugsViewModel()
+  @ObservedObject var viewModel = CollectibleViewModel()
   
   let columns = [
     GridItem(.adaptive(minimum: 160))
@@ -64,7 +64,7 @@ struct BugsOfTheMonth: View {
 
 struct BugsOfTheMonth_Previews: PreviewProvider {
   static var previews: some View {
-    BugsOfTheMonth(viewModel: BugsViewModel()
+    BugsOfTheMonth(viewModel: CollectibleViewModel()
     )
   }
 }

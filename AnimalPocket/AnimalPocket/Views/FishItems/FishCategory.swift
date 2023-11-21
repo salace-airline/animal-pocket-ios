@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FishCategory: View {
-  @ObservedObject var viewModel = FishViewModel()
+  @ObservedObject var viewModel = CollectibleViewModel()
   
   var body: some View {
     VStack {
@@ -18,40 +18,40 @@ struct FishCategory: View {
       
       ScrollView {
         LazyVStack {
-          Toggle(isOn: $viewModel.showCurrentFish, label: {
+          Toggle(isOn: $viewModel.showCurrentItem, label: {
             Text("Currently")
               .font(.custom("FinkHeavy", size: 20))
               .font(.subheadline)
           })
           .toggleStyle(MinusToggleStyle())
           
-          if viewModel.showCurrentFish {
+          if viewModel.showCurrentItem {
             CurrentFish()
           }
         }
         
         LazyVStack {
-          Toggle(isOn: $viewModel.showFishOfTheMonth, label: {
+          Toggle(isOn: $viewModel.showItemsOfTheMonth, label: {
             Text("This Month")
               .font(.custom("FinkHeavy", size: 20))
               .font(.subheadline)
           })
           .toggleStyle(MinusToggleStyle())
           
-          if viewModel.showFishOfTheMonth {
+          if viewModel.showItemsOfTheMonth {
             FishOfTheMonth()
           }
         }
         
         LazyVStack {
-          Toggle(isOn: $viewModel.showAllFish, label: {
+          Toggle(isOn: $viewModel.showAllItems, label: {
             Text("All Fish")
               .font(.custom("FinkHeavy", size: 20))
               .font(.subheadline)
           })
           .toggleStyle(MinusToggleStyle())
           
-          if viewModel.showAllFish {
+          if viewModel.showAllItems {
             AllFish()
           }
         }

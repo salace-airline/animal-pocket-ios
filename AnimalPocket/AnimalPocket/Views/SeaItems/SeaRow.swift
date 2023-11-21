@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SeaRow: View {
-  @ObservedObject var viewModel = SeaCreatureViewModel()
+  @ObservedObject var viewModel = CollectibleViewModel()
   
   let rows = [
     GridItem()
@@ -17,20 +17,20 @@ struct SeaRow: View {
   var body: some View {
     ScrollView(.horizontal) {
       LazyHGrid(rows: rows) {
-        ForEach(viewModel.currentlyAvailable) { sea in
+        ForEach(viewModel.filterCurrentItems(for: viewModel.seaArray)) { sea in
           SeaDetails(sea: sea)
         }
       }
     }
     .onAppear(perform: {
-      viewModel.loadSeaCreature()
+      viewModel.loadSeaCreatures()
     })
   }
 }
 
 struct SeaRow_Previews: PreviewProvider {
   static var previews: some View {
-    SeaRow(viewModel: SeaCreatureViewModel()
+    SeaRow(viewModel: CollectibleViewModel()
     )
   }
 }

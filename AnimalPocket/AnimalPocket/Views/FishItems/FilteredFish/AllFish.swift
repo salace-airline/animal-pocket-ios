@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AllFish: View {
-  @ObservedObject var viewModel = FishViewModel()
+  @ObservedObject var viewModel = CollectibleViewModel()
   
   let columns = [
     GridItem(.adaptive(minimum: 160))

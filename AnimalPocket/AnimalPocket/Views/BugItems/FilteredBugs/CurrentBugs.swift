@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CurrentBugs: View {
   @EnvironmentObject var user: LoginViewModel
-  @ObservedObject var viewModel = BugsViewModel()
+  @ObservedObject var viewModel = CollectibleViewModel()
   
   let columns = [
     GridItem(.adaptive(minimum: 160))
@@ -64,7 +64,7 @@ struct CurrentBugs: View {
 struct BugsCurrentMoment_Previews: PreviewProvider {
   static var previews: some View {
     CurrentBugs(
-      viewModel: BugsViewModel()
+      viewModel: CollectibleViewModel()
     )
   }
 }

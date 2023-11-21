@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AllBugs: View {
   @EnvironmentObject var user: LoginViewModel
-  @ObservedObject var viewModel = BugsViewModel()
+  @ObservedObject var viewModel = CollectibleViewModel()
     
   let columns = [
     GridItem(.adaptive(minimum: 160))

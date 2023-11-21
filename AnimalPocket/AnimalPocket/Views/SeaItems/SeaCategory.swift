@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SeaCategory: View {
-  @ObservedObject var viewModel = SeaCreatureViewModel()
+  @ObservedObject var viewModel = CollectibleViewModel()
   
   var body: some View {
     VStack {
@@ -18,40 +18,40 @@ struct SeaCategory: View {
       
       ScrollView {
         LazyVStack {
-          Toggle(isOn: $viewModel.showCurrentSeaCreatures, label: {
+          Toggle(isOn: $viewModel.showCurrentItem, label: {
             Text("Currently")
               .font(.custom("FinkHeavy", size: 20))
               .font(.subheadline)
           })
           .toggleStyle(MinusToggleStyle())
           
-          if viewModel.showCurrentSeaCreatures {
+          if viewModel.showCurrentItem {
             CurrentSeaCreatures()
           }
         }
         
         LazyVStack {
-          Toggle(isOn: $viewModel.showSeaCreaturesOfTheMonth, label: {
+          Toggle(isOn: $viewModel.showItemsOfTheMonth, label: {
             Text("This Month")
               .font(.custom("FinkHeavy", size: 20))
               .font(.subheadline)
           })
           .toggleStyle(MinusToggleStyle())
           
-          if viewModel.showSeaCreaturesOfTheMonth {
+          if viewModel.showItemsOfTheMonth {
             SeaCreaturesOfTheMonth()
           }
         }
         
         LazyVStack {
-          Toggle(isOn: $viewModel.showAllSeaCreatures, label: {
+          Toggle(isOn: $viewModel.showAllItems, label: {
             Text("All Sea Creatures")
               .font(.custom("FinkHeavy", size: 20))
               .font(.subheadline)
           })
           .toggleStyle(MinusToggleStyle())
           
-          if viewModel.showAllSeaCreatures {
+          if viewModel.showAllItems {
             AllSeaCreatures()
           }
         }
