@@ -1,16 +1,16 @@
 //
-//  UpdateRequest.swift
+//  BugUpdateRequest.swift
 //  AnimalPocket
 //
-//  Created by Sarah WATREMET on 09/11/2023.
+//  Created by Sarah WATREMET on 21/11/2023.
 //
 
 import Foundation
 
-final class UpdateRequest: APIRequest {
-  let itemNumber: UpdateFish
+final class BugUpdateRequest: APIRequest {
+  let itemNumber: UpdateBug
   
-  init(itemNumber: UpdateFish, path: String) {
+  init(itemNumber: UpdateBug, path: String) {
     self.itemNumber = itemNumber
     super.init(path: path)
   }

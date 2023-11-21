@@ -23,12 +23,11 @@ final class CollectibleViewModel: ObservableObject {
   @Published var decreasingPrice = false
   @Published var alphabeticalOrder = false
   
-//  @Published var showMissingItemsOnly = false
-    
+  
+  // bugs
   @MainActor func loadBugs() {
     Task {
       do {
-        // bugs
         let bugResponse = try await CollectibleService.fetchCollectibles(path: CategoryRouter.bug.path)
         let bugs = bugResponse.map {
           CollectibleItem(
@@ -57,7 +56,7 @@ final class CollectibleViewModel: ObservableObject {
     }
   }
         
-        // fish
+  // fish
   @MainActor func loadFish() {
     Task {
       do {
@@ -89,7 +88,7 @@ final class CollectibleViewModel: ObservableObject {
     }
   }
         
-        // sea creatures
+    // sea creatures
     @MainActor func loadSeaCreatures() {
       Task {
         do {

@@ -51,3 +51,23 @@ extension UpdateFish: Codable {
   }
 }
 
+public struct UpdateBug {
+  public let caughtBug: Int
+}
+
+extension UpdateBug: Codable {
+  enum CodingKeys: String, CodingKey {
+    case caughtBug = "caught_bug"
+  }
+}
+
+public struct UpdateSeaCreature {
+  public let caughtSeaCreature: Int
+}
+
+extension UpdateSeaCreature: Codable {
+  enum CodingKeys: String, CodingKey {
+    case caughtSeaCreature = "caught_sea_creature"
+  }
+}
+

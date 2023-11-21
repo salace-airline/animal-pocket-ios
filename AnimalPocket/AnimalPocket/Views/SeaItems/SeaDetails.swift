@@ -32,10 +32,10 @@ struct SeaDetails: View {
                 Task {
                   if collection.contains(sea) {
                     collection.remove(sea)
-//                    await collection.updateSeaCollection(with: sea.itemNumber)
+                    await collection.updateSeaCollection(with: sea.itemNumber)
                   } else {
                     collection.add(sea)
-//                    await collection.updateSeaCollection(with: sea.itemNumber)
+                    await collection.updateSeaCollection(with: sea.itemNumber)
                   }
                 }
               } else {

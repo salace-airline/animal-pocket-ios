@@ -32,10 +32,10 @@ struct BugDetails: View {
                 Task {
                   if collection.contains(bug) {
                     collection.remove(bug)
-//                    await collection.updateBugCollection(with: bug.itemNumber)
+                    await collection.updateBugCollection(with: bug.itemNumber)
                   } else {
                     collection.add(bug)
-//                    await collection.updateBugCollection(with: bug.itemNumber)
+                    await collection.updateBugCollection(with: bug.itemNumber)
                   }
                 }
               } else {

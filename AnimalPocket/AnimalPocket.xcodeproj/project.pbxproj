@@ -74,10 +74,12 @@
 		101AFA03290BBD9200855FA6 /* AnimalPocketUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101AFA02290BBD9200855FA6 /* AnimalPocketUITestsLaunchTests.swift */; };
 		DC2133992AFD05FA0032FAE9 /* UserItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2133982AFD05FA0032FAE9 /* UserItems.swift */; };
 		DC21339B2AFD0A420032FAE9 /* CollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC21339A2AFD0A420032FAE9 /* CollectionViewModel.swift */; };
-		DC21339D2AFD0C760032FAE9 /* UpdateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC21339C2AFD0C760032FAE9 /* UpdateRequest.swift */; };
+		DC21339D2AFD0C760032FAE9 /* FishUpdateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC21339C2AFD0C760032FAE9 /* FishUpdateRequest.swift */; };
 		DC43DDAC29AE2FEC00DECFA4 /* CollectibleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC43DDAB29AE2FEC00DECFA4 /* CollectibleViewModel.swift */; };
 		DC43DDB329AE3A1200DECFA4 /* CategoryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC43DDB229AE3A1200DECFA4 /* CategoryRouter.swift */; };
 		DC4C59682B076F21005A6355 /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4C59672B076F21005A6355 /* UserRequest.swift */; };
+		DC99ABB32B0D5F380078206B /* BugUpdateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC99ABB22B0D5F380078206B /* BugUpdateRequest.swift */; };
+		DC99ABB52B0D618B0078206B /* SeaCreatureUpdateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC99ABB42B0D618B0078206B /* SeaCreatureUpdateRequest.swift */; };
 		DCA36E252AF264120009508E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA36E242AF264120009508E /* LoginViewModel.swift */; };
 		DCA36E272AF267060009508E /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA36E262AF267060009508E /* UserInfo.swift */; };
 		DCA36E292AF26A1B0009508E /* AuthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA36E282AF26A1B0009508E /* AuthRequest.swift */; };
@@ -180,10 +182,12 @@
 		101AFA02290BBD9200855FA6 /* AnimalPocketUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalPocketUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		DC2133982AFD05FA0032FAE9 /* UserItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserItems.swift; sourceTree = "<group>"; };
 		DC21339A2AFD0A420032FAE9 /* CollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewModel.swift; sourceTree = "<group>"; };
-		DC21339C2AFD0C760032FAE9 /* UpdateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateRequest.swift; sourceTree = "<group>"; };
+		DC21339C2AFD0C760032FAE9 /* FishUpdateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishUpdateRequest.swift; sourceTree = "<group>"; };
 		DC43DDAB29AE2FEC00DECFA4 /* CollectibleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectibleViewModel.swift; sourceTree = "<group>"; };
 		DC43DDB229AE3A1200DECFA4 /* CategoryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRouter.swift; sourceTree = "<group>"; };
 		DC4C59672B076F21005A6355 /* UserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRequest.swift; sourceTree = "<group>"; };
+		DC99ABB22B0D5F380078206B /* BugUpdateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugUpdateRequest.swift; sourceTree = "<group>"; };
+		DC99ABB42B0D618B0078206B /* SeaCreatureUpdateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeaCreatureUpdateRequest.swift; sourceTree = "<group>"; };
 		DCA36E242AF264120009508E /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		DCA36E262AF267060009508E /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		DCA36E282AF26A1B0009508E /* AuthRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRequest.swift; sourceTree = "<group>"; };
@@ -357,7 +361,9 @@
 				DC43DDB229AE3A1200DECFA4 /* CategoryRouter.swift */,
 				DCA36E282AF26A1B0009508E /* AuthRequest.swift */,
 				DCFC43912AF41599003A8587 /* UserRouter.swift */,
-				DC21339C2AFD0C760032FAE9 /* UpdateRequest.swift */,
+				DC21339C2AFD0C760032FAE9 /* FishUpdateRequest.swift */,
+				DC99ABB22B0D5F380078206B /* BugUpdateRequest.swift */,
+				DC99ABB42B0D618B0078206B /* SeaCreatureUpdateRequest.swift */,
 				DC4C59672B076F21005A6355 /* UserRequest.swift */,
 			);
 			path = Request;
@@ -673,7 +679,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC21339D2AFD0C760032FAE9 /* UpdateRequest.swift in Sources */,
+				DC21339D2AFD0C760032FAE9 /* FishUpdateRequest.swift in Sources */,
 				00ADF74A29E956C100729CAF /* MainView.swift in Sources */,
 				00DCEADE298D16D2001D7AF4 /* MinusToggleStyle.swift in Sources */,
 				00D9B95E2993A98B001B9FF6 /* Request.swift in Sources */,
@@ -700,9 +706,11 @@
 				DCA36E252AF264120009508E /* LoginViewModel.swift in Sources */,
 				00D9B96B2993ADE7001B9FF6 /* CollectibleNetworkService.swift in Sources */,
 				DCA36E292AF26A1B0009508E /* AuthRequest.swift in Sources */,
+				DC99ABB32B0D5F380078206B /* BugUpdateRequest.swift in Sources */,
 				0083A5B0295B648400007ED4 /* LowTideBackground.swift in Sources */,
 				0083A5E12984321A00007ED4 /* CurrentBugs.swift in Sources */,
 				0083A5D3297AD26300007ED4 /* SeaFilterButton.swift in Sources */,
+				DC99ABB52B0D618B0078206B /* SeaCreatureUpdateRequest.swift in Sources */,
 				00D9B9672993AD21001B9FF6 /* CategoryRequest.swift in Sources */,
 				0000E8C2290C1D6700BE076D /* Colors.swift in Sources */,
 				0083A5C82971B16600007ED4 /* Filter.swift in Sources */,

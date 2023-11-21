@@ -126,7 +126,6 @@ extension LoginViewModel {
     for fish in collectedFish{
       if caughtItems.caughtFish.contains(fish.itemNumber) == false {
         missingFish.append(fish)
-        print(fish.itemNumber)
       }
     }
     return missingFish
@@ -137,7 +136,6 @@ extension LoginViewModel {
     for bug in collectedBugs {
       if caughtItems.caughtBug.contains(bug.itemNumber) == false {
         missingBugs.append(bug)
-        print(bug.itemNumber)
       }
     }
     return missingBugs
@@ -148,7 +146,6 @@ extension LoginViewModel {
     for seaCreature in collectedSeaCreatures {
       if caughtItems.caughtSeaCreature.contains(seaCreature.itemNumber) == false {
         missingSeaCreatures.append(seaCreature)
-        print(seaCreature.itemNumber)
       }
     }
     return missingSeaCreatures
