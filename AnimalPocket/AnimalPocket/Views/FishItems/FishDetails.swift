@@ -24,7 +24,7 @@ struct FishDetails: View {
             .bold()
           
           CollectedButton(
-            isCollected: .constant(user.containsFish(fish.itemNumber)),
+            isCollected: .constant(collection.contains(fish)),
             setImage: "fish.fill",
             unsetImage: "fish",
             setColor: .blue,
@@ -33,10 +33,10 @@ struct FishDetails: View {
                 Task {
                   if collection.contains(fish) {
                     collection.remove(fish)
-                    await collection.updateFishCollection(with: fish.itemNumber)
+                    await user.updateFishCollection(with: fish.itemNumber)
                   } else {
                     collection.add(fish)
-                    await collection.updateFishCollection(with: fish.itemNumber)
+                    await user.updateFishCollection(with: fish.itemNumber)
                   }
                 }
               } else {

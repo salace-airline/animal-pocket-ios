@@ -23,6 +23,7 @@ final class CollectibleViewModel: ObservableObject {
   @Published var decreasingPrice = false
   @Published var alphabeticalOrder = false
   
+  @Published var showMissingBugs = false
   
   // bugs
   @MainActor func loadBugs() {

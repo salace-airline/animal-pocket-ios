@@ -18,6 +18,7 @@ class LoginViewModel: ObservableObject {
   )
   
   @Published var showMissingItemsOnly = false
+  @Published var showMissingBugs = false
   
   //  @MainActor
   //  func checkExistingUser() async -> Bool {
@@ -98,6 +99,49 @@ class LoginViewModel: ObservableObject {
         print(caughtItems.caughtBug)
         print(caughtItems.caughtFish)
         print(caughtItems.caughtSeaCreature)
+      } catch {
+        print("Error", error)
+      }
+    }
+  }
+}
+
+extension LoginViewModel {
+  @MainActor
+  func updateFishCollection(with collectedFish: Int) async {
+    Task {
+      do {
+        let update = try await UserService.updateFishCollection(with: UpdateFish(caughtFish: collectedFish), path: UserRouter.updateFish.path)
+        caughtItems.caughtFish.append(collectedFish)
+        print("Updated fish collection \(caughtItems.caughtFish)")
+        print("Fish collection updated successfully! \(update) Fish number \(collectedFish)")
+      } catch {
+        print("Error", error)
+      }
+    }
+  }
+  
+  @MainActor
+  func updateSeaCollection(with collectedSeaCreature: Int) async {
+    Task {
+      do {
+        let update = try await UserService.updateSeaCollection(with: UpdateSeaCreature(caughtSeaCreature: collectedSeaCreature), path: UserRouter.updateSea.path)
+        caughtItems.caughtSeaCreature.append(collectedSeaCreature)
+        print("Sea Creature collection updated successfully! \(update)")
+      } catch {
+        print("Error", error)
+      }
+    }
+  }
+
+  @MainActor
+  func updateBugCollection(with collectedBug: Int) async {
+    Task {
+      do {
+        let update = try await UserService.updateBugCollection(with: UpdateBug(caughtBug: collectedBug), path: UserRouter.updateBug.path)
+        caughtItems.caughtBug.append(collectedBug)
+        print("Updated bug \(caughtItems.caughtBug)")
+        print("Bug collection updated successfully! \(update)")
       } catch {
         print("Error", error)
       }

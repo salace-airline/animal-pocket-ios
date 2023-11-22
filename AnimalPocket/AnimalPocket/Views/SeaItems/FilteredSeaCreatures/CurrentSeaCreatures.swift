@@ -53,7 +53,7 @@ struct CurrentSeaCreatures: View {
       ScrollView(.vertical) {
         LazyVGrid(columns: columns, spacing: 10) {
           ForEach(sea) { sea in
-            SeaDetails(sea: sea)
+            SeaDetails(seaCreature: sea)
           }
         }
       }

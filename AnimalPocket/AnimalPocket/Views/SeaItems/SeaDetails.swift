@@ -10,32 +10,32 @@ import SwiftUI
 struct SeaDetails: View {
   @EnvironmentObject var collection: CollectionViewModel
   @EnvironmentObject var user: LoginViewModel
-  var sea: CollectibleItem
+  var seaCreature: CollectibleItem
   
   var body: some View {
     VStack(alignment: .leading) {
       VStack {
-        CollectibleImage(item: sea, background: "fond_violet")
+        CollectibleImage(item: seaCreature, background: "fond_violet")
         
         HStack {
-          Text(sea.name.capitalized)
+          Text(seaCreature.name.capitalized)
             .font(.system(size: 15))
             .bold()
           
           CollectedButton(
-            isCollected: .constant(collection.contains(sea) && user.containsSeaCreature(sea.itemNumber)),
+            isCollected: .constant(collection.contains(seaCreature)),
             setImage: "drop.fill",
             unsetImage: "drop",
             setColor: .black,
             updateCollection: {
               if user.isUserLoggedIn == true {
                 Task {
-                  if collection.contains(sea) {
-                    collection.remove(sea)
-                    await collection.updateSeaCollection(with: sea.itemNumber)
+                  if collection.contains(seaCreature) {
+                    collection.remove(seaCreature)
+                    await user.updateSeaCollection(with: seaCreature.itemNumber)
                   } else {
-                    collection.add(sea)
-                    await collection.updateSeaCollection(with: sea.itemNumber)
+                    collection.add(seaCreature)
+                    await user.updateSeaCollection(with: seaCreature.itemNumber)
                   }
                 }
               } else {
@@ -72,23 +72,23 @@ struct SeaDetails: View {
         
         VStack(alignment: .leading) {
           HStack {
-            Text(sea.period)
+            Text(seaCreature.period)
           }
           
           HStack {
-            Text(sea.hour)
+            Text(seaCreature.hour)
           }
           
           HStack {
-            Text(sea.shadow ?? "")
+            Text(seaCreature.shadow ?? "")
           }
           
           HStack {
-            Text(sea.speed ?? "")
+            Text(seaCreature.speed ?? "")
           }
           
           HStack {
-            Text("\(sea.price) bells")
+            Text("\(seaCreature.price) bells")
           }
         }
       }
@@ -114,7 +114,7 @@ struct SeaDetails: View {
 struct SeaDetails_Previews: PreviewProvider {
   static var previews: some View {
     SeaDetails(
-      sea: CollectibleItem.seaSample
+      seaCreature: CollectibleItem.seaSample
     )
   }
 }

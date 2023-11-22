@@ -17,6 +17,11 @@ struct BugsOfTheMonth: View {
   
   var body: some View {
     VStack {
+//      if user.showMissingBugs {
+//        loadedMissingBugs(with: user.showMissingBugs(viewModel.bugsArray))
+//      } else {
+//        loadedBugs(with: viewModel.bugsArray)
+//      }
       if user.showMissingItemsOnly {
         switch viewModel.filter {
           case .noFilter:
@@ -49,7 +54,7 @@ struct BugsOfTheMonth: View {
   func loadedBugs(with bugs: [CollectibleItem]) -> some View {
     VStack {
       BugButtons(viewModel: viewModel)
-      
+
       ScrollView(.vertical) {
         LazyVGrid(columns: columns, spacing: 10) {
           ForEach(bugs) { bug in
@@ -59,6 +64,32 @@ struct BugsOfTheMonth: View {
       }
     }
   }
+
+  
+//  func loadedMissingBugs(with bugs: [CollectibleItem]) -> some View {
+//    VStack {
+//      switch viewModel.filter {
+//        case .noFilter:
+//          viewModel.filterCurrentMonth(for: user.showMissingBugs(bugs))
+//        case .increasingPrice:
+//          viewModel.filter.increasePrice(of: viewModel.filterCurrentMonth(for: user.showMissingBugs(bugs)))
+//        case .decreasingPrice:
+//          viewModel.filter.decreasePrice(of: viewModel.filterCurrentMonth(for: user.showMissingBugs(bugs)))
+//        case .alphatically:
+//          viewModel.filter.sortAlphabetically(viewModel.filterCurrentMonth(for: user.showMissingBugs(bugs)))
+//      }
+//
+//      BugButtons(viewModel: viewModel)
+//
+//      ScrollView(.vertical) {
+//        LazyVGrid(columns: columns, spacing: 10) {
+//          ForEach(bugs) { bug in
+//            BugDetails(bug: bug)
+//          }
+//        }
+//      }
+//    }
+//  }
 }
 
 struct BugsOfTheMonth_Previews: PreviewProvider {

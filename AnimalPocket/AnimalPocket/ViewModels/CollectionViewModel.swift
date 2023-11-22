@@ -50,39 +50,39 @@ final class CollectionViewModel: ObservableObject {
     }
   }
   
-  @MainActor
-  func updateFishCollection(with collectedFish: Int) async {
-    Task {
-      do {
-        let update = try await UserService.updateFishCollection(with: UpdateFish(caughtFish: collectedFish), path: UserRouter.updateFish.path)
-        print("Fish collection updated successfully! \(update) Fish number \(collectedFish)")
-      } catch {
-        print("Error", error)
-      }
-    }
-  }
+//  @MainActor
+//  func updateFishCollection(with collectedFish: Int) async {
+//    Task {
+//      do {
+//        let update = try await UserService.updateFishCollection(with: UpdateFish(caughtFish: collectedFish), path: UserRouter.updateFish.path)
+//        print("Fish collection updated successfully! \(update) Fish number \(collectedFish)")
+//      } catch {
+//        print("Error", error)
+//      }
+//    }
+//  }
   
-  @MainActor
-  func updateSeaCollection(with collectedSeaCreature: Int) async {
-    Task {
-      do {
-        let update = try await UserService.updateSeaCollection(with: UpdateSeaCreature(caughtSeaCreature: collectedSeaCreature), path: UserRouter.updateSea.path)
-        print("Sea Creature collection updated successfully! \(update)")
-      } catch {
-        print("Error", error)
-      }
-    }
-  }
-
-  @MainActor
-  func updateBugCollection(with collectedBug: Int) async {
-    Task {
-      do {
-        let update = try await UserService.updateBugCollection(with: UpdateBug(caughtBug: collectedBug), path: UserRouter.updateBug.path)
-        print("Bug collection updated successfully! \(update)")
-      } catch {
-        print("Error", error)
-      }
-    }
-  }
+//  @MainActor
+//  func updateSeaCollection(with collectedSeaCreature: Int) async {
+//    Task {
+//      do {
+//        let update = try await UserService.updateSeaCollection(with: UpdateSeaCreature(caughtSeaCreature: collectedSeaCreature), path: UserRouter.updateSea.path)
+//        print("Sea Creature collection updated successfully! \(update)")
+//      } catch {
+//        print("Error", error)
+//      }
+//    }
+//  }
+//
+//  @MainActor
+//  func updateBugCollection(with collectedBug: Int) async {
+//    Task {
+//      do {
+//        let update = try await UserService.updateBugCollection(with: UpdateBug(caughtBug: collectedBug), path: UserRouter.updateBug.path)
+//        print("Bug collection updated successfully! \(update)")
+//      } catch {
+//        print("Error", error)
+//      }
+//    }
+//  }
 }

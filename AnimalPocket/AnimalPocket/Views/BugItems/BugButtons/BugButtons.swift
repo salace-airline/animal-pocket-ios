@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct BugButtons: View {
+  @EnvironmentObject var user: LoginViewModel
   @ObservedObject var viewModel: CollectibleViewModel
   
   var body: some View {
@@ -71,6 +72,15 @@ struct BugButtons: View {
           viewModel.decreasingPrice = false
         }
       })
+      
+//      BugFilterButtons(
+//        isSelected: $user.showMissingBugs,
+//        color: Colors.green100,
+//        buttonText: "👀"
+//      )
+//      .onTapGesture {
+//        user.showMissingBugs.toggle()
+//      }
     }
   }
 }
