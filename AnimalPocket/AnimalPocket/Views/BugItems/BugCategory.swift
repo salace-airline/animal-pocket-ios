@@ -24,7 +24,7 @@ struct BugCategory: View {
         } label: {
           Label("Toggle missing bugs", systemImage: user.showMissingItemsOnly ? "eye.slash.fill" : "eye.slash")
             .labelStyle(.iconOnly)
-            .foregroundColor(.red)
+            .foregroundColor(.green)
         }
       }
       

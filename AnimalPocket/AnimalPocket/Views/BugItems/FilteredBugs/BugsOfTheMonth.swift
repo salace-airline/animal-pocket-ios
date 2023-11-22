@@ -41,6 +41,9 @@ struct BugsOfTheMonth: View {
         }
       }
     }
+    .onAppear(perform: {
+      viewModel.loadBugs()
+    })
   }
   
   func loadedBugs(with bugs: [CollectibleItem]) -> some View {
@@ -55,9 +58,6 @@ struct BugsOfTheMonth: View {
         }
       }
     }
-    .onAppear(perform: {
-      viewModel.loadBugs()
-    })
   }
 }
 

@@ -24,7 +24,7 @@ struct SeaCategory: View {
         } label: {
           Label("Toggle missing sea creature", systemImage: user.showMissingItemsOnly ? "eye.slash.fill" : "eye.slash")
             .labelStyle(.iconOnly)
-            .foregroundColor(.blue)
+            .foregroundColor(.black)
         }
       }
       

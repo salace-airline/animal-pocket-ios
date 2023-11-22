@@ -41,6 +41,9 @@ struct FishOfTheMonth: View {
         }
       }
     }
+    .onAppear(perform: {
+      viewModel.loadFish()
+    })
   }
   
   func loadedFish(fish: [CollectibleItem]) -> some View {
@@ -55,9 +58,6 @@ struct FishOfTheMonth: View {
         }
       }
     }
-    .onAppear(perform: {
-      viewModel.loadFish()
-    })
   }
 }
 

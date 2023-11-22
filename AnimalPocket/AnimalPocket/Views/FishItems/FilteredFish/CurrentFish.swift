@@ -41,6 +41,9 @@ struct CurrentFish: View {
         }
       }
     }
+    .onAppear(perform: {
+      viewModel.loadFish()
+    })
   }
   
   func loadedFish(fish: [CollectibleItem]) -> some View {
@@ -55,9 +58,6 @@ struct CurrentFish: View {
         }
       }
     }
-    .onAppear(perform: {
-      viewModel.loadFish()
-    })
   }
 }
 
