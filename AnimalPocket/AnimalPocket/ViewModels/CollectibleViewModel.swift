@@ -152,3 +152,19 @@ extension CollectibleViewModel {
     return currentItems
   }
 }
+
+/// MARK - Handle filter logic for views
+extension CollectibleViewModel {
+  func filterItems(_ items: [CollectibleItem]) -> [CollectibleItem] {
+    switch self.filter {
+      case .noFilter:
+        return items
+      case .increasingPrice:
+        return self.filter.increasePrice(of: items)
+      case .decreasingPrice:
+        return self.filter.decreasePrice(of: items)
+      case .alphatically:
+        return self.filter.sortAlphabetically(items)
+    }
+  }
+}

@@ -1,5 +1,5 @@
 //
-//  LoginViewModel.swift
+//  UserViewModel.swift
 //  AnimalPocket
 //
 //  Created by Sarah WATREMET on 01/11/2023.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class LoginViewModel: ObservableObject {
+class UserViewModel: ObservableObject {
   @Published var isUserLoggedIn = false
   @Published var userEmail: String = ""
   @Published var userPassword: String = ""
@@ -19,6 +19,8 @@ class LoginViewModel: ObservableObject {
   
   @Published var showMissingItemsOnly = false
   @Published var showMissingBugs = false
+  
+  @Published var filter: Filter = .noFilter
   
   //  @MainActor
   //  func checkExistingUser() async -> Bool {
@@ -106,7 +108,7 @@ class LoginViewModel: ObservableObject {
   }
 }
 
-extension LoginViewModel {
+extension UserViewModel {
   @MainActor
   func updateFishCollection(with collectedFish: Int) async {
     Task {
@@ -149,7 +151,7 @@ extension LoginViewModel {
   }
 }
 
-extension LoginViewModel {
+extension UserViewModel {
   func containsFish(_ collectedItem: Int) -> Bool {
     caughtItems.caughtFish.contains(collectedItem)
   }
@@ -164,7 +166,7 @@ extension LoginViewModel {
 }
 
 /// MARK - Handle showing missing items only
-extension LoginViewModel {
+extension UserViewModel {
   func showMissingFish(_ collectedFish: [CollectibleItem]) -> [CollectibleItem] {
     var missingFish = [CollectibleItem]()
     for fish in collectedFish{

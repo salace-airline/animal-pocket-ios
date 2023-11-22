@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AllSeaCreatures: View {
-  @EnvironmentObject var user: LoginViewModel
+  @EnvironmentObject var user: UserViewModel
   @ObservedObject var viewModel = CollectibleViewModel()
   
   let columns = [
@@ -18,27 +18,9 @@ struct AllSeaCreatures: View {
   var body: some View {
     VStack {
       if user.showMissingItemsOnly {
-        switch viewModel.filter {
-          case .noFilter:
-            loadedSea(sea: user.showMissingSeaCreatures(viewModel.seaArray))
-          case .increasingPrice:
-            loadedSea(sea: viewModel.filter.increasePrice(of: user.showMissingSeaCreatures(viewModel.seaArray)))
-          case .decreasingPrice:
-            loadedSea(sea: viewModel.filter.decreasePrice(of: user.showMissingSeaCreatures(viewModel.seaArray)))
-          case .alphatically:
-            loadedSea(sea: viewModel.filter.sortAlphabetically(user.showMissingSeaCreatures(viewModel.seaArray)))
-        }
+        loadedSea(sea: viewModel.filterItems(user.showMissingSeaCreatures(viewModel.seaArray)))
       } else {
-        switch viewModel.filter {
-          case .noFilter:
-            loadedSea(sea: viewModel.seaArray)
-          case .increasingPrice:
-            loadedSea(sea: viewModel.filter.increasePrice(of: viewModel.seaArray))
-          case .decreasingPrice:
-            loadedSea(sea: viewModel.filter.decreasePrice(of: viewModel.seaArray))
-          case .alphatically:
-            loadedSea(sea: viewModel.filter.sortAlphabetically(viewModel.seaArray))
-        }
+        loadedSea(sea: viewModel.filterItems(viewModel.seaArray))
       }
     }
     .onAppear(perform: {

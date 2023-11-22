@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FishOfTheMonth: View {
-  @EnvironmentObject var user: LoginViewModel
+  @EnvironmentObject var user: UserViewModel
   @ObservedObject var viewModel = CollectibleViewModel()
   
   let columns = [
@@ -18,27 +18,9 @@ struct FishOfTheMonth: View {
   var body: some View {
     VStack {
       if user.showMissingItemsOnly {
-        switch viewModel.filter {
-          case .noFilter:
-            loadedFish(fish: viewModel.filterCurrentMonth(for: user.showMissingFish(viewModel.fishArray)))
-          case .increasingPrice:
-            loadedFish(fish: viewModel.filter.increasePrice(of: viewModel.filterCurrentMonth(for: user.showMissingFish(viewModel.fishArray))))
-          case .decreasingPrice:
-            loadedFish(fish: viewModel.filter.decreasePrice(of: viewModel.filterCurrentMonth(for: user.showMissingFish(viewModel.fishArray))))
-          case .alphatically:
-            loadedFish(fish: viewModel.filter.sortAlphabetically(viewModel.filterCurrentMonth(for: user.showMissingFish(viewModel.fishArray))))
-        }
+        loadedFish(fish: viewModel.filterItems(user.showMissingFish(viewModel.fishArray)))
       } else {
-        switch viewModel.filter {
-          case .noFilter:
-            loadedFish(fish: viewModel.filterCurrentMonth(for: viewModel.fishArray))
-          case .increasingPrice:
-            loadedFish(fish: viewModel.filter.increasePrice(of: viewModel.filterCurrentMonth(for: viewModel.fishArray)))
-          case .decreasingPrice:
-            loadedFish(fish: viewModel.filter.decreasePrice(of: viewModel.filterCurrentMonth(for: viewModel.fishArray)))
-          case .alphatically:
-            loadedFish(fish: viewModel.filter.sortAlphabetically(viewModel.filterCurrentMonth(for: viewModel.fishArray)))
-        }
+        loadedFish(fish: viewModel.filterItems(viewModel.fishArray))
       }
     }
     .onAppear(perform: {

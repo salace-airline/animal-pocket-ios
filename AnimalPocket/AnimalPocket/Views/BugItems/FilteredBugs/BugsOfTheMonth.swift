@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BugsOfTheMonth: View {
-  @EnvironmentObject var user: LoginViewModel
+  @EnvironmentObject var user: UserViewModel
   @ObservedObject var viewModel = CollectibleViewModel()
   
   let columns = [
@@ -17,33 +17,20 @@ struct BugsOfTheMonth: View {
   
   var body: some View {
     VStack {
-//      if user.showMissingBugs {
-//        loadedMissingBugs(with: user.showMissingBugs(viewModel.bugsArray))
-//      } else {
-//        loadedBugs(with: viewModel.bugsArray)
-//      }
       if user.showMissingItemsOnly {
-        switch viewModel.filter {
-          case .noFilter:
-            loadedBugs(with: viewModel.filterCurrentMonth(for: user.showMissingBugs(viewModel.bugsArray)))
-          case .increasingPrice:
-            loadedBugs(with: viewModel.filter.increasePrice(of: viewModel.filterCurrentMonth(for: user.showMissingBugs(viewModel.bugsArray))))
-          case .decreasingPrice:
-            loadedBugs(with: viewModel.filter.decreasePrice(of: viewModel.filterCurrentMonth(for: user.showMissingBugs(viewModel.bugsArray))))
-          case .alphatically:
-            loadedBugs(with: viewModel.filter.sortAlphabetically(viewModel.filterCurrentMonth(for: user.showMissingBugs(viewModel.bugsArray))))
-        }
+//        switch viewModel.filter {
+//          case .noFilter:
+//            loadedBugs(with: viewModel.filterCurrentMonth(for: user.showMissingBugs(viewModel.bugsArray)))
+//          case .increasingPrice:
+//            loadedBugs(with: viewModel.filter.increasePrice(of: viewModel.filterCurrentMonth(for: user.showMissingBugs(viewModel.bugsArray))))
+//          case .decreasingPrice:
+//            loadedBugs(with: viewModel.filter.decreasePrice(of: viewModel.filterCurrentMonth(for: user.showMissingBugs(viewModel.bugsArray))))
+//          case .alphatically:
+//            loadedBugs(with: viewModel.filter.sortAlphabetically(viewModel.filterCurrentMonth(for: user.showMissingBugs(viewModel.bugsArray))))
+//        }
+        loadedBugs(with: viewModel.filterItems(user.showMissingBugs(viewModel.bugsArray)))
       } else {
-        switch viewModel.filter {
-          case .noFilter:
-            loadedBugs(with: viewModel.filterCurrentMonth(for: viewModel.bugsArray))
-          case .increasingPrice:
-            loadedBugs(with: viewModel.filter.increasePrice(of: viewModel.filterCurrentMonth(for: viewModel.bugsArray)))
-          case .decreasingPrice:
-            loadedBugs(with: viewModel.filter.decreasePrice(of: viewModel.filterCurrentMonth(for: viewModel.bugsArray)))
-          case .alphatically:
-            loadedBugs(with: viewModel.filter.sortAlphabetically(viewModel.filterCurrentMonth(for: viewModel.bugsArray)))
-        }
+        loadedBugs(with: viewModel.filterItems(viewModel.bugsArray))
       }
     }
     .onAppear(perform: {

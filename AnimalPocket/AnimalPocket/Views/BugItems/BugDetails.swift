@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BugDetails: View {
   @EnvironmentObject var collection: CollectionViewModel
-  @EnvironmentObject var user: LoginViewModel
+  @EnvironmentObject var user: UserViewModel
   var bug: CollectibleItem
   
   var body: some View {

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct UserLoginView: View {
   @EnvironmentObject var collection: CollectionViewModel
-  @EnvironmentObject var viewModel: LoginViewModel
+  @EnvironmentObject var viewModel: UserViewModel
   
   var body: some View {
     ZStack {

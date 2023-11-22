@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BugCategory: View {
-  @EnvironmentObject var user: LoginViewModel
+  @EnvironmentObject var user: UserViewModel
   @ObservedObject var viewModel = CollectibleViewModel()
   
   var body: some View {

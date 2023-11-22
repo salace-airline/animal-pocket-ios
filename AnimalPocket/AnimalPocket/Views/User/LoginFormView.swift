@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LoginFormView: View {
-  @ObservedObject var viewModel: LoginViewModel
+  @ObservedObject var viewModel: UserViewModel
   
   var body: some View {
     VStack(alignment: .leading, spacing: 15) {

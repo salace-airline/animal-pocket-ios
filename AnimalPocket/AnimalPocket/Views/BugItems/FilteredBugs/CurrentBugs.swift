@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CurrentBugs: View {
-  @EnvironmentObject var user: LoginViewModel
+  @EnvironmentObject var user: UserViewModel
   @ObservedObject var viewModel = CollectibleViewModel()
   
   let columns = [
@@ -18,27 +18,19 @@ struct CurrentBugs: View {
   var body: some View {
     VStack {
       if user.showMissingItemsOnly {
-        switch viewModel.filter {
-          case .noFilter:
-            loadedBugs(with: viewModel.filterCurrentItems(for: user.showMissingBugs(viewModel.bugsArray)))
-          case .increasingPrice:
-            loadedBugs(with: viewModel.filter.increasePrice(of: viewModel.filterCurrentItems(for: user.showMissingBugs(viewModel.bugsArray))))
-          case .decreasingPrice:
-            loadedBugs(with: viewModel.filter.decreasePrice(of: viewModel.filterCurrentItems(for: user.showMissingBugs(viewModel.bugsArray))))
-          case .alphatically:
-            loadedBugs(with: viewModel.filter.sortAlphabetically(viewModel.filterCurrentItems(for: user.showMissingBugs(viewModel.bugsArray))))
-        }
+//        switch viewModel.filter {
+//          case .noFilter:
+//            loadedBugs(with: viewModel.filterCurrentItems(for: user.showMissingBugs(viewModel.bugsArray)))
+//          case .increasingPrice:
+//            loadedBugs(with: viewModel.filter.increasePrice(of: viewModel.filterCurrentItems(for: user.showMissingBugs(viewModel.bugsArray))))
+//          case .decreasingPrice:
+//            loadedBugs(with: viewModel.filter.decreasePrice(of: viewModel.filterCurrentItems(for: user.showMissingBugs(viewModel.bugsArray))))
+//          case .alphatically:
+//            loadedBugs(with: viewModel.filter.sortAlphabetically(viewModel.filterCurrentItems(for: user.showMissingBugs(viewModel.bugsArray))))
+//        }
+        loadedBugs(with: viewModel.filterItems(user.showMissingBugs(viewModel.bugsArray)))
       } else {
-        switch viewModel.filter {
-          case .noFilter:
-            loadedBugs(with: viewModel.filterCurrentItems(for: viewModel.bugsArray))
-          case .increasingPrice:
-            loadedBugs(with: viewModel.filter.increasePrice(of: viewModel.filterCurrentItems(for: viewModel.bugsArray)))
-          case .decreasingPrice:
-            loadedBugs(with: viewModel.filter.decreasePrice(of: viewModel.filterCurrentItems(for: viewModel.bugsArray)))
-          case .alphatically:
-            loadedBugs(with: viewModel.filter.sortAlphabetically(viewModel.filterCurrentItems(for: viewModel.bugsArray)))
-        }
+        loadedBugs(with: viewModel.filterItems(viewModel.bugsArray))
       }
     }
     .onAppear(perform: {

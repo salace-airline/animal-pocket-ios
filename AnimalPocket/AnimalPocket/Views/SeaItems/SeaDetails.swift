@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SeaDetails: View {
   @EnvironmentObject var collection: CollectionViewModel
-  @EnvironmentObject var user: LoginViewModel
+  @EnvironmentObject var user: UserViewModel
   var seaCreature: CollectibleItem
   
   var body: some View {
