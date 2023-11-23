@@ -101,7 +101,7 @@ class UserViewModel: ObservableObject {
         }
         
         selectedTab = 0
-        print("User logged in successfully! \(login)")
+        print("User logged in successfully!")
         print("Caught bugs: \(caughtItems.caughtBug)")
         print("Cuaght fish: \(caughtItems.caughtFish)")
         print("Caught sea creatures: \(caughtItems.caughtSeaCreature)")

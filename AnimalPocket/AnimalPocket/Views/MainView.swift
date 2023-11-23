@@ -9,7 +9,6 @@ import SwiftUI
 
 struct MainView: View {
   @EnvironmentObject var user: UserViewModel
-//  @State private var selection = 4
   
   var body: some View {
     TabView(selection: $user.selectedTab) {

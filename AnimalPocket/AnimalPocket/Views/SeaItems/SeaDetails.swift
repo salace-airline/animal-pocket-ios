@@ -10,6 +10,7 @@ import SwiftUI
 struct SeaDetails: View {
   @EnvironmentObject var collection: CollectionViewModel
   @EnvironmentObject var user: UserViewModel
+  @State private var showAlert = false
   var seaCreature: CollectibleItem
   
   var body: some View {
@@ -39,74 +40,76 @@ struct SeaDetails: View {
                   }
                 }
               } else {
-                // alert to tell the user they need to login to update their collection
-                print("You need to login first!")
+                showAlert = true
               }
             }
           )
+          .alert("You need to login first!", isPresented: $showAlert) {
+            Button("OK", role: .cancel) { }
+          }
+          .padding(.bottom, 0.5)
         }
-        .padding(.bottom, 0.5)
-      }
-      
-      HStack {
-        VStack(alignment: .leading) {
-          HStack {
-            Text("Period:")
-          }
-          HStack {
-            Text("Time:")
-          }
-          HStack {
-            Text("Shadow:")
-          }
-          HStack {
-            Text("Speed:")
-          }
-          HStack {
-            Text("Price:")
-          }
-        }
-        .foregroundColor(Colors.blue200)
-        .bold()
         
-        
-        VStack(alignment: .leading) {
-          HStack {
-            Text(seaCreature.period)
+        HStack {
+          VStack(alignment: .leading) {
+            HStack {
+              Text("Period:")
+            }
+            HStack {
+              Text("Time:")
+            }
+            HStack {
+              Text("Shadow:")
+            }
+            HStack {
+              Text("Speed:")
+            }
+            HStack {
+              Text("Price:")
+            }
           }
+          .foregroundColor(Colors.blue200)
+          .bold()
           
-          HStack {
-            Text(seaCreature.hour)
-          }
           
-          HStack {
-            Text(seaCreature.shadow ?? "")
-          }
-          
-          HStack {
-            Text(seaCreature.speed ?? "")
-          }
-          
-          HStack {
-            Text("\(seaCreature.price) bells")
+          VStack(alignment: .leading) {
+            HStack {
+              Text(seaCreature.period)
+            }
+            
+            HStack {
+              Text(seaCreature.hour)
+            }
+            
+            HStack {
+              Text(seaCreature.shadow ?? "")
+            }
+            
+            HStack {
+              Text(seaCreature.speed ?? "")
+            }
+            
+            HStack {
+              Text("\(seaCreature.price) bells")
+            }
           }
         }
-      }
-      .padding(.leading, 10)
-      
-      .font(.system(size: 11))
-      .padding(
-        EdgeInsets(
-          top: 0,
-          leading: 10,
-          bottom: 10,
-          trailing: 0
+        .padding(.leading, 10)
+        
+        .font(.system(size: 11))
+        .padding(
+          EdgeInsets(
+            top: 0,
+            leading: 10,
+            bottom: 10,
+            trailing: 0
+          )
         )
-      )
+      }
+      .frame(width: 175)
+      .background(Colors.blue200.opacity(0.1))
+      .cornerRadius(4)
     }
-    .frame(width: 175)
-    .background(Colors.blue200.opacity(0.1))
-    .cornerRadius(4)
   }
 }
 

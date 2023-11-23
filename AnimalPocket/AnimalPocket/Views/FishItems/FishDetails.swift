@@ -10,6 +10,7 @@ import SwiftUI
 struct FishDetails: View {
   @EnvironmentObject var collection: CollectionViewModel
   @EnvironmentObject var user: UserViewModel
+  @State private var showAlert = false
   var fish: CollectibleItem
   
   var body: some View {
@@ -40,70 +41,72 @@ struct FishDetails: View {
                   }
                 }
               } else {
-                // alert to tell the user they need to login to update their collection
-                print("You need to login first!")
+                showAlert = true
               }
             }
           )
+          .alert("You need to login first!", isPresented: $showAlert) {
+            Button("OK", role: .cancel) { }
+          }
+          .padding(.bottom, 0.5)
         }
-        .padding(.bottom, 0.5)
-      }
-      
-      HStack {
-        VStack(alignment: .leading) {
-          HStack {
-            Text("Period:")
+        
+        HStack {
+          VStack(alignment: .leading) {
+            HStack {
+              Text("Period:")
+            }
+            HStack {
+              Text("Time:")
+            }
+            HStack {
+              Text("Place:")
+            }
+            HStack {
+              Text("Price:")
+            }
           }
-          HStack {
-            Text("Time:")
-          }
-          HStack {
-            Text("Place:")
-          }
-          HStack {
-            Text("Price:")
+          .foregroundColor(Colors.blue100)
+          .bold()
+          
+          
+          VStack(alignment: .leading) {
+            HStack {
+              Text(fish.period)
+            }
+            
+            HStack {
+              Text(fish.hour)
+            }
+            
+            HStack {
+              Text(fish.location ?? "")
+            }
+            
+            HStack {
+              Text("\(fish.price) bells")
+            }
           }
         }
-        .foregroundColor(Colors.blue100)
-        .bold()
+        .padding(.leading, 10)
         
         
-        VStack(alignment: .leading) {
-          HStack {
-            Text(fish.period)
-          }
-          
-          HStack {
-            Text(fish.hour)
-          }
-          
-          HStack {
-            Text(fish.location ?? "")
-          }
-          
-          HStack {
-            Text("\(fish.price) bells")
-          }
-        }
-      }
-      .padding(.leading, 10)
-      
-      
-      RarityBadge(rarity: RarityViewModel(rarityLevel: fish.rarity ?? .common)
-      )
-      .padding(
-        EdgeInsets(
-          top: 0,
-          leading: 10,
-          bottom: 10,
-          trailing: 0
+        RarityBadge(rarity: RarityViewModel(rarityLevel: fish.rarity ?? .common)
         )
-      )
+        .padding(
+          EdgeInsets(
+            top: 0,
+            leading: 10,
+            bottom: 10,
+            trailing: 0
+          )
+        )
+      }
+      .font(.system(size: 11))
+      .frame(width: 175)
+      .background(Colors.blue100.opacity(0.1))
+      .cornerRadius(4)
     }
-    .font(.system(size: 11))
-    .frame(width: 175)
-    .background(Colors.blue100.opacity(0.1))
-    .cornerRadius(4)
   }
 }
 
