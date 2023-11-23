@@ -8,9 +8,6 @@
 import SwiftUI
 
 struct HomePage: View {
-//  @ObservedObject var collectionViewModel: CollectionViewModel
-//  @StateObject var collection = CollectionViewModel()
-  
   var body: some View {
       VStack(alignment: .center) {
         Text("Currently Available")

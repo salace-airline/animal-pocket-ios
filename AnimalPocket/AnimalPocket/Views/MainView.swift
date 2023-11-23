@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct MainView: View {
-  @State private var selection = 4
+  @EnvironmentObject var user: UserViewModel
+//  @State private var selection = 4
   
   var body: some View {
-    TabView(selection: $selection) {
+    TabView(selection: $user.selectedTab) {
       HomePage()
         .onTapGesture {
-          selection = 0
+          user.selectedTab = 0
         }
         .tabItem {
           Label("Home", systemImage: "house.circle")
@@ -24,7 +25,7 @@ struct MainView: View {
       
       FishCategory()
         .onTapGesture {
-          selection = 1
+          user.selectedTab = 1
         }
         .tabItem {
           Label("Fish", systemImage: "fish")
@@ -34,7 +35,7 @@ struct MainView: View {
       
       BugCategory()
         .onTapGesture {
-          selection = 2
+          user.selectedTab = 2
         }
         .tabItem {
           Label("Bugs", systemImage: "ant")
@@ -44,7 +45,7 @@ struct MainView: View {
       
       SeaCategory()
         .onTapGesture {
-          selection = 3
+          user.selectedTab = 3
         }
         .tabItem {
           Label("Sea", systemImage: "water.waves")
@@ -54,7 +55,7 @@ struct MainView: View {
       
       UserLoginView()
         .onTapGesture {
-          selection = 4
+          user.selectedTab = 4
         }
         .tabItem {
           Label("User", systemImage: "person.circle")

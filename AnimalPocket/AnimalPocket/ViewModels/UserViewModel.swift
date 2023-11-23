@@ -22,6 +22,8 @@ class UserViewModel: ObservableObject {
   
   @Published var filter: Filter = .noFilter
   
+  @Published var selectedTab = 4
+  
   //  @MainActor
   //  func checkExistingUser() async -> Bool {
   //    do {
@@ -45,6 +47,7 @@ class UserViewModel: ObservableObject {
           ),
           path: UserRouter.register.path
         )
+        selectedTab = 0
         print("User registered successfully! \(registration)")
       } catch {
         print("Error", error)
@@ -97,10 +100,11 @@ class UserViewModel: ObservableObject {
           )
         }
         
+        selectedTab = 0
         print("User logged in successfully! \(login)")
-        print(caughtItems.caughtBug)
-        print(caughtItems.caughtFish)
-        print(caughtItems.caughtSeaCreature)
+        print("Caught bugs: \(caughtItems.caughtBug)")
+        print("Cuaght fish: \(caughtItems.caughtFish)")
+        print("Caught sea creatures: \(caughtItems.caughtSeaCreature)")
       } catch {
         print("Error", error)
       }
