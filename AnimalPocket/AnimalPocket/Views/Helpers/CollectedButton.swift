@@ -8,18 +8,20 @@
 import SwiftUI
 
 struct CollectedButton: View {
-  @Binding var isSet: Bool
+  @Binding var isCollected: Bool
   var setImage: String
   var unsetImage: String
   var setColor: Color
+  var updateCollection: () -> Void
   
   var body: some View {
     Button {
-      isSet.toggle()
+      isCollected.toggle()
+      updateCollection()
     } label: {
-      Label("Toggle Collected", systemImage: isSet ? setImage : unsetImage)
+      Label("Toggle Collected", systemImage: isCollected ? setImage : unsetImage)
         .labelStyle(.iconOnly)
-        .foregroundColor(isSet ? setColor : .gray)
+        .foregroundColor(isCollected ? setColor : .gray)
     }
   }
 }

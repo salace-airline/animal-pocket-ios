@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct CurrentSeaCreatures: View {
-  @ObservedObject var viewModel = SeaCreatureViewModel()
+  @EnvironmentObject var user: UserViewModel
+  @ObservedObject var viewModel = CollectibleViewModel()
   
   let columns = [
     GridItem(.adaptive(minimum: 160))
@@ -16,15 +17,16 @@ struct CurrentSeaCreatures: View {
   
   var body: some View {
     VStack {
-      switch viewModel.filter {
-        case .noFilter:
-          loadedSea(sea: viewModel.currentlyAvailable)
-        case .increasingPrice:
-          loadedSea(sea: viewModel.filter.increasePrice(of: viewModel.currentlyAvailable))
-        case .decreasingPrice:
-          loadedSea(sea: viewModel.filter.decreasePrice(of: viewModel.currentlyAvailable))
-        case .alphatically:
-          loadedSea(sea: viewModel.filter.sortAlphabetically(viewModel.currentlyAvailable))
+      if user.showMissingSeaCreatures {
+        loadedSea(sea: viewModel.filterItems(user.showMissingSeaCreatures(viewModel.seaArray)))
+          .onAppear(perform: {
+            viewModel.loadSeaCreatures()
+          })
+      } else {
+        loadedSea(sea: viewModel.filterItems(viewModel.seaArray))
+          .onAppear(perform: {
+            viewModel.loadSeaCreatures()
+          })
       }
     }
   }
@@ -36,14 +38,11 @@ struct CurrentSeaCreatures: View {
       ScrollView(.vertical) {
         LazyVGrid(columns: columns, spacing: 10) {
           ForEach(sea) { sea in
-            SeaDetails(sea: sea)
+            SeaDetails(seaCreature: sea)
           }
         }
       }
     }
-    .onAppear(perform: {
-      viewModel.loadSeaCreature()
-    })
   }
 }
 

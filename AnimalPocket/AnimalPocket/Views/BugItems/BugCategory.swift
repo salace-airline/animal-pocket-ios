@@ -8,50 +8,62 @@
 import SwiftUI
 
 struct BugCategory: View {
-  @ObservedObject var viewModel = BugsViewModel()
+  @EnvironmentObject var user: UserViewModel
+  @ObservedObject var viewModel = CollectibleViewModel()
   
   var body: some View {
     VStack {
-      Text("Bugs")
-        .font(.custom("FinkHeavy", size: 20))
-        .font(.subheadline)
+      HStack {
+        Text("Bugs")
+          .font(.custom("FinkHeavy", size: 20))
+          .font(.subheadline)
+        
+        Button {
+          user.showMissingBugs.toggle()
+          print("Show missing bugs only is \(user.showMissingBugs)")
+        } label: {
+          Label("Toggle missing bugs", systemImage: user.showMissingBugs ? "eye.slash.fill" : "eye.slash")
+            .labelStyle(.iconOnly)
+            .foregroundColor(Colors.green100)
+        }
+      }
       
       ScrollView {
         LazyVStack {
-          Toggle(isOn: $viewModel.showCurrentBugs, label: {
+          Toggle(isOn: $viewModel.showCurrentItem, label: {
             Text("Currently")
               .font(.custom("FinkHeavy", size: 20))
               .font(.subheadline)
           })
           .toggleStyle(MinusToggleStyle())
           
-          if viewModel.showCurrentBugs {
+          if viewModel.showCurrentItem {
             CurrentBugs()
           }
         }
         
         LazyVStack {
-          Toggle(isOn: $viewModel.showBugsOfTheMonth, label: {
+          Toggle(isOn: $viewModel.showItemsOfTheMonth, label: {
             Text("This Month")
               .font(.custom("FinkHeavy", size: 20))
               .font(.subheadline)
           })
           .toggleStyle(MinusToggleStyle())
           
-          if viewModel.showBugsOfTheMonth {
+          if viewModel.showItemsOfTheMonth {
             BugsOfTheMonth()
           }
         }
         
         LazyVStack {
-          Toggle(isOn: $viewModel.showAllBugs, label: {
+          Toggle(isOn: $viewModel.showAllItems, label: {
             Text("All Bugs")
               .font(.custom("FinkHeavy", size: 20))
               .font(.subheadline)
           })
           .toggleStyle(MinusToggleStyle())
           
-          if viewModel.showAllBugs {
+          if viewModel.showAllItems {
             AllBugs()
           }
         }

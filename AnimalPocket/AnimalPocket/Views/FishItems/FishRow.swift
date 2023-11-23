@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FishRow: View {
-  @ObservedObject var viewModel = FishViewModel()
+  @ObservedObject var viewModel = CollectibleViewModel()
   
   let rows = [
     GridItem()
@@ -17,7 +17,7 @@ struct FishRow: View {
   var body: some View {
     ScrollView(.horizontal) {
       LazyHGrid(rows: rows) {
-        ForEach(viewModel.currentlyAvailable) { fish in
+        ForEach(viewModel.filterCurrentItems(for: viewModel.fishArray)) { fish in
           FishDetails(fish: fish)
         }
       }
@@ -30,6 +30,6 @@ struct FishRow: View {
 
 struct FishRow_Previews: PreviewProvider {
   static var previews: some View {
-    FishRow(viewModel: FishViewModel())
+    FishRow(viewModel: CollectibleViewModel())
   }
 }

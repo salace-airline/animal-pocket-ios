@@ -8,7 +8,10 @@
 import Foundation
 
 final class CollectibleViewModel: ObservableObject {
-  @Published var itemsArray: [CollectibleItem] = []
+  @Published var bugsArray: [CollectibleItem] = []
+  @Published var fishArray: [CollectibleItem] = []
+  @Published var seaArray: [CollectibleItem] = []
+  
   @Published var filter: Filter = .noFilter
   
   @Published var showCurrentItem = false
@@ -20,13 +23,13 @@ final class CollectibleViewModel: ObservableObject {
   @Published var decreasingPrice = false
   @Published var alphabeticalOrder = false
   
-  @Published var showMissingItemsOnly = false
+  @Published var showMissingBugs = false
   
-  @MainActor func loadItems() {
+  // bugs
+  @MainActor func loadBugs() {
     Task {
       do {
-        // bugs
-        let bugResponse = try await CollectibleService.fetchCollectibles(path: "bugs")
+        let bugResponse = try await CollectibleService.fetchCollectibles(path: CategoryRouter.bug.path)
         let bugs = bugResponse.map {
           CollectibleItem(
             itemNumber: $0.id,
@@ -47,10 +50,18 @@ final class CollectibleViewModel: ObservableObject {
             iconURI: $0.iconURI
           )
         }
-        self.itemsArray.append(contentsOf: bugs)
+        self.bugsArray.append(contentsOf: bugs)
+      } catch {
+        print("Error", error)
+      }
+    }
+  }
         
-        // fish
-        let fishResponse = try await CollectibleService.fetchCollectibles(path: "fish")
+  // fish
+  @MainActor func loadFish() {
+    Task {
+      do {
+        let fishResponse = try await CollectibleService.fetchCollectibles(path: CategoryRouter.fish.path)
         let fish = fishResponse.map {
           CollectibleItem(
             itemNumber: $0.id,
@@ -71,10 +82,18 @@ final class CollectibleViewModel: ObservableObject {
             iconURI: $0.iconURI
           )
         }
-        self.itemsArray.append(contentsOf: fish)
+        self.fishArray.append(contentsOf: fish)
+      } catch {
+        print("Error", error)
+      }
+    }
+  }
         
-        // sea creatures
-        let seaResponse = try await CollectibleService.fetchCollectibles(path: "sea")
+    // sea creatures
+    @MainActor func loadSeaCreatures() {
+      Task {
+        do {
+        let seaResponse = try await CollectibleService.fetchCollectibles(path: CategoryRouter.seaCreature.path)
         let sea = seaResponse.map{
           CollectibleItem(
             itemNumber: $0.id,
@@ -95,9 +114,7 @@ final class CollectibleViewModel: ObservableObject {
             iconURI: $0.iconURI
           )
         }
-        self.itemsArray.append(contentsOf: sea)
-        
-        print(itemsArray)
+        self.seaArray.append(contentsOf: sea)
       } catch {
         print("Error", error)
       }
@@ -105,11 +122,11 @@ final class CollectibleViewModel: ObservableObject {
   }
 }
 
-// Month & current filters
+/// MARK -  Month & currently available filters
 extension CollectibleViewModel {
-  var currentMonth: [CollectibleItem] {
+  func filterCurrentMonth(for items: [CollectibleItem]) -> [CollectibleItem] {
     var currentItems: [CollectibleItem] = []
-    for item in itemsArray {
+    for item in items {
       for month in item.monthArrayNorthern {
         if month == item.currentMonth {
           currentItems.append(item)
@@ -118,10 +135,10 @@ extension CollectibleViewModel {
     }
     return currentItems
   }
-  
-  var currentlyAvailable: [CollectibleItem] {
+
+  func filterCurrentItems(for items: [CollectibleItem]) -> [CollectibleItem] {
     var currentItems: [CollectibleItem] = []
-    for item in itemsArray {
+    for item in items {
       for time in item.availableTimeArray {
         if time == item.currentTime {
           for month in item.monthArrayNorthern {
@@ -136,11 +153,18 @@ extension CollectibleViewModel {
   }
 }
 
-// Collection filter
+/// MARK - Handle filter logic for views
 extension CollectibleViewModel {
-  var missingItems: [CollectibleItem] {
-    itemsArray.filter { item in
-      (!showMissingItemsOnly || !item.isCollected)
+  func filterItems(_ items: [CollectibleItem]) -> [CollectibleItem] {
+    switch self.filter {
+      case .noFilter:
+        return items
+      case .increasingPrice:
+        return self.filter.increasePrice(of: items)
+      case .decreasingPrice:
+        return self.filter.decreasePrice(of: items)
+      case .alphatically:
+        return self.filter.sortAlphabetically(items)
     }
   }
 }

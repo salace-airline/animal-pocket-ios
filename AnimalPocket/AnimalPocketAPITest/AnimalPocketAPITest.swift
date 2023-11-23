@@ -23,7 +23,7 @@ final class AnimalPocketAPITest: XCTestCase {
 
   func testBugApiCallCompletes() throws {
     // given
-    let urlString = "https://acnhapi.com/v1a/bugs"
+    let urlString = "http://13.39.189.214:3000/bug"
     let url = URL(string: urlString)!
     let promise = expectation(description: "Completion handler invoked")
     var statusCode: Int?
@@ -45,7 +45,7 @@ final class AnimalPocketAPITest: XCTestCase {
   
   func testFishApiCallCompletes() throws {
     // given
-    let urlString = "https://acnhapi.com/v1a/fish"
+    let urlString = "http://13.39.189.214:3000/fish"
     let url = URL(string: urlString)!
     let promise = expectation(description: "Completion handler invoked")
     var statusCode: Int?
@@ -67,7 +67,7 @@ final class AnimalPocketAPITest: XCTestCase {
   
   func testSeaApiCallCompletes() throws {
     // given
-    let urlString = "https://acnhapi.com/v1a/sea"
+    let urlString = "http://13.39.189.214:3000/sea-creature"
     let url = URL(string: urlString)!
     let promise = expectation(description: "Completion handler invoked")
     var statusCode: Int?

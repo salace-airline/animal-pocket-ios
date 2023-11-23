@@ -51,7 +51,7 @@ final class SeaTests: XCTestCase {
     let filteredArray = sut.filter.sortAlphabetically(itemsArray)
     
     // then
-    XCTAssertTrue(filteredArray[0].name.nameEUfr < filteredArray[1].name.nameEUfr)
+    XCTAssertTrue(filteredArray[0].name < filteredArray[1].name)
   }
 
 }

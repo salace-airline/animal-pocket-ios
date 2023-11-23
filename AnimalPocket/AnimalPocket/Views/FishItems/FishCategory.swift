@@ -8,53 +8,62 @@
 import SwiftUI
 
 struct FishCategory: View {
-  @ObservedObject var viewModel = FishViewModel()
-  @State private var showCurrentFish = true
-  @State private var showFishOfTheMonth = true
-  @State private var showAllFish = true
+  @EnvironmentObject var user: UserViewModel
+  @ObservedObject var viewModel = CollectibleViewModel()
   
   var body: some View {
     VStack {
-      Text("Fish")
-        .font(.custom("FinkHeavy", size: 20))
-        .font(.subheadline)
+      HStack {
+        Text("Fish")
+          .font(.custom("FinkHeavy", size: 20))
+          .font(.subheadline)
+        
+        Button {
+          user.showMissingFish.toggle()
+          print("Show missing fish only is \(user.showMissingFish)")
+        } label: {
+          Label("Toggle missing fish", systemImage: user.showMissingFish ? "eye.slash.fill" : "eye.slash")
+            .labelStyle(.iconOnly)
+            .foregroundColor(Colors.blue100)
+        }
+      }
       
       ScrollView {
         LazyVStack {
-          Toggle(isOn: $showCurrentFish, label: {
+          Toggle(isOn: $viewModel.showCurrentItem, label: {
             Text("Currently")
               .font(.custom("FinkHeavy", size: 20))
               .font(.subheadline)
           })
           .toggleStyle(MinusToggleStyle())
           
-          if showCurrentFish {
+          if viewModel.showCurrentItem {
             CurrentFish()
           }
         }
         
         LazyVStack {
-          Toggle(isOn: $showFishOfTheMonth, label: {
+          Toggle(isOn: $viewModel.showItemsOfTheMonth, label: {
             Text("This Month")
               .font(.custom("FinkHeavy", size: 20))
               .font(.subheadline)
           })
           .toggleStyle(MinusToggleStyle())
           
-          if showFishOfTheMonth {
+          if viewModel.showItemsOfTheMonth {
             FishOfTheMonth()
           }
         }
         
         LazyVStack {
-          Toggle(isOn: $showAllFish, label: {
+          Toggle(isOn: $viewModel.showAllItems, label: {
             Text("All Fish")
               .font(.custom("FinkHeavy", size: 20))
               .font(.subheadline)
           })
           .toggleStyle(MinusToggleStyle())
           
-          if showAllFish {
+          if viewModel.showAllItems {
             AllFish()
           }
         }

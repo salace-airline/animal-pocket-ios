@@ -8,53 +8,62 @@
 import SwiftUI
 
 struct SeaCategory: View {
-  @ObservedObject var viewModel = SeaCreatureViewModel()
-  @State private var showCurrentSeaCreatures = true
-  @State private var showSeaCreaturesOfTheMonth = true
-  @State private var showAllSeaCreatures = true
+  @EnvironmentObject var user: UserViewModel
+  @ObservedObject var viewModel = CollectibleViewModel()
   
   var body: some View {
     VStack {
-      Text("Sea Creatures")
-        .font(.custom("FinkHeavy", size: 20))
-        .font(.subheadline)
+      HStack {
+        Text("Sea Creatures")
+          .font(.custom("FinkHeavy", size: 20))
+          .font(.subheadline)
+        
+        Button {
+          user.showMissingSeaCreatures.toggle()
+          print("Show missing sea creatures only is \(user.showMissingSeaCreatures)")
+        } label: {
+          Label("Toggle missing sea creature", systemImage: user.showMissingSeaCreatures ? "eye.slash.fill" : "eye.slash")
+            .labelStyle(.iconOnly)
+            .foregroundColor(Colors.blueDark)
+        }
+      }
       
       ScrollView {
         LazyVStack {
-          Toggle(isOn: $showCurrentSeaCreatures, label: {
+          Toggle(isOn: $viewModel.showCurrentItem, label: {
             Text("Currently")
               .font(.custom("FinkHeavy", size: 20))
               .font(.subheadline)
           })
           .toggleStyle(MinusToggleStyle())
           
-          if showCurrentSeaCreatures {
+          if viewModel.showCurrentItem {
             CurrentSeaCreatures()
           }
         }
         
         LazyVStack {
-          Toggle(isOn: $showSeaCreaturesOfTheMonth, label: {
+          Toggle(isOn: $viewModel.showItemsOfTheMonth, label: {
             Text("This Month")
               .font(.custom("FinkHeavy", size: 20))
               .font(.subheadline)
           })
           .toggleStyle(MinusToggleStyle())
           
-          if showSeaCreaturesOfTheMonth {
+          if viewModel.showItemsOfTheMonth {
             SeaCreaturesOfTheMonth()
           }
         }
         
         LazyVStack {
-          Toggle(isOn: $showAllSeaCreatures, label: {
+          Toggle(isOn: $viewModel.showAllItems, label: {
             Text("All Sea Creatures")
               .font(.custom("FinkHeavy", size: 20))
               .font(.subheadline)
           })
           .toggleStyle(MinusToggleStyle())
           
-          if showAllSeaCreatures {
+          if viewModel.showAllItems {
             AllSeaCreatures()
           }
         }

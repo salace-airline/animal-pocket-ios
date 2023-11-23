@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SeaButtons: View {
-  @ObservedObject var viewModel: SeaCreatureViewModel
+  @ObservedObject var viewModel: CollectibleViewModel
   
   var body: some View {
     HStack {

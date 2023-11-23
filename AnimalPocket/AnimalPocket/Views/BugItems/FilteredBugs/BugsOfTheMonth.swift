@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct BugsOfTheMonth: View {
-  @ObservedObject var viewModel = BugsViewModel()
+  @EnvironmentObject var user: UserViewModel
+  @ObservedObject var viewModel = CollectibleViewModel()
   
   let columns = [
     GridItem(.adaptive(minimum: 160))
@@ -16,15 +17,16 @@ struct BugsOfTheMonth: View {
   
   var body: some View {
     VStack {
-      switch viewModel.filter {
-        case .noFilter:
-          loadedBugs(with: viewModel.currentMonth)
-        case .increasingPrice:
-          loadedBugs(with: viewModel.filter.increasePrice(of: viewModel.currentMonth))
-        case .decreasingPrice:
-          loadedBugs(with: viewModel.filter.decreasePrice(of: viewModel.currentMonth))
-        case .alphatically:
-          loadedBugs(with: viewModel.filter.sortAlphabetically(viewModel.currentMonth))
+      if user.showMissingBugs {
+        loadedBugs(with: viewModel.filterItems(user.showMissingBugs(viewModel.bugsArray)))
+          .onAppear(perform: {
+            viewModel.loadBugs()
+          })
+      } else {
+        loadedBugs(with: viewModel.filterItems(viewModel.bugsArray))
+          .onAppear(perform: {
+            viewModel.loadBugs()
+          })
       }
     }
   }
@@ -32,7 +34,7 @@ struct BugsOfTheMonth: View {
   func loadedBugs(with bugs: [CollectibleItem]) -> some View {
     VStack {
       BugButtons(viewModel: viewModel)
-      
+
       ScrollView(.vertical) {
         LazyVGrid(columns: columns, spacing: 10) {
           ForEach(bugs) { bug in
@@ -41,14 +43,12 @@ struct BugsOfTheMonth: View {
         }
       }
     }
-    .onAppear(perform: {
-      viewModel.loadBugs()
-    })
   }
 }
 
 struct BugsOfTheMonth_Previews: PreviewProvider {
   static var previews: some View {
-    BugsOfTheMonth()
+    BugsOfTheMonth(viewModel: CollectibleViewModel()
+    )
   }
 }

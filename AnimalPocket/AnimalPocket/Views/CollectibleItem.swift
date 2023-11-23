@@ -30,7 +30,6 @@ class CollectibleItem: Identifiable, Codable, ObservableObject {
   var shadow: String?
   var price: Int
   var iconURI: String
-  var isCollected: Bool
   
   init(
     itemNumber: Int,
@@ -48,8 +47,7 @@ class CollectibleItem: Identifiable, Codable, ObservableObject {
     speed: String?,
     shadow: String?,
     price: Int,
-    iconURI: String,
-    isCollected: Bool = false
+    iconURI: String
   ) {
     self.itemNumber = itemNumber
     self.name = name
@@ -67,7 +65,6 @@ class CollectibleItem: Identifiable, Codable, ObservableObject {
     self.shadow = shadow
     self.price = price
     self.iconURI = iconURI
-    self.isCollected = isCollected
   }
 }
 
@@ -95,29 +92,29 @@ extension CollectibleItem {
     for month in self.monthArrayNorthern {
       switch month {
         case 1:
-          monthArray.append("January")
+          monthArray.append("Jan")
         case 2:
-          monthArray.append("February")
+          monthArray.append("Feb")
         case 3:
-          monthArray.append("March")
+          monthArray.append("Mar")
         case 4:
-          monthArray.append("April")
+          monthArray.append("Apr")
         case 5:
           monthArray.append("May")
         case 6:
-          monthArray.append("June")
+          monthArray.append("Jun")
         case 7:
-          monthArray.append("July")
+          monthArray.append("Jul")
         case 8:
-          monthArray.append("August")
+          monthArray.append("Aug")
         case 9:
-          monthArray.append("September")
+          monthArray.append("Sep")
         case 10:
-          monthArray.append("October")
+          monthArray.append("Oct")
         case 11:
-          monthArray.append("November")
+          monthArray.append("Nov")
         case 12:
-          monthArray.append("December")
+          monthArray.append("Dec")
         default:
           monthArray.append("R")
       }
@@ -171,7 +168,7 @@ extension CollectibleItem {
     speed: nil,
     shadow: nil,
     price: 8000,
-    iconURI: "https://github.com/salace-airline/ACNHAPI/blob/master/icons/bugs/scorpion.png"
+    iconURI: "https://raw.githubusercontent.com/salace-airline/ACNHAPI/master/icons/bugs/scorpion.png"
   )
   
   static let fishSample = CollectibleItem(
@@ -190,7 +187,7 @@ extension CollectibleItem {
     speed: nil,
     shadow: "Largest (6)",
     price: 15000,
-    iconURI: "https://github.com/salace-airline/ACNHAPI/blob/master/icons/fish/coelacanth.png"
+    iconURI: "https://raw.githubusercontent.com/salace-airline/ACNHAPI/master/icons/fish/coelacanth.png"
   )
   
   static let seaSample = CollectibleItem(
@@ -209,6 +206,6 @@ extension CollectibleItem {
     speed: "Fast",
     shadow: "Medium",
     price: 5000,
-    iconURI: "https://github.com/salace-airline/ACNHAPI/blob/master/icons/bugs/scorpion.png"
+    iconURI: "https://raw.githubusercontent.com/salace-airline/ACNHAPI/master/icons/sea/venus_flower_basket.png"
   )
 }

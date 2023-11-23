@@ -21,12 +21,12 @@ public struct AuthResponse: Decodable {
 public struct UserResponse {
   public let id: Int?
   public let email: String
-  public let caughtFish: [Int]?
-  public let caughtBug: [Int]?
-  public let caughtSeaCreature: [Int]?
+  public let caughtFish: [Int]
+  public let caughtBug: [Int]
+  public let caughtSeaCreature: [Int]
 }
 
-extension UserResponse: Decodable {
+extension UserResponse: Codable {
   enum CodingKeys: String, CodingKey {
     case id
     case email
@@ -35,3 +35,39 @@ extension UserResponse: Decodable {
     case caughtSeaCreature = "caught_sea_creature"
   }
 }
+
+public struct Response: Decodable {
+  public let message: String
+  public let status: String
+}
+
+public struct UpdateFish {
+  public let caughtFish: Int
+}
+
+extension UpdateFish: Codable {
+  enum CodingKeys: String, CodingKey {
+    case caughtFish = "caught_fish"
+  }
+}
+
+public struct UpdateBug {
+  public let caughtBug: Int
+}
+
+extension UpdateBug: Codable {
+  enum CodingKeys: String, CodingKey {
+    case caughtBug = "caught_bug"
+  }
+}
+
+public struct UpdateSeaCreature {
+  public let caughtSeaCreature: Int
+}
+
+extension UpdateSeaCreature: Codable {
+  enum CodingKeys: String, CodingKey {
+    case caughtSeaCreature = "caught_sea_creature"
+  }
+}
+

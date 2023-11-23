@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct CurrentBugs: View {
-  @ObservedObject var viewModel = BugsViewModel()
+  @EnvironmentObject var user: UserViewModel
+  @ObservedObject var viewModel = CollectibleViewModel()
   
   let columns = [
     GridItem(.adaptive(minimum: 160))
@@ -16,15 +17,16 @@ struct CurrentBugs: View {
   
   var body: some View {
     VStack {
-      switch viewModel.filter {
-        case .noFilter:
-          loadedBugs(with: viewModel.currentlyAvailable)
-        case .increasingPrice:
-          loadedBugs(with: viewModel.filter.increasePrice(of: viewModel.currentlyAvailable))
-        case .decreasingPrice:
-          loadedBugs(with: viewModel.filter.decreasePrice(of: viewModel.currentlyAvailable))
-        case .alphatically:
-          loadedBugs(with: viewModel.filter.sortAlphabetically(viewModel.currentlyAvailable))
+      if user.showMissingBugs {
+        loadedBugs(with: viewModel.filterItems(user.showMissingBugs(viewModel.bugsArray)))
+          .onAppear(perform: {
+            viewModel.loadBugs()
+          })
+      } else {
+        loadedBugs(with: viewModel.filterItems(viewModel.bugsArray))
+          .onAppear(perform: {
+            viewModel.loadBugs()
+          })
       }
     }
   }
@@ -41,14 +43,13 @@ struct CurrentBugs: View {
         }
       }
     }
-    .onAppear(perform: {
-      viewModel.loadBugs()
-    })
   }
 }
 
 struct BugsCurrentMoment_Previews: PreviewProvider {
   static var previews: some View {
-    CurrentBugs()
+    CurrentBugs(
+      viewModel: CollectibleViewModel()
+    )
   }
 }
