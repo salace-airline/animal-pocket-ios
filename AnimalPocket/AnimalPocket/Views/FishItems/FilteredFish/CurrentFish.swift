@@ -19,13 +19,16 @@ struct CurrentFish: View {
     VStack {
       if user.showMissingItemsOnly {
         loadedFish(fish: viewModel.filterItems(user.showMissingFish(viewModel.fishArray)))
+          .onAppear(perform: {
+            viewModel.loadFish()
+          })
       } else {
         loadedFish(fish: viewModel.filterItems(viewModel.fishArray))
+          .onAppear(perform: {
+            viewModel.loadFish()
+          })
       }
     }
-    .onAppear(perform: {
-      viewModel.loadFish()
-    })
   }
   
   func loadedFish(fish: [CollectibleItem]) -> some View {

@@ -19,13 +19,16 @@ struct SeaCreaturesOfTheMonth: View {
     VStack {
       if user.showMissingItemsOnly {
         loadedSea(sea: viewModel.filterItems(user.showMissingSeaCreatures(viewModel.seaArray)))
+          .onAppear(perform: {
+            viewModel.loadSeaCreatures()
+          })
       } else {
         loadedSea(sea: viewModel.filterItems(viewModel.seaArray))
+          .onAppear(perform: {
+            viewModel.loadSeaCreatures()
+          })
       }
     }
-    .onAppear(perform: {
-      viewModel.loadSeaCreatures()
-    })
   }
   
   func loadedSea(sea: [CollectibleItem]) -> some View {

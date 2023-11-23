@@ -18,24 +18,17 @@ struct AllBugs: View {
   var body: some View {
     VStack {
       if user.showMissingItemsOnly {
-//        switch viewModel.filter {
-//          case .noFilter:
-//            loadedBugs(with: user.showMissingBugs(viewModel.bugsArray))
-//          case .increasingPrice:
-//            loadedBugs(with: viewModel.filter.increasePrice(of: user.showMissingBugs(viewModel.bugsArray)))
-//          case .decreasingPrice:
-//            loadedBugs(with: viewModel.filter.decreasePrice(of: user.showMissingBugs(viewModel.bugsArray)))
-//          case .alphatically:
-//            loadedBugs(with: viewModel.filter.sortAlphabetically(user.showMissingBugs(viewModel.bugsArray)))
-//        }
         loadedBugs(with: viewModel.filterItems(user.showMissingBugs(viewModel.bugsArray)))
+          .onAppear(perform: {
+            viewModel.loadBugs()
+          })
       } else {
         loadedBugs(with: viewModel.filterItems(viewModel.bugsArray))
+          .onAppear(perform: {
+            viewModel.loadBugs()
+          })
       }
     }
-    .onAppear(perform: {
-      viewModel.loadBugs()
-    })
   }
   
   func loadedBugs(with bugs: [CollectibleItem]) -> some View {
