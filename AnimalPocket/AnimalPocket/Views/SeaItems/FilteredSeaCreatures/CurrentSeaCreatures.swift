@@ -17,7 +17,7 @@ struct CurrentSeaCreatures: View {
   
   var body: some View {
     VStack {
-      if user.showMissingItemsOnly {
+      if user.showMissingSeaCreatures {
         loadedSea(sea: viewModel.filterItems(user.showMissingSeaCreatures(viewModel.seaArray)))
           .onAppear(perform: {
             viewModel.loadSeaCreatures()

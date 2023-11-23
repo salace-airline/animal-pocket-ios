@@ -19,10 +19,10 @@ struct FishCategory: View {
           .font(.subheadline)
         
         Button {
-          user.showMissingItemsOnly.toggle()
-          print(user.showMissingItemsOnly)
+          user.showMissingFish.toggle()
+          print("Show missing fish only is \(user.showMissingFish)")
         } label: {
-          Label("Toggle missing fish", systemImage: user.showMissingItemsOnly ? "eye.slash.fill" : "eye.slash")
+          Label("Toggle missing fish", systemImage: user.showMissingFish ? "eye.slash.fill" : "eye.slash")
             .labelStyle(.iconOnly)
             .foregroundColor(.blue)
         }

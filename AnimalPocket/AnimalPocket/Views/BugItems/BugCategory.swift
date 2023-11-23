@@ -19,10 +19,10 @@ struct BugCategory: View {
           .font(.subheadline)
         
         Button {
-          user.showMissingItemsOnly.toggle()
-          print(user.showMissingItemsOnly)
+          user.showMissingBugs.toggle()
+          print("Show missing bugs only is \(user.showMissingBugs)")
         } label: {
-          Label("Toggle missing bugs", systemImage: user.showMissingItemsOnly ? "eye.slash.fill" : "eye.slash")
+          Label("Toggle missing bugs", systemImage: user.showMissingBugs ? "eye.slash.fill" : "eye.slash")
             .labelStyle(.iconOnly)
             .foregroundColor(.green)
         }

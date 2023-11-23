@@ -17,7 +17,7 @@ struct CurrentBugs: View {
   
   var body: some View {
     VStack {
-      if user.showMissingItemsOnly {
+      if user.showMissingBugs {
         loadedBugs(with: viewModel.filterItems(user.showMissingBugs(viewModel.bugsArray)))
           .onAppear(perform: {
             viewModel.loadBugs()

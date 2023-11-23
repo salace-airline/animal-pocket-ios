@@ -19,10 +19,10 @@ struct SeaCategory: View {
           .font(.subheadline)
         
         Button {
-          user.showMissingItemsOnly.toggle()
-          print(user.showMissingItemsOnly)
+          user.showMissingSeaCreatures.toggle()
+          print("Show missing sea creatures only is \(user.showMissingSeaCreatures)")
         } label: {
-          Label("Toggle missing sea creature", systemImage: user.showMissingItemsOnly ? "eye.slash.fill" : "eye.slash")
+          Label("Toggle missing sea creature", systemImage: user.showMissingSeaCreatures ? "eye.slash.fill" : "eye.slash")
             .labelStyle(.iconOnly)
             .foregroundColor(.black)
         }

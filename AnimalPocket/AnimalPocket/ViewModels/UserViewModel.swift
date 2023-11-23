@@ -17,8 +17,9 @@ class UserViewModel: ObservableObject {
     caughtSeaCreature: []
   )
   
-  @Published var showMissingItemsOnly = false
   @Published var showMissingBugs = false
+  @Published var showMissingFish = false
+  @Published var showMissingSeaCreatures = false
   
   @Published var filter: Filter = .noFilter
   

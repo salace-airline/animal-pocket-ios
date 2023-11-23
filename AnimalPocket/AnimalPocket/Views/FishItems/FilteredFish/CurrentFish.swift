@@ -17,7 +17,7 @@ struct CurrentFish: View {
   
   var body: some View {
     VStack {
-      if user.showMissingItemsOnly {
+      if user.showMissingFish {
         loadedFish(fish: viewModel.filterItems(user.showMissingFish(viewModel.fishArray)))
           .onAppear(perform: {
             viewModel.loadFish()
