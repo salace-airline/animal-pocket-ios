@@ -13,7 +13,6 @@
 		001839FD299FD95700617F89 /* CollectedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001839FC299FD95700617F89 /* CollectedButton.swift */; };
 		00274F82299F7FA500DAA28F /* FishTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00274F81299F7FA500DAA28F /* FishTests.swift */; };
 		00274F84299F800400DAA28F /* SeaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00274F83299F800400DAA28F /* SeaTests.swift */; };
-		002CB1B629433A480093B974 /* Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002CB1B529433A480093B974 /* Name.swift */; };
 		004A258F290BDB17009281E4 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A258E290BDB17009281E4 /* HomePage.swift */; };
 		004A2598290BDC03009281E4 /* FishRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A2597290BDC03009281E4 /* FishRow.swift */; };
 		004A259C290C0D71009281E4 /* FishDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A2595290BDBE9009281E4 /* FishDetails.swift */; };
@@ -43,7 +42,6 @@
 		00B191EC29B23E37007D87AC /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = 00B191EB29B23E37007D87AC /* Nuke */; };
 		00B191EE29B23E37007D87AC /* NukeExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = 00B191ED29B23E37007D87AC /* NukeExtensions */; };
 		00B191F029B23E37007D87AC /* NukeUI in Frameworks */ = {isa = PBXBuildFile; productRef = 00B191EF29B23E37007D87AC /* NukeUI */; };
-		00CFC9EE2931014500A291DB /* Availability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CFC9EB2931014500A291DB /* Availability.swift */; };
 		00D9B9592993A4FA001B9FF6 /* Collectible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D9B9582993A4FA001B9FF6 /* Collectible.swift */; };
 		00D9B95E2993A98B001B9FF6 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D9B95D2993A98B001B9FF6 /* Request.swift */; };
 		00D9B9602993A9B7001B9FF6 /* URLRequest+Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D9B95F2993A9B7001B9FF6 /* URLRequest+Networking.swift */; };
@@ -116,7 +114,6 @@
 		001839FC299FD95700617F89 /* CollectedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectedButton.swift; sourceTree = "<group>"; };
 		00274F81299F7FA500DAA28F /* FishTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishTests.swift; sourceTree = "<group>"; };
 		00274F83299F800400DAA28F /* SeaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeaTests.swift; sourceTree = "<group>"; };
-		002CB1B529433A480093B974 /* Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Name.swift; sourceTree = "<group>"; };
 		004A258E290BDB17009281E4 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
 		004A2595290BDBE9009281E4 /* FishDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishDetails.swift; sourceTree = "<group>"; };
 		004A2597290BDC03009281E4 /* FishRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishRow.swift; sourceTree = "<group>"; };
@@ -143,7 +140,6 @@
 		00ADF74929E956C100729CAF /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		00ADF74C29E9583100729CAF /* UserLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginView.swift; sourceTree = "<group>"; };
 		00ADF75529E98A6600729CAF /* LoginFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormView.swift; sourceTree = "<group>"; };
-		00CFC9EB2931014500A291DB /* Availability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Availability.swift; sourceTree = "<group>"; };
 		00D9B9582993A4FA001B9FF6 /* Collectible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collectible.swift; sourceTree = "<group>"; };
 		00D9B95D2993A98B001B9FF6 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		00D9B95F2993A9B7001B9FF6 /* URLRequest+Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Networking.swift"; sourceTree = "<group>"; };
@@ -282,8 +278,6 @@
 			isa = PBXGroup;
 			children = (
 				00D9B9582993A4FA001B9FF6 /* Collectible.swift */,
-				00CFC9EB2931014500A291DB /* Availability.swift */,
-				002CB1B529433A480093B974 /* Name.swift */,
 				0083A5BB295DEACB00007ED4 /* Rarity.swift */,
 				005DF1D729437E0C00F964CE /* Time.swift */,
 				0083A5C72971B16600007ED4 /* Filter.swift */,
@@ -347,11 +341,10 @@
 		00D9B9682993ADBE001B9FF6 /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				DC799D8B2B0F883400BCB63A /* Routers */,
 				00D9B9632993AB5C001B9FF6 /* APIRequest.swift */,
 				00D9B9662993AD21001B9FF6 /* CategoryRequest.swift */,
-				DC43DDB229AE3A1200DECFA4 /* CategoryRouter.swift */,
 				DCA36E282AF26A1B0009508E /* AuthRequest.swift */,
-				DCFC43912AF41599003A8587 /* UserRouter.swift */,
 				DC21339C2AFD0C760032FAE9 /* FishUpdateRequest.swift */,
 				DC99ABB22B0D5F380078206B /* BugUpdateRequest.swift */,
 				DC99ABB42B0D618B0078206B /* SeaCreatureUpdateRequest.swift */,
@@ -491,6 +484,15 @@
 				101AFA02290BBD9200855FA6 /* AnimalPocketUITestsLaunchTests.swift */,
 			);
 			path = AnimalPocketUITests;
+			sourceTree = "<group>";
+		};
+		DC799D8B2B0F883400BCB63A /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				DCFC43912AF41599003A8587 /* UserRouter.swift */,
+				DC43DDB229AE3A1200DECFA4 /* CategoryRouter.swift */,
+			);
+			path = Routers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -711,7 +713,6 @@
 				005DF1EC29488EA300F964CE /* SeaDetails.swift in Sources */,
 				DCA36E2B2AF284C10009508E /* UserService.swift in Sources */,
 				00730FD7299FCD5E004E8C37 /* CollectibleItem.swift in Sources */,
-				00CFC9EE2931014500A291DB /* Availability.swift in Sources */,
 				00DCEAFA298D5510001D7AF4 /* CurrentSeaCreatures.swift in Sources */,
 				00DCEAE9298D3F4F001D7AF4 /* AllFish.swift in Sources */,
 				00DCEAEC298D407C001D7AF4 /* CurrentFish.swift in Sources */,
@@ -726,7 +727,6 @@
 				00ADF75629E98A6600729CAF /* LoginFormView.swift in Sources */,
 				101AF9E6290BBD9100855FA6 /* AnimalPocketApp.swift in Sources */,
 				DC43DDAC29AE2FEC00DECFA4 /* CollectibleViewModel.swift in Sources */,
-				002CB1B629433A480093B974 /* Name.swift in Sources */,
 				005DF1EE29488FE900F964CE /* SeaRow.swift in Sources */,
 				0083A5BE295DEB1600007ED4 /* RarityBadge.swift in Sources */,
 				00DCEAF6298D540E001D7AF4 /* AllSeaCreatures.swift in Sources */,

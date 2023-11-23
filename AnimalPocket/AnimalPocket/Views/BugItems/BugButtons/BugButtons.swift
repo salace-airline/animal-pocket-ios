@@ -72,15 +72,6 @@ struct BugButtons: View {
           viewModel.decreasingPrice = false
         }
       })
-      
-//      BugFilterButtons(
-//        isSelected: $user.showMissingBugs,
-//        color: Colors.green100,
-//        buttonText: "👀"
-//      )
-//      .onTapGesture {
-//        user.showMissingBugs.toggle()
-//      }
     }
   }
 }

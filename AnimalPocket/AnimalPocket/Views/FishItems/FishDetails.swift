@@ -28,7 +28,7 @@ struct FishDetails: View {
             isCollected: .constant(collection.contains(fish)),
             setImage: "fish.fill",
             unsetImage: "fish",
-            setColor: .blue,
+            setColor: Colors.blue100,
             updateCollection: {
               if user.isUserLoggedIn == true {
                 Task {

@@ -27,7 +27,7 @@ struct BugDetails: View {
             isCollected: .constant(collection.contains(bug)),
             setImage: "leaf.fill",
             unsetImage: "leaf",
-            setColor: .green,
+            setColor: Colors.green100,
             updateCollection: {
               if user.isUserLoggedIn == true {
                 Task {

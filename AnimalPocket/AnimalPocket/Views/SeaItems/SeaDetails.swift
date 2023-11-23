@@ -27,7 +27,7 @@ struct SeaDetails: View {
             isCollected: .constant(collection.contains(seaCreature)),
             setImage: "drop.fill",
             unsetImage: "drop",
-            setColor: .black,
+            setColor: Colors.blueDark,
             updateCollection: {
               if user.isUserLoggedIn == true {
                 Task {

@@ -24,7 +24,7 @@ struct FishCategory: View {
         } label: {
           Label("Toggle missing fish", systemImage: user.showMissingFish ? "eye.slash.fill" : "eye.slash")
             .labelStyle(.iconOnly)
-            .foregroundColor(.blue)
+            .foregroundColor(Colors.blue100)
         }
       }
       
