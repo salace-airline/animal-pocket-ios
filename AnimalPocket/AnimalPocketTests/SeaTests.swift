@@ -9,11 +9,11 @@ import XCTest
 @testable import AnimalPocket
 
 final class SeaTests: XCTestCase {
-  var sut: SeaCreatureViewModel!
+  var sut: CollectibleViewModel!
   
   override func setUpWithError() throws {
     try super.setUpWithError()
-    sut = SeaCreatureViewModel()
+    sut = CollectibleViewModel()
   }
   
   override func tearDownWithError() throws {

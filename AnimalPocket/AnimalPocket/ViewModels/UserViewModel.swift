@@ -70,36 +70,11 @@ class UserViewModel: ObservableObject {
         
         isUserLoggedIn = true
         
-        let caughtBugs = login.data.caughtBug
-        let caughtFish = login.data.caughtFish
-        let caughtSea = login.data.caughtSeaCreature
-        
-        let updatedUser = UserItems(caughtFish: caughtFish, caughtBug: caughtBugs, caughtSeaCreature: caughtSea)
-        caughtItems = updatedUser
-        
-        login.data.caughtBug.map {
-          UserItems(
-            caughtFish: [],
-            caughtBug: [$0.self],
-            caughtSeaCreature: []
-          )
-        }
-        
-        login.data.caughtFish.map {
-          UserItems(
-            caughtFish: [$0.self],
-            caughtBug: [],
-            caughtSeaCreature: []
-          )
-        }
-        
-        login.data.caughtSeaCreature.map {
-          UserItems(
-            caughtFish: [],
-            caughtBug: [],
-            caughtSeaCreature: [$0.self]
-          )
-        }
+        caughtItems = UserItems(
+          caughtFish: login.data.caughtFish.map { $0.self },
+          caughtBug: login.data.caughtBug.map { $0.self },
+          caughtSeaCreature: login.data.caughtSeaCreature.map { $0.self }
+        )
         
         selectedTab = 0
         print("User logged in successfully!")
@@ -153,20 +128,6 @@ extension UserViewModel {
         print("Error", error)
       }
     }
-  }
-}
-
-extension UserViewModel {
-  func containsFish(_ collectedItem: Int) -> Bool {
-    caughtItems.caughtFish.contains(collectedItem)
-  }
-  
-  func containsBug(_ collectedItem: Int) -> Bool {
-    caughtItems.caughtBug.contains(collectedItem)
-  }
-  
-  func containsSeaCreature(_ collectedItem: Int) -> Bool {
-    caughtItems.caughtSeaCreature.contains(collectedItem)
   }
 }
 
