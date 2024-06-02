@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct UserLoginView: View {
-  @EnvironmentObject var collection: CollectionViewModel
+//  @EnvironmentObject var collection: CollectionViewModel
   @EnvironmentObject var viewModel: UserViewModel
   
   var body: some View {

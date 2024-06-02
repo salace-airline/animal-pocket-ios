@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct BugDetails: View {
-  @EnvironmentObject var collection: CollectionViewModel
-  @EnvironmentObject var user: UserViewModel
+  @EnvironmentObject var viewModel: UserViewModel
   @State private var showAlert = false
   var bug: CollectibleItem
   
@@ -24,19 +23,19 @@ struct BugDetails: View {
             .bold()
           
           CollectedButton(
-            isCollected: .constant(collection.contains(bug)),
+            isCollected: .constant(viewModel.contains(bug)),
             setImage: "leaf.fill",
             unsetImage: "leaf",
             setColor: Colors.green100,
             updateCollection: {
-              if user.isUserLoggedIn == true {
+              if viewModel.isUserLoggedIn {
                 Task {
-                  if collection.contains(bug) {
-                    collection.remove(bug)
-                    await user.updateBugCollection(with: bug.itemNumber)
+                  if viewModel.contains(bug) {
+                    viewModel.remove(bug)
+                    await viewModel.updateBugCollection(with: bug.itemNumber)
                   } else {
-                    collection.add(bug)
-                    await user.updateBugCollection(with: bug.itemNumber)
+                    viewModel.add(bug)
+                    await viewModel.updateBugCollection(with: bug.itemNumber)
                   }
                 }
               } else {

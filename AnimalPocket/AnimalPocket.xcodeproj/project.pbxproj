@@ -68,7 +68,6 @@
 		101AFA01290BBD9200855FA6 /* AnimalPocketUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101AFA00290BBD9200855FA6 /* AnimalPocketUITests.swift */; };
 		101AFA03290BBD9200855FA6 /* AnimalPocketUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101AFA02290BBD9200855FA6 /* AnimalPocketUITestsLaunchTests.swift */; };
 		DC2133992AFD05FA0032FAE9 /* UserItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2133982AFD05FA0032FAE9 /* UserItems.swift */; };
-		DC21339B2AFD0A420032FAE9 /* CollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC21339A2AFD0A420032FAE9 /* CollectionViewModel.swift */; };
 		DC21339D2AFD0C760032FAE9 /* FishUpdateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC21339C2AFD0C760032FAE9 /* FishUpdateRequest.swift */; };
 		DC43DDAC29AE2FEC00DECFA4 /* CollectibleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC43DDAB29AE2FEC00DECFA4 /* CollectibleViewModel.swift */; };
 		DC43DDB329AE3A1200DECFA4 /* CategoryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC43DDB229AE3A1200DECFA4 /* CategoryRouter.swift */; };
@@ -171,7 +170,6 @@
 		101AFA00290BBD9200855FA6 /* AnimalPocketUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalPocketUITests.swift; sourceTree = "<group>"; };
 		101AFA02290BBD9200855FA6 /* AnimalPocketUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalPocketUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		DC2133982AFD05FA0032FAE9 /* UserItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserItems.swift; sourceTree = "<group>"; };
-		DC21339A2AFD0A420032FAE9 /* CollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewModel.swift; sourceTree = "<group>"; };
 		DC21339C2AFD0C760032FAE9 /* FishUpdateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishUpdateRequest.swift; sourceTree = "<group>"; };
 		DC43DDAB29AE2FEC00DECFA4 /* CollectibleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectibleViewModel.swift; sourceTree = "<group>"; };
 		DC43DDB229AE3A1200DECFA4 /* CategoryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRouter.swift; sourceTree = "<group>"; };
@@ -269,7 +267,6 @@
 				DC43DDAB29AE2FEC00DECFA4 /* CollectibleViewModel.swift */,
 				0083A5BF295DEC4700007ED4 /* RarityViewModel.swift */,
 				DCA36E242AF264120009508E /* UserViewModel.swift */,
-				DC21339A2AFD0A420032FAE9 /* CollectionViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -684,7 +681,6 @@
 				00ADF74D29E9583100729CAF /* UserLoginView.swift in Sources */,
 				00D9B9602993A9B7001B9FF6 /* URLRequest+Networking.swift in Sources */,
 				005DF1D829437E0C00F964CE /* Time.swift in Sources */,
-				DC21339B2AFD0A420032FAE9 /* CollectionViewModel.swift in Sources */,
 				0083A5DB298422AE00007ED4 /* BugFilterButtons.swift in Sources */,
 				DCA36E2D2AF284D00009508E /* UserNetworkService.swift in Sources */,
 				004A259C290C0D71009281E4 /* FishDetails.swift in Sources */,

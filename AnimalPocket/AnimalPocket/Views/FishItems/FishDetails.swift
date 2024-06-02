@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct FishDetails: View {
-  @EnvironmentObject var collection: CollectionViewModel
-  @EnvironmentObject var user: UserViewModel
+  @EnvironmentObject var viewModel: UserViewModel
   @State private var showAlert = false
   var fish: CollectibleItem
   
@@ -25,19 +24,19 @@ struct FishDetails: View {
             .bold()
           
           CollectedButton(
-            isCollected: .constant(collection.contains(fish)),
+            isCollected: .constant(viewModel.contains(fish)),
             setImage: "fish.fill",
             unsetImage: "fish",
             setColor: Colors.blue100,
             updateCollection: {
-              if user.isUserLoggedIn == true {
+              if viewModel.isUserLoggedIn {
                 Task {
-                  if collection.contains(fish) {
-                    collection.remove(fish)
-                    await user.updateFishCollection(with: fish.itemNumber)
+                  if viewModel.contains(fish) {
+                    viewModel.remove(fish)
+                    await viewModel.updateFishCollection(with: fish.itemNumber)
                   } else {
-                    collection.add(fish)
-                    await user.updateFishCollection(with: fish.itemNumber)
+                    viewModel.add(fish)
+                    await viewModel.updateFishCollection(with: fish.itemNumber)
                   }
                 }
               } else {

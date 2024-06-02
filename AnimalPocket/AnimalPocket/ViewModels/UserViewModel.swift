@@ -8,6 +8,22 @@
 import Foundation
 
 class UserViewModel: ObservableObject {
+  // saving user data
+  private var collectedItems: Set<String>
+  
+  private let saveKey = "CollectedItems"
+  
+  init() {
+    if let data = UserDefaults.standard.data(forKey: saveKey) {
+      if let decoded = try? JSONDecoder().decode(Set<String>.self, from: data) {
+        self.collectedItems = decoded
+        return
+      }
+    }
+    collectedItems = []
+  }
+  
+  // handling user collections
   @Published var isUserLoggedIn = false
   @Published var userEmail: String = ""
   @Published var userPassword: String = ""
@@ -24,18 +40,6 @@ class UserViewModel: ObservableObject {
   @Published var filter: Filter = .noFilter
   
   @Published var selectedTab = 4
-  
-  //  @MainActor
-  //  func checkExistingUser() async -> Bool {
-  //    do {
-  //      let user = try await UserService.getUser(with: UserRouter.user.path)
-  //      print("User exists")
-  //      return true
-  //    } catch {
-  //      print("Error", error)
-  //      return false
-  //    }
-  //  }
   
   @MainActor
   func register() async {
@@ -161,5 +165,35 @@ extension UserViewModel {
       }
     }
     return missingSeaCreatures
+  }
+}
+
+extension UserViewModel {
+  func contains(_ collectedItem: CollectibleItem) -> Bool {
+    collectedItems.contains(collectedItem.name)
+  }
+  
+  func add(_ collectedItem: CollectibleItem) {
+    objectWillChange.send()
+    collectedItems.insert(collectedItem.name)
+    save()
+  }
+  
+  func remove(_ collectedItem: CollectibleItem) {
+    objectWillChange.send()
+    collectedItems.remove(collectedItem.name)
+    save()
+  }
+  
+  func emptyCollection() {
+    objectWillChange.send()
+    collectedItems.removeAll()
+    save()
+  }
+  
+  func save() {
+    if let encoded = try? JSONEncoder().encode(collectedItems) {
+      UserDefaults.standard.set(encoded, forKey: saveKey)
+    }
   }
 }
