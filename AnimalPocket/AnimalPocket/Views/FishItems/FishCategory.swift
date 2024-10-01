@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FishCategory: View {
   @EnvironmentObject var user: UserViewModel
-  @ObservedObject var viewModel = CollectibleViewModel()
+  @ObservedObject var viewModel = CollectibleViewModel(category: .fish)
   
   var body: some View {
     VStack {

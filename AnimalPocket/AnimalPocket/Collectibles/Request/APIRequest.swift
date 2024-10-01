@@ -9,7 +9,7 @@ import Foundation
 
 // Request for the common URL
 class APIRequest: Request {
-  private let baseURL = URL(string: "http://13.39.189.214:3000")
+  private let baseURL = URL(string: "http://localhost:3000")
   private let path: String
   
   init(path: String) {

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SeaRow: View {
-  @ObservedObject var viewModel = CollectibleViewModel()
+  @ObservedObject var viewModel = CollectibleViewModel(category: .seaCreature)
   
   let rows = [
     GridItem()
@@ -23,14 +23,7 @@ struct SeaRow: View {
       }
     }
     .onAppear(perform: {
-      viewModel.loadSeaCreatures()
+      viewModel.loadItems()
     })
-  }
-}
-
-struct SeaRow_Previews: PreviewProvider {
-  static var previews: some View {
-    SeaRow(viewModel: CollectibleViewModel()
-    )
   }
 }

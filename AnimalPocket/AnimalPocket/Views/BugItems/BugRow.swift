@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BugRow: View {
-  @ObservedObject var viewModel = CollectibleViewModel()
+  @ObservedObject var viewModel = CollectibleViewModel(category: .bug)
   
   let rows = [
     GridItem()
@@ -23,7 +23,7 @@ struct BugRow: View {
       }
     }
     .onAppear(perform: {
-      viewModel.loadBugs()
+      viewModel.loadItems()
     })
   }
 }

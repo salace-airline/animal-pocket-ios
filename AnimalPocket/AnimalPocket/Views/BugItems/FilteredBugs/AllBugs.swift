@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AllBugs: View {
   @EnvironmentObject var user: UserViewModel
-  @ObservedObject var viewModel = CollectibleViewModel()
+  @ObservedObject var viewModel = CollectibleViewModel(category: .bug)
     
   let columns = [
     GridItem(.adaptive(minimum: 160))
@@ -20,12 +20,12 @@ struct AllBugs: View {
       if user.showMissingBugs {
         loadedBugs(with: viewModel.filterItems(user.showMissingBugs(viewModel.bugsArray)))
           .onAppear(perform: {
-            viewModel.loadBugs()
+            viewModel.loadItems()
           })
       } else {
         loadedBugs(with: viewModel.filterItems(viewModel.bugsArray))
           .onAppear(perform: {
-            viewModel.loadBugs()
+            viewModel.loadItems()
           })
       }
     }
@@ -48,7 +48,7 @@ struct AllBugs: View {
 }
 
 struct AllBugs_Previews: PreviewProvider {
-    static var previews: some View {
-      AllBugs()
-    }
+  static var previews: some View {
+    AllBugs()
+  }
 }

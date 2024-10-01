@@ -43,11 +43,6 @@ struct HomePage: View {
     }
   }
 
-
-struct HomePage_Previews: PreviewProvider {
-  static let items = CollectibleViewModel()
-  
-  static var previews: some View {
-    HomePage()
-  }
+#Preview {
+  HomePage()
 }

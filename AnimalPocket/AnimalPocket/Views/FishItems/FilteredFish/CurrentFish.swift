@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CurrentFish: View {
   @EnvironmentObject var user: UserViewModel
-  @ObservedObject var viewModel = CollectibleViewModel()
+  @ObservedObject var viewModel = CollectibleViewModel(category: .fish)
   
   let columns = [
     GridItem(.adaptive(minimum: 160))
@@ -20,12 +20,12 @@ struct CurrentFish: View {
       if user.showMissingFish {
         loadedFish(fish: viewModel.filterItems(user.showMissingFish(viewModel.fishArray)))
           .onAppear(perform: {
-            viewModel.loadFish()
+            viewModel.loadItems()
           })
       } else {
         loadedFish(fish: viewModel.filterItems(viewModel.fishArray))
           .onAppear(perform: {
-            viewModel.loadFish()
+            viewModel.loadItems()
           })
       }
     }
